@@ -1,0 +1,390 @@
+# Game Corner F3 (82) - Argon City Poké Center (104)
+82,11,0,104,0,63
+# Game Corner (83) - Game Corner F3 (82)
+83,South,0,82,North,39
+# Argon City (103) - Game Corner F3 (82)
+103,East,34,82,West,0
+# Argon City (103) - Argon City (95)
+103,East,63,95,West,0
+# Argon City Poké Center (104) - Argon City (85)
+104,89,144,85,0,0
+# Argon City Poké Center (104) - Argon City (102)
+104,67,56,102,0,0
+# Argon City Poké Center (104) - Game Corner (42)
+104,73,93,42,0,0
+# Argon City Poké Center (104) - Game Corner F2 (81)
+104,15,123,81,0,0
+# Route 14 (94) - Route 13 (93)
+94,North,68,93,South,0
+# Gold City (48) - Route 13 (93)
+48,East,40,93,West,0
+# Route 15 (126) - Route 2 (115)
+126,North,47,115,South,0
+# Route 3 (121) - Route 2 (115)
+121,South,0,115,North,0
+# Route 2 (116) - Route 2 (115)
+116,East,30,115,West,0
+# Lithium Town (78) - Route 2 (115)
+78,West,50,115,East,0
+# Route 1 (112) - Route 2 (115)
+112,North,23,115,South,0
+# Route 2 (118) - Route 2 (115)
+118,South,0,115,North,40
+# Argon City (32) - Route 2 (115)
+32,North,0,115,South,45
+# Igandea River (17) - Route 15 (126)
+17,North,0,126,South,52
+# Ferry Dock (6) - Route 15 (126)
+6,North,0,126,South,274
+# Route 2 (116) - Route 15 (126)
+116,South,0,126,North,27
+# Route 15 (40) - Route 15 (126)
+40,North,0,126,South,1
+# Route 1 (112) - Route 15 (126)
+112,West,0,126,East,0
+# Igandea River (41) - Route 15 (126)
+41,North,0,126,South,25
+# Germanium Village (135) - Route 15 (126)
+135,West,0,126,East,50
+# Igandea River Boardwalks (86) - Route 15 (126)
+86,North,0,126,South,374
+# Igandea River  (21) - Route 15 (126)
+21,North,0,126,South,294
+# Precious Metal Bridge (10) - Route 15 (126)
+10,North,0,126,South,254
+# Route 6 (89) - Route 5 (88)
+89,West,0,88,East,65
+# Route 5 (7) - Route 5 (88)
+7,West,0,88,East,0
+# Route 5 (101) - Route 5 (88)
+101,South,0,88,North,5
+# Route 4 (124) - Route 5 (88)
+124,East,0,88,West,61
+# Silver Town (43) - Route 5 (88)
+43,North,0,88,South,0
+# Route 14 (94) - Carbon Slums (33)
+94,West,0,33,East,82
+# Igandea River (17) - Carbon Slums (33)
+17,South,147,33,North,0
+# Igandea River (23) - Carbon Slums (33)
+23,South,0,33,North,175
+# Igandea River (18) - Carbon Slums (33)
+18,South,0,33,North,75
+# Gold City (48) - Carbon Slums (33)
+48,West,0,33,East,0
+# Igandea River  (21) - Carbon Slums (33)
+21,South,0,33,North,95
+# Extra Map (76) - Carbon Slums (33)
+76,North,0,33,South,0
+# Precious Metal Bridge (10) - Carbon Slums (33)
+10,South,0,33,North,55
+# Igandea River (23) - Barium Cemetery (99)
+23,North,70,99,South,0
+# Filler map (34) - Barium Cemetery (99)
+34,East,0,99,West,5
+# Arevelyan Ocean (29) - Barium Cemetery (99)
+29,West,120,99,East,0
+# Igandea River Boardwalks (86) - Barium Cemetery (99)
+86,East,0,99,West,25
+# Route 9 (105) - Boron Village (77)
+105,East,0,77,West,5
+# Arevelyan Ocean (29) - Boron Village (77)
+29,North,17,77,South,0
+# Arevelyan Ocean (51) - Boron Village (77)
+51,North,0,77,South,19
+# Arevelyan Ocean (52) - Boron Village (77)
+52,West,10,77,East,0
+# Route 2 (116) - Route 3 (121)
+116,East,0,121,West,0
+# Route 2 (117) - Route 3 (121)
+117,South,11,121,North,0
+# Route 2 (118) - Route 3 (121)
+118,West,20,121,East,0
+# Route 14 (94) - Safari Zone (39)
+94,West,15,39,East,0
+# Safari Zone (19) - Safari Zone (39)
+19,East,16,39,West,0
+# Safari Zone (96) - Safari Zone (39)
+96,South,0,39,North,0
+# Gold City (48) - Safari Zone (39)
+48,West,97,39,East,0
+# Helium City (79) - Route 14 (94)
+79,West,18,94,East,0
+# Safari Zone (96) - Route 14 (94)
+96,East,4,94,West,0
+# Gold City (48) - Route 14 (94)
+48,South,0,94,North,0
+# Extra Map (76) - Route 14 (94)
+76,East,45,94,West,0
+# Route 4 (127) - Igandea River (17)
+127,South,0,17,North,80
+# Platinum Heights (100) - Igandea River (17)
+100,North,0,17,South,396
+# Route 6 (89) - Igandea River (17)
+89,South,0,17,North,245
+# Filler map (34) - Igandea River (17)
+34,South,0,17,North,355
+# Igandea River (41) - Igandea River (17)
+41,East,0,17,West,0
+# Route 4 (124) - Igandea River (17)
+124,South,0,17,North,115
+# Argon Beach Front (36) - Igandea River (17)
+36,South,0,17,North,40
+# Germanium Village (135) - Igandea River (17)
+135,South,28,17,North,0
+# Gold City (48) - Igandea River (17)
+48,North,0,17,South,187
+# Route 7 (87) - Igandea River (17)
+87,South,0,17,North,320
+# Precious Metal Bridge (10) - Igandea River (17)
+10,West,0,17,East,0
+# Silver Town (43) - Igandea River (17)
+43,South,0,17,North,195
+# Ferry Dock (6) - Route 4 (127)
+6,North,0,127,South,142
+# Route 15 (40) - Route 4 (127)
+40,North,131,127,South,0
+# Igandea River (41) - Route 4 (127)
+41,North,107,127,South,0
+# Route 4 (124) - Route 4 (127)
+124,West,0,127,East,48
+# Argon Beach Front (36) - Route 4 (127)
+36,East,0,127,West,39
+# Igandea River Boardwalks (86) - Route 4 (127)
+86,North,0,127,South,242
+# Argon City (32) - Route 4 (127)
+32,East,25,127,West,0
+# Igandea River  (21) - Route 4 (127)
+21,North,0,127,South,162
+# Precious Metal Bridge (10) - Route 4 (127)
+10,North,0,127,South,122
+# Route 6 (89) - Ferry Dock (6)
+89,South,0,6,North,23
+# Filler map (34) - Ferry Dock (6)
+34,South,0,6,North,133
+# Igandea River (18) - Ferry Dock (6)
+18,North,0,6,South,0
+# Route 4 (124) - Ferry Dock (6)
+124,South,107,6,North,0
+# Argon Beach Front (36) - Ferry Dock (6)
+36,South,182,6,North,0
+# Germanium Village (135) - Ferry Dock (6)
+135,South,250,6,North,0
+# Igandea River  (21) - Ferry Dock (6)
+21,West,0,6,East,0
+# Route 7 (87) - Ferry Dock (6)
+87,South,0,6,North,98
+# Precious Metal Bridge (10) - Ferry Dock (6)
+10,East,0,6,West,0
+# Silver Town (43) - Ferry Dock (6)
+43,South,27,6,North,0
+# Mt. Silicon (106) - Route 9 (105)
+106,East,16,105,West,0
+# Arevelyan Ocean (29) - Route 9 (105)
+29,North,0,105,South,18
+# Arevelyan Ocean (51) - Route 9 (105)
+51,North,0,105,South,54
+# Route 9 (84) - Route 9 (105)
+84,East,0,105,West,24
+# Route 10 (206) - Route 9 (105)
+206,East,46,105,West,0
+# Route 2 (117) - Route 2 (116)
+117,South,0,116,North,9
+# Route 1 (112) - Route 2 (116)
+112,North,3,116,South,0
+# Argon City (32) - Route 2 (116)
+32,North,0,116,South,65
+# Igandea River (23) - Platinum Heights (100)
+23,South,74,100,North,0
+# Igandea River (18) - Platinum Heights (100)
+18,South,174,100,North,0
+# Arevelyan Ocean (29) - Platinum Heights (100)
+29,West,195,100,East,0
+# Igandea River  (21) - Platinum Heights (100)
+21,South,154,100,North,0
+# Precious Metal Bridge (10) - Platinum Heights (100)
+10,South,194,100,North,0
+# Arevelyan Ocean (29) - Igandea River (23)
+29,West,170,23,East,0
+# Igandea River Boardwalks (86) - Igandea River (23)
+86,South,0,23,North,0
+# Gold City (48) - Igandea River (23)
+48,North,135,23,South,0
+# Igandea River  (21) - Igandea River (23)
+21,East,25,23,West,0
+# Route 5 (7) - Route 6 (89)
+7,South,0,89,North,0
+# Route 15 (40) - Route 6 (89)
+40,North,296,89,South,0
+# Igandea River (41) - Route 6 (89)
+41,North,272,89,South,0
+# Igandea River Boardwalks (86) - Route 6 (89)
+86,North,0,89,South,77
+# Igandea River  (21) - Route 6 (89)
+21,North,3,89,South,0
+# Route 7 (87) - Route 6 (89)
+87,West,42,89,East,0
+# Precious Metal Bridge (10) - Route 6 (89)
+10,North,43,89,South,0
+# Silver Town (43) - Route 6 (89)
+43,East,40,89,West,0
+# Route 15 (40) - Filler map (34)
+40,North,406,34,South,0
+# Igandea River (41) - Filler map (34)
+41,North,382,34,South,0
+# Igandea River Boardwalks (86) - Filler map (34)
+86,North,33,34,South,0
+# Igandea River  (21) - Filler map (34)
+21,North,113,34,South,0
+# Iron Town (131) - Filler map (34)
+131,East,116,34,West,0
+# Route 7 (87) - Filler map (34)
+87,East,50,34,West,0
+# Precious Metal Bridge (10) - Filler map (34)
+10,North,153,34,South,0
+# Route 2 (118) - Lithium Town (78)
+118,East,0,78,West,0
+# Route 12 (92) - Lithium Town (78)
+92,South,0,78,North,161
+# Route 9 (84) - Mt. Silicon (106)
+84,North,0,106,South,0
+# Route 10 (90) - Mt. Silicon (106)
+90,East,0,106,West,0
+# Route 10 (206) - Mt. Silicon (106)
+206,South,19,106,North,0
+# Gold City (48) - Igandea River (18)
+48,North,35,18,South,0
+# Igandea River  (21) - Igandea River (18)
+21,West,22,18,East,0
+# Precious Metal Bridge (10) - Igandea River (18)
+10,East,22,18,West,0
+# Route 5 (101) - Route 5 (7)
+101,South,45,7,North,0
+# Silver Town (43) - Route 5 (7)
+43,East,0,7,West,25
+# Arevelyan Ocean (51) - Arevelyan Ocean (29)
+51,West,0,29,East,0
+# Arevelyan Ocean (52) - Arevelyan Ocean (29)
+52,South,0,29,North,67
+# Arevelyan Ocean (52) - Arevelyan Ocean (51)
+52,South,0,51,North,31
+# Route 10 (90) - Route 9 (84)
+90,East,40,84,West,0
+# Route 8 (20) - Route 9 (84)
+20,North,13,84,South,0
+# Iron Town (131) - Route 9 (84)
+131,North,63,84,South,0
+# Route 2 (118) - Route 2 (117)
+118,West,0,117,East,5
+# Igandea River (41) - Route 15 (40)
+41,West,0,40,East,0
+# Route 4 (124) - Route 15 (40)
+124,South,0,40,North,166
+# Argon Beach Front (36) - Route 15 (40)
+36,South,0,40,North,91
+# Germanium Village (135) - Route 15 (40)
+135,South,0,40,North,23
+# Route 15 (207) - Route 15 (40)
+207,West,0,40,East,39
+# Route 7 (87) - Route 15 (40)
+87,South,0,40,North,371
+# Silver Town (43) - Route 15 (40)
+43,South,0,40,North,246
+# Argon Beach Front (36) - Route 1 (112)
+36,West,0,112,East,64
+# Germanium Village (135) - Route 1 (112)
+135,North,0,112,South,0
+# Argon City (32) - Route 1 (112)
+32,West,0,112,East,0
+# Victory Road (98) - Helium City (79)
+98,West,0,79,East,0
+# Route 10 (206) - Route 10 (90)
+206,South,0,90,North,17
+# Route 11 (151) - Route 10 (90)
+151,East,0,90,West,36
+# Route 11 (91) - Route 10 (90)
+91,East,0,90,West,0
+# Route 8 (20) - Route 10 (90)
+20,North,0,90,South,23
+# Iron Town (131) - Route 10 (90)
+131,North,27,90,South,0
+# Route 11 (91) - Route 10 (206)
+91,North,83,206,South,0
+# Route 11 (91) - Route 11 (151)
+91,South,6,151,North,0
+# Route 8 (20) - Route 11 (151)
+20,North,0,151,South,83
+# Iron Town (131) - Route 11 (151)
+131,North,0,151,South,33
+# Route 4 (124) - Igandea River (41)
+124,South,0,41,North,142
+# Argon Beach Front (36) - Igandea River (41)
+36,South,0,41,North,67
+# Germanium Village (135) - Igandea River (41)
+135,South,1,41,North,0
+# Route 7 (87) - Igandea River (41)
+87,South,0,41,North,347
+# Silver Town (43) - Igandea River (41)
+43,South,0,41,North,222
+# Safari Zone (96) - Safari Zone (19)
+96,West,3,19,East,0
+# Gold City (48) - Safari Zone (96)
+48,West,78,96,East,0
+# Extra Map (76) - Safari Zone (96)
+76,South,0,96,North,6
+# Route 12 (92) - Route 2 (118)
+92,South,0,118,North,181
+# Igandea River Boardwalks (86) - Route 4 (124)
+86,North,0,124,South,207
+# Igandea River  (21) - Route 4 (124)
+21,North,0,124,South,127
+# Precious Metal Bridge (10) - Route 4 (124)
+10,North,0,124,South,87
+# Silver Town (43) - Route 4 (124)
+43,West,36,124,East,0
+# Germanium Village (135) - Argon Beach Front (36)
+135,East,14,36,West,0
+# Igandea River Boardwalks (86) - Argon Beach Front (36)
+86,North,0,36,South,282
+# Argon City (32) - Argon Beach Front (36)
+32,South,0,36,North,0
+# Igandea River  (21) - Argon Beach Front (36)
+21,North,0,36,South,202
+# Precious Metal Bridge (10) - Argon Beach Front (36)
+10,North,0,36,South,162
+# Igandea River Boardwalks (86) - Germanium Village (135)
+86,North,0,135,South,350
+# Argon City (32) - Germanium Village (135)
+32,West,50,135,East,0
+# Igandea River  (21) - Germanium Village (135)
+21,North,0,135,South,270
+# Precious Metal Bridge (10) - Germanium Village (135)
+10,North,0,135,South,230
+# Route 12 (92) - Route 11 (91)
+92,East,17,91,West,0
+# Iron Town (131) - Route 8 (20)
+131,East,0,20,West,0
+# Route 7 (87) - Route 8 (20)
+87,East,0,20,West,66
+# Igandea River  (21) - Igandea River Boardwalks (86)
+21,East,0,86,West,0
+# Route 7 (87) - Igandea River Boardwalks (86)
+87,South,2,86,North,0
+# Silver Town (43) - Igandea River Boardwalks (86)
+43,South,127,86,North,0
+# Igandea River  (21) - Gold City (48)
+21,South,0,48,North,55
+# Extra Map (76) - Gold City (48)
+76,East,0,48,West,37
+# Precious Metal Bridge (10) - Gold City (48)
+10,South,0,48,North,15
+# Route 7 (87) - Igandea River  (21)
+87,South,0,21,North,78
+# Silver Town (43) - Igandea River  (21)
+43,South,47,21,North,0
+# Route 7 (87) - Iron Town (131)
+87,North,0,131,South,15
+# Precious Metal Bridge (10) - Route 7 (87)
+10,North,118,87,South,0
+# Silver Town (43) - Precious Metal Bridge (10)
+43,South,7,10,North,0

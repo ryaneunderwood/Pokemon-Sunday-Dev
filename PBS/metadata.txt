@@ -1,0 +1,1254 @@
+﻿#-------------------------------
+[000]
+PlayerA=POKEMONTRAINER_Red,trchar000,boy_bike,boy_surf_offset,boy_run,001.png,boy_fish_offset.png,
+PlayerB=POKEMONTRAINER_Leaf,trchar001,girl_bike,girl_surf_offset,girl_run,001.png,girl_fish_offset.png,
+TrainerVictoryME=frlg_trainervictory.ogg
+WildVictoryME=frlg_wildvictory.ogg
+TrainerBattleBGM=Trainer_General.mp3
+SurfBGM=SurfMusic2.wav
+BicycleBGM=Bike.mp3
+Home=3,7,5,8
+WildBattleBGM=WildBattle.mp3
+#-------------------------------
+[001]
+# Intro
+#-------------------------------
+[002]
+# Daycare
+MapPosition=0,13,12
+Outdoor=false
+ShowArea=false
+#-------------------------------
+[003]
+# Silver Town Poké Center
+MapPosition=0,13,11
+Outdoor=false
+HealingSpot=43,13,42
+#-------------------------------
+[004]
+# Silver Town Pokémart
+MapPosition=0,13,11
+ShowArea=false
+#-------------------------------
+[005]
+# Silver Town Ball Shop
+Bicycle=false
+MapPosition=0,13,11
+Outdoor=false
+ShowArea=true
+#-------------------------------
+[006]
+# Ferry Dock
+BattleBack=battlebgPMB
+Bicycle=false
+MapPosition=0,14,12
+Outdoor=true
+ShowArea=false
+#-------------------------------
+[007]
+# Route 5
+BattleBack=battlebgRoutes1
+Bicycle=true
+MapPosition=0,15,10
+Outdoor=true
+ShowArea=true
+#-------------------------------
+[008]
+# Silver Town Gym
+BattleBack=battlebgGymDark
+Bicycle=false
+MapPosition=0,13,11
+DarkMap=true
+Outdoor=false
+ShowArea=true
+#-------------------------------
+[009]
+# Silver Town
+MapPosition=0,13,11
+#-------------------------------
+[010]
+# Precious Metal Bridge
+BattleBack=battlebgPMB
+Bicycle=true
+MapPosition=0,13,12
+Outdoor=true
+ShowArea=true
+#-------------------------------
+[011]
+# Ferry
+MapPosition=0,14,12
+#-------------------------------
+[012]
+# Gold City Poké Center
+MapPosition=0,13,14
+HealingSpot=48,23,33
+#-------------------------------
+[013]
+# Gold City Gym
+BattleBack=battlebgGymBug
+MapPosition=0,13,14
+ShowArea=true
+#-------------------------------
+[014]
+# Gold City Mall
+MapPosition=0,13,14
+#-------------------------------
+[015]
+# Kiraki Research Library
+MapPosition=0,13,14
+ShowArea=true
+#-------------------------------
+[016]
+# Kiraki Museum
+MapPosition=0,13,14
+ShowArea=true
+#-------------------------------
+[017]
+# Igandea River
+BattleBack=battlebgOcean
+Weather=Storm,5
+Bicycle=true
+MapPosition=0,17,12
+Outdoor=true
+ShowArea=true
+#-------------------------------
+[018]
+# Igandea River
+BattleBack=battlebgOcean
+Weather=Storm,15
+Bicycle=true
+MapPosition=0,14,13
+Outdoor=true
+ShowArea=true
+#-------------------------------
+[019]
+# Safari Zone
+BattleBack=battlebgSafari
+Bicycle=false
+MapPosition=0,11,16
+SafariMap=true
+Outdoor=true
+ShowArea=true
+#-------------------------------
+[020]
+# Route 8
+BattleBack=battlebgTowns2
+Bicycle=true
+MapPosition=0,22,7
+Outdoor=true
+ShowArea=true
+#-------------------------------
+[021]
+# Igandea River 
+BattleBack=battlebgOcean
+Weather=Storm,15
+Bicycle=true
+MapPosition=0,18,12
+Outdoor=true
+ShowArea=true
+#-------------------------------
+[023]
+# Igandea River
+BattleBack=battlebgOcean
+Weather=Storm,10
+Bicycle=true
+MapPosition=0,22,13
+Outdoor=true
+ShowArea=true
+#-------------------------------
+[024]
+# Gold City
+MapPosition=0,13,14
+#-------------------------------
+[025]
+# Gold City
+MapPosition=0,13,14
+#-------------------------------
+[026]
+# Gold City
+MapPosition=0,13,14
+#-------------------------------
+[027]
+# Gold City
+MapPosition=0,13,14
+#-------------------------------
+[028]
+# Gold City
+MapPosition=0,13,14
+#-------------------------------
+[029]
+# Arevelyan Ocean
+BattleBack=battlebgOcean
+Weather=Storm,10
+Bicycle=true
+MapPosition=0,28,11
+Outdoor=true
+ShowArea=true
+#-------------------------------
+[030]
+# Pokémon League
+MapPosition=0,13,14
+ShowArea=true
+#-------------------------------
+[031]
+# Iron Town Poké Center
+MapPosition=0,20,8
+HealingSpot=131,11,21
+#-------------------------------
+[032]
+# Argon City
+BattleBack=battlebgTowns
+Bicycle=true
+MapPosition=0,6,9
+Outdoor=true
+HealingSpot=32,13,40
+ShowArea=true
+#-------------------------------
+[033]
+# Carbon Slums
+BattleBack=battlebgBariumCemetery
+Weather=Rain,12
+Bicycle=true
+MapPosition=0,12,14
+Outdoor=true
+ShowArea=true
+#-------------------------------
+[035]
+# Iron Town Gym
+BattleBack=battlebgGymSteel
+MapPosition=0,20,8
+ShowArea=true
+#-------------------------------
+[036]
+# Argon Beach Front
+BattleBack=battlebgTowns
+Weather=Rain,5
+Bicycle=true
+MapPosition=0,6,11
+Outdoor=true
+ShowArea=true
+#-------------------------------
+[037]
+# Safari Zone entrance
+MapPosition=0,12,17
+#-------------------------------
+[038]
+# Yveltal's Lair
+BattleBack=battlebgLegendary
+ShowArea=true
+#-------------------------------
+[039]
+# Safari Zone
+BattleBack=battlebgSafari
+Bicycle=false
+MapPosition=0,11,16
+SafariMap=true
+Outdoor=true
+ShowArea=true
+#-------------------------------
+[040]
+# Route 16
+BattleBack=battlebgRoutes1
+Bicycle=true
+MapPosition=0,1,14
+Outdoor=true
+HealingSpot=40,10,42
+ShowArea=true
+#-------------------------------
+[041]
+# Igandea River
+BattleBack=battlebgOcean
+Weather=Storm,4
+Bicycle=true
+MapPosition=0,14,12
+Outdoor=true
+ShowArea=true
+#-------------------------------
+[042]
+# Game Corner
+MapPosition=0,6,9
+#-------------------------------
+[043]
+# Silver Town
+BattleBack=battlebgTowns
+Bicycle=true
+MapPosition=0,13,11
+Outdoor=true
+ShowArea=true
+#-------------------------------
+[044]
+# Route 15
+Weather=Storm,100
+MapPosition=0,1,11
+Outdoor=true
+#-------------------------------
+[045]
+# Mt. Silicon Forest
+BattleBack=battlebgMSF
+Weather=Rain,100
+Bicycle=false
+MapPosition=0,24,4
+Outdoor=true
+ShowArea=true
+#-------------------------------
+[046]
+# Ruins of Simkath
+BattleBack=battlebgLegendary
+MapPosition=0,24,10
+ShowArea=true
+#-------------------------------
+[047]
+# Mt. Silicon Summit
+BattleBack=battlebgMSS
+Bicycle=true
+MapPosition=0,23,5
+DarkMap=true
+Outdoor=false
+ShowArea=true
+#-------------------------------
+[048]
+# Gold City
+BattleBack=battlebgGold
+Bicycle=true
+MapPosition=0,13,14
+Outdoor=true
+HealingSpot=48,43,14
+ShowArea=true
+#-------------------------------
+[049]
+# Gold City
+MapPosition=0,13,14
+#-------------------------------
+[050]
+# Gold City
+MapPosition=0,13,14
+#-------------------------------
+[051]
+# Arevelyan Ocean
+BattleBack=battlebgOcean
+Weather=Storm,10
+Bicycle=true
+MapPosition=0,28,7
+Outdoor=true
+ShowArea=true
+#-------------------------------
+[052]
+# Arevelyan Ocean
+MapSize=1,1
+BattleBack=battlebgOcean
+Weather=Storm,10
+Bicycle=true
+MapPosition=0,28,5
+Outdoor=true
+ShowArea=true
+#-------------------------------
+[053]
+# Mt. Silicon Summit
+BattleBack=battlebgMSS
+Bicycle=true
+MapPosition=0,23,5
+DarkMap=true
+Outdoor=false
+ShowArea=true
+#-------------------------------
+[054]
+# Cherry's Lab
+MapPosition=0,3,11
+#-------------------------------
+[055]
+# Bike Shop
+MapPosition=0,6,9
+#-------------------------------
+[056]
+# Gold City
+MapPosition=0,13,14
+#-------------------------------
+[057]
+# Iron Mine
+MapPosition=0,20,8
+#-------------------------------
+[058]
+# Iron Town
+MapPosition=0,20,8
+#-------------------------------
+[059]
+# Iron Town
+MapPosition=0,20,8
+#-------------------------------
+[060]
+# Iron Town
+MapPosition=0,20,8
+#-------------------------------
+[061]
+# Iron Town
+MapPosition=0,20,8
+#-------------------------------
+[062]
+# Iron Town
+MapPosition=0,20,8
+#-------------------------------
+[063]
+# Iron Town Hydro Plant
+MapPosition=0,20,8
+ShowArea=true
+#-------------------------------
+[064]
+# Route 9 Healer
+MapPosition=0,22,6
+#-------------------------------
+[065]
+# Boron Village Poké Center
+MapPosition=0,26,5
+#-------------------------------
+[066]
+# Boron Village Pokémart
+MapPosition=0,26,5
+#-------------------------------
+[067]
+# Boron Village Gym
+BattleBack=battlebgGymDragon
+MapPosition=0,26,5
+ShowArea=true
+#-------------------------------
+[068]
+# EV Rater
+MapPosition=0,26,5
+#-------------------------------
+[069]
+# Boron Village
+MapPosition=0,26,5
+#-------------------------------
+[070]
+# Boron Village
+MapPosition=0,26,5
+#-------------------------------
+[071]
+# Boron Village
+MapPosition=0,26,5
+#-------------------------------
+[072]
+# Mt. Silicon
+MapPosition=0,21,3
+#-------------------------------
+[073]
+# Drilbur's Tunnel
+MapSize=6,111111
+BattleBack=battlebgDrillburstunnel
+MapPosition=0,8,0
+DarkMap=true
+Outdoor=false
+ShowArea=true
+#-------------------------------
+[074]
+# Lithium Town Poké Center
+MapPosition=0,7,1
+#-------------------------------
+[075]
+# Lithium Town Pokémart
+MapPosition=0,7,1
+#-------------------------------
+[076]
+# Extra Map
+Bicycle=true
+MapPosition=0,12,15
+Outdoor=true
+ShowArea=true
+#-------------------------------
+[077]
+# Boron Village
+BattleBack=battlebgBoron
+Bicycle=true
+MapPosition=0,26,5
+Outdoor=true
+ShowArea=true
+#-------------------------------
+[078]
+# Lithium Town
+BattleBack=battlebgTowns2
+Bicycle=true
+MapPosition=0,7,1
+Outdoor=true
+ShowArea=true
+#-------------------------------
+[079]
+# Helium City
+BattleBack=battlebgHelium
+Weather=Rain,10
+Bicycle=true
+MapPosition=0,20,17
+Outdoor=true
+ShowArea=true
+#-------------------------------
+[081]
+# Game Corner F2
+Bicycle=false
+TrainerBattleBGM=002-Battle02x.mid
+MapPosition=0,6,9
+Outdoor=false
+WildBattleBGM=002-Battle02.mid
+ShowArea=false
+#-------------------------------
+[082]
+# Game Corner F3
+Bicycle=false
+MapPosition=0,6,9
+Outdoor=true
+ShowArea=false
+#-------------------------------
+[083]
+# Game Corner
+Bicycle=false
+MapPosition=0,6,9
+Outdoor=false
+ShowArea=false
+#-------------------------------
+[084]
+# Route 9
+BattleBack=battlebgRoutes2
+Bicycle=true
+MapPosition=0,22,6
+Outdoor=true
+HealingSpot=84,6,25
+ShowArea=true
+#-------------------------------
+[085]
+# Argon City
+BattleBack=battlebgTowns
+Bicycle=false
+MapPosition=0,6,9
+Outdoor=false
+ShowArea=false
+#-------------------------------
+[086]
+# Igandea River Boardwalks
+BattleBack=battlebgPMB
+Bicycle=true
+MapPosition=0,22,12
+Outdoor=true
+ShowArea=true
+#-------------------------------
+[087]
+# Route 7
+BattleBack=battlebgRoute7
+Bicycle=true
+MapPosition=0,20,10
+Outdoor=true
+ShowArea=true
+#-------------------------------
+[088]
+# Route 5
+BattleBack=battlebgRoutes1
+Bicycle=true
+MapPosition=0,13,10
+Outdoor=true
+ShowArea=true
+#-------------------------------
+[089]
+# Route 6
+MapSize=1,1
+BattleBack=battlebgRoutes1
+Weather=Rain,5
+Bicycle=true
+MapPosition=0,17,11
+Outdoor=true
+ShowArea=true
+#-------------------------------
+[090]
+# Route 10
+BattleBack=battlebgTowns2
+Bicycle=true
+MapPosition=0,20,3
+Outdoor=true
+ShowArea=true
+#-------------------------------
+[091]
+# Route 11
+BattleBack=battlebgTowns2
+Bicycle=true
+MapPosition=0,17,3
+Outdoor=true
+ShowArea=true
+#-------------------------------
+[092]
+# Route 12
+BattleBack=battlebgSafari
+Bicycle=true
+MapPosition=0,15,1
+Outdoor=true
+HealingSpot=92,49,27
+ShowArea=true
+#-------------------------------
+[093]
+# Route 13
+BattleBack=battlebgRoutes1
+Bicycle=true
+MapPosition=0,14,15
+Outdoor=true
+ShowArea=true
+#-------------------------------
+[094]
+# Route 14
+BattleBack=battlebgRoutes1
+Bicycle=true
+MapPosition=0,15,17
+Outdoor=true
+ShowArea=true
+#-------------------------------
+[095]
+# Argon City
+MapPosition=0,6,9
+#-------------------------------
+[096]
+# Safari Zone
+BattleBack=battlebgSafari
+Bicycle=false
+MapPosition=0,11,16
+SafariMap=true
+Outdoor=true
+ShowArea=true
+#-------------------------------
+[097]
+# Lithium Town
+MapPosition=0,7,1
+#-------------------------------
+[098]
+# Victory Road
+BattleBack=battlebgRoutes2
+Bicycle=false
+MapPosition=0,23,17
+Outdoor=true
+ShowArea=true
+#-------------------------------
+[099]
+# Barium Cemetery
+BattleBack=battlebgBariumCemetery
+Weather=Rain,80
+Bicycle=false
+MapPosition=0,23,11
+Outdoor=true
+ShowArea=true
+#-------------------------------
+[100]
+# Platinum Heights
+MapSize=0,1;1
+BattleBack=battlebgOcean
+Bicycle=true
+MapPosition=0,25,15
+Outdoor=true
+HealingSpot=100,23,34
+ShowArea=true
+#-------------------------------
+[101]
+# Route 5
+BattleBack=battlebgRoutes1
+Bicycle=true
+MapPosition=0,13,9
+Outdoor=true
+ShowArea=true
+#-------------------------------
+[102]
+# Argon City
+Bicycle=false
+MapPosition=0,6,9
+Outdoor=false
+ShowArea=false
+#-------------------------------
+[103]
+# Argon City
+Bicycle=false
+MapPosition=0,6,9
+Outdoor=false
+ShowArea=false
+#-------------------------------
+[104]
+# Argon City Poké Center
+Bicycle=false
+MapPosition=0,6,9
+Outdoor=false
+HealingSpot=32,13,40
+ShowArea=false
+#-------------------------------
+[105]
+# Route 9
+BattleBack=battlebgRoutes2
+Bicycle=true
+MapPosition=0,25,5
+Outdoor=true
+ShowArea=true
+#-------------------------------
+[106]
+# Mt. Silicon
+BattleBack=battlebgMS
+Weather=Snow,70
+Bicycle=true
+MapPosition=0,22,4
+Outdoor=true
+ShowArea=true
+#-------------------------------
+[107]
+# Lithium Town Gym
+BattleBack=battlebgGymFighting
+MapPosition=0,7,1
+Outdoor=false
+ShowArea=true
+#-------------------------------
+[108]
+# Carbon Slums
+MapPosition=0,12,14
+#-------------------------------
+[109]
+# Pokéfan House
+MapPosition=0,6,9
+#-------------------------------
+[110]
+# K-ROCK 105.7 Radio Building
+MapPosition=0,6,9
+ShowArea=true
+#-------------------------------
+[111]
+# Argon City Pokémart
+#-------------------------------
+[112]
+# Route 1
+BattleBack=battlebgRoutes1
+Weather=Rain,10
+Bicycle=true
+MapPosition=0,3,9
+Outdoor=true
+ShowArea=true
+#-------------------------------
+[113]
+# Route 1
+Bicycle=false
+MapPosition=0,3,9
+Outdoor=false
+#-------------------------------
+[114]
+# Route 1
+MapPosition=0,3,9
+#-------------------------------
+[115]
+# Route 2
+BattleBack=battlebgRoutes2
+Bicycle=true
+MapPosition=0,3,7
+Outdoor=true
+ShowArea=true
+#-------------------------------
+[116]
+# Route 2
+BattleBack=battlebgRoutes2
+Bicycle=true
+MapPosition=0,2,4
+Outdoor=true
+ShowArea=true
+#-------------------------------
+[117]
+# Route 2
+BattleBack=battlebgRoutes2
+Bicycle=true
+MapPosition=0,4,1
+Outdoor=true
+ShowArea=true
+#-------------------------------
+[118]
+# Route 2
+BattleBack=battlebgRoutes2
+Bicycle=true
+MapPosition=0,6,4
+Outdoor=true
+ShowArea=true
+#-------------------------------
+[119]
+# Route 2 Healer
+MapPosition=0,2,2
+#-------------------------------
+[120]
+# MooMoo Milk Bar
+MapPosition=0,6,1
+#-------------------------------
+[121]
+# Route 3
+BattleBack=battlebgRoutes2
+Bicycle=true
+MapPosition=0,4,3
+Outdoor=true
+ShowArea=true
+#-------------------------------
+[122]
+# Diglett's Cave
+BattleBack=battlebgDiglettsCave
+Bicycle=true
+MapPosition=0,4,2
+DarkMap=true
+Outdoor=false
+ShowArea=true
+#-------------------------------
+[123]
+# Argon City Gym
+BattleBack=battlebgGymGround
+MapPosition=0,6,9
+ShowArea=true
+#-------------------------------
+[124]
+# Route 4
+BattleBack=battlebgRoutes1
+Bicycle=true
+MapPosition=0,8,11
+Outdoor=true
+ShowArea=true
+#-------------------------------
+[125]
+# Argon City entrance
+MapPosition=0,7,9
+#-------------------------------
+[126]
+# Route 15
+BattleBack=battlebgRoutes1
+Bicycle=true
+MapPosition=0,1,10
+Outdoor=true
+ShowArea=true
+#-------------------------------
+[127]
+# Route 4
+BattleBack=battlebgRoutes1
+Bicycle=true
+MapPosition=0,6,9
+Outdoor=true
+ShowArea=true
+#-------------------------------
+[128]
+# Gold City
+MapPosition=0,13,14
+#-------------------------------
+[129]
+# School
+MapPosition=0,12,14
+#-------------------------------
+[130]
+# Carbon Slums Gym
+BattleBack=battlebgGymPsychic
+MapPosition=0,12,14
+ShowArea=true
+#-------------------------------
+[131]
+# Iron Town
+BattleBack=battlebgTowns2
+Bicycle=true
+MapPosition=0,20,8
+Outdoor=true
+ShowArea=true
+#-------------------------------
+[132]
+# Diglett's Cave
+MapSize=0,
+SnapEdges=true
+BattleBack=battlebgDiglettsCave
+Bicycle=true
+MapPosition=0,4,2
+DarkMap=true
+ShowArea=true
+#-------------------------------
+[133]
+# Submarine Dock
+MapPosition=0,12,14
+#-------------------------------
+[134]
+# Helium City Poké Center
+MapPosition=0,20,17
+HealingSpot=79,19,31
+#-------------------------------
+[135]
+# Germanium Village
+BattleBack=battlebgTowns
+Bicycle=true
+MapPosition=0,3,11
+Outdoor=true
+HealingSpot=135,16,19
+ShowArea=true
+#-------------------------------
+[136]
+# Cherry's Lab
+BattleBack=battlebgGymSteel
+MapPosition=0,3,11
+#-------------------------------
+[137]
+# Cherry's House
+MapPosition=0,3,11
+HealingSpot=135,30,17
+#-------------------------------
+[138]
+# Cherry's House
+MapPosition=0,3,11
+#-------------------------------
+[139]
+# Germanium Village
+MapPosition=0,3,11
+#-------------------------------
+[140]
+# Germanium Village
+MapPosition=0,3,11
+#-------------------------------
+[141]
+# Germanium Village
+MapPosition=0,3,11
+#-------------------------------
+[142]
+# Germanium Village
+MapPosition=0,3,11
+#-------------------------------
+[143]
+# Helium City Pokémart
+MapPosition=0,20,17
+#-------------------------------
+[144]
+# Helium City Gym
+BattleBack=battlebgGymFlying
+MapPosition=0,20,17
+ShowArea=true
+#-------------------------------
+[145]
+# Helium City
+MapPosition=0,20,17
+#-------------------------------
+[146]
+# Dingy Back Room
+MapPosition=0,12,14
+ShowArea=true
+#-------------------------------
+[147]
+# Ancient Ruins
+BattleBack=battlebgLegendary
+MapPosition=0,2,1
+Outdoor=false
+ShowArea=true
+#-------------------------------
+[148]
+# Ancient Ruins
+BattleBack=battlebgLegendary
+MapPosition=0,15,10
+ShowArea=true
+#-------------------------------
+[149]
+# Ancient Ruins
+BattleBack=battlebgLegendary
+MapPosition=0,22,3
+ShowArea=true
+#-------------------------------
+[150]
+# Ancient Ruins
+BattleBack=battlebgLegendary
+MapPosition=0,27,14
+ShowArea=true
+#-------------------------------
+[151]
+# Route 11
+BattleBack=battlebgTowns2
+Bicycle=true
+MapPosition=0,20,7
+Outdoor=true
+ShowArea=true
+#-------------------------------
+[152]
+# Carbon Correctional Facility
+BattleBack=battlebgLegendary
+MapPosition=0,12,14
+Outdoor=false
+ShowArea=true
+#-------------------------------
+[153]
+# Carbon Slums
+BattleBack=battlebgIndoors
+MapPosition=0,12,14
+#-------------------------------
+[154]
+# Victory Cave
+BattleBack=battlebgDiglettsCave
+Bicycle=true
+MapPosition=0,24,16
+DarkMap=true
+ShowArea=true
+#-------------------------------
+[155]
+# Victory Cave
+Dungeon=true
+#-------------------------------
+[156]
+# Victory Cave
+Dungeon=true
+#-------------------------------
+[157]
+# Victory Cave
+Dungeon=true
+#-------------------------------
+[158]
+# Victory Cave
+Dungeon=true
+#-------------------------------
+[159]
+# Victory Cave
+Dungeon=true
+#-------------------------------
+[160]
+# Victory Cave
+Dungeon=true
+#-------------------------------
+[161]
+# Victory Cave
+BattleBack=battlebgLegendary
+#-------------------------------
+[162]
+# Platinum Heights
+MapPosition=0,25,15
+#-------------------------------
+[163]
+# Hall of the Elite
+MapPosition=0,25,15
+#-------------------------------
+[164]
+# Match Room 1
+BattleBack=battlebgElite4Blue
+MapPosition=0,25,15
+#-------------------------------
+[165]
+# Match Room 2
+BattleBack=battlebgElite4Red
+MapPosition=0,25,15
+#-------------------------------
+[166]
+# Match Room 3
+BattleBack=battlebgElite4Yellow
+MapPosition=0,25,15
+#-------------------------------
+[167]
+# Match Room 4
+BattleBack=battlebgElite4Green
+MapPosition=0,25,15
+#-------------------------------
+[168]
+# Carbon Slums
+BattleBack=battlebgIndoors
+MapPosition=0,12,14
+#-------------------------------
+[169]
+# Carbon Slums
+MapPosition=0,12,14
+#-------------------------------
+[170]
+# Route 9
+MapPosition=0,24,5
+#-------------------------------
+[171]
+# Champion's Room
+BattleBack=battlebgElite4Champ
+MapPosition=0,25,15
+ShowArea=true
+#-------------------------------
+[172]
+# Champion's Room
+MapPosition=0,25,15
+#-------------------------------
+[173]
+# Ho-oh's Lair
+BattleBack=battlebgLegendary
+Outdoor=false
+ShowArea=true
+#-------------------------------
+[174]
+# Ultra Space
+BattleBack=battlebgUltra
+Outdoor=false
+ShowArea=true
+#-------------------------------
+[175]
+# Zekrom's Lair
+BattleBack=battlebgLegendary
+ShowArea=true
+#-------------------------------
+[176]
+# Kyogre's Lair
+BattleBack=battlebgLegendary
+ShowArea=true
+#-------------------------------
+[177]
+# Reshiram's Lair
+BattleBack=battlebgLegendary
+ShowArea=true
+#-------------------------------
+[178]
+# Giratina's Lair
+BattleBack=battlebgLegendary
+ShowArea=true
+#-------------------------------
+[179]
+# Ultra Space
+BattleBack=battlebgUltra
+#-------------------------------
+[180]
+# Dialga's Lair
+BattleBack=battlebgLegendary
+ShowArea=true
+#-------------------------------
+[181]
+# Palkia's Lair
+BattleBack=battlebgLegendary
+Outdoor=false
+ShowArea=true
+#-------------------------------
+[182]
+# Rayquaza's Lair
+ShowArea=true
+#-------------------------------
+[183]
+# Deoxys's Lair
+BattleBack=battlebgLegendary
+ShowArea=true
+#-------------------------------
+[184]
+# Heatran's Lair
+BattleBack=battlebgLegendary
+Outdoor=false
+ShowArea=true
+#-------------------------------
+[185]
+# Kyurem's Lair
+BattleBack=battlebgLegendary
+ShowArea=true
+#-------------------------------
+[186]
+# Pokémon League
+MapPosition=0,13,14
+ShowArea=true
+#-------------------------------
+[187]
+# Arceus' Lair
+BattleBack=battlebgLegendary
+MapPosition=0,1,11
+ShowArea=true
+#-------------------------------
+[188]
+# Home
+MapPosition=0,3,11
+ShowArea=true
+#-------------------------------
+[189]
+# Platinum Heights
+MapPosition=0,25,15
+Outdoor=false
+#-------------------------------
+[190]
+# Volcanion's Lair
+BattleBack=battlebgLegendary
+Outdoor=false
+ShowArea=true
+#-------------------------------
+[191]
+# Eternatus's Lair
+BattleBack=battlebgLegendary
+Outdoor=false
+ShowArea=true
+#-------------------------------
+[192]
+# Xerneas's Lair
+BattleBack=battlebgLegendary
+ShowArea=true
+#-------------------------------
+[193]
+# Ultra Space
+BattleBack=battlebgUltra
+#-------------------------------
+[194]
+# Ultra Space
+BattleBack=battlebgUltra
+#-------------------------------
+[195]
+# Ultra Space
+BattleBack=battlebgUltra
+#-------------------------------
+[196]
+# Ultra Space
+BattleBack=battlebgUltra
+#-------------------------------
+[197]
+# Ultra Space
+BattleBack=battlebgUltra
+#-------------------------------
+[198]
+# Ultra Space
+BattleBack=Underwater
+Bicycle=false
+Outdoor=false
+ShowArea=false
+#-------------------------------
+[199]
+# Ultra Space
+BattleBack=battlebgUltra
+#-------------------------------
+[200]
+# Ultra Space
+BattleBack=battlebgUltra
+#-------------------------------
+[201]
+# Beryllium Island
+BattleBack=battlebgRoutes2
+Bicycle=true
+MapPosition=0,29,10
+Outdoor=true
+HealingSpot=201,25,25
+ShowArea=true
+#-------------------------------
+[202]
+# Beryllium Island
+MapPosition=0,29,10
+#-------------------------------
+[203]
+# Beryllium Island Poké Center
+MapPosition=0,29,10
+#-------------------------------
+[204]
+# Beryllium Lighthouse
+MapPosition=0,29,10
+ShowArea=true
+#-------------------------------
+[205]
+# Zarude's Den
+BattleBack=battlebgLegendary
+MapPosition=0,29,10
+ShowArea=true
+#-------------------------------
+[206]
+# Route 10
+BattleBack=battlebgTowns2
+Weather=Snow,5
+Bicycle=true
+MapPosition=0,23,3
+Outdoor=true
+ShowArea=true
+#-------------------------------
+[207]
+# Battle Tower
+BattleBack=battlebgRoutes1
+Bicycle=true
+MapPosition=0,3,14
+Outdoor=true
+HealingSpot=207,24,19
+ShowArea=true
+#-------------------------------
+[208]
+# Calyrex's Lair
+BattleBack=battlebgLegendary
+MapPosition=0,2,14
+ShowArea=true
+#-------------------------------
+[209]
+# Ancient Ruins
+BattleBack=battlebgLegendary
+MapPosition=0,22,3
+ShowArea=true
+#-------------------------------
+[210]
+# Ancient Ruins
+BattleBack=battlebgLegendary
+MapPosition=0,29,10
+ShowArea=true
