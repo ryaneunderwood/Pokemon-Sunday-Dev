@@ -597,7 +597,7 @@
 597,PETALBLIZZARD,Petal Blizzard,000,90,GRASS,Physical,100,15,0,08,0,bef,"The user stirs up a violent petal blizzard and attacks everything around it."
 598,PHANTOMFORCE,Phantom Force,14D,90,GHOST,Physical,100,10,0,00,0,aef,"The user vanishes, then strikes the target on the next turn. This move hits even if the target protects itself."
 599,PLAYNICE,Play Nice,139,0,NORMAL,Status,0,20,0,00,0,ce,"The user and the foe become friends, and the foe loses its will to fight. This lowers the target's Attack stat."
-600,PLAYROUGH,Play Rough,042,90,FAIRY,Physical,90,10,10,00,0,abef,"The user plays rough with the target and attacks it. This may also lower the target's Attack stat."
+600,PLAYROUGH,Play Rough,042,90,FAIRY,Physical,90,10,10,00,0,abef,"The user attacks playfully. It may also lower the target's attack."
 601,POWDER,Powder,148,0,BUG,Status,100,20,0,00,1,bcel,"The user covers the target in a powder that damages the target if it uses a Fire-type move."
 602,POWERUPPUNCH,Power-Up Punch,01C,40,FIGHTING,Physical,100,20,100,00,0,abefj,"Striking opponents rapidly makes the user's fists harder. Hitting a target raises the Attack stat."
 603,ROTOTILLER,Rototiller,13E,0,GROUND,Status,0,10,0,40,0,,"The user tills the soil to help plants to grow. This raises the Attack and Sp. Atk stats of Grass-type Pokémon."

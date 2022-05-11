@@ -1,11 +1,11 @@
 from PIL import Image,ImageFile
 import os
 directory='Graphics/Battlers/'
-folder=['Back/','BackShiny/','Front/','FrontShiny/']
+folder=['Back/','BackShiny/','Front/','FrontShiny/','Back/Female/','BackShiny/Female/','Front/Female/','FrontShiny/Female/']
 for f in folder:
     ImageFile.LOAD_TRUNCATED_IMAGES = True
     for filename in os.listdir(directory+f):
-        if filename.endswith(".png"):
+        if filename.endswith(".png") or filename.endswith(".PNG"):
             try:
                 image=Image.open(directory+f+filename)
                 #print(directory+filename,' 2')

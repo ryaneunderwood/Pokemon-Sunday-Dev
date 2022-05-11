@@ -353,7 +353,7 @@
 353,TM66,TM66,TM66s,4,3000,"The user stores power, then attacks. If the user can use this attack after the target, its power is doubled.",3,0,0,PAYBACK
 354,TM67,TM67,TM67s,4,1000,"The user gets revenge for a fainted ally. If an ally fainted in the previous turn, this attack's damage increases.",3,0,0,RETALIATE
 355,TM68,TM68,TM68s,4,7500,"The user charges at the target using every bit of its power. The user must rest on the next turn.",3,0,0,GIGAIMPACT
-356,TM69,TM69,TM69s,4,1500,"The user grabs on to a passing light ray and greatly ups its speed",3,0,0,LIGHTSPEED
+356,TM69,TM69,TM69s,4,1500,"The user grabs on to a passing light ray and greatly ups its speed.",3,0,0,LIGHTSPEED
 357,TM70,TM70,TM70s,4,1000,"The user emits a blinding flash of light.",3,0,0,DAZZLINGGLEAM
 358,TM71,TM71,TM71s,4,3000,"The user stabs the foe with sharpened stones from below. It has a high critical-hit ratio.",3,0,0,STONEEDGE
 359,TM72,TM72,TM72s,4,3000,"After making its attack, the user rushes back to switch places with a party Pokémon in waiting.",3,0,0,VOLTSWITCH
@@ -378,7 +378,7 @@
 378,TM91,TM91,TM91s,4,3000,"The user gathers all its light energy and releases it at once. It may also lower the target's Sp. Def stat.",3,0,0,FLASHCANNON
 379,TM92,TM92,TM92s,4,5500,"The user creates a bizarre space in which slower Pokémon get to move first for five turns.",3,0,0,TRICKROOM
 380,TM93,TM93,TM93s,4,3000,"The user shrouds itself in electricity and smashes into its target. It also damages the user a little.",3,0,0,WILDCHARGE
-381,TM94,TM94,TM94s,4,1000,"The user attacks playful attacks. It may also lower the target's attack.",3,0,0,PLAYROUGH
+381,TM94,TM94,TM94s,4,1000,"The user attacks playfully. It may also lower the target's attack.",3,0,0,PLAYROUGH
 382,TM95,TM95,TM95s,4,3000,"The user yells as if it is ranting about something, making the target's Sp. Atk stat decrease.",3,0,0,SNARL
 383,TM96,TM96,TM96s,4,3000,"An attack that can be used only if the user is asleep. The harsh noise may also make the foe flinch.",3,0,0,SNORE
 384,TM97,TM97,TM97s,4,3000,"The user releases a horrible aura imbued with dark thoughts. It may also make the target flinch.",3,0,0,DARKPULSE
