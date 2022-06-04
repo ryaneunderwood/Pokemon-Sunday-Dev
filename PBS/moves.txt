@@ -783,7 +783,7 @@
 870,SPRINGTIDESTORM,Springtide Storm,D10,95,FAIRY,Special,80,5,30,00,0,bef,"The user attacks by wrapping the target in fierce winds brimming with love and hate. This move’s effects depend on form."
 871,SANDSEARSTORM,Sandsear Storm,00A,95,GROUND,Special,80,5,30,00,0,bef,"The user attacks by wrapping the target in fierce winds and searingly hot sand. This may also leave the target with a burn."
 872,BLEAKWINDSTORM,Bleakwind Storm,00C,95,FLYING,Special,80,5,30,00,0,bef,"The user attacks with cold winds that cause both body and spirit to tremble. This may also leave the target frozen."
-873,WINDBOLTSTORM,Windbolt Storm,009,95,ELECTRIC,Special,80,5,30,00,0,bef,"The user summons a thunderous tempest and savagely attacks with lightning and wind. This may also paralyze the target."
+873,WILDBOLTSTORM,Wildbolt Storm,009,95,ELECTRIC,Special,80,5,30,00,0,bef,"The user summons a thunderous tempest and savagely attacks with lightning and wind. This may also paralyze the target."
 874,STONEAXE,Stone Axe,D09,65,ROCK,Physical,90,15,0,00,0,abefh,"The user swings its stone axes with a high chance to critical hit. Stone splinters continue to damage the target for several turns."
 875,HEADLONGRUSH,Headlong Rush,03C,120,GROUND,Physical,100,5,0,00,0,abef,"The user smashes into the target in a full-body tackle. It also cuts the user's Defense and Sp. Def."
 876,PSYSHIELDBASH,Psyshield Bash,D11,70,PSYCHIC,Physical,90,10,10,00,0,abef,"Cloaking itself in psychic energy, the user slams into the target. This may also raise the user's Def and Sp. Def."

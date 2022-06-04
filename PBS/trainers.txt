@@ -1,4 +1,4 @@
-
+#Pokemon,Level,HeldItem,Move1,Move2,Move3,Move4,Ability,Gender,Form,Shiny,Nature,IV,Happiness,Nickname,Shadow,Ball,MaxEV1,MaxEV2
 ##FIRST BATTLE
 #-------------------
 RIVAL1
@@ -178,7 +178,7 @@ BUGCATCHER
 Greg
 2
 BUTTERFREE,10
-VIVILLON,8
+VIVILLON,8,,SLEEPPOWDER,QUIVERDANCE,SILVERWIND,GUST,,,20
 #-------------------
 PICNICKER
 Molly
@@ -596,7 +596,7 @@ HUNTAIL,22
 STORRM,22
 
 
-### BARIUM CEMETERY
+### Barium Cemetery
 CHANELLER
 Rhea
 2

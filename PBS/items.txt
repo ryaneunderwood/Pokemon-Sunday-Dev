@@ -693,7 +693,7 @@
 706,ROOMSERVICE,Room Service,Room Services,1,200,"An item to be held by a Pokémon. Lowers Speed when Trick Room takes effect.",0,0,0
 707,UTILITYUMBRELLA,Utility Umbrella,Utility Umbrellas,1,4000,"An item to be held by a Pokémon. This sturdy umbrella protects the holder from the effects of weather.",0,0,0,
 708,EJECTPACK,Eject Pack,Eject Packs,1,200,"An item to be held by a Pokémon. When the holder's stats are lowered, it will be switched out of battle.",0,0,0
-709,BLACKAUGERITE,Black Augerite,Black Augerites,1,1000,"Certain Pokemon love this item.",0,0,0
+709,BLACKAUGERITE,Black Augerite,Black Augerites,6,1000,"Certain Pokemon love this item.",1,0,7
 710,PEATBLOCK,Peat Block,Peat Blocks,1,1000,"Certain Pokemon love this item.",0,0,0
 711,ADAMANTCRYSTAL,Adamant Crystal,Adamant Crystals,8,0,"When used on Dialga, this large, glowing gem wells with power and allows the Pokémon to change form.",5,0,6
 712,LUSTROUSGLOBE,Lustrous Globe,Lustrous Globes,8,0,"When used on Palkia, this large, glowing orb wells with power and allows the Pokémon to change form.",5,0,6

@@ -1640,6 +1640,8 @@ BattlerEnemyY=19
 #-------------------------------
 [SCATTERBUG-19]
 #-------------------------------
+[SCATTERBUG-20]
+#-------------------------------
 [SPEWPA-1]
 #-------------------------------
 [SPEWPA-2]
@@ -1677,6 +1679,8 @@ BattlerEnemyY=19
 [SPEWPA-18]
 #-------------------------------
 [SPEWPA-19]
+#-------------------------------
+[SPEWPA-20]
 #-------------------------------
 [VIVILLON-1]
 FormName=Polar Pattern
@@ -1737,6 +1741,7 @@ FormName=Poké Ball Pattern
 #-------------------------------
 [VIVILLON-20]
 FormName=Kiraki Pattern
+BaseStats=100,62,80,99,100,70
 #-------------------------------
 [FLABEBE-1]
 FormName=Yellow Flower
@@ -2382,7 +2387,6 @@ FormName=Mega Eternatus
 MegaStone=ETERNATITE
 BaseStats=140,105,115,130,185,115
 Shape=2
-
 #-------------------------------
 [TYPHLOSION-1]
 FormName=Hisuian Typhlosion
@@ -2393,7 +2397,6 @@ Moves=1,QUICKATTACK,1,HEX,6,EMBER,11,ROLLOUT,18,FLAMEWHEEL,25,SWIFT,34,FLAMETHRO
 #-------------------------------
 [DECIDUEYE-1]
 FormName=Hisuian Decidueye
-HiddenAbility=SNIPER
 Type1=GRASS
 Type2=FIGHTING
 BaseStats=88,112,80,60,95,95
@@ -2425,7 +2428,7 @@ Moves=1,TACKLE,5,POWDERSNOW,9,ICESHARD,15,BITE,21,IRONDEFENSE,29,CRUNCH,29,EARTH
 #-------------------------------
 [BASCULIN-2]
 FormName=White-striped
-Abilitites=RATTLED,ADAPTABILITY
+Abilities=RATTLED,ADAPTABILITY
 HiddenAbility=MOLDBREAKER
 Evolutions=BASCULEGION,RecoilDamage,294
 #-------------------------------
@@ -2451,7 +2454,7 @@ Kind=Sphere
 Moves=1,THUNDERSHOCK,5,TACKLE,9,THUNDERWAVE,11,RAZORLEAF,15,SPARK,21,ENERGYBALL,29,THUNDERBOLT,37,THUNDER,47,SELFDESTRUCT,55,SOLARBEAM
 #-------------------------------
 [ELECTRODE-1]
-FormName=Hisuian ELECTRODE
+FormName=Hisuian Electrode
 Type1=ELECTRIC
 Type2=GRASS
 Kind=Sphere
@@ -2543,7 +2546,6 @@ BaseStats=100,100,120,90,150,120
 [PALKIA-1]
 FormName=Origin Forme
 BaseStats=90,100,100,120,150,120
-
 #-------------------------------
 [GALEFRONT-1]
 FormName=Storm Form
