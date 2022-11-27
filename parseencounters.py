@@ -92,7 +92,35 @@ for i in numpy.arange(0,n):
 
 
 """
-print(content[10])       
+for i in range(len(content)):
+        if content[i][0:2]=='#-':
+                print('yo',i,content[i][0:2])
+                location=content[i+1].split("# ",1)[1]
+                f2.write(location+'\n')
+                j=i+4
+                while content[j][0] !='#':
+                        enctype=content[j-1]
+                        f2.write('{| class="article-table"\n')
+                        f2.write('|+ '+enctype+'\n')
+                        f2.write('! Species !! Level !! Rate \n')
+                        n=j
+                        k=j
+                        while (n<k+len(EnctypeChances[Enctypes.index(enctype)])) and j<len(content):
+                                f2.write('|- \n')
+                                print(content[n].split(','))
+                                if len(content[n].split(','))==2:
+                                        f2.write('|'+content[n].split(',')[0]+' || L'+content[n].split(',')[1]+' || '+str(EnctypeChances[Enctypes.index(enctype)][n-k])+'% \n')
+                                elif len(content[n].split(','))==3:
+                                        f2.write('|'+content[n].split(',')[0]+' || L'+content[n].split(',')[1]+'-'+content[n].split(',')[2]+' || '+str(EnctypeChances[Enctypes.index(enctype)][n-k])+'% \n')
+                                n+=1
+                                j+=1
+                                
+                        f2.write('|}\n')
+                        if j<len(content) and content[j][0:2]!='#-':
+                                j+=1
+                        else:
+                                break
+       
 f2.close()
 f.close()
 

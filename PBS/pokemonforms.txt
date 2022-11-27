@@ -49,7 +49,7 @@ Type1=FIRE
 MegaStone=CHARIZARDITEG
 BaseStats=78,124,108,90,119,115
 BaseEXP=285
-Abilities=DROUGHT
+Abilities=FLAMEBODY
 Weight=120.5
 BattlerPlayerY=3
 #-------------------------------
@@ -550,7 +550,7 @@ BattlerPlayerY=3
 BattlerEnemyY=7
 #-------------------------------
 [LAPRAS-1]
-FormName=Mega LAPRAS
+FormName=Mega Lapras
 MegaStone=LAPRASITE
 BaseStats=130,85,110,60,135,115
 Abilities=ICESCALES
@@ -2158,7 +2158,7 @@ FormName=Full Moon phase
 #-------------------------------
 [NECROZMA-1]
 FormName=Dusk Mane Necrozma
-Type1=PSYCHIC
+Type1=LIGHT
 Type2=STEEL
 BaseStats=97,157,127,77,113,109
 BaseEXP=306
@@ -2170,7 +2170,7 @@ Shape=8
 #-------------------------------
 [NECROZMA-2]
 FormName=Dawn Wings Necrozma
-Type1=PSYCHIC
+Type1=LIGHT
 Type2=GHOST
 BaseStats=97,113,109,77,157,127
 BaseEXP=306
@@ -2183,7 +2183,7 @@ Shape=9
 [NECROZMA-3]
 FormName=Mega Necrozma
 MegaStone=NECROZMITE
-Type1=PSYCHIC
+Type1=LIGHT
 Type2=DRAGON
 BaseStats=97,147,101,99,167,89
 BaseEXP=339
@@ -2392,7 +2392,7 @@ Shape=2
 FormName=Hisuian Typhlosion
 Type1=FIRE
 Type2=GHOST
-BaseStats=73,84,78,95,119,85,95
+BaseStats=73,84,78,95,119,85
 Moves=1,QUICKATTACK,1,HEX,6,EMBER,11,ROLLOUT,18,FLAMEWHEEL,25,SWIFT,34,FLAMETHROWER,40,INFERNALPARADE,43,SHADOWBALL,43,OVERHEAT
 #-------------------------------
 [DECIDUEYE-1]
@@ -2411,7 +2411,6 @@ Moves=1,TACKLE,1,NIGHTSLASH,6,AQUAJET,11,SWORDSDANCE,18,WATERPULSE,21,CEASELESSE
 #-------------------------------
 [BRAVIARY-1]
 FormName=Hisuian Braviary
-HiddenAbility=TINTEDLENS
 Type1=PSYCHIC
 Type2=FLYING
 BaseStats=110,83,70,65,112,70
@@ -2472,6 +2471,7 @@ FormName=Hisuian Sneasel
 Type1=FIGHTING
 Type2=POISON
 Weight=27.0
+Abilities=INNERFOCUS,KEENEYE
 HiddenAbility=POISONTOUCH
 Moves=1,QUICKATTACK,6,ROCKSMASH,11,SWIFT,18,SLASH,25,POISONJAB,34,SWORDSDANCE,43,CLOSECOMBAT
 EggMoves=COUNTER,SPITE,FORESIGHT,BITE,CRUSHCLAW,FAKEOUT,DOUBLEHIT,PUNISHMENT,PURSUIT,ASSIST,AVALANCHE,FEINT,THROATCHOP,SUNSET,GUNKSHOT,CROSSPOISON
@@ -2551,7 +2551,7 @@ BaseStats=90,100,100,120,150,120
 FormName=Storm Form
 Type1=FLYING
 Type2=WATER
-BaseStats=70,116,86,99,116,69
+BaseStats=70,116,86,99,116,109
 #-------------------------------
 [CHORDALUX-1]
 FormName=Mega Chordalux

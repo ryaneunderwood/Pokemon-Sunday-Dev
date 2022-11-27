@@ -130,3 +130,5 @@
 134,PTRAINERSHOELESS,Ace Trainer,180,,,,Female,255,
 135,PTRAINERZAGAN,Super Nerd,180,Trainer_Gaymede.mp3,,,Male,255,
 136,PTRAINERDIGASS,Pokémon Trainer,180,Trainer_GymLeader.mp3,,,Male,255,
+137,CHERRY,Professor,180,Trainer_GymLeader.mp3,,,Male,255,
+138,VETERAN,Veteran,180,Trainer_GymLeader.mp3,,,Male,255,

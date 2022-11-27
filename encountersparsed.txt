@@ -1,0 +1,3835 @@
+Ferry Dock
+{| class="article-table"
+|+ Water
+! Species !! Level !! Rate 
+|- 
+|TENTACOOL || L30-40 || 30% 
+|- 
+|PELIPPER || L30-40 || 30% 
+|- 
+|GOLDEEN || L30-40 || 20% 
+|- 
+|REMORAID || L30-40 || 18% 
+|- 
+|LAPRAS || L30-32 || 2% 
+|}
+{| class="article-table"
+|+ OldRod
+! Species !! Level !! Rate 
+|- 
+|MAGIKARP || L5-12 || 90% 
+|- 
+|MAGIKARP || L18-19 || 10% 
+|}
+{| class="article-table"
+|+ GoodRod
+! Species !! Level !! Rate 
+|- 
+|BARBOACH || L18-22 || 40% 
+|- 
+|BASCULIN || L18-22 || 40% 
+|- 
+|GYARADOS || L20 || 20% 
+|}
+{| class="article-table"
+|+ SuperRod
+! Species !! Level !! Rate 
+|- 
+|DHELMISE || L33-36 || 40% 
+|- 
+|GYARADOS || L33-36 || 30% 
+|- 
+|DHELMISE || L33-35 || 15% 
+|- 
+|SEAKING || L33-35 || 13% 
+|- 
+|DRAGONAIR || L29-30 || 2% 
+|}
+Route 5
+{| class="article-table"
+|+ Land
+! Species !! Level !! Rate 
+|- 
+|MINCCINO || L15-17 || 10% 
+|- 
+|PARAS || L17 || 10% 
+|- 
+|FLETCHLING || L15-17 || 10% 
+|- 
+|YANMA || L15-17 || 10% 
+|- 
+|LEDIAN || L15-17 || 10% 
+|- 
+|HOPPIP || L12-18 || 10% 
+|- 
+|YANMA || L15-17 || 10% 
+|- 
+|SHROOMISH || L15-17 || 10% 
+|- 
+|PIKACHU || L15-17 || 5% 
+|- 
+|BLITZLE || L15-19 || 5% 
+|- 
+|SKIPLOOM || L15-17 || 4% 
+|- 
+|HOPPIP || L14 || 4% 
+|- 
+|ZORUA || L15-18 || 1% 
+|- 
+|ZORUA || L15-16 || 1% 
+|}
+{| class="article-table"
+|+ Water
+! Species !! Level !! Rate 
+|- 
+|BUIZEL || L19-30 || 30% 
+|- 
+|SHELLDER || L25-30 || 30% 
+|- 
+|SLOWPOKE || L25-27 || 20% 
+|- 
+|MANTYKE || L20-25 || 18% 
+|- 
+|FLOATZEL || L25-27 || 2% 
+|}
+{| class="article-table"
+|+ OldRod
+! Species !! Level !! Rate 
+|- 
+|MAGIKARP || L5-12 || 90% 
+|- 
+|MAGIKARP || L18-19 || 10% 
+|}
+{| class="article-table"
+|+ GoodRod
+! Species !! Level !! Rate 
+|- 
+|BARBOACH || L18-22 || 40% 
+|- 
+|BASCULIN || L18-22 || 40% 
+|- 
+|GYARADOS || L20 || 20% 
+|}
+{| class="article-table"
+|+ SuperRod
+! Species !! Level !! Rate 
+|- 
+|SLOWBRO || L30-33 || 40% 
+|- 
+|POLIWAG || L30-35 || 30% 
+|- 
+|POLIWHIRL || L32-33 || 15% 
+|- 
+|FLOATZEL || L30 || 13% 
+|- 
+|MANTYKE || L30 || 2% 
+|}
+Precious Metal Bridge
+{| class="article-table"
+|+ Cave
+! Species !! Level !! Rate 
+|- 
+|DUCKLETT || L14 || 20% 
+|- 
+|DUCKLETT || L14 || 20% 
+|- 
+|PIDGEY || L14 || 10% 
+|- 
+|SPEAROW || L14 || 10% 
+|- 
+|DUCKLETT || L15 || 10% 
+|- 
+|DUCKLETT || L15 || 10% 
+|- 
+|DUCKLETT || L15 || 5% 
+|- 
+|DUCKLETT || L15 || 5% 
+|- 
+|PIDOVE || L14 || 4% 
+|- 
+|PIDOVE || L14 || 4% 
+|- 
+|SWANNA || L16 || 1% 
+|- 
+|SWANNA || L16 || 1% 
+|}
+{| class="article-table"
+|+ Water
+! Species !! Level !! Rate 
+|- 
+|TENTACOOL || L30-40 || 30% 
+|- 
+|PELIPPER || L30-40 || 30% 
+|- 
+|GOLDEEN || L30-40 || 20% 
+|- 
+|REMORAID || L30-40 || 18% 
+|- 
+|LAPRAS || L30-32 || 2% 
+|}
+{| class="article-table"
+|+ OldRod
+! Species !! Level !! Rate 
+|- 
+|MAGIKARP || L5-12 || 90% 
+|- 
+|MAGIKARP || L18-19 || 10% 
+|}
+{| class="article-table"
+|+ GoodRod
+! Species !! Level !! Rate 
+|- 
+|BARBOACH || L18-22 || 40% 
+|- 
+|BASCULIN || L18-22 || 40% 
+|- 
+|GYARADOS || L20 || 20% 
+|}
+{| class="article-table"
+|+ SuperRod
+! Species !! Level !! Rate 
+|- 
+|CARVANHA || L33-36 || 40% 
+|- 
+|GYARADOS || L33-36 || 30% 
+|- 
+|WHISCASH || L33-35 || 15% 
+|- 
+|SEAKING || L33-35 || 13% 
+|- 
+|DRAGONAIR || L29-30 || 2% 
+|}
+Igandea River
+{| class="article-table"
+|+ Water
+! Species !! Level !! Rate 
+|- 
+|TENTACOOL || L30-40 || 30% 
+|- 
+|PELIPPER || L30-40 || 30% 
+|- 
+|GOLDEEN || L30-40 || 20% 
+|- 
+|REMORAID || L30-40 || 18% 
+|- 
+|LAPRAS || L30-32 || 2% 
+|}
+{| class="article-table"
+|+ OldRod
+! Species !! Level !! Rate 
+|- 
+|MAGIKARP || L5-12 || 90% 
+|- 
+|MAGIKARP || L18-19 || 10% 
+|}
+{| class="article-table"
+|+ GoodRod
+! Species !! Level !! Rate 
+|- 
+|BARBOACH || L18-22 || 40% 
+|- 
+|BASCULIN || L18-22 || 40% 
+|- 
+|GYARADOS || L20 || 20% 
+|}
+{| class="article-table"
+|+ SuperRod
+! Species !! Level !! Rate 
+|- 
+|CARVANHA || L33-36 || 40% 
+|- 
+|GYARADOS || L33-36 || 30% 
+|- 
+|WHISCASH || L33-35 || 15% 
+|- 
+|SEAKING || L33-35 || 13% 
+|- 
+|DRAGONAIR || L29-30 || 2% 
+|}
+Igandea River
+{| class="article-table"
+|+ Water
+! Species !! Level !! Rate 
+|- 
+|TENTACOOL || L30-40 || 30% 
+|- 
+|PELIPPER || L30-40 || 30% 
+|- 
+|GOLDEEN || L30-40 || 20% 
+|- 
+|REMORAID || L30-40 || 18% 
+|- 
+|LAPRAS || L30-32 || 2% 
+|}
+{| class="article-table"
+|+ OldRod
+! Species !! Level !! Rate 
+|- 
+|MAGIKARP || L5-12 || 90% 
+|- 
+|MAGIKARP || L18-19 || 10% 
+|}
+{| class="article-table"
+|+ GoodRod
+! Species !! Level !! Rate 
+|- 
+|BARBOACH || L18-22 || 40% 
+|- 
+|BASCULIN || L18-22 || 40% 
+|- 
+|GYARADOS || L20 || 20% 
+|}
+{| class="article-table"
+|+ SuperRod
+! Species !! Level !! Rate 
+|- 
+|CARVANHA || L33-36 || 40% 
+|- 
+|GYARADOS || L33-36 || 30% 
+|- 
+|WHISCASH || L33-35 || 15% 
+|- 
+|SEAKING || L33-35 || 13% 
+|- 
+|DRAGONAIR || L29-30 || 2% 
+|}
+Safari Zone
+{| class="article-table"
+|+ Land
+! Species !! Level !! Rate 
+|- 
+|TAUROS || L32-34 || 10% 
+|- 
+|BOUFFALANT || L32-34 || 10% 
+|- 
+|INDEEDEE || L33-34 || 10% 
+|- 
+|KANGASKHAN || L31-32 || 10% 
+|- 
+|TURTONATOR || L31-33 || 10% 
+|- 
+|TURTONATOR || L31-32 || 10% 
+|- 
+|SLIGGOO || L30-31 || 10% 
+|- 
+|GIRAFARIG || L32-33 || 10% 
+|- 
+|VENOMOTH || L33 || 5% 
+|- 
+|BEEDRILL || L34 || 5% 
+|- 
+|BUTTERFREE || L33 || 4% 
+|- 
+|MURKROW || L30 || 4% 
+|- 
+|MURKROW || L31 || 1% 
+|- 
+|MURKROW || L32 || 1% 
+|}
+{| class="article-table"
+|+ Water
+! Species !! Level !! Rate 
+|- 
+|LUMINEON || L25-45 || 30% 
+|- 
+|STARMIE || L25-45 || 30% 
+|- 
+|LUVDISC || L25-45 || 20% 
+|- 
+|ALOMOMOLA || L25-45 || 18% 
+|- 
+|DRATINI || L25-45 || 2% 
+|}
+{| class="article-table"
+|+ OldRod
+! Species !! Level !! Rate 
+|- 
+|DRATINI || L5-12 || 90% 
+|- 
+|DRATINI || L18-19 || 10% 
+|}
+{| class="article-table"
+|+ GoodRod
+! Species !! Level !! Rate 
+|- 
+|DRATINI || L18-22 || 40% 
+|- 
+|MAGIKARP || L18-22 || 40% 
+|- 
+|GYARADOS || L20 || 20% 
+|}
+{| class="article-table"
+|+ SuperRod
+! Species !! Level !! Rate 
+|- 
+|DRAGONAIR || L33-36 || 40% 
+|- 
+|KINGLER || L33-36 || 30% 
+|- 
+|CHINCHOU || L33-35 || 15% 
+|- 
+|POLIWHIRL || L33-35 || 13% 
+|- 
+|PALPITOAD || L35 || 2% 
+|}
+Route 8
+{| class="article-table"
+|+ Land
+! Species !! Level !! Rate 
+|- 
+|MAGNEMITE || L19-23 || 10% 
+|- 
+|GEODUDE || L19-23 || 10% 
+|- 
+|ONIX || L19-23 || 10% 
+|- 
+|RHYHORN || L19-23 || 10% 
+|- 
+|CARKOL || L19-23 || 10% 
+|- 
+|ROCKRUFF || L19-23 || 10% 
+|- 
+|SHUCKLE || L19-23 || 10% 
+|- 
+|GEODUDE || L19-23 || 10% 
+|- 
+|STARAVIA || L19-23 || 5% 
+|- 
+|BIDOOF || L19-23 || 5% 
+|- 
+|ARON || L19-23 || 4% 
+|- 
+|RHYHORN || L21-25 || 4% 
+|- 
+|RHYDON || L19-25 || 1% 
+|- 
+|GRAVELER || L25 || 1% 
+|}
+{| class="article-table"
+|+ Water
+! Species !! Level !! Rate 
+|- 
+|BUIZEL || L19-30 || 30% 
+|- 
+|SHELLDER || L25-30 || 30% 
+|- 
+|SLOWPOKE || L25-27 || 20% 
+|- 
+|MANTYKE || L20-25 || 18% 
+|- 
+|FLOATZEL || L25-27 || 2% 
+|}
+{| class="article-table"
+|+ OldRod
+! Species !! Level !! Rate 
+|- 
+|MAGIKARP || L5-12 || 90% 
+|- 
+|MAGIKARP || L18-19 || 10% 
+|}
+{| class="article-table"
+|+ GoodRod
+! Species !! Level !! Rate 
+|- 
+|BARBOACH || L18-22 || 40% 
+|- 
+|BASCULIN || L18-22 || 40% 
+|- 
+|GYARADOS || L20 || 20% 
+|}
+{| class="article-table"
+|+ SuperRod
+! Species !! Level !! Rate 
+|- 
+|SLOWBRO || L30-33 || 40% 
+|- 
+|POLIWAG || L30-35 || 30% 
+|- 
+|POLIWHIRL || L32-33 || 15% 
+|- 
+|FLOATZEL || L30 || 13% 
+|- 
+|MANTYKE || L30 || 2% 
+|}
+Igandea River
+{| class="article-table"
+|+ Water
+! Species !! Level !! Rate 
+|- 
+|TENTACOOL || L30-40 || 30% 
+|- 
+|PELIPPER || L30-40 || 30% 
+|- 
+|GOLDEEN || L30-40 || 20% 
+|- 
+|REMORAID || L30-40 || 18% 
+|- 
+|LAPRAS || L30-32 || 2% 
+|}
+{| class="article-table"
+|+ OldRod
+! Species !! Level !! Rate 
+|- 
+|MAGIKARP || L5-12 || 90% 
+|- 
+|MAGIKARP || L18-19 || 10% 
+|}
+{| class="article-table"
+|+ GoodRod
+! Species !! Level !! Rate 
+|- 
+|BARBOACH || L18-22 || 40% 
+|- 
+|BASCULIN || L18-22 || 40% 
+|- 
+|GYARADOS || L20 || 20% 
+|}
+{| class="article-table"
+|+ SuperRod
+! Species !! Level !! Rate 
+|- 
+|CARVANHA || L33-36 || 40% 
+|- 
+|GYARADOS || L33-36 || 30% 
+|- 
+|WHISCASH || L33-35 || 15% 
+|- 
+|SEAKING || L33-35 || 13% 
+|- 
+|DRAGONAIR || L29-30 || 2% 
+|}
+Arevelyan Ocean
+{| class="article-table"
+|+ Water
+! Species !! Level !! Rate 
+|- 
+|PELIPPER || L25-45 || 30% 
+|- 
+|WAILMER || L25-45 || 30% 
+|- 
+|LUVDISC || L25-45 || 20% 
+|- 
+|ALOMOMOLA || L25-45 || 18% 
+|- 
+|CLOBBOPUS || L25-45 || 2% 
+|}
+{| class="article-table"
+|+ OldRod
+! Species !! Level !! Rate 
+|- 
+|MAGIKARP || L5-12 || 90% 
+|- 
+|MAGIKARP || L18-19 || 10% 
+|}
+{| class="article-table"
+|+ GoodRod
+! Species !! Level !! Rate 
+|- 
+|BARBOACH || L18-22 || 40% 
+|- 
+|BASCULIN || L18-22 || 40% 
+|- 
+|GYARADOS || L20 || 20% 
+|}
+{| class="article-table"
+|+ SuperRod
+! Species !! Level !! Rate 
+|- 
+|CORSOLA || L33-36 || 40% 
+|- 
+|RELICANTH || L33-36 || 30% 
+|- 
+|GRAPPLOCT || L33-35 || 15% 
+|- 
+|SEADRA || L33-35 || 13% 
+|- 
+|WAILORD || L35 || 2% 
+|}
+Argon City
+{| class="article-table"
+|+ Land
+! Species !! Level !! Rate 
+|- 
+|PIDOVE || L3-6 || 10% 
+|- 
+|LILLIPUP || L4-5 || 10% 
+|- 
+|BUNEARY || L3-6 || 10% 
+|- 
+|BUNNELBY || L3-6 || 10% 
+|- 
+|SUNKERN || L4-6 || 10% 
+|- 
+|NINCADA || L4-6 || 10% 
+|- 
+|PURRLOIN || L3-6 || 10% 
+|- 
+|SKITTY || L4-6 || 10% 
+|- 
+|RALTS || L4-6 || 5% 
+|- 
+|ROOKIDEE || L3-6 || 5% 
+|- 
+|CHATOT || L4-6 || 4% 
+|- 
+|ROOKIDEE || L4-6 || 4% 
+|- 
+|CHATOT || L6 || 1% 
+|- 
+|SUNKERN || L7 || 1% 
+|}
+{| class="article-table"
+|+ Water
+! Species !! Level !! Rate 
+|- 
+|WIMPOD || L30-40 || 30% 
+|- 
+|WIMPOD || L30-40 || 30% 
+|- 
+|DEWPIDER || L30-40 || 20% 
+|- 
+|WIMPOD || L20-29 || 18% 
+|- 
+|WIMPOD || L40-42 || 2% 
+|}
+{| class="article-table"
+|+ OldRod
+! Species !! Level !! Rate 
+|- 
+|MAGIKARP || L5-12 || 90% 
+|- 
+|MAGIKARP || L18-19 || 10% 
+|}
+{| class="article-table"
+|+ GoodRod
+! Species !! Level !! Rate 
+|- 
+|BARBOACH || L18-22 || 40% 
+|- 
+|BASCULIN || L18-22 || 40% 
+|- 
+|GYARADOS || L20 || 20% 
+|}
+{| class="article-table"
+|+ SuperRod
+! Species !! Level !! Rate 
+|- 
+|POLIWHIRL || L33-36 || 40% 
+|- 
+|GYARADOS || L33-36 || 30% 
+|- 
+|WHISCASH || L33-35 || 15% 
+|- 
+|LUMINEON || L33-35 || 13% 
+|- 
+|MAGIKARP || L15-29 || 2% 
+|}
+Carbon Slums
+{| class="article-table"
+|+ Land
+! Species !! Level !! Rate 
+|- 
+|GRIMER || L36-38 || 10% 
+|- 
+|KOFFING || L36-38 || 10% 
+|- 
+|TRUBBISH || L36-38 || 10% 
+|- 
+|NIMBEE || L36-38 || 10% 
+|- 
+|YIMBEE || L36-38 || 10% 
+|- 
+|PANCHAM || L36-38 || 10% 
+|- 
+|SINISTEA || L36-38 || 10% 
+|- 
+|STUNKY || L36-38 || 10% 
+|- 
+|VOLTORB || L36-38 || 5% 
+|- 
+|GULPIN || L36-38 || 5% 
+|- 
+|KLINK || L36-38 || 4% 
+|- 
+|MIMIKYU || L36-38 || 4% 
+|- 
+|GARBODOR || L39 || 1% 
+|- 
+|WEEZING || L39 || 1% 
+|}
+{| class="article-table"
+|+ Water
+! Species !! Level !! Rate 
+|- 
+|TENTACOOL || L30-40 || 30% 
+|- 
+|PELIPPER || L30-40 || 30% 
+|- 
+|GOLDEEN || L30-40 || 20% 
+|- 
+|REMORAID || L30-40 || 18% 
+|- 
+|LAPRAS || L30-32 || 2% 
+|}
+{| class="article-table"
+|+ OldRod
+! Species !! Level !! Rate 
+|- 
+|MAGIKARP || L5-12 || 90% 
+|- 
+|MAGIKARP || L18-19 || 10% 
+|}
+{| class="article-table"
+|+ GoodRod
+! Species !! Level !! Rate 
+|- 
+|BARBOACH || L18-22 || 40% 
+|- 
+|BASCULIN || L18-22 || 40% 
+|- 
+|GYARADOS || L20 || 20% 
+|}
+{| class="article-table"
+|+ SuperRod
+! Species !! Level !! Rate 
+|- 
+|CARVANHA || L33-36 || 40% 
+|- 
+|GYARADOS || L33-36 || 30% 
+|- 
+|WHISCASH || L33-35 || 15% 
+|- 
+|SEAKING || L33-35 || 13% 
+|- 
+|DRAGONAIR || L29-30 || 2% 
+|}
+Argon Beach Front
+{| class="article-table"
+|+ Land
+! Species !! Level !! Rate 
+|- 
+|PIDOVE || L4-6 || 10% 
+|- 
+|WIMPOD || L4-5 || 10% 
+|- 
+|BUNEARY || L4-6 || 10% 
+|- 
+|WINGULL || L4-6 || 10% 
+|- 
+|DEWPIDER || L4-6 || 10% 
+|- 
+|NINCADA || L4-6 || 10% 
+|- 
+|RATTATA || L4-6 || 10% 
+|- 
+|WIMPOD || L4-6 || 10% 
+|- 
+|SKWOVET || L4-6 || 5% 
+|- 
+|LOTAD || L3-5 || 5% 
+|- 
+|CHATOT || L4-5 || 4% 
+|- 
+|ROOKIDEE || L4-5 || 4% 
+|- 
+|LOTAD || L6 || 1% 
+|- 
+|SUNKERN || L7 || 1% 
+|}
+{| class="article-table"
+|+ Water
+! Species !! Level !! Rate 
+|- 
+|TENTACOOL || L30-40 || 30% 
+|- 
+|PELIPPER || L30-40 || 30% 
+|- 
+|GOLDEEN || L30-40 || 20% 
+|- 
+|REMORAID || L30-40 || 18% 
+|- 
+|LAPRAS || L30-32 || 2% 
+|}
+{| class="article-table"
+|+ OldRod
+! Species !! Level !! Rate 
+|- 
+|MAGIKARP || L5-12 || 90% 
+|- 
+|MAGIKARP || L18-19 || 10% 
+|}
+{| class="article-table"
+|+ GoodRod
+! Species !! Level !! Rate 
+|- 
+|BARBOACH || L18-22 || 40% 
+|- 
+|BASCULIN || L18-22 || 40% 
+|- 
+|GYARADOS || L20 || 20% 
+|}
+{| class="article-table"
+|+ SuperRod
+! Species !! Level !! Rate 
+|- 
+|CARVANHA || L33-36 || 40% 
+|- 
+|GYARADOS || L33-36 || 30% 
+|- 
+|WHISCASH || L33-35 || 15% 
+|- 
+|SEAKING || L33-35 || 13% 
+|- 
+|DRAGONAIR || L29-30 || 2% 
+|}
+Safari Zone
+{| class="article-table"
+|+ Land
+! Species !! Level !! Rate 
+|- 
+|PINSIR || L30-32 || 10% 
+|- 
+|HERACROSS || L30-33 || 10% 
+|- 
+|SKORUPI || L33-34 || 10% 
+|- 
+|TRUMBEAK || L30-33 || 10% 
+|- 
+|SKORUPI || L31-32 || 10% 
+|- 
+|CARNIVINE || L31-32 || 10% 
+|- 
+|CARNIVINE || L33-34 || 10% 
+|- 
+|VENOMOTH || L33 || 10% 
+|- 
+|BEEDRILL || L34 || 5% 
+|- 
+|DRAMPA || L31-34 || 5% 
+|- 
+|BUTTERFREE || L33 || 4% 
+|- 
+|TRUMBEAK || L30 || 4% 
+|- 
+|MURKROW || L31 || 1% 
+|- 
+|TOUCANNON || L32 || 1% 
+|}
+{| class="article-table"
+|+ Water
+! Species !! Level !! Rate 
+|- 
+|LUMINEON || L25-45 || 30% 
+|- 
+|STARMIE || L25-45 || 30% 
+|- 
+|LUVDISC || L25-45 || 20% 
+|- 
+|ALOMOMOLA || L25-45 || 18% 
+|- 
+|DRATINI || L25-45 || 2% 
+|}
+{| class="article-table"
+|+ OldRod
+! Species !! Level !! Rate 
+|- 
+|DRATINI || L5-12 || 90% 
+|- 
+|DRATINI || L18-19 || 10% 
+|}
+{| class="article-table"
+|+ GoodRod
+! Species !! Level !! Rate 
+|- 
+|DRATINI || L18-22 || 40% 
+|- 
+|MAGIKARP || L18-22 || 40% 
+|- 
+|GYARADOS || L20 || 20% 
+|}
+{| class="article-table"
+|+ SuperRod
+! Species !! Level !! Rate 
+|- 
+|DRAGONAIR || L33-36 || 40% 
+|- 
+|KINGLER || L33-36 || 30% 
+|- 
+|CHINCHOU || L33-35 || 15% 
+|- 
+|POLIWHIRL || L33-35 || 13% 
+|- 
+|PALPITOAD || L35 || 2% 
+|}
+Igandea River
+{| class="article-table"
+|+ Water
+! Species !! Level !! Rate 
+|- 
+|TENTACOOL || L30-40 || 30% 
+|- 
+|PELIPPER || L30-40 || 30% 
+|- 
+|GOLDEEN || L30-40 || 20% 
+|- 
+|REMORAID || L30-40 || 18% 
+|- 
+|LAPRAS || L30-32 || 2% 
+|}
+{| class="article-table"
+|+ OldRod
+! Species !! Level !! Rate 
+|- 
+|MAGIKARP || L5-12 || 90% 
+|- 
+|MAGIKARP || L18-19 || 10% 
+|}
+{| class="article-table"
+|+ GoodRod
+! Species !! Level !! Rate 
+|- 
+|BARBOACH || L18-22 || 40% 
+|- 
+|BASCULIN || L18-22 || 40% 
+|- 
+|GYARADOS || L20 || 20% 
+|}
+{| class="article-table"
+|+ SuperRod
+! Species !! Level !! Rate 
+|- 
+|CARVANHA || L33-36 || 40% 
+|- 
+|GYARADOS || L33-36 || 30% 
+|- 
+|WHISCASH || L33-35 || 15% 
+|- 
+|SEAKING || L33-35 || 13% 
+|- 
+|DRAGONAIR || L29-30 || 2% 
+|}
+Silver Town
+{| class="article-table"
+|+ Land
+! Species !! Level !! Rate 
+|- 
+|MEOWTH || L11-12 || 10% 
+|- 
+|AIPOM || L11-12 || 10% 
+|- 
+|ELECTRIKE || L11-12 || 10% 
+|- 
+|STARLY || L11-12 || 10% 
+|- 
+|PATRAT || L11-12 || 10% 
+|- 
+|NICKIT || L11-12 || 10% 
+|- 
+|ESPURR || L11-12 || 10% 
+|- 
+|MEOWTH || L11-12 || 10% 
+|- 
+|JIGGLYPUFF || L11-12 || 5% 
+|- 
+|MARILL || L11-12 || 5% 
+|- 
+|PANSAGE || L9-10 || 4% 
+|- 
+|PANSAGE || L9-10 || 4% 
+|- 
+|APPLIN || L11 || 1% 
+|- 
+|APPLIN || L10 || 1% 
+|}
+{| class="article-table"
+|+ Water
+! Species !! Level !! Rate 
+|- 
+|TENTACOOL || L30-40 || 30% 
+|- 
+|PELIPPER || L30-40 || 30% 
+|- 
+|GOLDEEN || L30-40 || 20% 
+|- 
+|REMORAID || L30-40 || 18% 
+|- 
+|LAPRAS || L30-32 || 2% 
+|}
+{| class="article-table"
+|+ OldRod
+! Species !! Level !! Rate 
+|- 
+|MAGIKARP || L5-12 || 90% 
+|- 
+|MAGIKARP || L18-19 || 10% 
+|}
+{| class="article-table"
+|+ GoodRod
+! Species !! Level !! Rate 
+|- 
+|BARBOACH || L18-22 || 40% 
+|- 
+|BASCULIN || L18-22 || 40% 
+|- 
+|GYARADOS || L20 || 20% 
+|}
+{| class="article-table"
+|+ SuperRod
+! Species !! Level !! Rate 
+|- 
+|CARVANHA || L33-36 || 40% 
+|- 
+|GYARADOS || L33-36 || 30% 
+|- 
+|WHISCASH || L33-35 || 15% 
+|- 
+|SEAKING || L33-35 || 13% 
+|- 
+|DRAGONAIR || L29-30 || 2% 
+|}
+{| class="article-table"
+|+ LandNight
+! Species !! Level !! Rate 
+|- 
+|STUNKY || L11-12 || 10% 
+|- 
+|AIPOM || L11-12 || 10% 
+|- 
+|ELECTRIKE || L11-12 || 10% 
+|- 
+|STARLY || L11-12 || 10% 
+|- 
+|PATRAT || L11-12 || 10% 
+|- 
+|NICKIT || L11-12 || 10% 
+|- 
+|ESPURR || L11-12 || 10% 
+|- 
+|STUNKY || L11-12 || 10% 
+|- 
+|JIGGLYPUFF || L11-12 || 5% 
+|- 
+|MARILL || L11-12 || 5% 
+|- 
+|ABRA || L11-12 || 4% 
+|- 
+|ABRA || L8-10 || 4% 
+|- 
+|ABSOL || L11 || 1% 
+|- 
+|ABSOL || L10 || 1% 
+|}
+Mt. Silicon Forest
+{| class="article-table"
+|+ Land
+! Species !! Level !! Rate 
+|- 
+|YUNGOOS || L26-29 || 10% 
+|- 
+|BELLSPROUT || L26-29 || 10% 
+|- 
+|ODDISH || L26-29 || 10% 
+|- 
+|WEEPINBELL || L26-29 || 10% 
+|- 
+|PASSIMIAN || L26-29 || 10% 
+|- 
+|KECLEON || L26-29 || 10% 
+|- 
+|TROPIUS || L26-29 || 10% 
+|- 
+|ODDISH || L26-29 || 10% 
+|- 
+|SLAKOTH || L26-29 || 5% 
+|- 
+|TANGELA || L26-29 || 5% 
+|- 
+|MANKEY || L26-29 || 4% 
+|- 
+|GUMSHOOS || L26-29 || 4% 
+|- 
+|VIGOROTH || L26-29 || 1% 
+|- 
+|PRIMEAPE || L26-29 || 1% 
+|}
+{| class="article-table"
+|+ LandNight
+! Species !! Level !! Rate 
+|- 
+|HOOTHOOT || L26-29 || 10% 
+|- 
+|MORELULL || L26-29 || 10% 
+|- 
+|ODDISH || L26-29 || 10% 
+|- 
+|WEEPINBELL || L26-29 || 10% 
+|- 
+|GLOOM || L26-29 || 10% 
+|- 
+|KECLEON || L26-29 || 10% 
+|- 
+|TROPIUS || L26-29 || 10% 
+|- 
+|NOCTOWL || L26-29 || 10% 
+|- 
+|TANGELA || L26-29 || 5% 
+|- 
+|ORANGURU || L26-29 || 5% 
+|- 
+|SLAKOTH || L26-29 || 4% 
+|- 
+|SHIINOTIC || L26-29 || 4% 
+|- 
+|KOMALA || L26-29 || 1% 
+|- 
+|KOMALA || L30 || 1% 
+|}
+Ruins of Simkath
+{| class="article-table"
+|+ Cave
+! Species !! Level !! Rate 
+|- 
+|UNOWN || L5 || 20% 
+|- 
+|UNOWN || L10 || 20% 
+|- 
+|UNOWN || L15 || 10% 
+|- 
+|LITWICK || L20-25 || 10% 
+|- 
+|UNOWN || L15 || 10% 
+|- 
+|UNOWN || L20 || 10% 
+|- 
+|GASTLY || L20-25 || 5% 
+|- 
+|UNOWN || L20 || 5% 
+|- 
+|UNOWN || L25 || 4% 
+|- 
+|UNOWN || L30 || 4% 
+|- 
+|UNOWN || L40 || 1% 
+|- 
+|UNOWN || L45 || 1% 
+|}
+Mt. Silicon Summit
+{| class="article-table"
+|+ Cave
+! Species !! Level !! Rate 
+|- 
+|ZUBAT || L30-32 || 20% 
+|- 
+|SNEASEL || L30-32 || 20% 
+|- 
+|VANILLITE || L30-32 || 10% 
+|- 
+|SWINUB || L30-32 || 10% 
+|- 
+|JYNX || L30-32 || 10% 
+|- 
+|CRYOGONAL || L30-32 || 10% 
+|- 
+|PILOSWINE || L32 || 5% 
+|- 
+|EISCUE || L32-33 || 5% 
+|- 
+|CUBCHOO || L30-32 || 4% 
+|- 
+|AVALUGG || L32 || 4% 
+|- 
+|GLALIE || L34 || 1% 
+|- 
+|FROSLASS || L34 || 1% 
+|}
+{| class="article-table"
+|+ Water
+! Species !! Level !! Rate 
+|- 
+|SEALEO || L33-35 || 30% 
+|- 
+|SEEL || L30-32 || 30% 
+|- 
+|CLOYSTER || L30-35 || 20% 
+|- 
+|SHELLDER || L33-34 || 18% 
+|- 
+|SPHEAL || L33-35 || 2% 
+|}
+{| class="article-table"
+|+ OldRod
+! Species !! Level !! Rate 
+|- 
+|MAGIKARP || L5-12 || 90% 
+|- 
+|MAGIKARP || L18-19 || 10% 
+|}
+{| class="article-table"
+|+ GoodRod
+! Species !! Level !! Rate 
+|- 
+|BARBOACH || L18-22 || 40% 
+|- 
+|BASCULIN || L18-22 || 40% 
+|- 
+|GYARADOS || L20 || 20% 
+|}
+{| class="article-table"
+|+ SuperRod
+! Species !! Level !! Rate 
+|- 
+|CLOYSTER || L33-35 || 40% 
+|- 
+|ALOMOMOLA || L30-33 || 30% 
+|- 
+|GYARADOS || L30-45 || 15% 
+|- 
+|SEALEO || L30-34 || 13% 
+|- 
+|CLOYSTER || L40 || 2% 
+|}
+Gold City
+{| class="article-table"
+|+ Land
+! Species !! Level !! Rate 
+|- 
+|PIDGEY || L16-18 || 10% 
+|- 
+|FURFROU || L16-17 || 10% 
+|- 
+|PIDGEY || L14-18 || 10% 
+|- 
+|GLAMEOW || L15 || 10% 
+|- 
+|PANSEAR || L13-15 || 10% 
+|- 
+|MEDITITE || L14 || 10% 
+|- 
+|CORVISQUIRE || L14-16 || 10% 
+|- 
+|SWIRLIX || L14-17 || 10% 
+|- 
+|YAMPER || L14-16 || 5% 
+|- 
+|HOOTHOOT || L14-17 || 5% 
+|- 
+|BOLTUND || L14-18 || 4% 
+|- 
+|STARAVIA || L15 || 4% 
+|- 
+|ROTOM || L12-15 || 1% 
+|- 
+|ROTOM || L16 || 1% 
+|}
+{| class="article-table"
+|+ Water
+! Species !! Level !! Rate 
+|- 
+|TENTACOOL || L30-40 || 30% 
+|- 
+|PELIPPER || L30-40 || 30% 
+|- 
+|GOLDEEN || L30-40 || 20% 
+|- 
+|REMORAID || L30-40 || 18% 
+|- 
+|LAPRAS || L30-32 || 2% 
+|}
+{| class="article-table"
+|+ OldRod
+! Species !! Level !! Rate 
+|- 
+|MAGIKARP || L5-12 || 90% 
+|- 
+|MAGIKARP || L18-19 || 10% 
+|}
+{| class="article-table"
+|+ GoodRod
+! Species !! Level !! Rate 
+|- 
+|BARBOACH || L18-22 || 40% 
+|- 
+|BASCULIN || L18-22 || 40% 
+|- 
+|GYARADOS || L20 || 20% 
+|}
+{| class="article-table"
+|+ SuperRod
+! Species !! Level !! Rate 
+|- 
+|CARVANHA || L33-36 || 40% 
+|- 
+|GYARADOS || L33-36 || 30% 
+|- 
+|WHISCASH || L33-35 || 15% 
+|- 
+|SEAKING || L33-35 || 13% 
+|- 
+|DRAGONAIR || L29-30 || 2% 
+|}
+{| class="article-table"
+|+ LandNight
+! Species !! Level !! Rate 
+|- 
+|HOOTHOOT || L16-18 || 10% 
+|- 
+|FURFROU || L16-17 || 10% 
+|- 
+|WEEDLE || L14-18 || 10% 
+|- 
+|GLAMEOW || L15 || 10% 
+|- 
+|PANSEAR || L13-15 || 10% 
+|- 
+|MEDITITE || L14 || 10% 
+|- 
+|CORVISQUIRE || L14-16 || 10% 
+|- 
+|SWIRLIX || L14-17 || 10% 
+|- 
+|CATERPIE || L14-17 || 5% 
+|- 
+|HOOTHOOT || L14-17 || 5% 
+|- 
+|BOLTUND || L14-18 || 4% 
+|- 
+|NOCTOWL || L15 || 4% 
+|- 
+|ROTOM || L12-15 || 1% 
+|- 
+|ROTOM || L16 || 1% 
+|}
+Arevelyan Ocean
+{| class="article-table"
+|+ Water
+! Species !! Level !! Rate 
+|- 
+|PELIPPER || L25-45 || 30% 
+|- 
+|WAILMER || L25-45 || 30% 
+|- 
+|LUVDISC || L25-45 || 20% 
+|- 
+|ALOMOMOLA || L25-45 || 18% 
+|- 
+|HORSEA || L25-45 || 2% 
+|}
+{| class="article-table"
+|+ OldRod
+! Species !! Level !! Rate 
+|- 
+|MAGIKARP || L5-12 || 90% 
+|- 
+|MAGIKARP || L18-19 || 10% 
+|}
+{| class="article-table"
+|+ GoodRod
+! Species !! Level !! Rate 
+|- 
+|BARBOACH || L18-22 || 40% 
+|- 
+|BASCULIN || L18-22 || 40% 
+|- 
+|GYARADOS || L20 || 20% 
+|}
+{| class="article-table"
+|+ SuperRod
+! Species !! Level !! Rate 
+|- 
+|CORSOLA || L33-36 || 40% 
+|- 
+|WISHIWASHI || L33-36 || 30% 
+|- 
+|LANTURN || L33-35 || 15% 
+|- 
+|SEADRA || L33-35 || 13% 
+|- 
+|WAILORD || L35 || 2% 
+|}
+Arevelyan Ocean
+{| class="article-table"
+|+ Water
+! Species !! Level !! Rate 
+|- 
+|PELIPPER || L25-45 || 30% 
+|- 
+|WAILMER || L25-45 || 30% 
+|- 
+|BARRASKEWDA || L25-45 || 20% 
+|- 
+|ALOMOMOLA || L25-45 || 18% 
+|- 
+|HORSEA || L25-45 || 2% 
+|}
+{| class="article-table"
+|+ OldRod
+! Species !! Level !! Rate 
+|- 
+|MAGIKARP || L5-12 || 90% 
+|- 
+|MAGIKARP || L18-19 || 10% 
+|}
+{| class="article-table"
+|+ GoodRod
+! Species !! Level !! Rate 
+|- 
+|BARBOACH || L18-22 || 40% 
+|- 
+|BASCULIN || L18-22 || 40% 
+|- 
+|GYARADOS || L20 || 20% 
+|}
+{| class="article-table"
+|+ SuperRod
+! Species !! Level !! Rate 
+|- 
+|CORSOLA || L33-36 || 40% 
+|- 
+|RELICANTH || L33-36 || 30% 
+|- 
+|LANTURN || L33-35 || 15% 
+|- 
+|SEADRA || L33-35 || 13% 
+|- 
+|WAILORD || L35 || 2% 
+|}
+Mt. Silicon Summit
+{| class="article-table"
+|+ Cave
+! Species !! Level !! Rate 
+|- 
+|ZUBAT || L30-32 || 20% 
+|- 
+|SNEASEL || L30-32 || 20% 
+|- 
+|ZUBAT || L30-32 || 10% 
+|- 
+|SWINUB || L30-32 || 10% 
+|- 
+|JYNX || L30-32 || 10% 
+|- 
+|CRYOGONAL || L30-32 || 10% 
+|- 
+|PILOSWINE || L33 || 5% 
+|- 
+|SPHEAL || L32-33 || 5% 
+|- 
+|CUBCHOO || L30-32 || 4% 
+|- 
+|CUBCHOO || L32 || 4% 
+|- 
+|GLALIE || L34 || 1% 
+|- 
+|BEARTIC || L34 || 1% 
+|}
+Drilbur's Tunnel
+{| class="article-table"
+|+ Cave
+! Species !! Level !! Rate 
+|- 
+|DRILBUR || L31-33 || 20% 
+|- 
+|DRILBUR || L32-34 || 20% 
+|- 
+|NOIBAT || L30-32 || 10% 
+|- 
+|DRILBUR || L32-34 || 10% 
+|- 
+|TORKOAL || L31-33 || 10% 
+|- 
+|EXCADRILL || L30-31 || 10% 
+|- 
+|WOOBAT || L30-32 || 5% 
+|- 
+|ZUBAT || L29-31 || 5% 
+|- 
+|DUNSPARCE || L31 || 4% 
+|- 
+|GOLBAT || L31 || 4% 
+|- 
+|DUGTRIO || L40 || 1% 
+|- 
+|DUGTRIO || L41 || 1% 
+|}
+Boron Village
+{| class="article-table"
+|+ Land
+! Species !! Level !! Rate 
+|- 
+|KRABBY || L27-29 || 10% 
+|- 
+|DWEBBLE || L27-29 || 10% 
+|- 
+|SHELLDER || L27-29 || 10% 
+|- 
+|STARYU || L27-29 || 10% 
+|- 
+|TRAPINCH || L27-29 || 10% 
+|- 
+|TROPIUS || L27-29 || 10% 
+|- 
+|CORPHISH || L27-29 || 10% 
+|- 
+|CRABRAWLER || L27-29 || 10% 
+|- 
+|COMFEY || L27-29 || 5% 
+|- 
+|PYUKUMUKU || L27-29 || 5% 
+|- 
+|CLAMPERL || L27-29 || 4% 
+|- 
+|EXEGGCUTE || L27-29 || 4% 
+|- 
+|EXEGGUTOR || L31 || 1% 
+|- 
+|CRUSTLE || L27-29 || 1% 
+|}
+{| class="article-table"
+|+ Water
+! Species !! Level !! Rate 
+|- 
+|PELIPPER || L25-35 || 30% 
+|- 
+|WAILMER || L25-35 || 30% 
+|- 
+|LUVDISC || L25-35 || 20% 
+|- 
+|BRUXISH || L25-35 || 18% 
+|- 
+|HORSEA || L25-35 || 2% 
+|}
+{| class="article-table"
+|+ OldRod
+! Species !! Level !! Rate 
+|- 
+|MAGIKARP || L5-12 || 90% 
+|- 
+|MAGIKARP || L18-19 || 10% 
+|}
+{| class="article-table"
+|+ GoodRod
+! Species !! Level !! Rate 
+|- 
+|BARBOACH || L18-22 || 40% 
+|- 
+|BASCULIN || L18-22 || 40% 
+|- 
+|GYARADOS || L20 || 20% 
+|}
+{| class="article-table"
+|+ SuperRod
+! Species !! Level !! Rate 
+|- 
+|MAREANIE || L33-36 || 40% 
+|- 
+|CLAUNCHER || L33-36 || 30% 
+|- 
+|LANTURN || L33-35 || 15% 
+|- 
+|BRUXISH || L33-35 || 13% 
+|- 
+|KINGLER || L35 || 2% 
+|}
+Lithium Town
+{| class="article-table"
+|+ Land
+! Species !! Level !! Rate 
+|- 
+|CLEFAIRY || L33-35 || 10% 
+|- 
+|JIGGLYPUFF || L33-35 || 10% 
+|- 
+|SNUBBULL || L33-35 || 10% 
+|- 
+|IMPIDIMP || L33 || 10% 
+|- 
+|LEDIAN || L34 || 10% 
+|- 
+|AUDINO || L35-37 || 10% 
+|- 
+|KRICKETUNE || L31-33 || 10% 
+|- 
+|IGGLYBUFF || L18-22 || 10% 
+|- 
+|CLEFFA || L18-22 || 5% 
+|- 
+|VULPIX || L30-34 || 5% 
+|- 
+|TOGEPI || L18-22 || 4% 
+|- 
+|KLEFKI || L34-36 || 4% 
+|- 
+|TOGETIC || L38 || 1% 
+|- 
+|TOGETIC || L37 || 1% 
+|}
+{| class="article-table"
+|+ Water
+! Species !! Level !! Rate 
+|- 
+|AZURILL || L25-35 || 30% 
+|- 
+|MARILL || L25-35 || 30% 
+|- 
+|SURSKIT || L25-35 || 20% 
+|- 
+|AZURILL || L25-35 || 18% 
+|- 
+|AZUMARILL || L25-35 || 2% 
+|}
+{| class="article-table"
+|+ OldRod
+! Species !! Level !! Rate 
+|- 
+|MAGIKARP || L5-12 || 90% 
+|- 
+|MAGIKARP || L18-19 || 10% 
+|}
+{| class="article-table"
+|+ GoodRod
+! Species !! Level !! Rate 
+|- 
+|BARBOACH || L18-22 || 40% 
+|- 
+|BASCULIN || L18-22 || 40% 
+|- 
+|GYARADOS || L20 || 20% 
+|}
+{| class="article-table"
+|+ SuperRod
+! Species !! Level !! Rate 
+|- 
+|AZURILL || L25-35 || 40% 
+|- 
+|MARILL || L25-35 || 30% 
+|- 
+|MARILL || L25-35 || 15% 
+|- 
+|AZURILL || L25-35 || 13% 
+|- 
+|AZUMARILL || L25-35 || 2% 
+|}
+Helium City
+{| class="article-table"
+|+ Land
+! Species !! Level !! Rate 
+|- 
+|PIDGEOTTO || L40-43 || 10% 
+|- 
+|STARAVIA || L40-43 || 10% 
+|- 
+|RUFFLET || L40-43 || 10% 
+|- 
+|VULLABY || L40-43 || 10% 
+|- 
+|SKARMORY || L40-43 || 10% 
+|- 
+|TRANQUILL || L40-43 || 10% 
+|- 
+|FLETCHINDER || L40-43 || 10% 
+|- 
+|SWELLOW || L40-43 || 10% 
+|- 
+|PIDGEOT || L40-43 || 5% 
+|- 
+|STARAPTOR || L40-43 || 5% 
+|- 
+|CORVIKNIGHT || L40-43 || 4% 
+|- 
+|UNFEZANT || L40-43 || 4% 
+|- 
+|CASTFORM || L44 || 1% 
+|- 
+|CASTFORM || L44 || 1% 
+|}
+Route 9
+{| class="article-table"
+|+ Land
+! Species !! Level !! Rate 
+|- 
+|SANDSHREW || L24-26 || 10% 
+|- 
+|CACNEA || L24-26 || 10% 
+|- 
+|MARACTUS || L24-26 || 10% 
+|- 
+|SANDILE || L24-26 || 10% 
+|- 
+|CUFANT || L24-26 || 10% 
+|- 
+|GLIGAR || L24-26 || 10% 
+|- 
+|PHANPY || L24-26 || 10% 
+|- 
+|SANDSHREW || L24-26 || 10% 
+|- 
+|GOLETT || L24-26 || 5% 
+|- 
+|HELIOPTILE || L24-26 || 5% 
+|- 
+|KROKOROK || L24-26 || 4% 
+|- 
+|NIDORINO || L24-26 || 4% 
+|- 
+|DONPHAN || L24-26 || 1% 
+|- 
+|SANDSLASH || L24-26 || 1% 
+|}
+Igandea River Boardwalks
+{| class="article-table"
+|+ Water
+! Species !! Level !! Rate 
+|- 
+|TENTACOOL || L30-40 || 30% 
+|- 
+|PELIPPER || L30-40 || 30% 
+|- 
+|GOLDEEN || L30-40 || 20% 
+|- 
+|REMORAID || L30-40 || 18% 
+|- 
+|LAPRAS || L30-32 || 2% 
+|}
+{| class="article-table"
+|+ OldRod
+! Species !! Level !! Rate 
+|- 
+|MAGIKARP || L5-12 || 90% 
+|- 
+|MAGIKARP || L18-19 || 10% 
+|}
+{| class="article-table"
+|+ GoodRod
+! Species !! Level !! Rate 
+|- 
+|BARBOACH || L18-22 || 40% 
+|- 
+|BASCULIN || L18-22 || 40% 
+|- 
+|GYARADOS || L20 || 20% 
+|}
+{| class="article-table"
+|+ SuperRod
+! Species !! Level !! Rate 
+|- 
+|CARVANHA || L33-36 || 40% 
+|- 
+|GYARADOS || L33-36 || 30% 
+|- 
+|WHISCASH || L33-35 || 15% 
+|- 
+|SEAKING || L33-35 || 13% 
+|- 
+|DRAGONAIR || L29-30 || 2% 
+|}
+Route 7
+{| class="article-table"
+|+ Land
+! Species !! Level !! Rate 
+|- 
+|FLABEBE || L17-19 || 10% 
+|- 
+|VIVILLON || L17-19 || 10% 
+|- 
+|VENIPEDE || L17-19 || 10% 
+|- 
+|FLABEBE || L17-19 || 10% 
+|- 
+|FARFETCHD || L17-19 || 10% 
+|- 
+|YANMA || L17-19 || 10% 
+|- 
+|COMBEE || L17-19 || 10% 
+|- 
+|ROSELIA || L17-19 || 10% 
+|- 
+|CUTIEFLY || L17-19 || 5% 
+|- 
+|ORICORIO || L17-19 || 5% 
+|- 
+|ORICORIO || L20 || 4% 
+|- 
+|WEEPINBELL || L20 || 4% 
+|- 
+|SUNFLORA || L17-19 || 1% 
+|- 
+|FLOETTE || L17-19 || 1% 
+|}
+{| class="article-table"
+|+ Water
+! Species !! Level !! Rate 
+|- 
+|TENTACOOL || L30-40 || 30% 
+|- 
+|PELIPPER || L30-40 || 30% 
+|- 
+|GOLDEEN || L30-40 || 20% 
+|- 
+|REMORAID || L30-40 || 18% 
+|- 
+|LAPRAS || L30-32 || 2% 
+|}
+{| class="article-table"
+|+ OldRod
+! Species !! Level !! Rate 
+|- 
+|MAGIKARP || L5-12 || 90% 
+|- 
+|MAGIKARP || L18-19 || 10% 
+|}
+{| class="article-table"
+|+ GoodRod
+! Species !! Level !! Rate 
+|- 
+|BARBOACH || L18-22 || 40% 
+|- 
+|BASCULIN || L18-22 || 40% 
+|- 
+|GYARADOS || L20 || 20% 
+|}
+{| class="article-table"
+|+ SuperRod
+! Species !! Level !! Rate 
+|- 
+|CARVANHA || L33-36 || 40% 
+|- 
+|GYARADOS || L33-36 || 30% 
+|- 
+|WHISCASH || L33-35 || 15% 
+|- 
+|SEAKING || L33-35 || 13% 
+|- 
+|DRAGONAIR || L29-30 || 2% 
+|}
+{| class="article-table"
+|+ LandNight
+! Species !! Level !! Rate 
+|- 
+|VENIPEDE || L17-19 || 10% 
+|- 
+|VENONAT || L17-19 || 10% 
+|- 
+|VENIPEDE || L17-19 || 10% 
+|- 
+|VENONAT || L17-19 || 10% 
+|- 
+|FARFETCHD || L17-19 || 10% 
+|- 
+|YANMA || L17-19 || 10% 
+|- 
+|COMBEE || L17-19 || 10% 
+|- 
+|ROSELIA || L17-19 || 10% 
+|- 
+|GULPIN || L17-19 || 5% 
+|- 
+|SPINDA || L17-19 || 5% 
+|- 
+|GLOOM || L20 || 4% 
+|- 
+|WEEPINBELL || L20 || 4% 
+|- 
+|VENOMOTH || L17-19 || 1% 
+|- 
+|LEAVANNY || L17-19 || 1% 
+|}
+Route 5
+{| class="article-table"
+|+ Land
+! Species !! Level !! Rate 
+|- 
+|GOSSIFLEUR || L15-17 || 10% 
+|- 
+|LEDYBA || L15-17 || 10% 
+|- 
+|HOPPIP || L15-17 || 10% 
+|- 
+|PARAS || L15-17 || 10% 
+|- 
+|LEDIAN || L15-17 || 10% 
+|- 
+|HOPPIP || L15-17 || 10% 
+|- 
+|YANMA || L15-19 || 10% 
+|- 
+|SHROOMISH || L15-17 || 10% 
+|- 
+|PLUSLE || L15-17 || 5% 
+|- 
+|MINUN || L15-17 || 5% 
+|- 
+|SKIPLOOM || L15-17 || 4% 
+|- 
+|SHINX || L15-17 || 4% 
+|- 
+|CHANSEY || L15 || 1% 
+|- 
+|CHANSEY || L17 || 1% 
+|}
+{| class="article-table"
+|+ Water
+! Species !! Level !! Rate 
+|- 
+|BUIZEL || L19-30 || 30% 
+|- 
+|SHELLDER || L25-30 || 30% 
+|- 
+|SLOWPOKE || L25-27 || 20% 
+|- 
+|MANTYKE || L20-25 || 18% 
+|- 
+|FLOATZEL || L25-27 || 2% 
+|}
+{| class="article-table"
+|+ OldRod
+! Species !! Level !! Rate 
+|- 
+|MAGIKARP || L5-12 || 90% 
+|- 
+|MAGIKARP || L18-19 || 10% 
+|}
+{| class="article-table"
+|+ GoodRod
+! Species !! Level !! Rate 
+|- 
+|BARBOACH || L18-22 || 40% 
+|- 
+|BASCULIN || L18-22 || 40% 
+|- 
+|GYARADOS || L20 || 20% 
+|}
+{| class="article-table"
+|+ SuperRod
+! Species !! Level !! Rate 
+|- 
+|SLOWBRO || L30-33 || 40% 
+|- 
+|POLIWAG || L30-35 || 30% 
+|- 
+|POLIWHIRL || L32-33 || 15% 
+|- 
+|FLOATZEL || L30 || 13% 
+|- 
+|MANTYKE || L30 || 2% 
+|}
+Route 6
+{| class="article-table"
+|+ Land
+! Species !! Level !! Rate 
+|- 
+|WORMADAM || L16-19 || 10% 
+|- 
+|SPEWPA || L16-19 || 10% 
+|- 
+|GRUBBIN || L16-19 || 10% 
+|- 
+|TIMBURR || L16-19 || 10% 
+|- 
+|VOLBEAT || L16-19 || 10% 
+|- 
+|VOLBEAT || L16-19 || 10% 
+|- 
+|MAKUHITA || L16-19 || 10% 
+|- 
+|WHISMUR || L16-19 || 10% 
+|- 
+|CRAMORANT || L16-19 || 5% 
+|- 
+|TEDDIURSA || L18 || 5% 
+|- 
+|NUZLEAF || L16-19 || 4% 
+|- 
+|LOMBRE || L16-19 || 4% 
+|- 
+|DOTTLER || L16 || 1% 
+|- 
+|DOTTLER || L16 || 1% 
+|}
+{| class="article-table"
+|+ Water
+! Species !! Level !! Rate 
+|- 
+|TENTACOOL || L30-40 || 30% 
+|- 
+|PELIPPER || L30-40 || 30% 
+|- 
+|GOLDEEN || L30-40 || 20% 
+|- 
+|REMORAID || L30-40 || 18% 
+|- 
+|LAPRAS || L30-32 || 2% 
+|}
+{| class="article-table"
+|+ OldRod
+! Species !! Level !! Rate 
+|- 
+|MAGIKARP || L5-12 || 90% 
+|- 
+|MAGIKARP || L18-19 || 10% 
+|}
+{| class="article-table"
+|+ GoodRod
+! Species !! Level !! Rate 
+|- 
+|BARBOACH || L18-22 || 40% 
+|- 
+|BASCULIN || L18-22 || 40% 
+|- 
+|GYARADOS || L20 || 20% 
+|}
+{| class="article-table"
+|+ SuperRod
+! Species !! Level !! Rate 
+|- 
+|CARVANHA || L33-36 || 40% 
+|- 
+|GYARADOS || L33-36 || 30% 
+|- 
+|WHISCASH || L33-35 || 15% 
+|- 
+|SEAKING || L33-35 || 13% 
+|- 
+|DRAGONAIR || L29-30 || 2% 
+|}
+{| class="article-table"
+|+ LandNight
+! Species !! Level !! Rate 
+|- 
+|MINIOR || L16-19 || 10% 
+|- 
+|SPEWPA || L16-19 || 10% 
+|- 
+|GRUBBIN || L16-19 || 10% 
+|- 
+|TIMBURR || L16-19 || 10% 
+|- 
+|ILLUMISE || L16-19 || 10% 
+|- 
+|ILLUMISE || L16-19 || 10% 
+|- 
+|MAKUHITA || L16-19 || 10% 
+|- 
+|WHISMUR || L16-19 || 10% 
+|- 
+|HOUNDOUR || L16-19 || 5% 
+|- 
+|TEDDIURSA || L18 || 5% 
+|- 
+|NUZLEAF || L16-19 || 4% 
+|- 
+|LOMBRE || L16-19 || 4% 
+|- 
+|DOTTLER || L16 || 1% 
+|- 
+|LOUDRED || L16 || 1% 
+|}
+Route 10
+{| class="article-table"
+|+ Land
+! Species !! Level !! Rate 
+|- 
+|ONIX || L28-30 || 10% 
+|- 
+|EMOLGA || L28-30 || 10% 
+|- 
+|HAWLUCHA || L28-30 || 10% 
+|- 
+|ROCKRUFF || L28-30 || 10% 
+|- 
+|PONYTA || L28-30 || 10% 
+|- 
+|DURANT || L28-30 || 10% 
+|- 
+|SAWK || L28-30 || 10% 
+|- 
+|THROH || L28-30 || 10% 
+|- 
+|NOSEPASS || L28-30 || 5% 
+|- 
+|DARUMAKA || L28-30 || 5% 
+|- 
+|HEATMOR || L28-30 || 4% 
+|- 
+|RIOLU || L28-30 || 4% 
+|- 
+|JANGMOO || L28-30 || 1% 
+|- 
+|JANGMOO || L31 || 1% 
+|}
+{| class="article-table"
+|+ Water
+! Species !! Level !! Rate 
+|- 
+|BASCULIN || L25-35 || 30% 
+|- 
+|SHELLDER || L25-30 || 30% 
+|- 
+|SLOWPOKE || L25-27 || 20% 
+|- 
+|MANTYKE || L20-25 || 18% 
+|- 
+|FLOATZEL || L25-27 || 2% 
+|}
+{| class="article-table"
+|+ OldRod
+! Species !! Level !! Rate 
+|- 
+|MAGIKARP || L5-12 || 90% 
+|- 
+|MAGIKARP || L18-19 || 10% 
+|}
+{| class="article-table"
+|+ GoodRod
+! Species !! Level !! Rate 
+|- 
+|BARBOACH || L18-22 || 40% 
+|- 
+|BASCULIN || L18-22 || 40% 
+|- 
+|GYARADOS || L20 || 20% 
+|}
+{| class="article-table"
+|+ SuperRod
+! Species !! Level !! Rate 
+|- 
+|POLIWAG || L30-35 || 40% 
+|- 
+|POLIWHIRL || L32-33 || 30% 
+|- 
+|DRATINI || L30-33 || 15% 
+|- 
+|BASCULIN || L30-33 || 13% 
+|- 
+|DRATINI || L30-33 || 2% 
+|}
+Route 10
+{| class="article-table"
+|+ Land
+! Species !! Level !! Rate 
+|- 
+|ONIX || L28-30 || 10% 
+|- 
+|EMOLGA || L28-30 || 10% 
+|- 
+|HAWLUCHA || L28-30 || 10% 
+|- 
+|ROCKRUFF || L28-30 || 10% 
+|-  
+|PONYTA || L28-30 || 10% 
+|- 
+|DURANT || L28-30 || 10% 
+|- 
+|SAWK || L28-30 || 10% 
+|- 
+|THROH || L28-30 || 10% 
+|- 
+|NOSEPASS || L28-30 || 5% 
+|- 
+|DARUMAKA || L28-30 || 5% 
+|- 
+|HEATMOR || L28-30 || 4% 
+|- 
+|RIOLU || L28-30 || 4% 
+|- 
+|JANGMOO || L28-30 || 1% 
+|- 
+|JANGMOO || L31 || 1% 
+|}
+Route 11
+{| class="article-table"
+|+ Land
+! Species !! Level !! Rate 
+|- 
+|EMOLGA || L30-32 || 10% 
+|- 
+|PACHIRISU || L30-32 || 10% 
+|- 
+|SCRAGGY || L30-32 || 10% 
+|- 
+|NOCTOWL || L30-32 || 10% 
+|- 
+|MORPEKO || L30-32 || 10% 
+|- 
+|TOGEDEMARU || L30-32 || 10% 
+|- 
+|DEDENNE || L30-32 || 10% 
+|- 
+|EKANS || L30-32 || 10% 
+|- 
+|SEVIPER || L30-32 || 5% 
+|- 
+|ZANGOOSE || L30-32 || 5% 
+|- 
+|DEERLING || L30-32 || 4% 
+|- 
+|SWABLU || L30-32 || 4% 
+|- 
+|DEERLING || L30-32 || 1% 
+|- 
+|DEERLING || L33 || 1% 
+|}
+{| class="article-table"
+|+ Water
+! Species !! Level !! Rate 
+|- 
+|BASCULIN || L25-35 || 30% 
+|- 
+|SHELLDER || L25-30 || 30% 
+|- 
+|SLOWPOKE || L25-27 || 20% 
+|- 
+|MANTYKE || L20-25 || 18% 
+|- 
+|FLOATZEL || L25-27 || 2% 
+|}
+{| class="article-table"
+|+ OldRod
+! Species !! Level !! Rate 
+|- 
+|MAGIKARP || L5-12 || 90% 
+|- 
+|MAGIKARP || L18-19 || 10% 
+|}
+{| class="article-table"
+|+ GoodRod
+! Species !! Level !! Rate 
+|- 
+|BARBOACH || L18-22 || 40% 
+|- 
+|BASCULIN || L18-22 || 40% 
+|- 
+|GYARADOS || L20 || 20% 
+|}
+{| class="article-table"
+|+ SuperRod
+! Species !! Level !! Rate 
+|- 
+|POLIWAG || L30-35 || 40% 
+|- 
+|POLIWHIRL || L32-33 || 30% 
+|- 
+|DRATINI || L30-33 || 15% 
+|- 
+|BASCULIN || L30-33 || 13% 
+|- 
+|DRATINI || L30-33 || 2% 
+|}
+Route 12
+{| class="article-table"
+|+ Land
+! Species !! Level !! Rate 
+|- 
+|GOTHITA || L31-33 || 10% 
+|- 
+|SOLOSIS || L31-33 || 10% 
+|- 
+|SPRITZEE || L32-33 || 10% 
+|- 
+|INKAY || L30-33 || 10% 
+|- 
+|FOMANTIS || L28-31 || 10% 
+|- 
+|MUNNA || L31-33 || 10% 
+|- 
+|PARASECT || L30-33 || 10% 
+|- 
+|WOBBUFFET || L30-32 || 10% 
+|- 
+|SPOINK || L31-33 || 5% 
+|- 
+|CHIMECHO || L29-31 || 5% 
+|- 
+|GOTHORITA || L31 || 4% 
+|- 
+|DUOSION || L31 || 4% 
+|- 
+|WYNAUT || L15 || 1% 
+|- 
+|WYNAUT || L15 || 1% 
+|}
+{| class="article-table"
+|+ Water
+! Species !! Level !! Rate 
+|- 
+|LOTAD || L25-35 || 30% 
+|- 
+|LOMBRE || L25-35 || 30% 
+|- 
+|POLIWHIRL || L25-35 || 20% 
+|- 
+|POLIWAG || L25-35 || 18% 
+|- 
+|PALPITOAD || L25-35 || 2% 
+|}
+{| class="article-table"
+|+ OldRod
+! Species !! Level !! Rate 
+|- 
+|MAGIKARP || L5-12 || 90% 
+|- 
+|MAGIKARP || L18-19 || 10% 
+|}
+{| class="article-table"
+|+ GoodRod
+! Species !! Level !! Rate 
+|- 
+|BARBOACH || L18-22 || 40% 
+|- 
+|BASCULIN || L18-22 || 40% 
+|- 
+|GYARADOS || L20 || 20% 
+|}
+{| class="article-table"
+|+ SuperRod
+! Species !! Level !! Rate 
+|- 
+|PALPITOAD || L33-36 || 40% 
+|- 
+|POLIWHIRL || L33-36 || 30% 
+|- 
+|GYARADOS || L33-35 || 15% 
+|- 
+|GYARADOS || L33-35 || 13% 
+|- 
+|DRATINI || L30-32 || 2% 
+|}
+{| class="article-table"
+|+ LandNight
+! Species !! Level !! Rate 
+|- 
+|HATENNA || L31-33 || 10% 
+|- 
+|SOLOSIS || L31-33 || 10% 
+|- 
+|NOCTOWL || L32-33 || 10% 
+|- 
+|INKAY || L30-33 || 10% 
+|- 
+|FOMANTIS || L28-31 || 10% 
+|- 
+|MUNNA || L31-33 || 10% 
+|- 
+|PARASECT || L30-33 || 10% 
+|- 
+|WOBBUFFET || L30-32 || 10% 
+|- 
+|SPOINK || L31-33 || 5% 
+|- 
+|CHIMECHO || L29-31 || 5% 
+|- 
+|HATTREM || L31 || 4% 
+|- 
+|LURANTIS || L31 || 4% 
+|- 
+|CHINGLING || L15 || 1% 
+|- 
+|CHINGLING || L15 || 1% 
+|}
+Route 13
+{| class="article-table"
+|+ Land
+! Species !! Level !! Rate 
+|- 
+|BOUNSWEET || L37-39 || 10% 
+|- 
+|STEENEE || L37-39 || 10% 
+|- 
+|PETILIL || L37-39 || 10% 
+|- 
+|COTTONEE || L37-39 || 10% 
+|- 
+|SKIPLOOM || L37-39 || 10% 
+|- 
+|SKIPLOOM || L37-39 || 10% 
+|- 
+|EEVEE || L37-39 || 10% 
+|- 
+|MRMIME || L37-39 || 10% 
+|- 
+|ELECTABUZZ || L37-39 || 5% 
+|- 
+|MAGMAR || L37-39 || 5% 
+|- 
+|TYROGUE || L30 || 4% 
+|- 
+|DROWZEE || L37-39 || 4% 
+|- 
+|LILLIGANT || L40 || 1% 
+|- 
+|WHIMSICOTT || L40 || 1% 
+|}
+{| class="article-table"
+|+ Water
+! Species !! Level !! Rate 
+|- 
+|PELIPPER || L25-45 || 30% 
+|- 
+|WAILMER || L25-45 || 30% 
+|- 
+|LUVDISC || L25-45 || 20% 
+|- 
+|ALOMOMOLA || L25-45 || 18% 
+|- 
+|STUNFISK || L25-45 || 2% 
+|}
+{| class="article-table"
+|+ OldRod
+! Species !! Level !! Rate 
+|- 
+|MAGIKARP || L5-12 || 90% 
+|- 
+|MAGIKARP || L18-19 || 10% 
+|}
+{| class="article-table"
+|+ GoodRod
+! Species !! Level !! Rate 
+|- 
+|BARBOACH || L18-22 || 40% 
+|- 
+|BASCULIN || L18-22 || 40% 
+|- 
+|GYARADOS || L20 || 20% 
+|}
+{| class="article-table"
+|+ SuperRod
+! Species !! Level !! Rate 
+|- 
+|QWILFISH || L33-36 || 40% 
+|- 
+|BASCULIN || L33-36 || 30% 
+|- 
+|FINNEON || L33-35 || 15% 
+|- 
+|KRABBY || L33-35 || 13% 
+|- 
+|QWILFISH || L30-35 || 2% 
+|}
+{| class="article-table"
+|+ LandNight
+! Species !! Level !! Rate 
+|- 
+|MINIOR || L37-39 || 10% 
+|- 
+|MINIOR || L37-39 || 10% 
+|- 
+|MINIOR || L37-39 || 10% 
+|- 
+|COTTONEE || L37-39 || 10% 
+|- 
+|ELDEGOSS || L37-39 || 10% 
+|- 
+|SKIPLOOM || L37-39 || 10% 
+|- 
+|SIZZLIPEDE || L37-39 || 10% 
+|- 
+|MRMIME || L37-39 || 10% 
+|- 
+|ELECTABUZZ || L37-39 || 5% 
+|- 
+|MAGMAR || L37-39 || 5% 
+|- 
+|TYROGUE || L30 || 4% 
+|- 
+|DROWZEE || L37-39 || 4% 
+|- 
+|LILLIGANT || L40 || 1% 
+|- 
+|WHIMSICOTT || L40 || 1% 
+|}
+Route 14
+{| class="article-table"
+|+ Land
+! Species !! Level !! Rate 
+|- 
+|BEWEAR || L37-39 || 10% 
+|- 
+|CENTISKORCH || L37-39 || 10% 
+|- 
+|AMOONGUSS || L37-39 || 10% 
+|- 
+|MIGHTYENA || L37-39 || 10% 
+|- 
+|SCYTHER || L37-39 || 10% 
+|- 
+|LICKITUNG || L37-39 || 10% 
+|- 
+|SUDOWOODO || L37-39 || 10% 
+|- 
+|JOLTIK || L37-39 || 10% 
+|- 
+|MIENFOO || L37-39 || 5% 
+|- 
+|DITTO || L37-39 || 5% 
+|- 
+|FOONGUS || L37-39 || 4% 
+|- 
+|DREEPY || L37-39 || 4% 
+|- 
+|GALVANTULA || L37-39 || 1% 
+|- 
+|MIENSHAO || L37-39 || 1% 
+|}
+{| class="article-table"
+|+ Water
+! Species !! Level !! Rate 
+|- 
+|PELIPPER || L25-45 || 30% 
+|- 
+|WAILMER || L25-45 || 30% 
+|- 
+|LUVDISC || L25-45 || 20% 
+|- 
+|ALOMOMOLA || L25-45 || 18% 
+|- 
+|STUNFISK || L25-45 || 2% 
+|}
+{| class="article-table"
+|+ OldRod
+! Species !! Level !! Rate 
+|- 
+|MAGIKARP || L5-12 || 90% 
+|- 
+|MAGIKARP || L18-19 || 10% 
+|}
+{| class="article-table"
+|+ GoodRod
+! Species !! Level !! Rate 
+|- 
+|BARBOACH || L18-22 || 40% 
+|- 
+|BASCULIN || L18-22 || 40% 
+|- 
+|GYARADOS || L20 || 20% 
+|}
+{| class="article-table"
+|+ SuperRod
+! Species !! Level !! Rate 
+|- 
+|QWILFISH || L33-36 || 40% 
+|- 
+|BASCULIN || L33-36 || 30% 
+|- 
+|FINNEON || L33-35 || 15% 
+|- 
+|KRABBY || L33-35 || 13% 
+|- 
+|QWILFISH || L30-35 || 2% 
+|}
+Safari Zone
+{| class="article-table"
+|+ Land
+! Species !! Level !! Rate 
+|- 
+|CUBONE || L33-34 || 10% 
+|- 
+|KECLEON || L33-34 || 10% 
+|- 
+|QUAGSIRE || L32-34 || 10% 
+|- 
+|WOOPER || L31-32 || 10% 
+|- 
+|CROAGUNK || L32-33 || 10% 
+|- 
+|CHEWTLE || L30-32 || 10% 
+|- 
+|VENOMOTH || L33 || 10% 
+|- 
+|BEEDRILL || L34 || 10% 
+|- 
+|BUTTERFREE || L33 || 5% 
+|- 
+|BINACLE || L30 || 5% 
+|- 
+|SKRELP || L30 || 4% 
+|- 
+|MURKROW || L31 || 4% 
+|- 
+|MURKROW || L31 || 1% 
+|- 
+|MURKROW || L32 || 1% 
+|}
+{| class="article-table"
+|+ Water
+! Species !! Level !! Rate 
+|- 
+|BINACLE || L25-45 || 30% 
+|- 
+|STARMIE || L25-45 || 30% 
+|- 
+|LUVDISC || L25-45 || 20% 
+|- 
+|ALOMOMOLA || L25-45 || 18% 
+|- 
+|DRATINI || L25-45 || 2% 
+|}
+{| class="article-table"
+|+ OldRod
+! Species !! Level !! Rate 
+|- 
+|DRATINI || L5-12 || 90% 
+|- 
+|DRATINI || L18-19 || 10% 
+|}
+{| class="article-table"
+|+ GoodRod
+! Species !! Level !! Rate 
+|- 
+|DRATINI || L18-22 || 40% 
+|- 
+|MAGIKARP || L18-22 || 40% 
+|- 
+|GYARADOS || L20 || 20% 
+|}
+{| class="article-table"
+|+ SuperRod
+! Species !! Level !! Rate 
+|- 
+|DRAGONAIR || L33-36 || 40% 
+|- 
+|KINGLER || L33-36 || 30% 
+|- 
+|CHINCHOU || L33-35 || 15% 
+|- 
+|DRAGALGE || L33-35 || 13% 
+|- 
+|PALPITOAD || L35 || 2% 
+|}
+Victory Road
+{| class="article-table"
+|+ Land
+! Species !! Level !! Rate 
+|- 
+|GROWLITHE || L47-52 || 10% 
+|- 
+|NUMEL || L47-52 || 10% 
+|- 
+|BOLDORE || L50-52 || 10% 
+|- 
+|TORKOAL || L51-52 || 10% 
+|- 
+|DONPHAN || L48-53 || 10% 
+|- 
+|MAGCARGO || L49-51 || 10% 
+|- 
+|AUDINO || L53-55 || 10% 
+|- 
+|FALINKS || L48-50 || 10% 
+|- 
+|DIGGERSBY || L50 || 5% 
+|- 
+|CAMERUPT || L48-50 || 5% 
+|- 
+|LARVITAR || L42-48 || 4% 
+|- 
+|AXEW || L42-48 || 4% 
+|- 
+|LARVITAR || L49-53 || 1% 
+|- 
+|AXEW || L49-53 || 1% 
+|}
+{| class="article-table"
+|+ LandNight
+! Species !! Level !! Rate 
+|- 
+|GROWLITHE || L47-52 || 10% 
+|- 
+|TOXTRICITY || L47-52 || 10% 
+|- 
+|PYROAR || L50-52 || 10% 
+|- 
+|TORKOAL || L51-52 || 10% 
+|- 
+|DONPHAN || L48-53 || 10% 
+|- 
+|MAGCARGO || L49-51 || 10% 
+|- 
+|AUDINO || L53-55 || 10% 
+|- 
+|SALANDIT || L48-50 || 10% 
+|- 
+|FALINKS || L48-50 || 5% 
+|- 
+|SALAZZLE || L45-55 || 5% 
+|- 
+|LARVITAR || L42-48 || 4% 
+|- 
+|AXEW || L42-48 || 4% 
+|- 
+|LARVITAR || L49-53 || 1% 
+|- 
+|AXEW || L49-53 || 1% 
+|}
+Barium Cemetery
+{| class="article-table"
+|+ Land
+! Species !! Level !! Rate 
+|- 
+|GASTLY || L18-21 || 10% 
+|- 
+|MISDREAVUS || L18-21 || 10% 
+|- 
+|SABLEYE || L18-21 || 10% 
+|- 
+|SHUPPET || L18-21 || 10% 
+|- 
+|DUSKULL || L18-21 || 10% 
+|- 
+|PHANTUMP || L18-21 || 10% 
+|- 
+|PUMPKABOO || L18-21 || 10% 
+|- 
+|DRIFLOON || L18-21 || 10% 
+|- 
+|YAMASK || L18-21 || 5% 
+|- 
+|LITWICK || L18-21 || 5% 
+|- 
+|DRIFLOON || L18-21 || 4% 
+|- 
+|HONEDGE || L18-21 || 4% 
+|- 
+|SPIRITOMB || L21 || 1% 
+|- 
+|SPIRITOMB || L19 || 1% 
+|}
+{| class="article-table"
+|+ Water
+! Species !! Level !! Rate 
+|- 
+|FRILLISH || L25-35 || 30% 
+|- 
+|FRILLISH || L25-35 || 30% 
+|- 
+|HAUNTER || L25-35 || 20% 
+|- 
+|JELLICENT || L25-35 || 18% 
+|- 
+|JELLICENT || L25-35 || 2% 
+|}
+{| class="article-table"
+|+ OldRod
+! Species !! Level !! Rate 
+|- 
+|MAGIKARP || L5-12 || 90% 
+|- 
+|MAGIKARP || L18-19 || 10% 
+|}
+{| class="article-table"
+|+ GoodRod
+! Species !! Level !! Rate 
+|- 
+|BARBOACH || L18-22 || 40% 
+|- 
+|BASCULIN || L18-22 || 40% 
+|- 
+|GYARADOS || L20 || 20% 
+|}
+{| class="article-table"
+|+ SuperRod
+! Species !! Level !! Rate 
+|- 
+|FRILLISH || L33-36 || 40% 
+|- 
+|FRILLISH || L33-36 || 30% 
+|- 
+|JELLICENT || L33-35 || 15% 
+|- 
+|JELLICENT || L33-35 || 13% 
+|- 
+|DRAGONAIR || L30-32 || 2% 
+|}
+Platinum Heights
+{| class="article-table"
+|+ Water
+! Species !! Level !! Rate 
+|- 
+|TENTACOOL || L30-40 || 30% 
+|- 
+|PELIPPER || L30-40 || 30% 
+|- 
+|GOLDEEN || L30-40 || 20% 
+|- 
+|REMORAID || L30-40 || 18% 
+|- 
+|LAPRAS || L30-32 || 2% 
+|}
+{| class="article-table"
+|+ OldRod
+! Species !! Level !! Rate 
+|- 
+|MAGIKARP || L5-12 || 90% 
+|- 
+|MAGIKARP || L18-19 || 10% 
+|}
+{| class="article-table"
+|+ GoodRod
+! Species !! Level !! Rate 
+|- 
+|BARBOACH || L18-22 || 40% 
+|- 
+|BASCULIN || L18-22 || 40% 
+|- 
+|GYARADOS || L20 || 20% 
+|}
+{| class="article-table"
+|+ SuperRod
+! Species !! Level !! Rate 
+|- 
+|CARVANHA || L33-36 || 40% 
+|- 
+|GYARADOS || L33-36 || 30% 
+|- 
+|WHISCASH || L33-35 || 15% 
+|- 
+|SEAKING || L33-35 || 13% 
+|- 
+|DRAGONAIR || L29-30 || 2% 
+|}
+Route 9
+{| class="article-table"
+|+ Land
+! Species !! Level !! Rate 
+|- 
+|SANDSHREW || L24-26 || 10% 
+|- 
+|CACNEA || L24-26 || 10% 
+|- 
+|WATCHOG || L24-26 || 10% 
+|- 
+|SANDILE || L24-26 || 10% 
+|- 
+|GLIGAR || L24-26 || 10% 
+|- 
+|EEVEE || L24-26 || 10% 
+|- 
+|CUFANT || L24-26 || 10% 
+|- 
+|PHANPY || L24-26 || 10% 
+|- 
+|SANDSHREW || L24-26 || 5% 
+|- 
+|GOLETT || L24-26 || 5% 
+|- 
+|KROKOROK || L24-26 || 4% 
+|- 
+|NIDORINA || L24-26 || 4% 
+|- 
+|DONPHAN || L24-26 || 1% 
+|- 
+|SANDSLASH || L24-28 || 1% 
+|}
+Mt. Silicon
+{| class="article-table"
+|+ Land
+! Species !! Level !! Rate 
+|- 
+|SNORUNT || L28-30 || 10% 
+|- 
+|SWINUB || L28-30 || 10% 
+|- 
+|SNOVER || L28-30 || 10% 
+|- 
+|SNOVER || L28-30 || 10% 
+|- 
+|BERGMITE || L28-30 || 10% 
+|- 
+|SNOM || L28-30 || 10% 
+|- 
+|DELIBIRD || L28-30 || 10% 
+|- 
+|SNEASEL || L28-30 || 10% 
+|- 
+|CUBCHOO || L28-30 || 5% 
+|- 
+|SNEASEL || L28-30 || 5% 
+|- 
+|SWINUB || L28-30 || 4% 
+|- 
+|STANTLER || L28-30 || 4% 
+|- 
+|PILOSWINE || L31 || 1% 
+|- 
+|ABOMASNOW || L31 || 1% 
+|}
+{| class="article-table"
+|+ Water
+! Species !! Level !! Rate 
+|- 
+|SEEL || L25-35 || 30% 
+|- 
+|SPHEAL || L25-35 || 30% 
+|- 
+|SEALEO || L25-35 || 20% 
+|- 
+|SEEL || L25-35 || 18% 
+|- 
+|DEWGONG || L25-35 || 2% 
+|}
+{| class="article-table"
+|+ OldRod
+! Species !! Level !! Rate 
+|- 
+|MAGIKARP || L5-12 || 90% 
+|- 
+|MAGIKARP || L18-19 || 10% 
+|}
+{| class="article-table"
+|+ GoodRod
+! Species !! Level !! Rate 
+|- 
+|BARBOACH || L18-22 || 40% 
+|- 
+|BASCULIN || L18-22 || 40% 
+|- 
+|GYARADOS || L20 || 20% 
+|}
+{| class="article-table"
+|+ SuperRod
+! Species !! Level !! Rate 
+|- 
+|SEEL || L25-35 || 40% 
+|- 
+|SPHEAL || L25-35 || 30% 
+|- 
+|SEALEO || L25-35 || 15% 
+|- 
+|DEWGONG || L25-35 || 13% 
+|- 
+|CLOYSTER || L25-35 || 2% 
+|}
+Route 1
+{| class="article-table"
+|+ Land
+! Species !! Level !! Rate 
+|- 
+|RATTATA || L2-4 || 10% 
+|- 
+|SENTRET || L2-4 || 10% 
+|- 
+|BIDOOF || L2-4 || 10% 
+|- 
+|SENTRET || L2-4 || 10% 
+|- 
+|PATRAT || L2-4 || 10% 
+|- 
+|SPEAROW || L2-4 || 10% 
+|- 
+|PIDGEY || L2-4 || 10% 
+|- 
+|SKWOVET || L2-5 || 10% 
+|- 
+|TAILLOW || L2-4 || 5% 
+|- 
+|TAILLOW || L2-4 || 5% 
+|- 
+|RATTATA || L2-4 || 4% 
+|- 
+|PIDGEY || L5 || 4% 
+|- 
+|SKIDDO || L5 || 1% 
+|- 
+|SKIDDO || L6 || 1% 
+|}
+{| class="article-table"
+|+ Water
+! Species !! Level !! Rate 
+|- 
+|TYMPOLE || L25-35 || 30% 
+|- 
+|FINNEON || L25-35 || 30% 
+|- 
+|PSYDUCK || L25-35 || 20% 
+|- 
+|GOLDUCK || L25-35 || 18% 
+|- 
+|LUMINEON || L25-35 || 2% 
+|}
+{| class="article-table"
+|+ OldRod
+! Species !! Level !! Rate 
+|- 
+|MAGIKARP || L5-12 || 90% 
+|- 
+|MAGIKARP || L18-19 || 10% 
+|}
+{| class="article-table"
+|+ GoodRod
+! Species !! Level !! Rate 
+|- 
+|BARBOACH || L18-22 || 40% 
+|- 
+|BASCULIN || L18-22 || 40% 
+|- 
+|GYARADOS || L20 || 20% 
+|}
+{| class="article-table"
+|+ SuperRod
+! Species !! Level !! Rate 
+|- 
+|POLIWHIRL || L33-36 || 40% 
+|- 
+|GYARADOS || L33-36 || 30% 
+|- 
+|WHISCASH || L33-35 || 15% 
+|- 
+|LUMINEON || L33-35 || 13% 
+|- 
+|MAGIKARP || L15-29 || 2% 
+|}
+{| class="article-table"
+|+ LandNight
+! Species !! Level !! Rate 
+|- 
+|ZIGZAGOON || L2-4 || 10% 
+|- 
+|MURKROW || L2-5 || 10% 
+|- 
+|HOOTHOOT || L2-5 || 10% 
+|- 
+|RATTATA || L2-5 || 10% 
+|- 
+|SKWOVET || L2-4 || 10% 
+|- 
+|SENTRET || L2-4 || 10% 
+|- 
+|RATTATA || L2-4 || 10% 
+|- 
+|HOOTHOOT || L2-4 || 10% 
+|- 
+|MURKROW || L2-4 || 5% 
+|- 
+|SKWOVET || L5 || 5% 
+|- 
+|ZIGZAGOON || L2-4 || 4% 
+|- 
+|BIDOOF || L2-4 || 4% 
+|- 
+|MAREEP || L5 || 1% 
+|- 
+|MAREEP || L6 || 1% 
+|}
+{| class="article-table"
+|+ Rt1
+! Species !! Level !! Rate 
+|- 
+|RATICATE || L20-50 || 20% 
+|- 
+|GREEDENT || L20-50 || 20% 
+|- 
+|BIBAREL || L20-50 || 10% 
+|- 
+|FURRET || L20-50 || 10% 
+|- 
+|WATCHOG || L20-50 || 10% 
+|- 
+|FEAROW || L20-50 || 10% 
+|- 
+|PIDGEOTTO || L20-50 || 5% 
+|- 
+|HONCHKROW || L20-50 || 5% 
+|- 
+|NOCTOWL || L20-50 || 4% 
+|- 
+|SWELLOW || L20-50 || 4% 
+|- 
+|LINOONE || L44 || 1% 
+|- 
+|FLAAFFY || L44 || 1% 
+|}
+Route 2
+{| class="article-table"
+|+ Land
+! Species !! Level !! Rate 
+|- 
+|GEODUDE || L3-6 || 10% 
+|- 
+|BURMY || L3-6 || 10% 
+|- 
+|GEODUDE || L3-6 || 10% 
+|- 
+|ROGGENROLA || L3-5 || 10% 
+|- 
+|SENTRET || L2-7 || 10% 
+|- 
+|PATRAT || L4-6 || 10% 
+|- 
+|WOOLOO || L4-5 || 10% 
+|- 
+|SPEAROW || L4-7 || 10% 
+|- 
+|SANDILE || L5-6 || 5% 
+|- 
+|HIPPOPOTAS || L2-4 || 5% 
+|- 
+|SANDSHREW || L5-7 || 4% 
+|- 
+|TAILLOW || L2-7 || 4% 
+|- 
+|MACHOP || L4-6 || 1% 
+|- 
+|MACHOP || L7 || 1% 
+|}
+Route 2
+{| class="article-table"
+|+ Land
+! Species !! Level !! Rate 
+|- 
+|GEODUDE || L3-6 || 10% 
+|- 
+|GEODUDE || L3-6 || 10% 
+|- 
+|BURMY || L3-6 || 10% 
+|- 
+|ROGGENROLA || L3-5 || 10% 
+|- 
+|ROGGENROLA || L3-5 || 10% 
+|- 
+|SENTRET || L2-7 || 10% 
+|- 
+|PATRAT || L4-6 || 10% 
+|- 
+|SPEAROW || L4-7 || 10% 
+|- 
+|SANDILE || L5-6 || 5% 
+|- 
+|HIPPOPOTAS || L2-4 || 5% 
+|- 
+|MILTANK || L5-7 || 4% 
+|- 
+|TAILLOW || L2-7 || 4% 
+|- 
+|DRILBUR || L4-6 || 1% 
+|- 
+|DRILBUR || L7 || 1% 
+|}
+Route 2
+{| class="article-table"
+|+ Land
+! Species !! Level !! Rate 
+|- 
+|GEODUDE || L3-6 || 10% 
+|- 
+|BURMY || L3-6 || 10% 
+|- 
+|HIPPOPOTAS || L2-4 || 10% 
+|- 
+|HIPPOPOTAS || L2-4 || 10% 
+|- 
+|SENTRET || L2-7 || 10% 
+|- 
+|PATRAT || L4-6 || 10% 
+|- 
+|CACNEA || L4-7 || 10% 
+|- 
+|SANDILE || L5-6 || 10% 
+|- 
+|ROGGENROLA || L3-5 || 5% 
+|- 
+|SANDSHREW || L5-7 || 5% 
+|- 
+|STONJOURNER || L4 || 4% 
+|- 
+|TAILLOW || L2-7 || 4% 
+|- 
+|MILTANK || L4-6 || 1% 
+|- 
+|MILTANK || L7 || 1% 
+|}
+Route 2
+{| class="article-table"
+|+ Land
+! Species !! Level !! Rate 
+|- 
+|GEODUDE || L4-7 || 10% 
+|- 
+|MUDBRAY || L4-7 || 10% 
+|- 
+|MUDBRAY || L4-7 || 10% 
+|- 
+|BURMY || L4-7 || 10% 
+|- 
+|ROGGENROLA || L5-6 || 10% 
+|- 
+|SENTRET || L6-8 || 10% 
+|- 
+|PATRAT || L4-6 || 10% 
+|- 
+|SPEAROW || L6-7 || 10% 
+|- 
+|SANDILE || L5-6 || 5% 
+|- 
+|HIPPOPOTAS || L4-6 || 5% 
+|- 
+|SANDSHREW || L5-7 || 4% 
+|- 
+|GRAVELER || L2-7 || 4% 
+|- 
+|GIBLE || L4-6 || 1% 
+|- 
+|GIBLE || L7 || 1% 
+|}
+Route 3
+{| class="article-table"
+|+ Land
+! Species !! Level !! Rate 
+|- 
+|GEODUDE || L4-7 || 10% 
+|- 
+|ROGGENROLA || L4-7 || 10% 
+|- 
+|ROGGENROLA || L5-6 || 10% 
+|- 
+|SILICOBRA || L5-8 || 10% 
+|- 
+|DIGLETT || L4-6 || 10% 
+|- 
+|SENTRET || L6-8 || 10% 
+|- 
+|PATRAT || L4-6 || 10% 
+|- 
+|SPEAROW || L6-7 || 10% 
+|- 
+|SANDILE || L5-6 || 5% 
+|- 
+|DIGLETT || L4-6 || 5% 
+|- 
+|SANDSHREW || L5-7 || 4% 
+|- 
+|GRAVELER || L2-7 || 4% 
+|- 
+|GIBLE || L4-6 || 1% 
+|- 
+|GIBLE || L7 || 1% 
+|}
+Diglett's Cave
+{| class="article-table"
+|+ Cave
+! Species !! Level !! Rate 
+|- 
+|DIGLETT || L4-7 || 20% 
+|- 
+|DIGLETT || L4-7 || 20% 
+|- 
+|DIGLETT || L4-7 || 10% 
+|- 
+|ZUBAT || L4-7 || 10% 
+|- 
+|ROLYCOLY || L4-7 || 10% 
+|- 
+|ROLYCOLY || L4-7 || 10% 
+|- 
+|DIGLETT || L4-7 || 5% 
+|- 
+|DIGLETT || L4-7 || 5% 
+|- 
+|DIGLETT || L4-7 || 4% 
+|- 
+|DIGLETT || L7-10 || 4% 
+|- 
+|DUGTRIO || L9 || 1% 
+|- 
+|DUGTRIO || L11 || 1% 
+|}
+Route 4
+{| class="article-table"
+|+ Land
+! Species !! Level !! Rate 
+|- 
+|ODDISH || L9-10 || 10% 
+|- 
+|WINGULL || L9-10 || 10% 
+|- 
+|NIDORANmA || L9-11 || 10% 
+|- 
+|NIDORANfE || L9-11 || 10% 
+|- 
+|SURSKIT || L8-10 || 10% 
+|- 
+|SLAKOTH || L8 || 10% 
+|- 
+|KRICKETOT || L10 || 10% 
+|- 
+|LOTAD || L10 || 10% 
+|- 
+|PANPOUR || L8-10 || 5% 
+|- 
+|DEWPIDER || L9-10 || 5% 
+|- 
+|SHELLOS || L9-10 || 4% 
+|- 
+|PINCURCHIN || L9-10 || 4% 
+|- 
+|SANDYGAST || L9-11 || 1% 
+|- 
+|SANDYGAST || L7-10 || 1% 
+|}
+{| class="article-table"
+|+ Water
+! Species !! Level !! Rate 
+|- 
+|TENTACOOL || L30-40 || 30% 
+|- 
+|PELIPPER || L30-40 || 30% 
+|- 
+|GOLDEEN || L30-40 || 20% 
+|- 
+|REMORAID || L30-40 || 18% 
+|- 
+|LAPRAS || L30-32 || 2% 
+|}
+{| class="article-table"
+|+ OldRod
+! Species !! Level !! Rate 
+|- 
+|MAGIKARP || L5-12 || 90% 
+|- 
+|MAGIKARP || L18-19 || 10% 
+|}
+{| class="article-table"
+|+ GoodRod
+! Species !! Level !! Rate 
+|- 
+|BARBOACH || L18-22 || 40% 
+|- 
+|BASCULIN || L18-22 || 40% 
+|- 
+|GYARADOS || L20 || 20% 
+|}
+{| class="article-table"
+|+ SuperRod
+! Species !! Level !! Rate 
+|- 
+|CARVANHA || L33-36 || 40% 
+|- 
+|GYARADOS || L33-36 || 30% 
+|- 
+|WHISCASH || L33-35 || 15% 
+|- 
+|SEAKING || L33-35 || 13% 
+|- 
+|DRAGONAIR || L29-30 || 2% 
+|}
+Route 15
+{| class="article-table"
+|+ Land
+! Species !! Level !! Rate 
+|- 
+|DODUO || L42-45 || 10% 
+|- 
+|SIGILYPH || L42-45 || 10% 
+|- 
+|PAWNIARD || L42-45 || 10% 
+|- 
+|PAWNIARD || L42-45 || 10% 
+|- 
+|FALINKS || L42-45 || 10% 
+|- 
+|MILTANK || L42-45 || 10% 
+|- 
+|SHELLOS || L42-45 || 10% 
+|- 
+|SHELMET || L42-45 || 10% 
+|- 
+|KARRABLAST || L42-45 || 5% 
+|- 
+|LARVESTA || L42-45 || 5% 
+|- 
+|SNOM || L42-45 || 4% 
+|- 
+|SMEARGLE || L42-45 || 4% 
+|- 
+|SMEARGLE || L46 || 1% 
+|- 
+|DODRIO || L46 || 1% 
+|}
+{| class="article-table"
+|+ Water
+! Species !! Level !! Rate 
+|- 
+|TENTACOOL || L30-40 || 30% 
+|- 
+|PELIPPER || L30-40 || 30% 
+|- 
+|GOLDEEN || L30-40 || 20% 
+|- 
+|REMORAID || L30-40 || 18% 
+|- 
+|LAPRAS || L30-32 || 2% 
+|}
+{| class="article-table"
+|+ OldRod
+! Species !! Level !! Rate 
+|- 
+|MAGIKARP || L5-12 || 90% 
+|- 
+|MAGIKARP || L18-19 || 10% 
+|}
+{| class="article-table"
+|+ GoodRod
+! Species !! Level !! Rate 
+|- 
+|BARBOACH || L18-22 || 40% 
+|- 
+|BASCULIN || L18-22 || 40% 
+|- 
+|GYARADOS || L20 || 20% 
+|}
+{| class="article-table"
+|+ SuperRod
+! Species !! Level !! Rate 
+|- 
+|CARVANHA || L33-36 || 40% 
+|- 
+|GYARADOS || L33-36 || 30% 
+|- 
+|WHISCASH || L33-35 || 15% 
+|- 
+|SEAKING || L33-35 || 13% 
+|- 
+|DRAGONAIR || L29-30 || 2% 
+|}
+Route 4
+{| class="article-table"
+|+ Land
+! Species !! Level !! Rate 
+|- 
+|BLIPBUG || L7-9 || 10% 
+|- 
+|PIKIPEK || L7-9 || 10% 
+|- 
+|SCATTERBUG || L7-9 || 10% 
+|- 
+|BLIPBUG || L7-9 || 10% 
+|- 
+|WURMPLE || L7-9 || 10% 
+|- 
+|LEDYBA || L7-8 || 10% 
+|- 
+|SPINARAK || L6-8 || 10% 
+|- 
+|NATU || L7-10 || 10% 
+|- 
+|SEEDOT || L8 || 5% 
+|- 
+|CHERUBI || L8 || 5% 
+|- 
+|SEWADDLE || L8 || 4% 
+|- 
+|BUDEW || L8-9 || 4% 
+|- 
+|DUSTOX || L10 || 1% 
+|- 
+|BEAUTIFLY || L10 || 1% 
+|}
+{| class="article-table"
+|+ HeadbuttLow
+! Species !! Level !! Rate 
+|- 
+|MUNCHLAX || L15 || 30% 
+|- 
+|MUNCHLAX || L16 || 25% 
+|- 
+|MUNCHLAX || L17 || 20% 
+|- 
+|MUNCHLAX || L20 || 10% 
+|- 
+|MUNCHLAX || L18 || 5% 
+|- 
+|MUNCHLAX || L19 || 5% 
+|- 
+|MUNCHLAX || L20 || 4% 
+|- 
+|FORRETRESS || L21 || 1% 
+|}
+{| class="article-table"
+|+ HeadbuttHigh
+! Species !! Level !! Rate 
+|- 
+|PINECO || L15 || 30% 
+|- 
+|PINECO || L16 || 25% 
+|- 
+|PINECO || L17 || 20% 
+|- 
+|PINECO || L20 || 10% 
+|- 
+|METAPOD || L18 || 5% 
+|- 
+|METAPOD || L19 || 5% 
+|- 
+|KAKUNA || L20 || 4% 
+|- 
+|KAKUNA || L21 || 1% 
+|}
+Iron Town
+{| class="article-table"
+|+ Land
+! Species !! Level !! Rate 
+|- 
+|DRILBUR || L19-23 || 10% 
+|- 
+|MAGNEMITE || L19-23 || 10% 
+|- 
+|SKARMORY || L19-23 || 10% 
+|- 
+|GURDURR || L19-23 || 10% 
+|- 
+|MAGNEMITE || L19-23 || 10% 
+|- 
+|CARBINK || L19-23 || 10% 
+|- 
+|CHARJABUG || L19-23 || 10% 
+|- 
+|FERROSEED || L19-23 || 10% 
+|- 
+|BRONZOR || L19-23 || 5% 
+|- 
+|MAWILE || L19-23 || 5% 
+|- 
+|BELDUM || L19-23 || 4% 
+|- 
+|ARON || L19-23 || 4% 
+|- 
+|MAGNETON || L25 || 1% 
+|- 
+|EXCADRILL || L25 || 1% 
+|}
+{| class="article-table"
+|+ Water
+! Species !! Level !! Rate 
+|- 
+|BUIZEL || L19-30 || 30% 
+|- 
+|SHELLDER || L25-30 || 30% 
+|- 
+|SLOWPOKE || L25-27 || 20% 
+|- 
+|MANTYKE || L20-25 || 18% 
+|- 
+|FLOATZEL || L25-27 || 2% 
+|}
+{| class="article-table"
+|+ OldRod
+! Species !! Level !! Rate 
+|- 
+|MAGIKARP || L5-12 || 90% 
+|- 
+|MAGIKARP || L18-19 || 10% 
+|}
+{| class="article-table"
+|+ GoodRod
+! Species !! Level !! Rate 
+|- 
+|BARBOACH || L18-22 || 40% 
+|- 
+|BASCULIN || L18-22 || 40% 
+|- 
+|GYARADOS || L20 || 20% 
+|}
+{| class="article-table"
+|+ SuperRod
+! Species !! Level !! Rate 
+|- 
+|SLOWBRO || L30-33 || 40% 
+|- 
+|POLIWAG || L30-35 || 30% 
+|- 
+|POLIWHIRL || L32-33 || 15% 
+|- 
+|FLOATZEL || L30 || 13% 
+|- 
+|MANTYKE || L30 || 2% 
+|}
+Diglett's Cave
+{| class="article-table"
+|+ Cave
+! Species !! Level !! Rate 
+|- 
+|DIGLETT || L41-44 || 20% 
+|- 
+|ZUBAT || L41-44 || 20% 
+|- 
+|DUGTRIO || L41-44 || 10% 
+|- 
+|GOLBAT || L41-44 || 10% 
+|- 
+|DIGLETT || L41-44 || 10% 
+|- 
+|CARKOL || L41-44 || 10% 
+|- 
+|SLUGMA || L41-44 || 5% 
+|- 
+|SLUGMA || L41-44 || 5% 
+|- 
+|DRILBUR || L41-44 || 4% 
+|- 
+|WOOBAT || L41-44 || 4% 
+|- 
+|SWOOBAT || L45 || 1% 
+|- 
+|DUGTRIO || L48 || 1% 
+|}
+{| class="article-table"
+|+ Water
+! Species !! Level !! Rate 
+|- 
+|ZUBAT || L37-39 || 30% 
+|- 
+|GOLBAT || L38-40 || 30% 
+|- 
+|WOOBAT || L39-41 || 20% 
+|- 
+|BASCULIN || L39-41 || 18% 
+|- 
+|MAGIKARP || L40-41 || 2% 
+|}
+{| class="article-table"
+|+ OldRod
+! Species !! Level !! Rate 
+|- 
+|MAGIKARP || L5-12 || 90% 
+|- 
+|MAGIKARP || L18-19 || 10% 
+|}
+{| class="article-table"
+|+ GoodRod
+! Species !! Level !! Rate 
+|- 
+|BARBOACH || L18-22 || 40% 
+|- 
+|BASCULIN || L18-22 || 40% 
+|- 
+|WHISCASH || L20 || 20% 
+|}
+{| class="article-table"
+|+ SuperRod
+! Species !! Level !! Rate 
+|- 
+|MAGIKARP || L35-41 || 40% 
+|- 
+|BARBOACH || L35-41 || 30% 
+|- 
+|BASCULIN || L35-41 || 15% 
+|- 
+|WHISCASH || L34-38 || 13% 
+|- 
+|FEEBAS || L25-38 || 2% 
+|}
+Germanium Village
+{| class="article-table"
+|+ Water
+! Species !! Level !! Rate 
+|- 
+|TENTACOOL || L30-40 || 30% 
+|- 
+|PELIPPER || L30-40 || 30% 
+|- 
+|GOLDEEN || L30-40 || 20% 
+|- 
+|REMORAID || L30-40 || 18% 
+|- 
+|LAPRAS || L30-32 || 2% 
+|}
+{| class="article-table"
+|+ OldRod
+! Species !! Level !! Rate 
+|- 
+|MAGIKARP || L5-12 || 90% 
+|- 
+|MAGIKARP || L18-19 || 10% 
+|}
+{| class="article-table"
+|+ GoodRod
+! Species !! Level !! Rate 
+|- 
+|BARBOACH || L18-22 || 40% 
+|- 
+|BASCULIN || L18-22 || 40% 
+|- 
+|GYARADOS || L20 || 20% 
+|}
+{| class="article-table"
+|+ SuperRod
+! Species !! Level !! Rate 
+|- 
+|CARVANHA || L33-36 || 40% 
+|- 
+|GYARADOS || L33-36 || 30% 
+|- 
+|WHISCASH || L33-35 || 15% 
+|- 
+|SEAKING || L33-35 || 13% 
+|- 
+|DRAGONAIR || L29-30 || 2% 
+|}
+{| class="article-table"
+|+ LandMorning
+! Species !! Level !! Rate 
+|- 
+|SQUIRTLE || L5 || 10% 
+|- 
+|TOTODILE || L5 || 10% 
+|- 
+|MUDKIP || L5 || 10% 
+|- 
+|OSHAWOTT || L5 || 10% 
+|- 
+|PIPLUP || L5 || 10% 
+|- 
+|FROAKIE || L5 || 10% 
+|- 
+|POPPLIO || L5 || 10% 
+|- 
+|SOBBLE || L5 || 10% 
+|- 
+|CAULDREAM || L5 || 5% 
+|- 
+|CAULDREAM || L5 || 5% 
+|- 
+|CAULDREAM || L5 || 4% 
+|- 
+|CRUCIBLEAK || L16 || 4% 
+|- 
+|CRUCIBLEAK || L25 || 1% 
+|- 
+|CAULDREAD || L36 || 1% 
+|}
+{| class="article-table"
+|+ LandDay
+! Species !! Level !! Rate 
+|- 
+|CHARMANDER || L5 || 10% 
+|- 
+|CYNDAQUIL || L5 || 10% 
+|- 
+|TORCHIC || L5 || 10% 
+|- 
+|TEPIG || L5 || 10% 
+|- 
+|CHIMCHAR || L5 || 10% 
+|- 
+|FENNEKIN || L5 || 10% 
+|- 
+|LITTEN || L5 || 10% 
+|- 
+|SCORBUNNY || L5 || 10% 
+|- 
+|CLOWD || L5 || 5% 
+|- 
+|CLOWD || L5 || 5% 
+|- 
+|CLOWD || L5 || 4% 
+|- 
+|STORRM || L16 || 4% 
+|- 
+|STORRM || L25 || 1% 
+|- 
+|GALEFRONT || L36 || 1% 
+|}
+{| class="article-table"
+|+ LandNight
+! Species !! Level !! Rate 
+|- 
+|BULBASAUR || L5 || 10% 
+|- 
+|CHIKORITA || L5 || 10% 
+|- 
+|TREECKO || L5 || 10% 
+|- 
+|TURTWIG || L5 || 10% 
+|- 
+|SNIVY || L5 || 10% 
+|- 
+|CHESPIN || L5 || 10% 
+|- 
+|ROWLET || L5 || 10% 
+|- 
+|GROOKEY || L5 || 10% 
+|- 
+|PHOTOWYRM || L5 || 5% 
+|- 
+|PHOTOWYRM || L5 || 5% 
+|- 
+|PHOTOWYRM || L5 || 4% 
+|- 
+|CHROMASP || L16 || 4% 
+|- 
+|CHROMASP || L25 || 1% 
+|- 
+|CHORDALUX || L36 || 1% 
+|}
+Victory Cave
+{| class="article-table"
+|+ Cave
+! Species !! Level !! Rate 
+|- 
+|DURALUDON || L47-52 || 20% 
+|- 
+|SHELGON || L47-53 || 20% 
+|- 
+|EELEKTRIK || L47-54 || 10% 
+|- 
+|LAIRON || L47-53 || 10% 
+|- 
+|LUNATONE || L47-53 || 10% 
+|- 
+|SOLROCK || L47-53 || 10% 
+|- 
+|CLAYDOL || L47-58 || 5% 
+|- 
+|ELGYEM || L47-52 || 5% 
+|- 
+|DRUDDIGON || L48-53 || 4% 
+|- 
+|PUPITAR || L49-52 || 4% 
+|- 
+|DOUBLADE || L49-50 || 1% 
+|- 
+|DEINO || L49-50 || 1% 
+|}
+{| class="article-table"
+|+ Water
+! Species !! Level !! Rate 
+|- 
+|TENTACRUEL || L40-50 || 30% 
+|- 
+|BRONZONG || L30-50 || 30% 
+|- 
+|GOLBAT || L30-46 || 20% 
+|- 
+|OCTILLERY || L30-46 || 18% 
+|- 
+|DRUDDIGON || L30-46 || 2% 
+|}
+{| class="article-table"
+|+ OldRod
+! Species !! Level !! Rate 
+|- 
+|MAGIKARP || L5-12 || 90% 
+|- 
+|MAGIKARP || L18-19 || 10% 
+|}
+{| class="article-table"
+|+ GoodRod
+! Species !! Level !! Rate 
+|- 
+|BARBOACH || L18-22 || 40% 
+|- 
+|BASCULIN || L18-22 || 40% 
+|- 
+|CLAMPERL || L20 || 20% 
+|}
+{| class="article-table"
+|+ SuperRod
+! Species !! Level !! Rate 
+|- 
+|CRAWDAUNT || L33-36 || 40% 
+|- 
+|BASCULIN || L33-36 || 30% 
+|- 
+|WHISCASH || L33-35 || 15% 
+|- 
+|HUNTAIL || L33-35 || 13% 
+|- 
+|GOREBYSS || L29-30 || 2% 
+|}
