@@ -270,7 +270,7 @@
 270,DRAGONSMAW,Dragon's Maw,"Boosts the power of Dragon-type moves.",
 271,STELLARRADIATION,Stellar Aura,"Negates the power of Legendite.",
 272,ANGERSHELL,Anger Shell,"When HP drops below half, Defense and Sp. Def drop, but Attack, Sp. Atk, and Speed raise.",
-273,ROCKPAYLOAD,Rocky Payload,"Powers up Rock-type moves.",
+273,ROCKYPAYLOAD,Rocky Payload,"Powers up Rock-type moves.",
 274,GOODASGOLD,Good as Gold,"Gives full immunity to status moves from other Pokémon.",
 275,WINDRIDER,Wind Rider,"Boosts Attack if Tailwind takes effect or if the Pokémon is hit by a wind move.",
 276,COSTAR,Co-star,"When the Pokémon enters a battle, it copies an ally's stat changes.",
@@ -287,6 +287,18 @@
 287,ELECRTROMORPHISIS,Electromorphisis,"The user becomes charged up if hit by an Electric-type attack.",
 288,TOXICDEBRIS,Toxic Debris,"If the Pokémon takes physical damage it scatters toxic spikes.",
 289,EARTHEATER,Earth Eater,"If hit by a Ground-type move, the Pokémon has its HP restored instead of taking damage.",
-
+290,BEADSOFRUIn,Beads of Ruin,"",
+291,CUDCHEW,Cud Chew,"",
+292,GUARDDOG,Guard Dog,"",
+293,HADRONENGINE,Hadron Engine,"",
+294,LINGERINGAROMA,Lingering Aroma,"",
+295,OPPORTUNIST,Opportunist,"",
+296,ORICHALCUMPULSE,Orichalcum Pulse,"",
+297,SWORDOFRUIN,Sword of Ruin,"",
+298,TABLETSOFRUIN,Tablets of Ruin,"",
+299,THERMALEXCHANGE,Thermal Exchange,"",
+300,VESSELOFRUIN,Vessel of Ruin,"",
+301,WINDPOWER,Wind Power,"",
+302,ZEROTOHERO,Zero to Hero,"",
 
 
