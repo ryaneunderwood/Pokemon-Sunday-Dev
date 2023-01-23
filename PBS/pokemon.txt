@@ -27353,7 +27353,7 @@ Color=Yellow
 Shape=6
 Kind=Mouse
 Pokedex=When its group is attacked, Pawmo is the first to leap into battle, defeating enemies with a fighting technique that utilizes electric shocks.
-Evolutions=PAWMOT,None,
+Evolutions=PAWMOT,Level,36
 RegionalNumbers=0,0,0,0,0,0,0,0,0,17
 #-------------------------------
 [938]
@@ -28094,7 +28094,7 @@ Color=Brown
 Shape=10
 Kind=Tumbleweed
 Pokedex=A soul unable to move on to the afterlife was blown around by the wind until it got tangled up with dried grass and became a Pokémon.
-Evolutions=BRAMBLEGHAST,None,
+Evolutions=BRAMBLEGHAST,Level,36
 RegionalNumbers=0,0,0,0,0,0,0,0,0,45
 #-------------------------------
 [966]
@@ -28278,7 +28278,7 @@ Color=Brown
 Shape=4
 Kind=Rolling
 Pokedex=This Pokémon creates a mud ball by mixing sand and dirt with psychic energy. It treasures its mud ball more than its own life.
-Evolutions=RABSCA,None,
+Evolutions=RABSCA,Level,36
 RegionalNumbers=0,0,0,0,0,0,0,0,0,52
 #-------------------------------
 [973]
@@ -28686,7 +28686,7 @@ BaseStats=48,35,42,60,105,60
 GenderRate=Female50Percent
 GrowthRate=Parabolic
 BaseEXP=75
-EffortPoints=0,0,0,01,0
+EffortPoints=0,0,0,0,1,0
 Rareness=70
 Happiness=50
 Abilities=TOXICDEBRIS
@@ -28873,7 +28873,7 @@ GrowthRate=Medium
 BaseEXP=220
 EffortPoints=0,3,0,0,0,0
 Rareness=25
-Happiness=
+Happiness=50
 Abilities=DEFIANT,SUPREMEOVERLORD
 HiddenAbilities=PRESSURE
 Moves=0,KOWTOWCLEAVE,1,METALBURST,1,METALCLAW,1,FURYCUTTER,1,SCRATCH,1,LEER,15,TORMENT,20,SCARYFACE,25,ASSURANCE,30,METALSOUND,35,SLASH,40,NIGHTSLASH,45,IRONDEFENSE,50,RETALIATE,57,IRONHEAD,64,SWORDSDANCE,71,GUILLOTINE
@@ -29373,7 +29373,7 @@ Shape=11
 Kind=Coin Chest
 Pokedex=This Pokémon was born inside a treasure chest about 1,500 years ago. It sucks the life-force out of scoundrels who try to steal the treasure.
 FormName=Chest
-Evolutions=GHOLDENGO,None,
+Evolutions=GHOLDENGO,Level,36
 RegionalNumbers=0,0,0,0,0,0,0,0,0,94
 #-------------------------------
 [1015]

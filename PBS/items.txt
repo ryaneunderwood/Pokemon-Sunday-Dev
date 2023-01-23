@@ -698,6 +698,36 @@
 711,ADAMANTCRYSTAL,Adamant Crystal,Adamant Crystals,8,0,"When used on Dialga, this large, glowing gem wells with power and allows the Pokémon to change form.",5,0,6
 712,LUSTROUSGLOBE,Lustrous Globe,Lustrous Globes,8,0,"When used on Palkia, this large, glowing orb wells with power and allows the Pokémon to change form.",5,0,6
 713,GRISEOUSCORE,Griseous Core,Griseous Cores,8,0,"When used on Giratina, this large, glowing gem wells with power and allows the Pokémon to change form.",5,0,6
+714,ABILITYSHIELD,Ability Shield,Ability Shields,1,20000,"This item protects the holder from moves that will change its Ability and Abilities that change the Ability.",0,0,0
+715,AUSPICIOUSARMOR,Auspicious Armor,Auspicious Armors,6,3000,"A peculiar set of armor that can make a certain species of Pokémon evolve. Auspicious wishes live within it.",1,0,7
+716,BOOSTERENERGY,Booster Energy,Booster Energies,1,4000,"An item to be held by Pokémon with certain Abilities. The energy that fills this capsule boosts the strength of the Pokémon.",0,0,0,
+717,CLEARAMULET,Clear Amulet,Clear Amulets,1,30000,"An item to be held. This protects the holder from having its stats lowered by moves used against it or by other Pokémon's Abilities.",0,0,0,
+718,COVERTCLOAK,Covert Cloak,Covert Cloaks,1,20000,"An item to be held by a Pokémon. This hooded cloak conceals the holder, protecting it from the additional effects of moves.",0,0,0,
+719,GIMMIGHOULCOIN,Gimmighoul Coin,Gimmighoul Coins,6,400,"Material accidentally dropped by a Pokémon. It seems that Gimmighoul treasure and hoard these.",5,0,6
+720,LEADERSCREST,Leader's Crest,Leader's Crests,1,3000,"A shard of what appears to be an old blade. It is held by Bisharp that lead a group of Pawniard.",5,0,6
+721,MALICIOUSARMOR,Malicious Armor,Malicious Armors,6,3000,"A peculiar set of armor that can make a certain species of Pokémon evolve. Malicious will lurks within it.",5,0,6
+722,MIRRORHERB,Mirror Herb,Mirror Herbs,1,30000,"An item to be held by a Pokémon. This herb will allow the holder to mirror an opponent's stat increases to boost its own stats—but only once.",0,0,0
+723,BIGBAMBOOSHOOT,Big Bamboo Shoot,Big Bamboo Shoots,6,3000,"A large and rare bamboo shoot. It’s extremely popular with a certain class of gourmands.",0,0,0,
+724,TINYBAMBOOSHOOT,Tiny Bamboo Shoot,Tiny Bamboo Shoots,6,750,"A small and rare bamboo shoot. It’s quite popular with a certain class of gourmands.",0,0,0,
+725,BUGTERASHARD,Bug Tera Shard,Bug Tera Shards,6,5000,"On rare occasions, these shards form when a Tera Pokémon falls in battle and its Tera Jewel shatters.",0,0,0,
+726,DARKTERASHARD,Dark Tera Shard,Dark Tera Shards,6,5000,"On rare occasions, these shards form when a Tera Pokémon falls in battle and its Tera Jewel shatters.",0,0,0,
+727,DRAGONTERASHARD,Dragon Tera Shard,Dragon Tera Shards,6,5000,"On rare occasions, these shards form when a Tera Pokémon falls in battle and its Tera Jewel shatters.",0,0,0,
+728,ELECTRICTERASHARD,Electric Tera Shard,Electric Tera Shards,6,5000,"On rare occasions, these shards form when a Tera Pokémon falls in battle and its Tera Jewel shatters.",0,0,0,
+729,FAIRYTERASHARD,Fairy Tera Shard,Fairy Tera Shards,6,5000,"On rare occasions, these shards form when a Tera Pokémon falls in battle and its Tera Jewel shatters.",0,0,0,
+730,FIGHTINGTERASHARD,Fighting Tera Shard,Fighting Tera Shards,6,5000,"On rare occasions, these shards form when a Tera Pokémon falls in battle and its Tera Jewel shatters.",0,0,0,
+731,FIRETERASHARD,Fire Tera Shard,Fire Tera Shards,6,5000,"On rare occasions, these shards form when a Tera Pokémon falls in battle and its Tera Jewel shatters.",0,0,0,
+732,FLYINGTERASHARD,Flying Tera Shard,Flying Tera Shards,6,5000,"On rare occasions, these shards form when a Tera Pokémon falls in battle and its Tera Jewel shatters.",0,0,0,
+733,GHOSTTERASHARD,Ghost Tera Shard,Ghost Tera Shards,6,5000,"On rare occasions, these shards form when a Tera Pokémon falls in battle and its Tera Jewel shatters.",0,0,0,
+734,GRASSTERASHARD,Grass Tera Shard,Grass Tera Shards,6,5000,"On rare occasions, these shards form when a Tera Pokémon falls in battle and its Tera Jewel shatters.",0,0,0,
+735,GROUNDTERASHARD,Ground Tera Shard,Ground Tera Shards,6,5000,"On rare occasions, these shards form when a Tera Pokémon falls in battle and its Tera Jewel shatters.",0,0,0,
+736,ICETERASHARD,Ice Tera Shard,Ice Tera Shards,6,5000,"On rare occasions, these shards form when a Tera Pokémon falls in battle and its Tera Jewel shatters.",0,0,0,
+737,LIGHTTERASHARD,Light Tera Shard,Light Tera Shards,6,5000,"On rare occasions, these shards form when a Tera Pokémon falls in battle and its Tera Jewel shatters.",0,0,0,
+738,NORMALTERASHARD,Normal Tera Shard,Normal Tera Shards,6,5000,"On rare occasions, these shards form when a Tera Pokémon falls in battle and its Tera Jewel shatters.",0,0,0,
+739,POISONTERASHARD,Poison Tera Shard,Poison Tera Shards,6,5000,"On rare occasions, these shards form when a Tera Pokémon falls in battle and its Tera Jewel shatters.",0,0,0,
+740,PSYCHICTERASHARD,Psychic Tera Shard,Psychic Tera Shards,6,5000,"On rare occasions, these shards form when a Tera Pokémon falls in battle and its Tera Jewel shatters.",0,0,0,
+741,ROCKTERASHARD,Rock Tera Shard,Rock Tera Shards,6,5000,"On rare occasions, these shards form when a Tera Pokémon falls in battle and its Tera Jewel shatters.",0,0,0,
+742,STEELTERASHARD,Steel Tera Shard,Steel Tera Shards,6,5000,"On rare occasions, these shards form when a Tera Pokémon falls in battle and its Tera Jewel shatters.",0,0,0,
+743,WATERTERASHARD,Water Tera Shard,Water Tera Shards,6,5000,"On rare occasions, these shards form when a Tera Pokémon falls in battle and its Tera Jewel shatters.",0,0,0,
 1000,EXPALL,Exp. Share,Exp. Shares,8,0,"Turning on this special device will allow all the Pokémon on your team to receive Exp. Points from battles.",2,0,6,
 1001,EXPALLOFF,Exp. Share,Exp. Shares,8,0,"Turning on this special device will allow all the Pokémon on your team to receive Exp. Points from battles.",2,0,6,
 1002,OAKSPARCEL,Oak's Parcel,Oak's Parcels,8,0,"A parcel to be delivered to Prof. Oak from Viridian City's Pokémon Mart.",0,0,6,
@@ -928,3 +958,4 @@
 1435,CHORDALUXITE,Chordaluxite,Chordaluxites,1,0,"One of the mysterious Mega Stones. Have Chordalux hold it, and this stone will enable it to Mega Evolve in battle.",0,0,12,
 1436,ABFBALL,Argon Beachfront Ball,Argon Beachfront Balls,3,200,"A device for catching wild Pokémon. It is thrown like a ball at the target. It is designed as a capsule system.",0,2,4,
 1437,RT16BALL,Route 16 Ball,Route 16 Balls,3,200,"A device for catching wild Pokémon. It is thrown like a ball at the target. It is designed as a capsule system.",0,2,4,
+
