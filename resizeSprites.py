@@ -11,8 +11,9 @@ for f in folder:
                 #print(directory+filename,' 2')
                 if image.size[0]==288:
                     print(f+filename)
-                    new_image=image.resize((1/3*image.size[0],1/3*image.size[1]), Image.NEAREST)
-                    new_image=new_image.resize((2*new_image.size[0],2*new_image.size[1]), Image.NEAREST)
+                    new_image=image.resize((int(0.6667*image.size[0]),int(0.6667*image.size[1])), Image.NEAREST)
+                    print('a')
+                    #new_image=new_image.resize((2*new_image.size[0],2*new_image.size[1]), Image.NEAREST)
                     new_image.save(directory+f+filename)
             except:
                 print(f+filename, "failed to load image")
