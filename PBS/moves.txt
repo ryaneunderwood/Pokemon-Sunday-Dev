@@ -843,4 +843,4 @@
 918,DOUBLESHOCK,Double Shock,A11,120,ELECTRIC,Physical,100,5,10,00,0,abef,"The user attacks by discharging all of its electricity. The user will no longer be Electric type."
 919,GIGATONHAMMER,Gigaton Hammer,A11,160,STEEL,Physical,100,5,10,00,0,bef,"The user attacks with its huge hammer. This move can't be used twice in a row."
 920,COMEUPPANCE,Comeuppance,A11,1,DARK,Physical,100,10,10,01,0,abef,"The user retaliates with much greater force against the opponent that last inflicted damage on it."
-921,AQUACUTTER,Comeuppance,A11,1,DARK,Physical,100,10,10,01,0,abef,"The user retaliates with much greater force against the opponent that last inflicted damage on it."
+921,AQUACUTTER,Aqua Cutter,000,70,WATER,Physical,100,20,0,00,0,befh,"This move has a heightened chance of landing a critical hit." 
