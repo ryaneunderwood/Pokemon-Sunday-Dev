@@ -865,3 +865,4 @@
 940,PSYCHICNOISE,Psychic Noise,FFF,75,PSYCHIC,Special,100,10,100,00,0,befk,"Attacks the target with unpleasant sound waves. Prevents the target from healing for two turns."
 941,UPPERHAND,Upper Hand,FFF,65,FIGHTING,Physical,100,15,100,00,3,abe,"An attack that hits first and makes the target flinch. Fails if the target isn't using a high priority move."
 942,MALIGNANTCHAIN,Malignant Chain,FFF,100,POISON,Special,100,5,50,00,0,bef,"Wraps the target in a toxic, corrosive chain. This may also leave the target badly poisoned."
+943,TERABLAST,Terablast,,FFF,100,POISON,Special,100,5,50,00,0,bef,"Wraps the target in a toxic, corrosive chain. This may also leave the target badly poisoned."
