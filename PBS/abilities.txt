@@ -312,4 +312,4 @@
 312,TERASHIFT,Tera Shift,"Enters Terastal Form when sent out.",
 313,TERASHELL,Tera Shell,"Resists all types when HP is full.",
 314,TERAFORMZERO,Teraform Zero,"Eliminates all weather and terrain.",
-315,SNOWFORT,Snowfort,"",
+315,SNOWFORT,Snowfort,"The user is healed by 1/4 for each turn in hail.",
