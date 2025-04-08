@@ -248,7 +248,7 @@ MURKROW,13
 SUPERNERD
 Muhammad
 2
-ABSOL,13
+TARFELON,14
 IMPIDIMP,14
 #-------------------
 LEADER_Praxidike
