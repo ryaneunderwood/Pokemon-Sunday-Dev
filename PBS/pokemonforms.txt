@@ -1779,6 +1779,18 @@ Type1=FAIRY
 Type2=LIGHT
 Evolutions=
 #-------------------------------
+[FLOETTE-6]
+FormName=Mega Floette
+BaseStats=74,85,87,102,155,148
+MegaStone=FLOETTITE
+BaseEXP=243
+BattlerPlayerY=15
+BattlerEnemyY=19
+Abilities=MAGICGUARD
+Type1=FAIRY
+Type2=LIGHT
+Evolutions=
+#-------------------------------
 [FLORGES-1]
 FormName=Yellow Flower
 #-------------------------------
