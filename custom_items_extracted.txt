@@ -1,0 +1,5218 @@
+
+====================================================================================================
+FOUND LEGENDITE AT OFFSET 197109
+====================================================================================================
+
+
+Context starting at line 66:
+
+    p2=createPokemon("SEISMITOAD",lVL)
+    p2.pbLearnMove(:SLUDGEWAVE)
+    p2.pbLearnMove(:EARTHQUAKE)
+    p2.pbLearnMove(:SURF)
+    p2.pbLearnMove(:DRAINPUNCH)
+    p2.iv[1]=31
+    p2.iv[2]=31
+    p2.iv[3]=31
+    p2.ev[0]=250
+    p2.ev[3]=150
+    p2.setItem(:LEGENDITE)
+    p2.setAbility(2)
+    
+    p3=createPokemon("LAPRAS",lVL)
+    p3.pbLearnMove(:PERISHSONG)
+    p3.pbLearnMove(:ICEBEAM)
+    p3.pbLearnMove(:WHIRLPOOL)
+    p3.pbLearnMove(:SHEERCOLD)
+    p3.iv[4]=31
+    p3.iv[2]=31
+    p3.iv[3]=31
+    p3.ev[4]=250
+    p3.ev[5]=150
+    p3.setItem(:LAPRASITE)
+    
+    p4=createPokemon("ROTOM",lVL)
+    p4.pbLearnMove(:WILLOWISP)
+    p4.pbLearnMove(:HYDROPUMP)
+    p4.pbLearnMove(:VOLTSWITCH)
+    p4.pbLearnMove(:PAINSPLIT)
+    p4.iv[5]=31
+    p4.iv[4]=31
+    p4.iv[1]=31
+    p4.ev[0]=250
+    p4.ev[3]=150
+    p4.setItem(:SPLASHPLATE)
+    p4.form=2
+    
+    p5=createPokemon("SUICUNE",lVL)
+    p5.pbLearnMove(:CALMMIND)
+    p5.pbLearnMove(:REST)
+    p5.pbLearnMove(:SLEEPTALK)
+    p5.pbLearnMove(:SCALD)
+    p5.iv[2]=31
+    p5.iv[4]=31
+    p5.iv[0]=31
+    p5.ev[4]=250
+    p5.ev[5]=150
+    p5.setItem(:LEFTOVERS)
+    p5.makeShiny
+    
+    p6=createPokemon("DRACOVISH",lVL)
+    p6.pbLearnMove(:FISHIOUSREND)
+    p6.pbLearnMove(:DRACOMETEOR)
+    p6.pbLearnMove(:ICEFANG)
+    p6.pbLearnMove(:CRUNCH)
+    p6.setAbility(0)
+    p6.iv[1]=31
+    p6.iv[5]=31
+    p6.iv[3]=31
+
+
+
+Context starting at line 143:
+
+    p8.pbLearnMove(:PSYCHICFANGS)
+    p8.pbLearnMove(:ICEFANG)
+    p8.pbLearnMove(:POISONFANG)
+    p8.pbLearnMove(:WATERFALL)
+    p8.setAbility(0)
+    p8.iv[0]=31
+    p8.iv[1]=31
+    p8.iv[3]=31
+    p8.ev[3]=250
+    p8.ev[5]=150
+    p8.setItem(:LEGENDITE)
+    
+    p9=createPokemon("OMASTAR",lVL)
+    p9.pbLearnMove(:SHELLSMASH)
+    p9.pbLearnMove(:SCALD)
+    p9.pbLearnMove(:ICEBEAM)
+    p9.pbLearnMove(:ANCIENTPOWER)
+    p9.setAbility(2)
+    p9.iv[0]=31
+    p9.iv[4]=31
+    p9.iv[3]=31
+    p9.ev[3]=250
+    p9.ev[4]=150
+    p9.setItem(:WHITEHERB)
+        
+  elsif e4Trainer ==2
+    Kernel.pbMessage(_INTL("I am Io, a master of Fire-type Pokemon."))
+    Kernel.pbMessage(_INTL("I will take you down as an inferno of flames surround you!"))
+    
+    p0 = createPokemon("TYPHLOSION", lVL)
+    p0.pbLearnMove(:SUNNYDAY)
+    p0.pbLearnMove(:BLASTBURN)
+    p0.pbLearnMove(:SOLARBEAM)
+    p0.pbLearnMove(:SHADOWCLAW)
+    p0.iv[3]=31
+    p0.iv[4]=31
+    p0.iv[5]=31
+    p0.ev[3]=250
+    p0.ev[5]=150
+    p0.setItem(:HEATROCK)
+    p0.setAbility(2)
+    
+    p1 = createPokemon("DARMANITAN", lVL)
+    p1.pbLearnMove(:ZENHEADBUTT)
+    p1.pbLearnMove(:ICEPUNCH)
+    p1.pbLearnMove(:SOLARFISTS)
+    p1.pbLearnMove(:FIREPUNCH)
+    p1.iv[2]=31
+    p1.iv[4]=31
+    p1.iv[3]=31
+    p1.iv[0]=31
+    p1.iv[1]=20
+    p1.ev[2]=250
+    p1.ev[1]=250
+    p1.setItem(:LEFTOVERS)
+    p1.form=1
+    p1.setAbility(2)
+    
+    p2 = createPokemon("HOUNDOOM", lVL)
+    p2.pbLearnMove(:DARKPULSE)
+
+
+
+Context starting at line 201:
+
+    p2 = createPokemon("HOUNDOOM", lVL)
+    p2.pbLearnMove(:DARKPULSE)
+    p2.pbLearnMove(:FLAMETHROWER)
+    p2.pbLearnMove(:NASTYPLOT)
+    p2.pbLearnMove(:SUBSTITUTE)
+    p2.iv[0]=31
+    p2.iv[5]=31
+    p2.iv[4]=31
+    p2.ev[4]=250
+    p2.ev[3]=150
+    p2.setItem(:LEGENDITE)
+    p2.setAbility(1)
+    p2.makeShiny
+    
+    p3 = createPokemon("VOLCARONA", lVL)
+    p3.pbLearnMove(:WILLOWISP)
+    p3.pbLearnMove(:HIDDENPOWER)
+    p3.pbLearnMove(:MORNINGSUN)
+    p3.pbLearnMove(:FIERYDANCE)
+    p3.iv[1]=31
+    p3.iv[5]=31
+    p3.iv[3]=31
+    p3.ev[3]=250
+    p3.ev[0]=150
+    p3.setItem(:FLAMEPLATE)
+    p3.setAbility(2)
+    
+    p4 = createPokemon("ROTOM", lVL)
+    p4.pbLearnMove(:OVERHEAT)
+    p4.pbLearnMove(:VOLTSWITCH)
+    p4.pbLearnMove(:PAINSPLIT)
+    p4.pbLearnMove(:HEX)
+    p4.iv[2]=31
+    p4.iv[3]=31
+    p4.iv[0]=31
+    p4.ev[4]=150
+    p4.ev[5]=250
+    p4.form=1
+    p4.setItem(:WHITEHERB)
+    
+    p5 = createPokemon("ENTEI", lVL)
+    p5.pbLearnMove(:EXTREMESPEED)
+    p5.pbLearnMove(:FLAREBLITZ)
+    p5.pbLearnMove(:STONEEDGE)
+    p5.pbLearnMove(:CALMMIND)
+    p5.iv[3]=31
+    p5.iv[1]=31
+    p5.iv[5]=31
+    p5.ev[1]=150
+    p5.ev[2]=250
+    p5.setItem(:CHOICEBAND)
+    
+    p6 = createPokemon("TURTONATOR", lVL)
+    p6.pbLearnMove(:FIREBLAST)
+    p6.pbLearnMove(:SHELLSMASH)
+    p6.pbLearnMove(:DRACOMETEOR)
+    p6.pbLearnMove(:DRAGONPULSE)
+    p6.iv[0]=31
+    p6.iv[1]=31
+    p6.iv[5]=31
+
+
+
+Context starting at line 265:
+
+    p7 = createPokemon("TORRACAT", lVL)
+    p7.pbLearnMove(:KNOCKOFF)
+    p7.pbLearnMove(:ACROBATICS)
+    p7.pbLearnMove(:FIREFANG)
+    p7.pbLearnMove(:BULKUP)
+    p7.iv[0]=31
+    p7.iv[1]=31
+    p7.iv[5]=31
+    p7.ev[3]=150
+    p7.ev[1]=250
+    p7.setItem(:LEGENDITE)
+    p7.setAbility(1)
+    
+    p8 = createPokemon("CENTISKORCH", lVL)
+    p8.pbLearnMove(:LUNGE)
+    p8.pbLearnMove(:FIRELASH)
+    p8.pbLearnMove(:POWERWHIP)
+    p8.pbLearnMove(:COIL)
+    p8.iv[0]=31
+    p8.iv[1]=31
+    p8.iv[5]=31
+    p8.ev[1]=150
+    p8.ev[5]=250
+    p8.setItem(:CENTISKITE)
+    p8.setAbility(2)
+    
+  elsif e4Trainer==3
+    Kernel.pbMessage(_INTL("I am Callisto, a master of Electric-type Pokemon."))
+    Kernel.pbMessage(_INTL("The shock of electricity will keep you from being able to fight back!"))
+   
+    p0 = createPokemon("EELEKTROSS", lVL)
+    p0.pbLearnMove(:COIL)
+    p0.pbLearnMove(:WILDCHARGE)
+    p0.pbLearnMove(:CRUNCH)
+    p0.pbLearnMove(:CRUSHCLAW)
+    p0.iv[3]=31
+    p0.iv[1]=31
+    p0.iv[2]=31
+    p0.ev[3]=250
+    p0.ev[2]=150
+    p0.setItem(:MUSCLEBAND)
+    p0.setAbility(0)
+    
+    p1 = createPokemon("AMPHAROS", lVL)
+    p1.pbLearnMove(:BEACON)
+    p1.pbLearnMove(:PRISMSHOT)
+    p1.pbLearnMove(:THUNDERBOLT)
+    p1.pbLearnMove(:DRAGONDANCE)
+    p1.iv[2]=31
+    p1.iv[4]=31
+    p1.iv[0]=31
+    p1.ev[4]=150
+    p1.ev[3]=250
+    p1.setItem(:MAGNIFYINGGLASS)
+    
+    p2 = createPokemon("GALVANTULA", lVL)
+    p2.pbLearnMove(:HIDDENPOWER)
+    p2.pbLearnMove(:THUNDERWAVE)
+    p2.pbLearnMove(:UTURN)
+    p2.pbLearnMove(:THUNDER)
+
+
+
+Context starting at line 336:
+
+    p3.pbLearnMove(:THUNDER)
+    p3.pbLearnMove(:SURF)
+    p3.pbLearnMove(:RAINDANCE)
+    p3.pbLearnMove(:ATTRACT)
+    p3.iv[1]=31
+    p3.iv[5]=31
+    p3.iv[3]=31
+    p3.ev[3]=150
+    p3.ev[0]=250
+    p3.form=1
+    p3.setItem(:LEGENDITE)
+    p3.setAbility(0)
+    
+    p4 = createPokemon("ROTOM", lVL)
+    p4.pbLearnMove(:SHADOWBALL)
+    p4.pbLearnMove(:SIGNALBEAM)
+    p4.pbLearnMove(:DISCHARGE)
+    p4.pbLearnMove(:TOXIC)
+    p4.iv[4]=31
+    p4.iv[2]=31
+    p4.iv[0]=31
+    p4.ev[2]=250
+    p4.ev[5]=150
+    p4.setItem(:ZAPPLATE)
+    
+    p5 = createPokemon("ZAPDOS", lVL)
+    p5.pbLearnMove(:HIDDENPOWER)
+    p5.pbLearnMove(:THUNDERBOLT)
+    p5.pbLearnMove(:ROOST)
+    p5.pbLearnMove(:HEATWAVE)
+    p5.iv[3]=31
+    p5.iv[4]=31
+    p5.iv[5]=31
+    p5.iv[0]=31
+    p5.iv[2]=31
+    p5.iv[1]=23
+    p5.setNature(:TIMID)
+    p5.ev[0]=250
+    p3.ev[4]=250
+    p5.setItem(:LEFTOVERS)
+    
+    p6 = createPokemon("DEDENNE", lVL)
+    p6.pbLearnMove(:THUNDERPUNCH)
+    p6.pbLearnMove(:PLAYROUGH)
+    p6.pbLearnMove(:PRISMSHOT)
+    p6.pbLearnMove(:SUBSTITUTE)
+    p6.iv[3]=31
+    p6.iv[1]=31
+    p6.iv[5]=31
+    p6.ev[1]=250
+    p6.ev[3]=150
+    p6.setAbility(2)
+    p6.setItem(:LEGENDITE)
+    
+    p7 = createPokemon("TOXTRICITY", lVL)
+    p7.pbLearnMove(:OVERDRIVE)
+    p7.pbLearnMove(:SLUDGEBOMB)
+    p7.pbLearnMove(:NUZZLE)
+    p7.pbLearnMove(:ROUND)
+    p7.iv[3]=31
+
+
+
+Context starting at line 378:
+
+    p6.pbLearnMove(:THUNDERPUNCH)
+    p6.pbLearnMove(:PLAYROUGH)
+    p6.pbLearnMove(:PRISMSHOT)
+    p6.pbLearnMove(:SUBSTITUTE)
+    p6.iv[3]=31
+    p6.iv[1]=31
+    p6.iv[5]=31
+    p6.ev[1]=250
+    p6.ev[3]=150
+    p6.setAbility(2)
+    p6.setItem(:LEGENDITE)
+    
+    p7 = createPokemon("TOXTRICITY", lVL)
+    p7.pbLearnMove(:OVERDRIVE)
+    p7.pbLearnMove(:SLUDGEBOMB)
+    p7.pbLearnMove(:NUZZLE)
+    p7.pbLearnMove(:ROUND)
+    p7.iv[3]=31
+    p7.iv[1]=31
+    p7.iv[4]=31
+    p7.ev[0]=250
+    p7.ev[3]=150
+    p7.setAbility(0)
+    p7.setNature(0)
+    p7.form=0
+    p7.setItem(:TOXTRICITITE)
+    
+    p8 = createPokemon("ARCTOZOLT", lVL)
+    p8.pbLearnMove(:BOLTBEAK)
+    p8.pbLearnMove(:ICICLECRASH)
+    p8.pbLearnMove(:STOMPINGTANTRUM)
+    p8.pbLearnMove(:HAIL)
+    p8.iv[3]=31
+    p8.iv[1]=31
+    p8.iv[0]=31
+    p8.ev[3]=250
+    p8.ev[1]=150
+    p8.setAbility(2)
+    p8.setItem(:LUMBERRY)
+    p8.makeShiny
+    
+  elsif e4Trainer==4
+    Kernel.pbMessage(_INTL("I am Ganymede, a master of Grass-type Pokemon."))
+    Kernel.pbMessage(_INTL("Have you ever been lost in a deep, dark forest?"))
+    Kernel.pbMessage(_INTL("My Pokemon's foliage will block out the sun as you feel helpless and lost!"))
+   
+    p0 = createPokemon("TORTERRA", lVL)
+    p0.pbLearnMove(:STONEEDGE)
+    p0.pbLearnMove(:EARTHQUAKE)
+    p0.pbLearnMove(:ROCKPOLISH)
+    p0.pbLearnMove(:WOODHAMMER)
+    p0.iv[3]=31
+    p0.iv[1]=31
+    p0.iv[0]=31
+    p0.ev[0]=250
+    p0.ev[1]=150
+    p0.setItem(:LEFTOVERS)
+    p0.setAbility(2)
+    
+    p1 = createPokemon("LUDICOLO", lVL)
+
+
+
+Context starting at line 517:
+
+    p7 = createPokemon("LURANTIS", lVL)
+    p7.pbLearnMove(:STICKYWEB)
+    p7.pbLearnMove(:SWORDSDANCE)
+    p7.pbLearnMove(:LEAFBLADE)
+    p7.pbLearnMove(:GAMMARAYBURST)
+    p7.iv[3]=31
+    p7.iv[0]=31
+    p7.iv[1]=31
+    p7.ev[1]=150
+    p7.ev[3]=250
+    p7.setItem(:LEGENDITE)
+    p7.setAbility(0)
+    
+    p8 = createPokemon("DECIDUEYE", lVL)
+    p8.pbLearnMove(:BRAVEBIRD)
+    p8.pbLearnMove(:SPIRITSHACKLE)
+    p8.pbLearnMove(:LEAFBLADE)
+    p8.pbLearnMove(:UTURN)
+    p8.iv[3]=31
+    p8.iv[2]=31
+    p8.iv[1]=31
+    p8.ev[1]=150
+    p8.ev[3]=250
+    p8.setItem(:LEGENDITE)
+    p8.setAbility(0)
+    
+  elsif e4Trainer==5
+    Kernel.pbMessage(_INTL("I am Taranis. The longest tenure as Champion of Kiraki belongs to me."))
+    Kernel.pbMessage(_INTL("Can you put up a decent challenge while being blinded by my Light-type Pokemon?"))
+   
+    p0 = createPokemon("CHORDALUX", lVL)
+    p0.pbLearnMove(:DRACOMETEOR)
+    p0.pbLearnMove(:BLINDINGRUSH)
+    p0.pbLearnMove(:COIL)
+    p0.pbLearnMove(:BLINDINGBEAM)
+    p0.iv[4]=31
+    p0.iv[3]=31
+    p0.iv[0]=31
+    p0.ev[1]=250
+    p0.ev[3]=250
+    p0.setItem(:CHORDALUXITE)
+    p0.makeShiny
+    p0.setAbility(2)
+    
+    p1 = createPokemon("NINETALES", lVL)
+    p1.pbLearnMove(:HOWL)
+    p1.pbLearnMove(:FIREBLAST)
+    p1.pbLearnMove(:HIDDENPOWER)
+    p1.pbLearnMove(:SUNBEAM)
+    p1.iv[4]=31
+    p1.iv[3]=31
+    p1.iv[2]=31
+    p1.iv[0]=31
+    p1.iv[1]=29
+    p1.ev[0]=250
+    p1.ev[4]=250
+    p1.setItem(:PRISMPLATE)
+    p1.setAbility(2)
+    
+    p2 = createPokemon("LUCARIO", lVL)
+
+
+
+Context starting at line 530:
+
+    p8 = createPokemon("DECIDUEYE", lVL)
+    p8.pbLearnMove(:BRAVEBIRD)
+    p8.pbLearnMove(:SPIRITSHACKLE)
+    p8.pbLearnMove(:LEAFBLADE)
+    p8.pbLearnMove(:UTURN)
+    p8.iv[3]=31
+    p8.iv[2]=31
+    p8.iv[1]=31
+    p8.ev[1]=150
+    p8.ev[3]=250
+    p8.setItem(:LEGENDITE)
+    p8.setAbility(0)
+    
+  elsif e4Trainer==5
+    Kernel.pbMessage(_INTL("I am Taranis. The longest tenure as Champion of Kiraki belongs to me."))
+    Kernel.pbMessage(_INTL("Can you put up a decent challenge while being blinded by my Light-type Pokemon?"))
+   
+    p0 = createPokemon("CHORDALUX", lVL)
+    p0.pbLearnMove(:DRACOMETEOR)
+    p0.pbLearnMove(:BLINDINGRUSH)
+    p0.pbLearnMove(:COIL)
+    p0.pbLearnMove(:BLINDINGBEAM)
+    p0.iv[4]=31
+    p0.iv[3]=31
+    p0.iv[0]=31
+    p0.ev[1]=250
+    p0.ev[3]=250
+    p0.setItem(:CHORDALUXITE)
+    p0.makeShiny
+    p0.setAbility(2)
+    
+    p1 = createPokemon("NINETALES", lVL)
+    p1.pbLearnMove(:HOWL)
+    p1.pbLearnMove(:FIREBLAST)
+    p1.pbLearnMove(:HIDDENPOWER)
+    p1.pbLearnMove(:SUNBEAM)
+    p1.iv[4]=31
+    p1.iv[3]=31
+    p1.iv[2]=31
+    p1.iv[0]=31
+    p1.iv[1]=29
+    p1.ev[0]=250
+    p1.ev[4]=250
+    p1.setItem(:PRISMPLATE)
+    p1.setAbility(2)
+    
+    p2 = createPokemon("LUCARIO", lVL)
+    p2.pbLearnMove(:AURASPHERE)
+    p2.pbLearnMove(:SHIMMERINGSPHERE)
+    p2.pbLearnMove(:PRISMSHOT)
+    p2.pbLearnMove(:DARKPULSE)
+    p2.iv[3]=31
+    p2.iv[5]=31
+    p2.iv[4]=31
+    p2.ev[4]=250
+    p2.ev[3]=250
+    p2.setItem(:FOCUSSASH)
+    p2.setAbility(2)
+    
+    p3 = createPokemon("LANTURN", lVL)
+
+
+
+Context starting at line 589:
+
+    p3 = createPokemon("LANTURN", lVL)
+    p3.pbLearnMove(:SURF)
+    p3.pbLearnMove(:SHIMMERINGSPHERE)
+    p3.pbLearnMove(:GAMMARAYBURST)
+    p3.pbLearnMove(:PRISMSHOT)
+    p3.iv[0]=31
+    p3.iv[5]=31
+    p3.iv[3]=31
+    p3.ev[0]=250
+    p3.ev[2]=250
+    p3.setItem(:LEGENDITE)
+    p3.setAbility(0)
+    p3.makeShiny
+    
+    p4 = createPokemon("ABSOL", lVL)
+    p4.pbLearnMove(:ICEFANG)
+    p4.pbLearnMove(:CRUNCH)
+    p4.pbLearnMove(:HOLYSWORD)
+    p4.pbLearnMove(:LIGHTSPEED)
+    p4.iv[2]=31
+    p4.iv[1]=31
+    p4.iv[0]=31
+    p4.ev[3]=250
+    p4.ev[2]=250
+    p4.setItem(:MAGNIFYINGGLASS)
+    
+    p5 = createPokemon("UXIE", lVL)
+    p5.pbLearnMove(:YAWN)
+    p5.pbLearnMove(:UTURN)
+    p5.pbLearnMove(:ZENHEADBUTT)
+    p5.pbLearnMove(:SUNRISE)
+    p5.iv[5]=31
+    p5.iv[0]=31
+    p5.iv[1]=31
+    p5.ev[0]=250
+    p5.ev[5]=250
+    p5.setItem(:LIFEORB)
+    
+    p6 = createPokemon("BLACEPHALON", lVL)
+    p6.pbLearnMove(:SHADOWBALL)
+    p6.pbLearnMove(:FLAMETHROWER)
+    p6.pbLearnMove(:GAMMARAYBURST)
+    p6.pbLearnMove(:CALMMIND)
+    p6.iv[4]=31
+    p6.iv[5]=31
+    p6.iv[2]=31
+    p6.ev[3]=250
+    p6.ev[4]=250
+    p6.setItem(:CHOICESCARF)
+    p6.makeShiny
+    
+    p7 = createPokemon("PHOTEON", lVL)
+    p7.pbLearnMove(:LIGHTSPEED)
+    p7.pbLearnMove(:FANCYFLASH)
+    p7.pbLearnMove(:SUNSET)
+    p7.pbLearnMove(:DAZZLINGGLEAM)
+    p7.iv[3]=31
+    p7.iv[0]=31
+    p7.iv[4]=31
+    p7.ev[3]=250
+
+
+
+Context starting at line 653:
+
+    p8 = createPokemon("HELIOPTILE", lVL)
+    p8.pbLearnMove(:THUNDERPUNCH)
+    p8.pbLearnMove(:SOLARFISTS)
+    p8.pbLearnMove(:ICEPUNCH)
+    p8.pbLearnMove(:LASERCLAW)
+    p8.iv[3]=31
+    p8.iv[0]=31
+    p8.iv[1]=31
+    p8.ev[1]=250
+    p8.ev[5]=250
+    p8.setItem(:LEGENDITE)
+    p8.setAbility(0)
+  
+  elsif e4Trainer==6
+    Kernel.pbMessage(_INTL("{1}! You have grown so much since I first met you on Route 3.",$Trainer.name))
+    Kernel.pbMessage(_INTL("You had no idea who you were, and yet the strength within you was apparent."))
+    Kernel.pbMessage(_INTL("Let us battle once more in a full force competition!"))
+    p0 = createPokemon("KROOKODILE", lVL)
+    p0.pbLearnMove(:SANDSTORM)
+    p0.pbLearnMove(:SPIKES)
+    p0.pbLearnMove(:TOXIC)
+    p0.pbLearnMove(:STEALTHROCK)
+    p0.iv[0]=31
+    p0.iv[5]=31
+    p0.iv[2]=31
+    p0.ev[0]=250
+    p0.ev[5]=150
+    p0.setItem(:LEGENDITE)
+    
+    
+    p1 = createPokemon("NIMBEE", lVL)
+    p1.pbLearnMove(:BLOCK)
+    p1.pbLearnMove(:TOXIC)
+    p1.pbLearnMove(:EARTHQUAKE)
+    p1.pbLearnMove(:BUGBITE)
+    p1.iv[2]=31
+    p1.iv[5]=31
+    p1.iv[1]=31
+    p1.ev[5]=250
+    p1.ev[1]=150
+    p1.setAbility(2)
+    p1.setItem(:ASSAULTVEST)
+    p1.makeShiny
+    
+    p2 = createPokemon("STUNFISK", lVL)
+    p2.pbLearnMove(:EARTHPOWER)
+    p2.pbLearnMove(:THUNDERBOLT)
+    p2.pbLearnMove(:PROTECT)
+    p2.pbLearnMove(:SANDSTORM)
+    p2.iv[0]=31
+    p2.iv[2]=31
+    p2.iv[4]=31
+    p2.ev[2]=250
+    p2.ev[5]=150
+    p2.setItem(:LEFTOVERS)
+    p2.setAbility(2)
+    
+    p3 = createPokemon("PUPITAR", lVL)
+    p3.pbLearnMove(:DRAGONDANCE)
+    p3.pbLearnMove(:STONEEDGE)
+
+
+
+Context starting at line 670:
+
+    p0 = createPokemon("KROOKODILE", lVL)
+    p0.pbLearnMove(:SANDSTORM)
+    p0.pbLearnMove(:SPIKES)
+    p0.pbLearnMove(:TOXIC)
+    p0.pbLearnMove(:STEALTHROCK)
+    p0.iv[0]=31
+    p0.iv[5]=31
+    p0.iv[2]=31
+    p0.ev[0]=250
+    p0.ev[5]=150
+    p0.setItem(:LEGENDITE)
+    
+    
+    p1 = createPokemon("NIMBEE", lVL)
+    p1.pbLearnMove(:BLOCK)
+    p1.pbLearnMove(:TOXIC)
+    p1.pbLearnMove(:EARTHQUAKE)
+    p1.pbLearnMove(:BUGBITE)
+    p1.iv[2]=31
+    p1.iv[5]=31
+    p1.iv[1]=31
+    p1.ev[5]=250
+    p1.ev[1]=150
+    p1.setAbility(2)
+    p1.setItem(:ASSAULTVEST)
+    p1.makeShiny
+    
+    p2 = createPokemon("STUNFISK", lVL)
+    p2.pbLearnMove(:EARTHPOWER)
+    p2.pbLearnMove(:THUNDERBOLT)
+    p2.pbLearnMove(:PROTECT)
+    p2.pbLearnMove(:SANDSTORM)
+    p2.iv[0]=31
+    p2.iv[2]=31
+    p2.iv[4]=31
+    p2.ev[2]=250
+    p2.ev[5]=150
+    p2.setItem(:LEFTOVERS)
+    p2.setAbility(2)
+    
+    p3 = createPokemon("PUPITAR", lVL)
+    p3.pbLearnMove(:DRAGONDANCE)
+    p3.pbLearnMove(:STONEEDGE)
+    p3.pbLearnMove(:EARTHQUAKE)
+    p3.pbLearnMove(:CRUNCH)
+    p3.iv[4]=31
+    p3.iv[2]=31
+    p3.iv[3]=31
+    p3.ev[2]=250
+    p3.ev[3]=150
+    p3.setItem(:EVIOLITE)
+    
+    p4 = createPokemon("FLYGON", lVL)
+    p4.pbLearnMove(:DRAGONCLAW)
+    p4.pbLearnMove(:FIREPUNCH)
+    p4.pbLearnMove(:EARTHPOWER)
+    p4.pbLearnMove(:TAILWIND)
+    p4.iv[5]=31
+    p4.iv[0]=31
+    p4.iv[1]=31
+
+
+
+Context starting at line 759:
+
+    p7 = createPokemon("RUNERIGUS", lVL)
+    p7.pbLearnMove(:TOXICSPIKES)
+    p7.pbLearnMove(:EARTHQUAKE)
+    p7.pbLearnMove(:BODYPRESS)
+    p7.pbLearnMove(:SHADOWCLAW)
+    p7.iv[1]=31
+    p7.iv[2]=31
+    p7.iv[5]=31
+    p7.ev[2]=250
+    p7.ev[5]=150
+    p7.setItem(:LEGENDITE)
+    
+    p8 = createPokemon("DUGTRIO", lVL)
+    p8.pbLearnMove(:MEMENTO)
+    p8.pbLearnMove(:EARTHQUAKE)
+    p8.pbLearnMove(:STONEEDGE)
+    p8.pbLearnMove(:IRONHEAR)
+    p8.iv[3]=31
+    p8.iv[5]=31
+    p8.iv[1]=31
+    p8.ev[1]=150
+    p8.ev[3]=250
+    p8.setItem(:CHOICEBAND)
+    p8.setAbility(2)
+    p8.form=1
+  
+  elsif e4Trainer==7
+    Kernel.pbMessage(_INTL("When we had our gym battle, {1}, I did think it was quite possible we would meet again like this.",$Trainer.name))
+    Kernel.pbMessage(_INTL("Now let me see if you have truly grown to be a master of the dark!"))
+    
+    p0 = createPokemon("ZOROARK", lVL)
+    p0.pbLearnMove(:SUCKERPUNCH)
+    p0.pbLearnMove(:UTURN)
+    p0.pbLearnMove(:TOXIC)
+    p0.pbLearnMove(:FAKEOUT)
+    p0.iv[0]=31
+    p0.iv[5]=31
+    p0.iv[1]=31
+    p0.ev[3]=250
+    p0.ev[1]=150
+    p0.setItem(:TANGABERRY)
+    
+    p1 = createPokemon("SHIFTRY", lVL)
+    p1.pbLearnMove(:ROCKSLIDE)
+    p1.pbLearnMove(:LEAFBLADE)
+    p1.pbLearnMove(:SWORDSDANCE)
+    p1.pbLearnMove(:KNOCKOFF)
+    p1.iv[2]=31
+    p1.iv[5]=31
+    p1.iv[1]=31
+    p1.ev[3]=250
+    p1.ev[5]=150
+    p1.setItem(:FOCUSSASH)
+    
+    p2 = createPokemon("WEAVILE", lVL)
+    p2.pbLearnMove(:ICESHARD)
+    p2.pbLearnMove(:FLING)
+    p2.pbLearnMove(:THIEF)
+    p2.pbLearnMove(:BRICKBREAK)
+    p2.iv[5]=31
+
+
+
+Context starting at line 838:
+
+    p4 = createPokemon("UMBREON", lVL)
+    p4.pbLearnMove(:TOXIC)
+    p4.pbLearnMove(:CONFUSERAY)
+    p4.pbLearnMove(:CURSE)
+    p4.pbLearnMove(:TRUMPCARD)
+    p4.iv[5]=31
+    p4.iv[0]=31
+    p4.iv[2]=31
+    p4.ev[0]=250
+    p4.ev[5]=150
+    p4.setItem(:LEGENDITE)
+    p4.makeShiny
+    
+    p5 = createPokemon("SABLEYE", lVL)
+    p5.pbLearnMove(:SHADOWCLAW)
+    p5.pbLearnMove(:ZENHEADBUTT)
+    p5.pbLearnMove(:SHADOWSNEAK)
+    p5.pbLearnMove(:FAKEOUT)
+    p5.iv[1]=31
+    p5.iv[4]=31
+    p5.iv[0]=31
+    p5.setItem(:SABLENITE)
+    
+    p6 = createPokemon("INCINEROAR", lVL)
+    p6.pbLearnMove(:DARKESTLARIAT)
+    p6.pbLearnMove(:SWORDSDANCE)
+    p6.pbLearnMove(:FLAREBLITZ)
+    p6.pbLearnMove(:LASERCLAW)
+    p6.iv[3]=31
+    p6.iv[4]=31
+    p6.iv[0]=31
+    p6.ev[2]=150
+    p6.ev[1]=250
+    p6.setAbility(2)
+    p6.setItem(:LEGENDITE)
+    
+    p7 = createPokemon("OBSTAGOON", lVL)
+    p7.pbLearnMove(:KNOCKOFF)
+    p7.pbLearnMove(:CLOSECOMBAT)
+    p7.pbLearnMove(:ICEPUNCH)
+    p7.pbLearnMove(:PARTINGSHOT)
+    p7.iv[1]=31
+    p7.iv[2]=31
+    p7.iv[5]=31
+    p7.ev[2]=250
+    p7.ev[5]=150
+    p7.setAbility(2)
+    p7.setItem(:RAZORCLAW)
+    
+    p8 = createPokemon("MORPEKO", lVL)
+    p8.pbLearnMove(:FAKEOUT)
+    p8.pbLearnMove(:CRUNCH)
+    p8.pbLearnMove(:SUPERFANG)
+    p8.pbLearnMove(:AURAWHEEL)
+    p8.iv[0]=31
+    p8.iv[5]=31
+    p8.iv[1]=31
+    p8.ev[1]=250
+    p8.ev[0]=150
+    p8.setItem(:METRONOME)
+
+
+
+Context starting at line 862:
+
+    p6.pbLearnMove(:DARKESTLARIAT)
+    p6.pbLearnMove(:SWORDSDANCE)
+    p6.pbLearnMove(:FLAREBLITZ)
+    p6.pbLearnMove(:LASERCLAW)
+    p6.iv[3]=31
+    p6.iv[4]=31
+    p6.iv[0]=31
+    p6.ev[2]=150
+    p6.ev[1]=250
+    p6.setAbility(2)
+    p6.setItem(:LEGENDITE)
+    
+    p7 = createPokemon("OBSTAGOON", lVL)
+    p7.pbLearnMove(:KNOCKOFF)
+    p7.pbLearnMove(:CLOSECOMBAT)
+    p7.pbLearnMove(:ICEPUNCH)
+    p7.pbLearnMove(:PARTINGSHOT)
+    p7.iv[1]=31
+    p7.iv[2]=31
+    p7.iv[5]=31
+    p7.ev[2]=250
+    p7.ev[5]=150
+    p7.setAbility(2)
+    p7.setItem(:RAZORCLAW)
+    
+    p8 = createPokemon("MORPEKO", lVL)
+    p8.pbLearnMove(:FAKEOUT)
+    p8.pbLearnMove(:CRUNCH)
+    p8.pbLearnMove(:SUPERFANG)
+    p8.pbLearnMove(:AURAWHEEL)
+    p8.iv[0]=31
+    p8.iv[5]=31
+    p8.iv[1]=31
+    p8.ev[1]=250
+    p8.ev[0]=150
+    p8.setItem(:METRONOME)
+    p8.setAbility(2)
+    p8.form=1
+    
+  elsif e4Trainer==8
+    Kernel.pbMessage(_INTL("You showed no fear of my creepy-crawlies in the Gold City gym."))
+    Kernel.pbMessage(_INTL("I think this battle will be much different {1}.",$Trainer.name))
+    Kernel.pbMessage(_INTL("Let me show you what it is like to be swarmed!"))
+    
+    p0 = createPokemon("NINJASK", lVL)
+    p0.pbLearnMove(:DOUBLETEAM)
+    p0.pbLearnMove(:LIGHTSPEED)
+    p0.pbLearnMove(:XSCISSOR)
+    p0.pbLearnMove(:BATONPASS)
+    p0.iv[0]=31
+    p0.iv[3]=31
+    p0.iv[2]=31
+    p0.ev[3]=250
+    p0.ev[1]=150
+    p0.setItem(:FOCUSSASH)
+    
+    p1 = createPokemon("VESPIQUEN", lVL)
+    p1.pbLearnMove(:DEFENDORDER)
+    p1.pbLearnMove(:ATTACKORDER)
+    p1.pbLearnMove(:DESTINYBOND)
+
+
+
+Context starting at line 956:
+
+    p4 = createPokemon("VOLBEAT", lVL)
+    p4.pbLearnMove(:GAMMARAYBURST)
+    p4.pbLearnMove(:BUGBUZZ)
+    p4.pbLearnMove(:PRISMSHOT)
+    p4.pbLearnMove(:WATERPULSE)
+    p4.iv[5]=31
+    p4.iv[0]=31
+    p4.iv[4]=31
+    p4.ev[1]=250
+    p4.ev[4]=150
+    p4.setItem(:LEGENDITE)
+    
+    p5 = createPokemon("GENESECT", lVL)
+    p5.pbLearnMove(:TECHNOBLAST)
+    p5.pbLearnMove(:FLAMECHARGE)
+    p5.pbLearnMove(:UTURN)
+    p5.pbLearnMove(:ICEBEAM)
+    p5.iv[1]=31
+    p5.iv[4]=31
+    p5.iv[0]=31
+    p5.ev[1]=250
+    p5.ev[4]=250
+    p5.setItem(:DOUSEDRIVE)
+    
+    p6 = createPokemon("ARAQUANID", lVL)
+    p6.pbLearnMove(:STICKYWEB)
+    p6.pbLearnMove(:LIQUIDATION)
+    p6.pbLearnMove(:MAGICCOAT)
+    p6.pbLearnMove(:TOXIC)
+    p6.iv[3]=31
+    p6.iv[1]=31
+    p6.iv[0]=31
+    p6.ev[0]=150
+    p6.ev[1]=250
+    p6.setAbility(0)
+    p6.setItem(:MYSTICWATER)
+    
+    p7 = createPokemon("FROSMOTH", lVL)
+    p7.pbLearnMove(:QUIVERDANCE)
+    p7.pbLearnMove(:ICEBEAM)
+    p7.pbLearnMove(:BUGBUZZ)
+    p7.pbLearnMove(:AIRSLASH)
+    p7.iv[4]=31
+    p7.iv[2]=31
+    p7.iv[3]=31
+    p7.ev[4]=250
+    p7.ev[2]=150
+    p7.setAbility(2)
+    p7.setItem(:OCCABERRY)
+    
+    p8 = createPokemon("ORBEETLE", lVL)
+    p8.pbLearnMove(:HYPNOSIS)
+    p8.pbLearnMove(:PSYCHIC)
+    p8.pbLearnMove(:BUGBUZZ)
+    p8.pbLearnMove(:LIGHTSCREEN)
+    p8.iv[0]=31
+    p8.iv[4]=31
+    p8.iv[3]=31
+    p8.ev[4]=250
+    p8.ev[0]=150
+
+
+
+Context starting at line 1073:
+
+    p4 = createPokemon("DRUDDIGON", lVL)
+    p4.pbLearnMove(:DRAGONCLAW)
+    p4.pbLearnMove(:GAMMARAYBURST)
+    p4.pbLearnMove(:IRONTAIL)
+    p4.pbLearnMove(:SUCKERPUNCH)
+    p4.iv[5]=31
+    p4.iv[0]=31
+    p4.iv[4]=31
+    p4.ev[1]=250
+    p4.ev[3]=150
+    p4.setItem(:LEGENDITE)
+    
+    p5 = createPokemon("LATIAS", lVL)
+    p5.pbLearnMove(:MISTBALL)
+    p5.pbLearnMove(:ENERGYBALL)
+    p5.pbLearnMove(:DRAGONBREATH)
+    p5.pbLearnMove(:ICEBEAM)
+    p5.iv[4]=31
+    p5.iv[3]=31
+    p5.iv[2]=31
+    p5.ev[4]=250
+    p5.ev[5]=150
+    p5.setItem(:SOULDEW)
+    
+    p6 = createPokemon("DRAGALGE", lVL)
+    p6.pbLearnMove(:VENOSHOCK)
+    p6.pbLearnMove(:SCALD)
+    p6.pbLearnMove(:THUNDERBOLT)
+    p6.pbLearnMove(:HAZE)
+    p6.iv[3]=31
+    p6.iv[5]=31
+    p6.iv[0]=31
+    p6.ev[4]=150
+    p6.ev[3]=250
+    p6.setAbility(2)
+    p6.setItem(:BLACKSLUDGE)
+    
+    p7 = createPokemon("APPLETUN", lVL)
+    p7.pbLearnMove(:APPLEACID)
+    p7.pbLearnMove(:RECYCLE)
+    p7.pbLearnMove(:LEECHSEED)
+    p7.pbLearnMove(:BODYPRESS)
+    p7.iv[1]=31
+    p7.iv[2]=31
+    p7.iv[0]=31
+    p7.ev[0]=250
+    p7.ev[2]=150
+    p7.setAbility(2)
+    p7.setItem(:SITRUSBERRY)
+    
+    p8 = createPokemon("ZYGARDE", lVL)
+    p8.pbLearnMove(:DRAGONDANCE)
+    p8.pbLearnMove(:THOUSANDARROWS)
+    p8.pbLearnMove(:OUTRAGE)
+    p8.pbLearnMove(:EXTREMESPEED)
+    p8.iv[0]=31
+    p8.iv[5]=31
+    p8.iv[3]=31
+    p8.ev[5]=250
+    p8.ev[1]=150
+
+
+
+Context starting at line 1123:
+
+    p8 = createPokemon("ZYGARDE", lVL)
+    p8.pbLearnMove(:DRAGONDANCE)
+    p8.pbLearnMove(:THOUSANDARROWS)
+    p8.pbLearnMove(:OUTRAGE)
+    p8.pbLearnMove(:EXTREMESPEED)
+    p8.iv[0]=31
+    p8.iv[5]=31
+    p8.iv[3]=31
+    p8.ev[5]=250
+    p8.ev[1]=150
+    p8.setItem(:LEGENDITE)
+    p8.form=1
+    p8.setAbility(0)
+    
+  elsif e4Trainer==10
+    Kernel.pbMessage(_INTL("Yo {1}!  When we first met I misjudged you.",$Trainer.name))
+    Kernel.pbMessage(_INTL("I thought you were with Tsadek, Themisto and the others."))
+    Kernel.pbMessage(_INTL("I'm glad we got that sorted, and now I even consider you a friend."))
+    Kernel.pbMessage(_INTL("Though that doesn't mean I'm about to go easy on ya! Brace yo'self!"))
+    
+    p0 = createPokemon("INFERNAPE", lVL)
+    p0.pbLearnMove(:MACHPUNCH)
+    p0.pbLearnMove(:BLASTBURN)
+    p0.pbLearnMove(:ROCKSLIDE)
+    p0.pbLearnMove(:PUNISHMENT)
+    p0.iv[4]=31
+    p0.iv[3]=31
+    p0.iv[1]=31
+    p0.ev[1]=250
+    p0.ev[5]=150
+    p0.setItem(:CHARCOAL)
+    
+    p1 = createPokemon("MAKUHITA", lVL)
+    p1.pbLearnMove(:BELLYDRUM)
+    p1.pbLearnMove(:REST)
+    p1.pbLearnMove(:SNORE)
+    p1.pbLearnMove(:KARATECHOP)
+    p1.iv[4]=31
+    p1.iv[2]=31
+    p1.iv[0]=31
+    p1.ev[0]=250
+    p1.ev[5]=150
+    p1.setAbility(2)
+    p1.setItem(:EVIOLITE)
+    
+    p2 = createPokemon("TOXICROAK", lVL)
+    p2.pbLearnMove(:FLING)
+    p2.pbLearnMove(:POISONJAB)
+    p2.pbLearnMove(:SUBMISSION)
+    p2.pbLearnMove(:SCREECH)
+    p2.iv[2]=31
+    p2.iv[5]=31
+    p2.iv[1]=31
+    p2.ev[1]=250
+    p2.ev[3]=150
+    p2.setAbility(2)
+    p2.setItem(:TOXICORB)
+
+    p3 = createPokemon("MACHAMP", lVL)
+    p3.pbLearnMove(:BULLETPUNCH)
+
+
+
+Context starting at line 1193:
+
+    p4 = createPokemon("HITMONCHAN", lVL)
+    p4.pbLearnMove(:ICEPUNCH)
+    p4.pbLearnMove(:THUNDERPUNCH)
+    p4.pbLearnMove(:FIREPUNCH)
+    p4.pbLearnMove(:SUCKERPUNCH)
+    p4.iv[5]=31
+    p4.iv[0]=31
+    p4.iv[4]=31
+    p4.ev[1]=150
+    p4.ev[2]=250
+    p4.setItem(:LEGENDITE)
+    p4.setAbility(1)
+    p4.makeShiny
+
+    p5 = createPokemon("TERRAKION", lVL)
+    p5.pbLearnMove(:SWORDSDANCE)
+    p5.pbLearnMove(:ROCKSLIDE)
+    p5.pbLearnMove(:CLOSECOMBAT)
+    p5.pbLearnMove(:SACREDSWORD)
+    p5.iv[1]=31
+    p5.iv[5]=31
+    p5.iv[0]=31
+    p5.ev[2]=250
+    p5.ev[5]=150
+    p5.setItem(:LEFTOVERS)
+    
+    p6 = createPokemon("FALINKS", lVL)
+    p6.pbLearnMove(:NORETREAT)
+    p6.pbLearnMove(:CLOSECOMBET)
+    p6.pbLearnMove(:POISONJAB)
+    p6.pbLearnMove(:ZENHEADBUTT)
+    p6.iv[3]=31
+    p6.iv[1]=31
+    p6.iv[0]=31
+    p6.ev[3]=150
+    p6.ev[1]=250
+    p6.setAbility(2)
+    p6.setItem(:EXPERTBELT)
+    
+    p7 = createPokemon("KOMMOO", lVL)
+    p7.pbLearnMove(:DRAGONDANCE)
+    p7.pbLearnMove(:DRAGONCLAW)
+    p7.pbLearnMove(:SKYUPPERCUT)
+    p7.pbLearnMove(:CLANGINGSCALES)
+    p7.iv[1]=31
+    p7.iv[2]=31
+    p7.iv[3]=31
+    p7.ev[3]=250
+    p7.ev[1]=150
+    p7.setAbility(0)
+    p7.setItem(:DRAGONFANG)
+    
+    p8 = createPokemon("SIRFETCHD", lVL)
+    p8.pbLearnMove(:LEAFBLADE)
+    p8.pbLearnMove(:SLASH)
+    p8.pbLearnMove(:NIGHTSLASH)
+    p8.pbLearnMove(:FOCUSENERGY)
+    p8.iv[2]=31
+    p8.iv[1]=31
+    p8.iv[5]=31
+
+
+
+Context starting at line 1341:
+
+    p6.pbLearnMove(:HURRICANE)
+    p6.pbLearnMove(:UTURN)
+    p6.pbLearnMove(:REVELATIONDANCE)
+    p6.pbLearnMove(:ROOST)
+    p6.iv[4]=31
+    p6.iv[1]=31
+    p6.iv[0]=31
+    p6.ev[5]=150
+    p6.ev[4]=250
+    p6.form=3
+    p6.setItem(:LEGENDITE)
+    
+    p7 = createPokemon("HAWLUCHA", lVL)
+    p7.pbLearnMove(:IRONHEAD)
+    p7.pbLearnMove(:CLOSECOMBAT)
+    p7.pbLearnMove(:BRAVEBIRD)
+    p7.pbLearnMove(:SWORDSDANCE)
+    p7.iv[1]=31
+    p7.iv[2]=31
+    p7.iv[3]=31
+    p7.ev[1]=250
+    p7.ev[3]=150
+    p7.setAbility(2)
+    p7.setItem(:LIFEORB)
+    
+    p8 = createPokemon("CORVIKNIGHT", lVL)
+    p8.pbLearnMove(:STEELWING)
+    p8.pbLearnMove(:TAUNT)
+    p8.pbLearnMove(:BODYPRESS)
+    p8.pbLearnMove(:ROOST)
+    p8.iv[0]=31
+    p8.iv[2]=31
+    p8.iv[5]=31
+    p8.ev[0]=250
+    p8.ev[2]=150
+    p8.setItem(:ROCKYHELMET)
+    p8.setAbility(2)
+    
+  elsif e4Trainer == 12
+    Kernel.pbMessage(_INTL("{1}! Do you remember when we went treasure hunting?",$Trainer.name))
+    Kernel.pbMessage(_INTL("You helped me achieve one of my greatest dreams!"))
+    Kernel.pbMessage(_INTL("What a shame it is one of us will now crush the other's dreams. No hard feelings?"))
+    
+    p0 = createPokemon("GLACEON", lVL)
+    p0.pbLearnMove(:ICEBEAM)
+    p0.pbLearnMove(:HIDDENPOWER)
+    p0.pbLearnMove(:SHADOWBALL)
+    p0.pbLearnMove(:HAIL)
+    p0.iv[2]=31
+    p0.iv[1]=13
+    p0.iv[3]=31
+    p0.iv[0]=31
+    p0.iv[4]=31
+    p0.ev[4]=250
+    p0.ev[0]=150
+    p0.setItem(:LEFTOVERS)
+    p0.makeShiny
+    
+    p1 = createPokemon("CRYOGONAL", lVL)
+    p1.pbLearnMove(:GAMMARAYBURST)
+
+
+
+Context starting at line 1436:
+
+    p4 = createPokemon("DELIBIRD", lVL)
+    p4.pbLearnMove(:PRESENT)
+    p4.pbLearnMove(:DRILLPECK)
+    p4.pbLearnMove(:SCALD)
+    p4.pbLearnMove(:BLIZZARD)
+    p4.iv[2]=31
+    p4.iv[0]=31
+    p4.iv[1]=31
+    p4.ev[3]=250
+    p4.ev[1]=150
+    p4.setItem(:LEGENDITE)
+    p4.setAbility(1)
+    
+    p5 = createPokemon("ABOMASNOW", lVL)
+    p5.pbLearnMove(:BLIZZARD)
+    p5.pbLearnMove(:SUBSTITUTE)
+    p5.pbLearnMove(:GIGADRAIN)
+    p5.pbLearnMove(:FOCUSBLAST)
+    p5.iv[0]=31
+    p5.iv[4]=31
+    p5.iv[3]=31
+    p5.ev[4]=250
+    p5.ev[3]=150
+    p5.setItem(:ABOMASITE)
+    p5.setAbility(0)
+            
+    p6 = createPokemon("NINETALES", lVL)
+    p6.pbLearnMove(:AURORAVEIL)
+    p6.pbLearnMove(:FREEZEDRY)
+    p6.pbLearnMove(:DARKPULSE)
+    p6.pbLearnMove(:DISABLE)
+    p6.iv[4]=31
+    p6.iv[3]=31
+    p6.iv[0]=31
+    p6.ev[4]=150
+    p6.ev[3]=250
+    p6.form=1
+    p6.setItem(:LIGHTCLAY)
+    
+    p7 = createPokemon("MRRIME", lVL)
+    p7.pbLearnMove(:RAPIDSPIN)
+    p7.pbLearnMove(:FREEZEDRY)
+    p7.pbLearnMove(:PSYCHIC)
+    p7.pbLearnMove(:FOCUSBLAST)
+    p7.iv[0]=31
+    p7.iv[2]=31
+    p7.iv[3]=31
+    p7.ev[4]=250
+    p7.ev[3]=150
+    p7.setAbility(1)
+    p7.setItem(:HEAVYDUTYBOOTS)
+    
+    p8 = createPokemon("AURORUS", lVL)
+    p8.pbLearnMove(:HYPERVOICE)
+    p8.pbLearnMove(:FREEZEDRY)
+    p8.pbLearnMove(:STONEEDGE)
+    p8.pbLearnMove(:EARTHPOWER)
+    p8.iv[0]=31
+    p8.iv[2]=31
+    p8.iv[4]=31
+
+
+
+Context starting at line 1558:
+
+    p4.pbLearnMove(:PSYCHIC)
+    p4.pbLearnMove(:THUNDERWAVE)
+    p4.pbLearnMove(:HIDDENPOWER)
+    p4.pbLearnMove(:CALMMIND)
+    p4.iv[2]=31
+    p4.iv[0]=31
+    p4.iv[4]=31
+    p4.iv[1]=27
+    p4.ev[0]=250
+    p4.ev[2]=150
+    p4.setItem(:LEGENDITE)
+    p4.setAbility(2)
+    
+    p5 = createPokemon("SNORLAX", lVL)
+    p5.pbLearnMove(:EARTHQUAKE)
+    p5.pbLearnMove(:BODYSLAM)
+    p5.pbLearnMove(:FIREPUNCH)
+    p5.pbLearnMove(:CURSE)
+    p5.iv[2]=31
+    p5.iv[5]=31
+    p5.iv[0]=31
+    p5.ev[2]=150
+    p5.ev[1]=250
+    p5.setItem(:SNORLAXITE)
+    
+    p6 = createPokemon("PORYGONZ", lVL)
+    p6.pbLearnMove(:TRIATTACK)
+    p6.pbLearnMove(:NASTYPLOT)
+    p6.pbLearnMove(:CONFUSERAY)
+    p6.pbLearnMove(:GAMMARAYBURST)
+    p6.iv[2]=31
+    p6.iv[4]=31
+    p6.iv[5]=31
+    p6.ev[4]=250
+    p6.ev[1]=150
+    p6.setItem(:NORMALGEM)
+    
+    p7 = createPokemon("DRAMPA", lVL)
+    p7.pbLearnMove(:DRAGONPULSE)
+    p7.pbLearnMove(:CALMMIND)
+    p7.pbLearnMove(:ROOST)
+    p7.pbLearnMove(:HYPERVOICE)
+    p7.iv[0]=31
+    p7.iv[2]=31
+    p7.iv[4]=31
+    p7.ev[4]=250
+    p7.ev[2]=150
+    p7.setAbility(1)
+    p7.makeShiny
+    p7.setItem(:LEFTOVERS)
+    
+    p8 = createPokemon("PYROAR", lVL)
+    p8.pbLearnMove(:WORKUP)
+    p8.pbLearnMove(:FLAMECHARGE)
+    p8.pbLearnMove(:RETURN)
+    p8.pbLearnMove(:WILDCHARGE)
+    p8.iv[1]=31
+    p8.iv[3]=31
+    p8.iv[5]=31
+    p8.ev[1]=250
+
+
+
+Context starting at line 1609:
+
+    p8 = createPokemon("PYROAR", lVL)
+    p8.pbLearnMove(:WORKUP)
+    p8.pbLearnMove(:FLAMECHARGE)
+    p8.pbLearnMove(:RETURN)
+    p8.pbLearnMove(:WILDCHARGE)
+    p8.iv[1]=31
+    p8.iv[3]=31
+    p8.iv[5]=31
+    p8.ev[1]=250
+    p8.ev[3]=150
+    p8.setItem(:LEGENDITE)
+    p8.setGender(0)
+    p8.happiness=255
+    p8.setAbility(2)
+    
+  elsif e4Trainer==14
+    Kernel.pbMessage(_INTL("Hello, chum! I spend so much time battling now I hardly get to paint anymore!"))
+    Kernel.pbMessage(_INTL("That's too bad, eh? But I think it's worth it! No way am I going back now!"))
+   
+    p0 = createPokemon("RHYPERIOR", lVL)
+    p0.pbLearnMove(:EARTHQUAKE)
+    p0.pbLearnMove(:STONEEDGE)
+    p0.pbLearnMove(:ICEPUNCH)
+    p0.pbLearnMove(:STEALTHROCK)
+    p0.iv[0]=31
+    p0.iv[2]=31
+    p0.iv[1]=31
+    p0.ev[1]=150
+    p0.ev[5]=250
+    p0.setItem(:EXPERTBELT)
+    p0.setAbility(1)
+    
+    p1 = createPokemon("CARRACOSTA", lVL)
+    p1.pbLearnMove(:WATERFALL)
+    p1.pbLearnMove(:TOXIC)
+    p1.pbLearnMove(:SHELLSMASH)
+    p1.pbLearnMove(:STONEEDGE)
+    p1.iv[5]=31
+    p1.iv[1]=31
+    p1.iv[0]=31
+    p1.ev[1]=150
+    p1.ev[0]=250
+    p1.setItem(:LEFTOVERS)
+    
+    p2 = createPokemon("MAGCARGO", lVL)
+    p2.pbLearnMove(:FLAMETHROWER)
+    p2.pbLearnMove(:ROCKSLIDE)
+    p2.pbLearnMove(:HIDDENPOWER)
+    p2.pbLearnMove(:PROTECT)
+    p2.iv[2]=31
+    p2.iv[3]=20
+    p2.iv[0]=31
+    p2.iv[4]=31
+    p2.iv[1]=31
+    p2.ev[0]=250
+    p2.ev[1]=150
+    p2.setItem(:LEGENDITE)
+    
+    p3 = createPokemon("GOLEM", lVL)
+    p3.pbLearnMove(:ROLLOUT)
+
+
+
+Context starting at line 1655:
+
+    p2.pbLearnMove(:ROCKSLIDE)
+    p2.pbLearnMove(:HIDDENPOWER)
+    p2.pbLearnMove(:PROTECT)
+    p2.iv[2]=31
+    p2.iv[3]=20
+    p2.iv[0]=31
+    p2.iv[4]=31
+    p2.iv[1]=31
+    p2.ev[0]=250
+    p2.ev[1]=150
+    p2.setItem(:LEGENDITE)
+    
+    p3 = createPokemon("GOLEM", lVL)
+    p3.pbLearnMove(:ROLLOUT)
+    p3.pbLearnMove(:BODYSLAM)
+    p3.pbLearnMove(:THUNDERPUNCH)
+    p3.pbLearnMove(:CURSE)
+    p3.iv[2]=31
+    p3.iv[4]=31
+    p3.iv[3]=31
+    p3.ev[1]=250
+    p3.ev[0]=150
+    p3.setItem(:REDCARD)
+    p3.setAbility(1)
+    p3.form=1
+    
+    p4 = createPokemon("AGGRON", lVL)
+    p4.pbLearnMove(:FIREFANG)
+    p4.pbLearnMove(:IRONHEAD)
+    p4.pbLearnMove(:SUCKERPUNCH)
+    p4.pbLearnMove(:SANDSTORM)
+    p4.iv[2]=31
+    p4.iv[5]=31
+    p4.iv[1]=31
+    p4.ev[2]=250
+    p4.ev[1]=150
+    p4.setItem(:ROCKYHELMET)
+    p4.setAbility(0)
+    
+    p5 = createPokemon("TYRANITAR", lVL)
+    p5.pbLearnMove(:CRUNCH)
+    p5.pbLearnMove(:STONEEDGE)
+    p5.pbLearnMove(:DRAGONDANCE)
+    p5.pbLearnMove(:AERIALACE)
+    p5.iv[2]=31
+    p5.iv[1]=31
+    p5.iv[5]=31
+    p5.ev[1]=150
+    p5.ev[0]=250
+    p5.setItem(:TYRANITARITE)
+    
+    p6 = createPokemon("STONJOURNER", lVL)
+    p6.pbLearnMove(:HEATCRASH)
+    p6.pbLearnMove(:EARTHQUAKE)
+    p6.pbLearnMove(:STONEEDGE)
+    p6.pbLearnMove(:BODYPRESS)
+    p6.iv[2]=31
+    p6.iv[1]=31
+    p6.iv[5]=31
+    p6.ev[5]=250
+
+
+
+Context starting at line 1731:
+
+    p8 = createPokemon("MINIOR", lVL)
+    p8.pbLearnMove(:SHELLSMASH)
+    p8.pbLearnMove(:GAMMARAYBURST)
+    p8.pbLearnMove(:STONEEDGE)
+    p8.pbLearnMove(:LIGHTSCREEN)
+    p8.iv[1]=31
+    p8.iv[2]=31
+    p8.iv[5]=31
+    p8.ev[2]=250
+    p8.ev[5]=150
+    p8.setItem(:LEGENDITE)
+    p8.makeShiny
+    
+  elsif e4Trainer==15
+    Kernel.pbMessage(_INTL("Oye, {1}! You're in my way again!",$Trainer.name))
+    Kernel.pbMessage(_INTL("Hahaha! My team is much stronger than it was in Mt. Silicon! Let's battle!"))
+   
+    p0 = createPokemon("GARBODOR", lVL)
+    p0.pbLearnMove(:GUNKSHOT)
+    p0.pbLearnMove(:ROCKBLAST)
+    p0.pbLearnMove(:POISONGAS)
+    p0.pbLearnMove(:TOXICSPIKES)
+    p0.iv[3]=31
+    p0.iv[2]=31
+    p0.iv[5]=31
+    p0.ev[2]=250
+    p0.ev[1]=150
+    p0.setItem(:RAZORFANG)
+    p0.setAbility(0)
+    
+    p1 = createPokemon("CROBAT", lVL)
+    p1.pbLearnMove(:XSCISSOR)
+    p1.pbLearnMove(:VENOSHOCK)
+    p1.pbLearnMove(:AIRSLASH)
+    p1.pbLearnMove(:HYPNOSIS)
+    p1.iv[3]=31
+    p1.iv[1]=31
+    p1.iv[0]=31
+    p1.ev[3]=250
+    p1.ev[5]=150
+    p1.setItem(:LIFEORB)
+
+    p2 = createPokemon("NIDOQUEEN", lVL)
+    p2.pbLearnMove(:EARTHPOWER)
+    p2.pbLearnMove(:DRAGONTAIL)
+    p2.pbLearnMove(:THUNDERBOLT)
+    p2.pbLearnMove(:VENOSHOCK)
+    p2.iv[2]=31
+    p2.iv[3]=31
+    p2.iv[4]=31
+    p2.ev[4]=250
+    p2.ev[3]=150
+    p2.setItem(:LEGENDITE)
+    p2.setAbility(0)
+
+    p3 = createPokemon("DRAPION", lVL)
+    p3.pbLearnMove(:NIGHTSLASH)
+    p3.pbLearnMove(:CROSSPOISON)
+    p3.pbLearnMove(:BRICKBREAK)
+    p3.pbLearnMove(:ICEFANG)
+
+
+
+Context starting at line 1773:
+
+    p2 = createPokemon("NIDOQUEEN", lVL)
+    p2.pbLearnMove(:EARTHPOWER)
+    p2.pbLearnMove(:DRAGONTAIL)
+    p2.pbLearnMove(:THUNDERBOLT)
+    p2.pbLearnMove(:VENOSHOCK)
+    p2.iv[2]=31
+    p2.iv[3]=31
+    p2.iv[4]=31
+    p2.ev[4]=250
+    p2.ev[3]=150
+    p2.setItem(:LEGENDITE)
+    p2.setAbility(0)
+
+    p3 = createPokemon("DRAPION", lVL)
+    p3.pbLearnMove(:NIGHTSLASH)
+    p3.pbLearnMove(:CROSSPOISON)
+    p3.pbLearnMove(:BRICKBREAK)
+    p3.pbLearnMove(:ICEFANG)
+    p3.iv[1]=31
+    p3.iv[5]=31
+    p3.iv[3]=31
+    p3.ev[0]=250
+    p3.ev[4]=150
+    p3.setItem(:KINGSROCK)
+    p3.setAbility(1)
+    p3.makeShiny
+    
+    p4 = createPokemon("SCOLIPEDE", lVL)
+    p4.pbLearnMove(:MEGAHORN)
+    p4.pbLearnMove(:POISONJAB)
+    p4.pbLearnMove(:ROCKSLIDE)
+    p4.pbLearnMove(:TOXICSPIKES)
+    p4.iv[2]=31
+    p4.iv[3]=31
+    p4.iv[1]=31
+    p4.ev[1]=250
+    p4.ev[3]=150
+    p4.setItem(:TOXICPLATE)
+    p4.setAbility(2)
+
+    p5 = createPokemon("VENUSAUR", lVL)
+    p5.pbLearnMove(:FRENZYPLANT)
+    p5.pbLearnMove(:EARTHQUAKE)
+    p5.pbLearnMove(:SLUDGEBOMB)
+    p5.pbLearnMove(:LEECHSEED)
+    p5.iv[2]=31
+    p5.iv[1]=31
+    p5.iv[5]=31
+    p5.ev[0]=250
+    p5.ev[5]=150
+    p5.setItem(:VENUSAURITEG)
+    
+    p6 = createPokemon("WEEZING", lVL)
+    p6.pbLearnMove(:SLUDGEWAVE)
+    p6.pbLearnMove(:STRANGESTEAM)
+    p6.pbLearnMove(:FIREBLAST)
+    p6.pbLearnMove(:THUNDERBOLT)
+    p6.iv[4]=31
+    p6.iv[0]=31
+    p6.iv[5]=31
+
+
+
+Context starting at line 1827:
+
+    p6.pbLearnMove(:STRANGESTEAM)
+    p6.pbLearnMove(:FIREBLAST)
+    p6.pbLearnMove(:THUNDERBOLT)
+    p6.iv[4]=31
+    p6.iv[0]=31
+    p6.iv[5]=31
+    p6.ev[0]=250
+    p6.ev[4]=150
+    p6.form=1
+    p6.setAbility(1)
+    p6.setItem(:LEGENDITE)
+    
+    p7 = createPokemon("TOXAPEX", lVL)
+    p7.pbLearnMove(:BANEFULBUNKER)
+    p7.pbLearnMove(:TOXICSPIKES)
+    p7.pbLearnMove(:HAZE)
+    p7.pbLearnMove(:ATTRACT)
+    p7.iv[0]=31
+    p7.iv[2]=31
+    p7.iv[5]=31
+    p7.ev[2]=250
+    p7.ev[5]=150
+    p7.setGender(1)
+    p7.setAbility(2)
+    p7.setItem(:BLACKSLUDGE)
+    
+    p8 = createPokemon("MUK", lVL)
+    p8.pbLearnMove(:CURSE)
+    p8.pbLearnMove(:RECYCLE)
+    p8.pbLearnMove(:POISONJAB)
+    p8.pbLearnMove(:ICEPUNCH)
+    p8.iv[1]=31
+    p8.iv[2]=31
+    p8.iv[5]=31
+    p8.ev[1]=250
+    p8.ev[5]=150
+    p8.setItem(:AGUAVBERRY)
+    p8.form=1
+    p8.setAbility(0)
+    
+  elsif e4Trainer==16
+    Kernel.pbMessage(_INTL("Oh Zayen! Or do you prefer {1} now?",$Trainer.name))
+    Kernel.pbMessage(_INTL("You've motivated me to get back into the game!"))
+    Kernel.pbMessage(_INTL("Heehee I can't wait to battle!"))    
+    
+    p0=createPokemon("ALCREMIE",lVL)
+    p0.pbLearnMove(:DAZZLINGGLEAM)
+    p0.pbLearnMove(:MYSTICALFIRE)
+    p0.pbLearnMove(:RECOVER)
+    p0.pbLearnMove(:CALMMIND)
+    p0.iv[0]=31
+    p0.iv[4]=31
+    p0.iv[5]=31
+    p0.ev[0]=150
+    p0.ev[5]=250
+    p0.setItem(:ALCREMITE)
+    p0.setAbility(2)
+    
+    p1=createPokemon("GRIMMSNARL",lVL)
+    p1.pbLearnMove(:SUCKERPUNCH)
+
+
+
+Context starting at line 1980:
+
+    p8.pbLearnMove(:AQUAJET)
+    p8.pbLearnMove(:BELLYDRUM)
+    p8.pbLearnMove(:PLAYROUGH)
+    p8.pbLearnMove(:KNOCKOFF)
+    p8.setAbility(1)
+    p8.iv[0]=31
+    p8.iv[1]=31
+    p8.iv[3]=31
+    p8.ev[3]=250
+    p8.ev[1]=150
+    p8.setItem(:LEGENDITE)  
+    
+  elsif e4Trainer==17
+    Kernel.pbMessage(_INTL("Prepare to be spooked. Blah blah blah. Can we battle now?"))
+    
+    p0=createPokemon("MIMIKYU",lVL)
+    p0.pbLearnMove(:SHADOWSNEAK)
+    p0.pbLearnMove(:PLAYROUGH)
+    p0.pbLearnMove(:SWORDSDANCE)
+    p0.pbLearnMove(:SHADOWCLAW)
+    p0.iv[0]=31
+    p0.iv[2]=31
+    p0.iv[5]=31
+    p0.ev[1]=150
+    p0.ev[0]=250
+    p0.setItem(:LIFEORB)
+    
+    p1=createPokemon("DHELMISE",lVL)
+    p1.pbLearnMove(:ANCHORSHOT)
+    p1.pbLearnMove(:POWERWHIP)
+    p1.pbLearnMove(:RAPIDSPIN)
+    p1.pbLearnMove(:SYNTHESIS)
+    p1.iv[1]=31
+    p1.iv[0]=31
+    p1.iv[3]=31
+    p1.ev[0]=250
+    p1.ev[3]=150
+    p1.setItem(:COLBURBERRY)
+   
+    p2=createPokemon("CHANDELURE",lVL)
+    p2.pbLearnMove(:HEX)
+    p2.pbLearnMove(:WILLOWISP)
+    p2.pbLearnMove(:FLAMETHROWER)
+    p2.pbLearnMove(:SHADOWBALL)
+    p2.iv[0]=31
+    p2.iv[3]=31
+    p2.iv[4]=31
+    p2.ev[4]=250
+    p2.ev[3]=150
+    p2.setItem(:CHARCOAL)
+    p2.setAbility(2)
+    
+    p3=createPokemon("GENGAR",lVL)
+    p3.pbLearnMove(:KNOCKOFF)
+    p3.pbLearnMove(:SLUDGEWAVE)
+    p3.pbLearnMove(:SHADOWBALL)
+    p3.pbLearnMove(:SUBSTITUTE)
+    p3.iv[4]=31
+    p3.iv[2]=31
+    p3.iv[3]=31
+
+
+
+Context starting at line 2098:
+
+    p8.pbLearnMove(:HYPNOSIS)
+    p8.pbLearnMove(:DREAMEATER)
+    p8.pbLearnMove(:DARKPULSE)
+    p8.setAbility(2)
+    p8.iv[0]=31
+    p8.iv[2]=31
+    p8.iv[5]=31
+    p8.ev[5]=250
+    p8.ev[4]=150
+    p8.makeShiny
+    p8.setItem(:LEGENDITE) 
+    
+    p9.createPokemon("SKARMORY",lVL)
+    p8.pbLearnMove(:NASTYPLOT)
+    p8.pbLearnMove(:HYPNOSIS)
+    p8.pbLearnMove(:DREAMEATER)
+    p8.pbLearnMove(:DARKPULSE)
+    p8.setAbility(2)
+    p8.iv[0]=31
+    p8.iv[2]=31
+    p8.iv[5]=31
+    p8.ev[5]=250
+    p8.ev[4]=150
+    p8.makeShiny
+    
+    elsif e4Trainer==18
+    Kernel.pbMessage(_INTL("I'm a former elite four member looking to get back to my glory days."))
+    Kernel.pbMessage(_INTL("Do you think you can stop my steely might?"))   
+    
+    p0=createPokemon("COPPERAJAH",lVL)
+    p0.pbLearnMove(:SANDSTORM)
+    p0.pbLearnMove(:PLAYROUGH)
+    p0.pbLearnMove(:POWERWHIP)
+    p0.pbLearnMove(:IRONHEAD)
+    p0.iv[0]=31
+    p0.iv[1]=31
+    p0.iv[5]=31
+    p0.ev[1]=150
+    p0.ev[5]=250
+    p0.setItem(:COPPERAJITE)
+    p0.setAbility(0)
+    
+    p1=createPokemon("SANDSLASH",lVL)
+    p1.pbLearnMove(:IRONHEAD)
+    p1.pbLearnMove(:ICICLECRASH)
+    p1.pbLearnMove(:EARTHQUAKE)
+    p1.pbLearnMove(:AERIALACE)
+    p1.iv[1]=31
+    p1.iv[2]=31
+    p1.iv[3]=31
+    p1.ev[1]=250
+    p1.ev[3]=150
+    p1.setAbility(2)
+    p1.setItem(:LEGENDITE)
+    p1.form=1
+   
+    p2=createPokemon("MAGNEZONE",lVL)
+    p2.pbLearnMove(:THUNDER)
+    p2.pbLearnMove(:VOLTSWITCH)
+    p2.pbLearnMove(:TOXIC)
+
+
+
+Context starting at line 2141:
+
+    p1.pbLearnMove(:IRONHEAD)
+    p1.pbLearnMove(:ICICLECRASH)
+    p1.pbLearnMove(:EARTHQUAKE)
+    p1.pbLearnMove(:AERIALACE)
+    p1.iv[1]=31
+    p1.iv[2]=31
+    p1.iv[3]=31
+    p1.ev[1]=250
+    p1.ev[3]=150
+    p1.setAbility(2)
+    p1.setItem(:LEGENDITE)
+    p1.form=1
+   
+    p2=createPokemon("MAGNEZONE",lVL)
+    p2.pbLearnMove(:THUNDER)
+    p2.pbLearnMove(:VOLTSWITCH)
+    p2.pbLearnMove(:TOXIC)
+    p2.pbLearnMove(:FLASHCANNON)
+    p2.iv[0]=31
+    p2.iv[2]=31
+    p2.iv[4]=31
+    p2.ev[4]=250
+    p2.ev[2]=150
+    p2.setItem(:ZOOMLENS)
+    p2.setAbility(1)
+    
+    p3=createPokemon("STUNFISK",lVL)
+    p3.pbLearnMove(:YAWN)
+    p3.pbLearnMove(:EARTHQUAKE)
+    p3.pbLearnMove(:PAINSPLIT)
+    p3.pbLearnMove(:SNAPTRAP)
+    p3.iv[0]=31
+    p3.iv[2]=31
+    p3.iv[3]=31
+    p3.ev[1]=250
+    p3.ev[5]=150
+    p3.setItem(:FOCUSSASH)
+    p3.form=1
+    
+    p4=createPokemon("BISHARP",lVL)
+    p4.pbLearnMove(:PURSUIT)
+    p4.pbLearnMove(:NIGHTSLASH)
+    p4.pbLearnMove(:IRONHEAD)
+    p4.pbLearnMove(:SUCKERPUNCH)
+    p4.iv[0]=31
+    p4.iv[1]=31
+    p4.iv[2]=31
+    p4.ev[1]=250
+    p4.ev[3]=150
+    p4.setItem(:ASSAULTVEST)
+    p4.setAbility(0)
+    p4.makeShiny
+    
+    p5=createPokemon("COBALION",lVL)
+    p5.pbLearnMove(:IRONHEAD)
+    p5.pbLearnMove(:XSCISSOR)
+    p5.pbLearnMove(:SACREDSWORD)
+    p5.pbLearnMove(:SWORDSDANCE)
+    p5.iv[1]=31
+    p5.iv[5]=31
+
+
+
+Context starting at line 2235:
+
+    p8.pbLearnMove(:ATTACKORDER)
+    p8.pbLearnMove(:SHIFTGEAR)
+    p8.pbLearnMove(:STEELROLLER)
+    p8.pbLearnMove(:BODYSLAM)
+    p8.setAbility(2)
+    p8.iv[2]=31
+    p8.iv[1]=31
+    p8.iv[3]=31
+    p8.ev[1]=250
+    p8.ev[3]=150
+    p8.setItem(:LEGENDITE)  
+
+  elsif e4Trainer ==19
+    Kernel.pbMessage(_INTL("I am Burnham, a master of Psychic type Pokemon."))
+    Kernel.pbMessage(_INTL("I will contort your mind and bend your senses!"))
+    
+    p0 = createPokemon("SLOWKING", lVL)
+    p0.pbLearnMove(:EERIESPELL)
+    p0.pbLearnMove(:SLUDGEWAVE)
+    p0.pbLearnMove(:SLACKOFF)
+    p0.pbLearnMove(:CALMMIND)
+    p0.iv[0]=31
+    p0.iv[4]=31
+    p0.iv[2]=31
+    p0.ev[0]=250
+    p0.ev[5]=150
+    p0.form=1
+    p0.setItem(:BLACKSLUDGE)
+    p0.setAbility(2)
+    
+    p1 = createPokemon("HATTERENE", lVL)
+    p1.pbLearnMove(:PSYCHIC)
+    p1.pbLearnMove(:MYSTICALFIRE)
+    p1.pbLearnMove(:DRAININGKISS)
+    p1.pbLearnMove(:NUZZLE)
+    p1.iv[2]=31
+    p1.iv[4]=31
+    p1.iv[3]=31
+    p1.iv[0]=31
+    p1.iv[1]=31
+    p1.ev[4]=250
+    p1.ev[5]=250
+    p1.setItem(:ASSAULTVEST)
+    p1.setAbility(2)
+    
+    p2 = createPokemon("MEDICHAM", lVL)
+    p2.pbLearnMove(:FAKEOUT)
+    p2.pbLearnMove(:HIGHJUMPKICK)
+    p2.pbLearnMove(:ICEPUNCH)
+    p2.pbLearnMove(:ZENHEADBUTT)
+    p2.iv[0]=31
+    p2.iv[3]=31
+    p2.iv[1]=31
+    p2.ev[3]=250
+    p2.ev[1]=250
+    p2.setItem(:MEDICHAMITE)
+    p2.setNature(:JOLLY)
+    p2.setAbility(0)
+    
+    p3 = createPokemon("EXEGGUTOR", lVL)
+
+
+
+Context starting at line 2321:
+
+    p5 = createPokemon("CHIMECHO", lVL)
+    p5.pbLearnMove(:PSYCHICTERRAIN)
+    p5.pbLearnMove(:PSYCHIC)
+    p5.pbLearnMove(:GAMMARAYBURST)
+    p5.pbLearnMove(:HEALINGWISH)
+    p5.iv[3]=31
+    p5.iv[1]=31
+    p5.iv[5]=31
+    p5.ev[1]=150
+    p5.ev[2]=250
+    p5.setItem(:LEGENDITE)
+    
+    p6 = createPokemon("ABRA", lVL)
+    p6.pbLearnMove(:PSYCHIC)
+    p6.pbLearnMove(:CALMMIND)
+    p6.pbLearnMove(:ENERGYBALL)
+    p6.pbLearnMove(:SIGNALBEAM)
+    p6.iv[0]=31
+    p6.iv[4]=31
+    p6.iv[3]=31
+    p6.ev[4]=150
+    p6.ev[3]=250
+    p6.setItem(:LEGENDITE)
+    p6.setNature(:TIMID)
+    p6.setAbility(2)
+    
+    p7 = createPokemon("MALAMAR", lVL)
+    p7.pbLearnMove(:SUPERPOWER)
+    p7.pbLearnMove(:KNOCKOFF)
+    p7.pbLearnMove(:REST)
+    p7.pbLearnMove(:SLEEPTALK)
+    p7.iv[0]=31
+    p7.iv[3]=31
+    p7.iv[5]=31
+    p7.ev[5]=150
+    p7.ev[0]=250
+    p7.setItem(:LEFTOVERS)
+    p7.setNature(:CAREFUL)
+    p7.setAbility(0)
+    
+    p8 = createPokemon("ARTICUNO", lVL)
+    p8.pbLearnMove(:FREEZINGGLARE)
+    p8.pbLearnMove(:CALMMIND)
+    p8.pbLearnMove(:RECOVER)
+    p8.pbLearnMove(:AIRSLASH)
+    p8.iv[0]=31
+    p8.iv[3]=31
+    p8.iv[4]=31
+    p8.ev[4]=150
+    p8.ev[3]=250
+    p8.setNature(:TIMID)
+    p8.setItem(:HEAVYDUTYBOOTS)
+    p8.form=1
+    p8.makeShiny
+    
+  elsif e4Trainer==21
+    Kernel.pbMessage(_INTL("You seem to be a pretty strong trainer... "))
+    Kernel.pbMessage(_INTL("Let's see if you can face me at full power!"))   
+    
+    p0=createPokemon("TOXAPEX",lVL)
+
+
+
+Context starting at line 2333:
+
+    p6 = createPokemon("ABRA", lVL)
+    p6.pbLearnMove(:PSYCHIC)
+    p6.pbLearnMove(:CALMMIND)
+    p6.pbLearnMove(:ENERGYBALL)
+    p6.pbLearnMove(:SIGNALBEAM)
+    p6.iv[0]=31
+    p6.iv[4]=31
+    p6.iv[3]=31
+    p6.ev[4]=150
+    p6.ev[3]=250
+    p6.setItem(:LEGENDITE)
+    p6.setNature(:TIMID)
+    p6.setAbility(2)
+    
+    p7 = createPokemon("MALAMAR", lVL)
+    p7.pbLearnMove(:SUPERPOWER)
+    p7.pbLearnMove(:KNOCKOFF)
+    p7.pbLearnMove(:REST)
+    p7.pbLearnMove(:SLEEPTALK)
+    p7.iv[0]=31
+    p7.iv[3]=31
+    p7.iv[5]=31
+    p7.ev[5]=150
+    p7.ev[0]=250
+    p7.setItem(:LEFTOVERS)
+    p7.setNature(:CAREFUL)
+    p7.setAbility(0)
+    
+    p8 = createPokemon("ARTICUNO", lVL)
+    p8.pbLearnMove(:FREEZINGGLARE)
+    p8.pbLearnMove(:CALMMIND)
+    p8.pbLearnMove(:RECOVER)
+    p8.pbLearnMove(:AIRSLASH)
+    p8.iv[0]=31
+    p8.iv[3]=31
+    p8.iv[4]=31
+    p8.ev[4]=150
+    p8.ev[3]=250
+    p8.setNature(:TIMID)
+    p8.setItem(:HEAVYDUTYBOOTS)
+    p8.form=1
+    p8.makeShiny
+    
+  elsif e4Trainer==21
+    Kernel.pbMessage(_INTL("You seem to be a pretty strong trainer... "))
+    Kernel.pbMessage(_INTL("Let's see if you can face me at full power!"))   
+    
+    p0=createPokemon("TOXAPEX",lVL)
+    p0.pbLearnMove(:SCALD)
+    p0.pbLearnMove(:TOXIC)
+    p0.pbLearnMove(:RECOVER)
+    p0.pbLearnMove(:BANEFULBUNKER)
+    p0.iv[0]=31
+    p0.iv[1]=31
+    p0.iv[5]=31
+    p0.ev[0]=250
+    p0.ev[5]=250
+    p0.setItem(:BLACKSLUDGE)
+    p0.setAbility(2)
+    p0.makeShiny
+
+
+
+Context starting at line 2396:
+
+    p1.pbLearnMove(:REST)
+    p1.pbLearnMove(:SNORE)
+    p1.pbLearnMove(:TOXIC)
+    p1.pbLearnMove(:STEALTHROCK)
+    p1.iv[1]=31
+    p1.iv[2]=31
+    p1.iv[0]=31
+    p1.ev[2]=150
+    p1.ev[0]=250
+    p1.setAbility(0)
+    p1.setItem(:LEGENDITE)
+    p1.setNature(:BOLD)
+   
+    p2=createPokemon("AZELF",lVL)
+    p2.pbLearnMove(:NASTYPLOT)
+    p2.pbLearnMove(:FLAMETHROWER)
+    p2.pbLearnMove(:PSYCHIC)
+    p2.pbLearnMove(:DAZZLINGGLEAM)
+    p2.iv[0]=31
+    p2.iv[3]=31
+    p2.iv[4]=31
+    p2.ev[4]=250
+    p2.ev[3]=150
+    p2.setItem(:LIFEORB)
+    p2.setAbility(0)
+    p2.setNature(:TIMID)
+    
+    p3=createPokemon("MEDICHAM",lVL)
+    p3.pbLearnMove(:HIGHJUMPKICK)
+    p3.pbLearnMove(:ZENHEADBUTT)
+    p3.pbLearnMove(:ICEPUNCH)
+    p3.pbLearnMove(:THUNDERPUNCH)
+    p3.iv[0]=31
+    p3.iv[1]=31
+    p3.iv[3]=31
+    p3.ev[1]=250
+    p3.ev[3]=150
+    p3.setItem(:MEDICHAMITE)
+    p3.setAbility(0)
+    p3.setNature(:ADAMANT)
+    
+    p4=createPokemon("BRELOOM",lVL)
+    p4.pbLearnMove(:SPORE)
+    p4.pbLearnMove(:SWORDSDANCE)
+    p4.pbLearnMove(:SEEDBOMB)
+    p4.pbLearnMove(:BRICKBREAK)
+    p4.iv[3]=31
+    p4.iv[1]=31
+    p4.iv[2]=31
+    p4.ev[3]=250
+    p4.ev[1]=150
+    p4.setItem(:TOXICORB)
+    p4.setAbility(1)
+    p4.setNature(:JOLLY)
+    
+    
+    p5=createPokemon("VOLCARONA",lVL)
+    p5.pbLearnMove(:QUIVERDANCE)
+    p5.pbLearnMove(:FLAMETHROWER)
+    p5.pbLearnMove(:BUGBUZZ)
+
+
+
+Context starting at line 2519:
+
+    p3=createPokemon("MORELULL",lVL)
+    p3.pbLearnMove(:JUNGLEHEALING)
+    p3.pbLearnMove(:SPORE)
+    p3.pbLearnMove(:STRENGTHSAP)
+    p3.pbLearnMove(:DAZZLINGGLEAM)
+    p3.iv[0]=31
+    p3.iv[2]=31
+    p3.iv[4]=31
+    p3.ev[0]=250
+    p3.ev[2]=250
+    p3.setItem(:LEGENDITE)
+    p3.setAbility(3)
+    p3.setNature(:BOLD)
+    
+    p4=createPokemon("MAGEARNA",lVL)
+    p4.pbLearnMove(:DAZZLINGGLEAM)
+    p4.pbLearnMove(:AURASPHERE)
+    p4.pbLearnMove(:THUNDERBOLT)
+    p4.pbLearnMove(:ICEBEAM)
+    p4.iv[3]=31
+    p4.iv[4]=31
+    p4.iv[0]=31
+    p4.ev[3]=250
+    p4.ev[4]=250
+    p4.form=1
+    p4.setItem(:ASSAULTVEST)
+    p4.setNature(:MODEST)
+    
+    
+    p5=createPokemon("GARDEVOIR",lVL)
+    p5.pbLearnMove(:CALMMIND)
+    p5.pbLearnMove(:HYPERVOICE)
+    p5.pbLearnMove(:PSYCHIC)
+    p5.pbLearnMove(:FOCUSBLAST)
+    p5.iv[4]=31
+    p5.iv[5]=31
+    p5.iv[3]=31
+    p5.ev[3]=252
+    p5.ev[4]=252
+    p5.setAbility(0)
+    p5.name="Void"
+    p5.makeShiny
+    p5.setItem(:GARDEVOIRITE)
+    p5.setNature(:TIMID)
+    
+    p6=p5
+    p7=p5
+    p8=p5
+    
+    
+    elsif e4Trainer==23
+    Kernel.pbMessage(_INTL("Hey kid. You wanna go big? Let's see if you can!"))
+    
+    p0=createPokemon("GRENINJA",lVL)
+    p0.pbLearnMove(:WATERSHURIKEN)
+    p0.pbLearnMove(:AIRSLASH)
+    p0.pbLearnMove(:ICEBEAM)
+    p0.pbLearnMove(:SLUDGEBOMB)
+    p0.iv[0]=31
+    p0.iv[1]=0
+
+
+
+Context starting at line 2651:
+
+    p5.pbLearnMove(:FANCYFLASH)
+    p5.pbLearnMove(:BOUNCYBUBBLE)
+    p5.pbLearnMove(:BUZZYBUZZ)
+    p5.iv[4]=31
+    p5.iv[5]=31
+    p5.iv[3]=31
+    p5.ev[3]=252
+    p5.ev[4]=252
+    p5.setAbility(0)
+    p5.makeShiny
+    p5.setItem(:LEGENDITE)
+    p5.setNature(:JOLLY)
+    
+    p6=p5
+    p7=p5
+    p8=p5
+    
+  elsif e4Trainer==24
+    Kernel.pbMessage(_INTL("Ghosts might be frail, challenger, but the supernatural are never to be underestimated!"))
+    
+    p0=createPokemon("PALOSSAND",lVL)
+    p0.pbLearnMove(:SHADOWBALL)
+    p0.pbLearnMove(:SCORCHINGSANDS)
+    p0.pbLearnMove(:SLUDGEBOMB)
+    p0.pbLearnMove(:ICEBEAM)
+    p0.iv[0]=31
+    p0.iv[4]=31
+    p0.iv[5]=31
+    p0.ev[4]=250
+    p0.ev[5]=250
+    p0.setItem(:LAXINCENSE)
+    p0.setAbility(2)
+    p0.setNature(:CALM)
+    
+    p1=createPokemon("AEGISLASH",lVL)
+    p1.pbLearnMove(:IRONHEAD)
+    p1.pbLearnMove(:SHADOWCLAW)
+    p1.pbLearnMove(:ROCKSLIDE)
+    p1.pbLearnMove(:KINGSSHIELD)
+    p1.iv[0]=31
+    p1.iv[1]=31
+    p1.iv[3]=31
+    p1.ev[3]=250
+    p1.ev[0]=250
+    p1.setAbility(0)
+    p1.setItem(:AIRBALLOON)
+    p1.setNature(:IMPISH)
+   
+    p2=createPokemon("CURSOLA",lVL)
+    p2.pbLearnMove(:HEX)
+    p2.pbLearnMove(:WILLOWISP)
+    p2.pbLearnMove(:SHADOWBALL)
+    p2.pbLearnMove(:ICEBEAM)
+    p2.iv[1]=31
+    p2.iv[2]=31
+    p2.iv[0]=31
+    p2.ev[0]=250
+    p2.ev[2]=250
+    p2.setItem(:SCOPELENS)
+    p2.setAbility(2)
+
+
+
+Context starting at line 2741:
+
+    p5.pbLearnMove(:SWORDSDANCE)
+    p5.pbLearnMove(:SHADOWCLAW)
+    p5.pbLearnMove(:PLAYROUGH)
+    p5.pbLearnMove(:SHADOWSNEAK)
+    p5.iv[2]=31
+    p5.iv[1]=31
+    p5.iv[3]=31
+    p5.ev[2]=252
+    p5.ev[1]=252
+    p5.setAbility(0)
+    p5.setItem(:LEGENDITE)
+    p5.setNature(:ADAMANT)
+    
+    p6=p5
+    p7=p5
+    p8=p5
+    
+    
+  elsif e4Trainer==25
+    Kernel.pbMessage(_INTL("The Dunning-Kruger Effect indicates that we all have pockets of incompetence which we don't accurately assess due to said incompetence."))
+    Kernel.pbMessage(_INTL("The Online Disinhibition Effect describes that people act worse online, behind the shield of anonymous communication."))
+    Kernel.pbMessage(_INTL("If you use knowledge of these and other phenomena to improve your life and actions, I applaud you."))
+
+    p0=createPokemon("EXCADRILL",lVL)
+    p0.pbLearnMove(:STEALTHROCK)
+    p0.pbLearnMove(:EARTHQUAKE)
+    p0.pbLearnMove(:IRONHEAD)
+    p0.pbLearnMove(:ROCKSLIDE)
+    p0.iv[0]=31
+    p0.iv[1]=31
+    p0.iv[3]=31
+    p0.ev[1]=250
+    p0.ev[3]=250
+    p0.setItem(:FOCUSSASH)
+    p0.setAbility(2)
+    p0.name="Reliability"
+    p0.setNature(:JOLLY)
+    
+    p1=createPokemon("HYDREIGON",lVL)
+    p1.pbLearnMove(:DARKPULSE)
+    p1.pbLearnMove(:DRAGONPULSE)
+    p1.pbLearnMove(:EARTHPOWER)
+    p1.pbLearnMove(:SLUDGEWAVE)
+    p1.iv[0]=31
+    p1.iv[4]=31
+    p1.iv[3]=31
+    p1.ev[3]=250
+    p1.ev[4]=250
+    p1.setAbility(0)
+    p1.name="Awareness"
+    p1.setItem(:LIFEORB)
+    p1.setNature(:TIMID)
+   
+    p2=createPokemon("GYARADOS",lVL)
+    p2.pbLearnMove(:EARTHQUAKE)
+    p2.pbLearnMove(:DRAGONDANCE)
+    p2.pbLearnMove(:WATERFALL)
+    p2.pbLearnMove(:ICEFANG)
+    p2.iv[1]=31
+    p2.iv[2]=31
+
+
+
+Context starting at line 2826:
+
+    p4.pbLearnMove(:EARTHQUAKE)
+    p4.pbLearnMove(:UTURN)
+    p4.happiness=255
+    p4.name="Benevolence"
+    p4.iv[3]=31
+    p4.iv[2]=31
+    p4.iv[1]=31
+    p4.ev[3]=250
+    p4.ev[1]=250
+    p4.setAbility(2)
+    p4.setItem(:LEGENDITE)
+    p4.setNature(:ADAMANT)
+    
+
+    p5=createPokemon("XERNEAS",lVL)
+    p5.pbLearnMove(:GEOMANCY)
+    p5.pbLearnMove(:HIDDENPOWER)
+    p5.pbLearnMove(:LIGHTOFRUIN)
+    p5.pbLearnMove(:MOONBLAST)
+    p5.iv[2]=31
+    p5.iv[1]=13
+    p5.iv[3]=31
+    p5.iv[4]=31
+    p4.iv[0]=31
+    p5.ev[2]=252
+    p5.ev[1]=252
+    p5.setAbility(0)
+    p5.makeShiny
+    p5.name="Transcendence"
+    p5.setItem(:POWERHERB)
+    p5.setNature(:MODEST)
+    
+    p6=p5
+    p7=p5
+    p8=p5  
+    
+    
+  elsif e4Trainer==26
+    Kernel.pbMessage(_INTL("As swift as wind, as gentle as forest, as fierce as fire, as unshakable as mountain."))
+    Kernel.pbMessage(_INTL("Have you heard about that? It's the battle standard used by Takeda Shingen in Sengoku period. Now let's see how you face it in a real pokemon battle, {1}", $Trainer.name))
+
+    p0=createPokemon("HITMONTOP",lVL)
+    p0.pbLearnMove(:TRIPLEAXEL)
+    p0.pbLearnMove(:TRIPLEKICK)
+    p0.pbLearnMove(:FAKEOUT)
+    p0.pbLearnMove(:RAPIDSPIN)
+    p0.iv[0]=31
+    p0.iv[1]=31
+    p0.iv[3]=31
+    p0.ev[1]=250
+    p0.ev[3]=250
+    p0.setItem(:FOCUSSASH)
+    p0.setAbility(1)
+    p0.name="Circle"
+    p0.setNature(:ADAMANT)
+    
+    p1=createPokemon("MIENSHAO",lVL)
+    p1.pbLearnMove(:HIGHJUMPKICK)
+    p1.pbLearnMove(:FAKEOUT)
+    p1.pbLearnMove(:KNOCKOFF)
+
+
+
+Context starting at line 2929:
+
+    p4.pbLearnMove(:EARTHQUAKE)
+    p4.pbLearnMove(:ROCKSLIDE)
+    p4.pbLearnMove(:BRICKBREAK)
+    p4.name="Surprise"
+    p4.iv[3]=31
+    p4.iv[2]=31
+    p4.iv[1]=31
+    p4.ev[3]=250
+    p4.ev[1]=250
+    p4.setAbility(0)
+    p4.setItem(:LEGENDITE)
+    p4.setNature(:JOLLY)
+
+    p5=createPokemon("MEDICHAM",lVL)
+    p5.pbLearnMove(:GEOMANCY)
+    p5.pbLearnMove(:HIDDENPOWER)
+    p5.pbLearnMove(:LIGHTOFRUIN)
+    p5.pbLearnMove(:MOONBLAST)
+    p5.iv[2]=31
+    p5.iv[1]=31
+    p5.iv[3]=31
+    p5.ev[3]=252
+    p5.ev[1]=252
+    p5.setAbility(0)
+    p5.name="Monk"
+    p5.setItem(:MEDICHAMITE)
+    p5.setNature(:JOLLY)
+    
+    p6=p5
+    p7=p5
+    p8=p5    
+    
+  elsif e4Trainer==27
+    Kernel.pbMessage(_INTL("Do you feel it? Climbing up your spine, into your neck? That's fear my friend, you best be ready."))
+
+    p0=createPokemon("LUCARIO",lVL)
+    p0.pbLearnMove(:CLOSECOMBAT)
+    p0.pbLearnMove(:METEORMASH)
+    p0.pbLearnMove(:HOLYBLADE)
+    p0.pbLearnMove(:THUNDERPUNCH)
+    p0.iv[0]=31
+    p0.iv[1]=31
+    p0.iv[3]=31
+    p0.ev[1]=250
+    p0.ev[3]=250
+    p0.setItem(:FOCUSSASH)
+    p0.setAbility(2)
+    p0.setNature(:JOLLY)
+    
+    p1=createPokemon("DRACOVISH",lVL)
+    p1.pbLearnMove(:FISHIOUSREND)
+    p1.pbLearnMove(:OUTRAGE)
+    p1.pbLearnMove(:PSYCHICFANGS)
+    p1.pbLearnMove(:CRUNCH)
+    p1.iv[0]=31
+    p1.iv[1]=31
+    p1.iv[3]=31
+    p1.ev[3]=250
+    p1.ev[1]=250
+    p1.setAbility(1)
+
+
+
+Context starting at line 3116:
+
+    p4.pbLearnMove(:UTURN)
+    p4.pbLearnMove(:NUZZLE)
+    p4.pbLearnMove(:SUPERFANG)
+    p4.pbLearnMove(:SWEETKISS)
+    p4.iv[0]=31
+    p4.iv[2]=31
+    p4.iv[5]=31
+    p4.ev[0]=250
+    p4.ev[2]=250
+    p4.setAbility(2)
+    p4.setItem(:LEGENDITE)
+    p4.setNature(:IMPISH)
+    p4.setGender(0)
+    
+    p5=createPokemon("METAGROSS",lVL)
+    p5.pbLearnMove(:METEORMASH)
+    p5.pbLearnMove(:EARTHQUAKE)
+    p5.pbLearnMove(:THUNDERPUNCH)
+    p5.pbLearnMove(:ICEPUNCH)
+    p5.iv[2]=31
+    p5.iv[1]=31
+    p5.iv[3]=31
+    p5.ev[3]=252
+    p5.ev[1]=252
+    p5.setAbility(0)
+    p5.setItem(:METAGROSSITE)
+    p5.setNature(:NAUGHTY)
+    
+    p6=p5
+    p7=p5
+    p8=p5     
+    
+    
+  elsif e4Trainer==29
+    Kernel.pbMessage(_INTL("I used to be a gym leader in another region, but I wanted to start a new life as a radio presenter here in Kiraki. Always on air!"))
+
+    p0=createPokemon("SKARMORY",lVL)
+    p0.pbLearnMove(:WHIRLWIND)
+    p0.pbLearnMove(:STEALTHROCK)
+    p0.pbLearnMove(:ROOST)
+    p0.pbLearnMove(:IRONHEAD)
+    p0.iv[0]=31
+    p0.iv[1]=31
+    p0.iv[3]=31
+    p0.ev[0]=250
+    p0.ev[5]=250
+    p0.makeShiny
+    p0.setItem(:LEFTOVERS)
+    p0.setAbility(1)
+    p0.form=0
+    p0.setNature(:JOLLY)
+       
+    p1=createPokemon("TOGEKISS",lVL)
+    p1.pbLearnMove(:AURASPHERE)
+    p1.pbLearnMove(:MOONBLAST)
+    p1.pbLearnMove(:AIRSLASH)
+    p1.pbLearnMove(:GAMMARAYBURST)
+    p1.iv[0]=31
+    p1.iv[4]=31
+    p1.iv[3]=31
+
+
+
+Context starting at line 3198:
+
+    p3.pbLearnMove(:SHADOWBALL)
+    p3.pbLearnMove(:THUNDER)
+    p3.pbLearnMove(:HURRICANE)
+    p3.pbLearnMove(:RAINDANCE)
+    p3.iv[0]=31
+    p3.iv[4]=31
+    p3.iv[3]=31
+    p3.ev[3]=250
+    p3.ev[4]=250
+    p3.setAbility(0)
+    p3.setItem(:LEGENDITE)
+    p3.setNature(:TIMID)
+    p3.setGender(1)
+
+    p4=createPokemon("SHAYMIN",lVL)
+    p4.pbLearnMove(:HIDDENPOWER)
+    p4.pbLearnMove(:EARTHPOWER)
+    p4.pbLearnMove(:SEEDFLARE)
+    p4.pbLearnMove(:AIRSLASH)
+    p4.iv[0]=31
+    p4.iv[1]=18
+    p4.iv[2]=31
+    p4.iv[3]=31
+    p4.iv[4]=31
+    p4.iv[5]=31
+    p4.ev[3]=250
+    p4.ev[4]=250
+    p4.setItem(:LIFEORB)
+    p4.setNature(:IMPISH)
+    p4.form=1
+    
+    p5=createPokemon("SALAMENCE",lVL)
+    p5.pbLearnMove(:DRAGONDANCE)
+    p5.pbLearnMove(:EARTHQUAKE)
+    p5.pbLearnMove(:RETURN)
+    p5.pbLearnMove(:ROOST)
+    p5.iv[2]=31
+    p5.iv[1]=31
+    p5.iv[3]=31
+    p5.ev[3]=252
+    p5.ev[1]=252
+    p5.setAbility(0)
+    p5.happiness=255
+    p5.setItem(:SALAMENCITE)
+    p5.setNature(:ADAMANT)
+    
+    p6=p5
+    p7=p5
+    p8=p5   
+    
+   elsif e4Trainer==30
+    Kernel.pbMessage(_INTL("Kudos on making it this far, but your run ends now!"))
+
+    p0=createPokemon("CARVANHA",lVL)
+    p0.pbLearnMove(:LIQUIDATION)
+    p0.pbLearnMove(:CRUNCH)
+    p0.pbLearnMove(:ICEFANG)
+    p0.pbLearnMove(:PSYCHICFANGS)
+    p0.iv[0]=31
+    p0.iv[1]=31
+
+
+
+Context starting at line 3251:
+
+    p0=createPokemon("CARVANHA",lVL)
+    p0.pbLearnMove(:LIQUIDATION)
+    p0.pbLearnMove(:CRUNCH)
+    p0.pbLearnMove(:ICEFANG)
+    p0.pbLearnMove(:PSYCHICFANGS)
+    p0.iv[0]=31
+    p0.iv[1]=31
+    p0.iv[3]=31
+    p0.ev[1]=250
+    p0.ev[3]=250
+    p0.setItem(:LEGENDITE)
+    p0.setAbility(2)
+    p0.setNature(:ADAMANT)
+       
+    p1=createPokemon("SLOWBRO",lVL)
+    p1.pbLearnMove(:CALMMIND)
+    p1.pbLearnMove(:PSYCHIC)
+    p1.pbLearnMove(:SLACKOFF)
+    p1.pbLearnMove(:SURF)
+    p1.iv[0]=31
+    p1.iv[5]=31
+    p1.iv[2]=31
+    p1.ev[0]=250
+    p1.ev[2]=160
+    p1.ev[5]=196
+    p1.setAbility(0)
+    p1.setItem(:SLOWBRONITE)
+    p1.setNature(:BOLD)
+    
+    p2=createPokemon("INCINEROAR",lVL)
+    p2.pbLearnMove(:DRAINPUNCH)
+    p2.pbLearnMove(:KNOCKOFF)
+    p2.pbLearnMove(:BLAZEKICK)
+    p2.pbLearnMove(:EARTHQUAKE)
+    p2.iv[5]=31
+    p2.iv[2]=31
+    p2.iv[0]=31
+    p2.ev[0]=250
+    p2.ev[2]=128
+    p2.ev[5]=128
+    p2.setItem(:ASSAULTVEST)
+    p2.setAbility(2)
+    p2.setNature(:IMPISH)
+    p2.makeShiny
+    
+    p3=createPokemon("GLISCOR",lVL)
+    p3.pbLearnMove(:SHOREUP)
+    p3.pbLearnMove(:BRAVEBIRD)
+    p3.pbLearnMove(:EARTHQUAKE)
+    p3.pbLearnMove(:SWORDSDANCE)
+    p3.iv[0]=31
+    p3.iv[1]=31
+    p3.iv[2]=31
+    p3.ev[1]=250
+    p3.ev[2]=250
+    p3.setAbility(2)
+    p3.setItem(:TOXICORB)
+    p3.setNature(:ADAMANT)
+
+    p4=createPokemon("SCIZOR",lVL)
+
+
+
+Context starting at line 3378:
+
+    p2.pbLearnMove(:DIG)
+    p2.pbLearnMove(:DRAGONCLAW)
+    p2.pbLearnMove(:CRUNCH)
+    p2.pbLearnMove(:EARTHQUAKE)
+    p2.iv[5]=31
+    p2.iv[2]=31
+    p2.iv[1]=31
+    p2.ev[1]=250
+    p2.ev[2]=128
+    p2.ev[3]=128
+    p2.setItem(:LEGENDITE)
+    p2.setAbility(2)
+    p2.setNature(:IMPISH)
+    
+    p3=createPokemon("HYDREIGON",lVL)
+    p3.pbLearnMove(:OUTRAGE)
+    p3.pbLearnMove(:CRUNCH)
+    p3.pbLearnMove(:FLAMETHROWER)
+    p3.pbLearnMove(:DARKPULSE)
+    p3.iv[0]=31
+    p3.iv[4]=31
+    p3.iv[3]=31
+    p3.ev[4]=250
+    p3.ev[3]=250
+    p3.setAbility(2)
+    p3.setItem(:LEFTOVERS)
+    p3.setNature(:ADAMANT)
+
+    p4=createPokemon("HAXORUS",lVL)
+    p4.pbLearnMove(:OUTRAGE)
+    p4.pbLearnMove(:EARTHQUAKE)
+    p4.pbLearnMove(:XSCISSOR)
+    p4.pbLearnMove(:SURF)
+    p4.iv[0]=31
+    p4.iv[1]=31
+    p4.iv[2]=31
+    p4.iv[3]=31
+    p4.iv[4]=31
+    p4.iv[5]=31
+    p4.ev[1]=250
+    p4.ev[3]=250
+    p4.setAbility(1)
+    p4.setItem(:LEFTOVERS)
+    p4.setNature(:IMPISH)
+    
+    p5=createPokemon("GENGAR",lVL)
+    p5.pbLearnMove(:SLUDGEBOMB)
+    p5.pbLearnMove(:PSYCHIC)
+    p5.pbLearnMove(:SHADOWBALL)
+    p5.pbLearnMove(:DARKPULSE)
+    p5.iv[4]=31
+    p5.iv[0]=31
+    p5.iv[2]=31
+    p5.ev[0]=252
+    p5.ev[4]=252
+    p5.setAbility(1)
+    p5.setItem(:LEFTOVERS)
+    p5.setNature(:BOLD)  
+    p5.makeShiny
+    
+
+
+
+Context starting at line 3506:
+
+    p4.pbLearnMove(:BRAVEBIRD)
+    p4.pbLearnMove(:UTURN)
+    p4.pbLearnMove(:IRONHEAD)
+    p4.pbLearnMove(:BODYSLAM)
+    p4.iv[0]=31
+    p4.iv[3]=31
+    p4.iv[5]=31
+    p4.ev[0]=250
+    p4.ev[3]=250
+    p4.setAbility(2)
+    p4.setItem(:LEGENDITE)
+    p4.setNature(:CAREFUL)
+    
+    p5=createPokemon("PRIMARINA",lVL)
+    p5.pbLearnMove(:SURF)
+    p5.pbLearnMove(:MOONBLAST)
+    p5.pbLearnMove(:ICEBEAM)
+    p5.pbLearnMove(:ENERGYBALL)
+    p5.iv[4]=31
+    p5.iv[0]=31
+    p5.iv[3]=31
+    p5.ev[3]=252
+    p5.ev[4]=252
+    p5.setAbility(0)
+    p5.setItem(:LIFEORB)
+    p5.setNature(:TIMID)  
+        
+    p6=p5
+    p7=p5
+    p8=p5    
+    
+  elsif e4Trainer==33
+    Kernel.pbMessage(_INTL("Hm? Sorry, I just got off the phone with Platinum Heights. For some reason they want my Primarina..."))
+    Kernel.pbMessage(_INTL("Anyways, let's battle! If the lag doesn't get you my fairies will!"))   
+   
+
+    p0=createPokemon("EXCADRILL",lVL)
+    p0.pbLearnMove(:ROCKTOMB)
+    p0.pbLearnMove(:STEALTHROCK)
+    p0.pbLearnMove(:EARTHQUAKE)
+    p0.pbLearnMove(:RAPIDSPIN)
+    p0.iv[1]=31
+    p0.iv[0]=31
+    p0.iv[3]=31
+    p0.ev[3]=250
+    p0.ev[1]=250
+    p0.setItem(:FOCUSSASH)
+    p0.setAbility(2)
+    p0.setNature(:JOLLY)
+    
+       
+    p1=createPokemon("ZACIAN",lVL)
+    p1.pbLearnMove(:PLAYROUGH)
+    p1.pbLearnMove(:CLOSECOMBAT)
+    p1.pbLearnMove(:SWORDSDANCE)
+    p1.pbLearnMove(:BEHEMOTHBLADE)
+    p1.iv[0]=31
+    p1.iv[1]=31
+    p1.iv[3]=31
+    p1.ev[1]=250
+
+
+
+Context starting at line 3707:
+
+    p4.pbLearnMove(:SHELLSMASH)
+    p4.pbLearnMove(:ROCKBLAST)
+    p4.pbLearnMove(:LIQUIDATION)
+    p4.pbLearnMove(:ICICLESPEAR)
+    p4.iv[4]=31
+    p4.iv[3]=31
+    p4.iv[0]=31
+    p4.ev[4]=250
+    p4.ev[3]=250
+    p4.setAbility(1)
+    p4.setItem(:LEGENDITE)
+    p4.setNature(:ADAMANT)
+    p4.name="Perle"
+    p4.ballused=5
+    
+    p5=createPokemon("ABSOL",lVL)
+    p5.pbLearnMove(:NIGHTSLASH)
+    p5.pbLearnMove(:HOLYBLADE)
+    p5.pbLearnMove(:PLAYROUGH)
+    p5.pbLearnMove(:PSYCHOCUT)
+    p5.iv[1]=31
+    p5.iv[0]=31
+    p5.iv[3]=31
+    p5.ev[3]=252
+    p5.ev[1]=252
+    p5.setAbility(1)
+    p5.setItem(:RAZORCLAW)
+    p5.setNature(:ADAMANT)  
+    p5.ballused=9
+    p5.name="Gothic"
+        
+    p6=p5
+    p7=p5
+    p8=p5       
+
+  elsif e4Trainer==35
+    Kernel.pbMessage(_INTL("It's getting real hot here."))
+    Kernel.pbMessage(_INTL("Have you ever been in a storm? A real storm?"))
+    Kernel.pbMessage(_INTL("Me and my pokemon will show you, a storm of fists! YAAAAAAAAARGH!!!"))
+    
+    p0=createPokemon("ZAMAZENTA",lVL)
+    p0.pbLearnMove(:IRONHEAD)
+    p0.pbLearnMove(:CLOSECOMBAT)
+    p0.pbLearnMove(:CRUNCH)
+    p0.pbLearnMove(:PLAYROUGH)
+    p0.iv[1]=31
+    p0.iv[0]=31
+    p0.iv[3]=31
+    p0.ev[3]=250
+    p0.ev[1]=250
+    p0.setItem(:RUSTEDSHIELD)
+    p0.setAbility(0)
+    p0.setNature(:JOLLY)
+    
+       
+    p1=createPokemon("MEWTWO",lVL)
+    p1.pbLearnMove(:ICEPUNCH)
+    p1.pbLearnMove(:LOWKICK)
+    p1.pbLearnMove(:EARTHQUAKE)
+    p1.pbLearnMove(:TAUNT)
+
+
+
+Context starting at line 3886:
+
+    p2.pbLearnMove(:EARTHQUAKE)
+    p2.iv[0]=31
+    p2.iv[1]=31
+    p2.iv[2]=31
+    p2.iv[3]=31
+    p2.iv[4]=31
+    p2.iv[5]=31
+    p2.ev[1]=252
+    p2.ev[3]=252
+    p2.ev[2]=4
+    p2.setItem(:LEGENDITE)
+    p2.setAbility(0)
+    p2.setNature(:JOLLY)
+    
+    p3=createPokemon("ETERNATUS",lVL)
+    p3.pbLearnMove(:DYNAMAXCANNON)
+    p3.pbLearnMove(:FLAMETHROWER)
+    p3.pbLearnMove(:METEORBEAM)
+    p3.pbLearnMove(:RECOVER)
+    p3.iv[0]=31
+    p3.iv[1]=31
+    p3.iv[2]=31
+    p3.iv[3]=31
+    p3.iv[4]=31
+    p3.iv[5]=31
+    p3.ev[3]=252
+    p3.ev[5]=252
+    p3.ev[2]=4
+    p3.setItem(:LIFEORB)
+    p3.setAbility(0)
+    p3.setNature(:TIMID)
+    
+    p4=createPokemon("TOXTRICITY",lVL)
+    p4.pbLearnMove(:OVERDRIVE)
+    p4.pbLearnMove(:BOOMBURST)
+    p4.pbLearnMove(:VOLTSWITCH)
+    p4.pbLearnMove(:SNARL)
+    p4.iv[0]=31
+    p4.iv[1]=31
+    p4.iv[2]=31
+    p4.iv[3]=31
+    p4.iv[4]=31
+    p4.iv[5]=31
+    p4.ev[3]=252
+    p4.ev[5]=252
+    p4.ev[2]=4
+    p4.setItem(:CHOICESCARF)
+    p4.setAbility(0)
+    p4.setNature(:MODEST)
+    
+    p5=createPokemon("TENTACRUEL",lVL)
+    p5.pbLearnMove(:KNOCKOFF)
+    p5.pbLearnMove(:RAPIDSPIN)
+    p5.pbLearnMove(:SCALD)
+    p5.pbLearnMove(:ICEBEAM)
+    p5.iv[0]=31
+    p5.iv[1]=31
+    p5.iv[2]=31
+    p5.iv[3]=31
+    p5.iv[4]=31
+
+
+
+====================================================================================================
+FOUND MAGNIFYINGGLASS AT OFFSET 197109
+====================================================================================================
+
+
+Context starting at line 308:
+
+    p1 = createPokemon("AMPHAROS", lVL)
+    p1.pbLearnMove(:BEACON)
+    p1.pbLearnMove(:PRISMSHOT)
+    p1.pbLearnMove(:THUNDERBOLT)
+    p1.pbLearnMove(:DRAGONDANCE)
+    p1.iv[2]=31
+    p1.iv[4]=31
+    p1.iv[0]=31
+    p1.ev[4]=150
+    p1.ev[3]=250
+    p1.setItem(:MAGNIFYINGGLASS)
+    
+    p2 = createPokemon("GALVANTULA", lVL)
+    p2.pbLearnMove(:HIDDENPOWER)
+    p2.pbLearnMove(:THUNDERWAVE)
+    p2.pbLearnMove(:UTURN)
+    p2.pbLearnMove(:THUNDER)
+    p2.iv[0]=31
+    p2.iv[1]=19
+    p2.iv[2]=31
+    p2.iv[3]=31
+    p2.iv[4]=31
+    p2.ev[0]=250
+    p2.ev[5]=150
+    p2.setItem(:LIFEORB)
+    p2.setAbility(0)
+    
+    p3 = createPokemon("RAICHU", lVL)
+    p3.pbLearnMove(:THUNDER)
+    p3.pbLearnMove(:SURF)
+    p3.pbLearnMove(:RAINDANCE)
+    p3.pbLearnMove(:ATTRACT)
+    p3.iv[1]=31
+    p3.iv[5]=31
+    p3.iv[3]=31
+    p3.ev[3]=150
+    p3.ev[0]=250
+    p3.form=1
+    p3.setItem(:LEGENDITE)
+    p3.setAbility(0)
+    
+    p4 = createPokemon("ROTOM", lVL)
+    p4.pbLearnMove(:SHADOWBALL)
+    p4.pbLearnMove(:SIGNALBEAM)
+    p4.pbLearnMove(:DISCHARGE)
+    p4.pbLearnMove(:TOXIC)
+    p4.iv[4]=31
+    p4.iv[2]=31
+    p4.iv[0]=31
+    p4.ev[2]=250
+    p4.ev[5]=150
+    p4.setItem(:ZAPPLATE)
+    
+    p5 = createPokemon("ZAPDOS", lVL)
+    p5.pbLearnMove(:HIDDENPOWER)
+    p5.pbLearnMove(:THUNDERBOLT)
+    p5.pbLearnMove(:ROOST)
+    p5.pbLearnMove(:HEATWAVE)
+    p5.iv[3]=31
+    p5.iv[4]=31
+
+
+
+Context starting at line 603:
+
+    p4 = createPokemon("ABSOL", lVL)
+    p4.pbLearnMove(:ICEFANG)
+    p4.pbLearnMove(:CRUNCH)
+    p4.pbLearnMove(:HOLYSWORD)
+    p4.pbLearnMove(:LIGHTSPEED)
+    p4.iv[2]=31
+    p4.iv[1]=31
+    p4.iv[0]=31
+    p4.ev[3]=250
+    p4.ev[2]=250
+    p4.setItem(:MAGNIFYINGGLASS)
+    
+    p5 = createPokemon("UXIE", lVL)
+    p5.pbLearnMove(:YAWN)
+    p5.pbLearnMove(:UTURN)
+    p5.pbLearnMove(:ZENHEADBUTT)
+    p5.pbLearnMove(:SUNRISE)
+    p5.iv[5]=31
+    p5.iv[0]=31
+    p5.iv[1]=31
+    p5.ev[0]=250
+    p5.ev[5]=250
+    p5.setItem(:LIFEORB)
+    
+    p6 = createPokemon("BLACEPHALON", lVL)
+    p6.pbLearnMove(:SHADOWBALL)
+    p6.pbLearnMove(:FLAMETHROWER)
+    p6.pbLearnMove(:GAMMARAYBURST)
+    p6.pbLearnMove(:CALMMIND)
+    p6.iv[4]=31
+    p6.iv[5]=31
+    p6.iv[2]=31
+    p6.ev[3]=250
+    p6.ev[4]=250
+    p6.setItem(:CHOICESCARF)
+    p6.makeShiny
+    
+    p7 = createPokemon("PHOTEON", lVL)
+    p7.pbLearnMove(:LIGHTSPEED)
+    p7.pbLearnMove(:FANCYFLASH)
+    p7.pbLearnMove(:SUNSET)
+    p7.pbLearnMove(:DAZZLINGGLEAM)
+    p7.iv[3]=31
+    p7.iv[0]=31
+    p7.iv[4]=31
+    p7.ev[3]=250
+    p7.ev[4]=250
+    p7.setAbility(0)
+    p7.setItem(:COLBURBERRY)
+    
+    p8 = createPokemon("HELIOPTILE", lVL)
+    p8.pbLearnMove(:THUNDERPUNCH)
+    p8.pbLearnMove(:SOLARFISTS)
+    p8.pbLearnMove(:ICEPUNCH)
+    p8.pbLearnMove(:LASERCLAW)
+    p8.iv[3]=31
+    p8.iv[0]=31
+    p8.iv[1]=31
+    p8.ev[1]=250
+    p8.ev[5]=250
+
+
+
+====================================================================================================
+FOUND PRISMPLATE AT OFFSET 197109
+====================================================================================================
+
+
+Context starting at line 563:
+
+    p1.pbLearnMove(:FIREBLAST)
+    p1.pbLearnMove(:HIDDENPOWER)
+    p1.pbLearnMove(:SUNBEAM)
+    p1.iv[4]=31
+    p1.iv[3]=31
+    p1.iv[2]=31
+    p1.iv[0]=31
+    p1.iv[1]=29
+    p1.ev[0]=250
+    p1.ev[4]=250
+    p1.setItem(:PRISMPLATE)
+    p1.setAbility(2)
+    
+    p2 = createPokemon("LUCARIO", lVL)
+    p2.pbLearnMove(:AURASPHERE)
+    p2.pbLearnMove(:SHIMMERINGSPHERE)
+    p2.pbLearnMove(:PRISMSHOT)
+    p2.pbLearnMove(:DARKPULSE)
+    p2.iv[3]=31
+    p2.iv[5]=31
+    p2.iv[4]=31
+    p2.ev[4]=250
+    p2.ev[3]=250
+    p2.setItem(:FOCUSSASH)
+    p2.setAbility(2)
+    
+    p3 = createPokemon("LANTURN", lVL)
+    p3.pbLearnMove(:SURF)
+    p3.pbLearnMove(:SHIMMERINGSPHERE)
+    p3.pbLearnMove(:GAMMARAYBURST)
+    p3.pbLearnMove(:PRISMSHOT)
+    p3.iv[0]=31
+    p3.iv[5]=31
+    p3.iv[3]=31
+    p3.ev[0]=250
+    p3.ev[2]=250
+    p3.setItem(:LEGENDITE)
+    p3.setAbility(0)
+    p3.makeShiny
+    
+    p4 = createPokemon("ABSOL", lVL)
+    p4.pbLearnMove(:ICEFANG)
+    p4.pbLearnMove(:CRUNCH)
+    p4.pbLearnMove(:HOLYSWORD)
+    p4.pbLearnMove(:LIGHTSPEED)
+    p4.iv[2]=31
+    p4.iv[1]=31
+    p4.iv[0]=31
+    p4.ev[3]=250
+    p4.ev[2]=250
+    p4.setItem(:MAGNIFYINGGLASS)
+    
+    p5 = createPokemon("UXIE", lVL)
+    p5.pbLearnMove(:YAWN)
+    p5.pbLearnMove(:UTURN)
+    p5.pbLearnMove(:ZENHEADBUTT)
+    p5.pbLearnMove(:SUNRISE)
+    p5.iv[5]=31
+    p5.iv[0]=31
+    p5.iv[1]=31
+
+
+
+Context starting at line 4077:
+
+        Kernel.pbReceiveItem(PBItems::ZAPPLATE)
+      end
+    elsif e4Trainer == 4
+      Kernel.pbMessage(_INTL("It was I who got lost. That was great, {1}.",$Trainer.name))
+      if !$PokemonBag.pbHasItem?(:MEADOWPLATE)
+        Kernel.pbMessage(_INTL("As the top trainer specializing in my type, I am in possession of a special item.  In recognition of your victory, I present you with this:"))
+        Kernel.pbReceiveItem(PBItems::MEADOWPLATE)
+      end
+    elsif e4Trainer == 5
+      Kernel.pbMessage(_INTL("Well that was certainly illuminating."))
+      if !$PokemonBag.pbHasItem?(:PRISMPLATE)
+        Kernel.pbMessage(_INTL("As the top trainer specializing in my type, I am in possession of a special item.  In recognition of your victory, I present you with this:"))
+        Kernel.pbReceiveItem(PBItems::PRISMPLATE)
+      end
+    elsif e4Trainer == 6
+      Kernel.pbMessage(_INTL("A battle worthy of your journey. I'm so proud, {1}!",$Trainer.name))
+      if !$PokemonBag.pbHasItem?(:EARTHPLATE)
+        Kernel.pbMessage(_INTL("As the top trainer specializing in my type, I am in possession of a special item.  In recognition of your victory, I present you with this:"))
+        Kernel.pbReceiveItem(PBItems::EARTHPLATE)
+      end
+    elsif e4Trainer == 7
+      Kernel.pbMessage(_INTL("There is no hiding from that result. Well done."))
+      if !$PokemonBag.pbHasItem?(:DREADPLATE)
+        Kernel.pbMessage(_INTL("As the top trainer specializing in my type, I am in possession of a special item.  In recognition of your victory, I present you with this:"))
+        Kernel.pbReceiveItem(PBItems::DREADPLATE)
+      end
+    elsif e4Trainer == 8
+      Kernel.pbMessage(_INTL("I'm caught in a web of my own making!"))
+      if !$PokemonBag.pbHasItem?(:INSECTPLATE)
+        Kernel.pbMessage(_INTL("As the top trainer specializing in my type, I am in possession of a special item.  In recognition of your victory, I present you with this:"))
+        Kernel.pbReceiveItem(PBItems::INSECTPLATE)
+      end
+    elsif e4Trainer == 9
+      Kernel.pbMessage(_INTL("Even the mystical beasts are no match for your might. Congratulations!"))
+      if !$PokemonBag.pbHasItem?(:DRACOPLATE)
+        Kernel.pbMessage(_INTL("As the top trainer specializing in my type, I am in possession of a special item.  In recognition of your victory, I present you with this:"))
+        Kernel.pbReceiveItem(PBItems::DRACOPLATE)
+      end
+    elsif e4Trainer == 10
+      Kernel.pbMessage(_INTL("Ach, you've gone and beat me again, dammit. You're too good, {1}.",$Trainer.name))
+      if !$PokemonBag.pbHasItem?(:FISTPLATE)
+        Kernel.pbMessage(_INTL("As the top trainer specializing in my type, I am in possession of a special item.  In recognition of your victory, I present you with this:"))
+        Kernel.pbReceiveItem(PBItems::FISTPLATE)
+      end
+    elsif e4Trainer == 11
+      Kernel.pbMessage(_INTL("SKWAAAAAK!"))
+      if !$PokemonBag.pbHasItem?(:SKYPLATE)
+        Kernel.pbMessage(_INTL("As the top trainer specializing in my type, I am in possession of a special item.  In recognition of your victory, I present you with this:"))
+        Kernel.pbReceiveItem(PBItems::SKYPLATE)
+      end
+    elsif e4Trainer == 12
+      Kernel.pbMessage(_INTL("Well, at least I'll always have the treasure."))
+      if !$PokemonBag.pbHasItem?(:ICICLEPLATE)
+        Kernel.pbMessage(_INTL("As the top trainer specializing in my type, I am in possession of a special item.  In recognition of your victory, I present you with this:"))
+        Kernel.pbReceiveItem(PBItems::ICICLEPLATE)
+      end
+    elsif e4Trainer == 13
+      Kernel.pbMessage(_INTL("Sturdier than a bridge, you are!"))
+      if !$PokemonBag.pbHasItem?(:NORMALGEM)
+        Kernel.pbMessage(_INTL("As the top trainer specializing in my type, I am in possession of a special item.  In recognition of your victory, I present you with this:"))
+
+
+
+Context starting at line 4079:
+
+    elsif e4Trainer == 4
+      Kernel.pbMessage(_INTL("It was I who got lost. That was great, {1}.",$Trainer.name))
+      if !$PokemonBag.pbHasItem?(:MEADOWPLATE)
+        Kernel.pbMessage(_INTL("As the top trainer specializing in my type, I am in possession of a special item.  In recognition of your victory, I present you with this:"))
+        Kernel.pbReceiveItem(PBItems::MEADOWPLATE)
+      end
+    elsif e4Trainer == 5
+      Kernel.pbMessage(_INTL("Well that was certainly illuminating."))
+      if !$PokemonBag.pbHasItem?(:PRISMPLATE)
+        Kernel.pbMessage(_INTL("As the top trainer specializing in my type, I am in possession of a special item.  In recognition of your victory, I present you with this:"))
+        Kernel.pbReceiveItem(PBItems::PRISMPLATE)
+      end
+    elsif e4Trainer == 6
+      Kernel.pbMessage(_INTL("A battle worthy of your journey. I'm so proud, {1}!",$Trainer.name))
+      if !$PokemonBag.pbHasItem?(:EARTHPLATE)
+        Kernel.pbMessage(_INTL("As the top trainer specializing in my type, I am in possession of a special item.  In recognition of your victory, I present you with this:"))
+        Kernel.pbReceiveItem(PBItems::EARTHPLATE)
+      end
+    elsif e4Trainer == 7
+      Kernel.pbMessage(_INTL("There is no hiding from that result. Well done."))
+      if !$PokemonBag.pbHasItem?(:DREADPLATE)
+        Kernel.pbMessage(_INTL("As the top trainer specializing in my type, I am in possession of a special item.  In recognition of your victory, I present you with this:"))
+        Kernel.pbReceiveItem(PBItems::DREADPLATE)
+      end
+    elsif e4Trainer == 8
+      Kernel.pbMessage(_INTL("I'm caught in a web of my own making!"))
+      if !$PokemonBag.pbHasItem?(:INSECTPLATE)
+        Kernel.pbMessage(_INTL("As the top trainer specializing in my type, I am in possession of a special item.  In recognition of your victory, I present you with this:"))
+        Kernel.pbReceiveItem(PBItems::INSECTPLATE)
+      end
+    elsif e4Trainer == 9
+      Kernel.pbMessage(_INTL("Even the mystical beasts are no match for your might. Congratulations!"))
+      if !$PokemonBag.pbHasItem?(:DRACOPLATE)
+        Kernel.pbMessage(_INTL("As the top trainer specializing in my type, I am in possession of a special item.  In recognition of your victory, I present you with this:"))
+        Kernel.pbReceiveItem(PBItems::DRACOPLATE)
+      end
+    elsif e4Trainer == 10
+      Kernel.pbMessage(_INTL("Ach, you've gone and beat me again, dammit. You're too good, {1}.",$Trainer.name))
+      if !$PokemonBag.pbHasItem?(:FISTPLATE)
+        Kernel.pbMessage(_INTL("As the top trainer specializing in my type, I am in possession of a special item.  In recognition of your victory, I present you with this:"))
+        Kernel.pbReceiveItem(PBItems::FISTPLATE)
+      end
+    elsif e4Trainer == 11
+      Kernel.pbMessage(_INTL("SKWAAAAAK!"))
+      if !$PokemonBag.pbHasItem?(:SKYPLATE)
+        Kernel.pbMessage(_INTL("As the top trainer specializing in my type, I am in possession of a special item.  In recognition of your victory, I present you with this:"))
+        Kernel.pbReceiveItem(PBItems::SKYPLATE)
+      end
+    elsif e4Trainer == 12
+      Kernel.pbMessage(_INTL("Well, at least I'll always have the treasure."))
+      if !$PokemonBag.pbHasItem?(:ICICLEPLATE)
+        Kernel.pbMessage(_INTL("As the top trainer specializing in my type, I am in possession of a special item.  In recognition of your victory, I present you with this:"))
+        Kernel.pbReceiveItem(PBItems::ICICLEPLATE)
+      end
+    elsif e4Trainer == 13
+      Kernel.pbMessage(_INTL("Sturdier than a bridge, you are!"))
+      if !$PokemonBag.pbHasItem?(:NORMALGEM)
+        Kernel.pbMessage(_INTL("As the top trainer specializing in my type, I am in possession of a special item.  In recognition of your victory, I present you with this:"))
+        Kernel.pbReceiveItem(PBItems::NORMALGEM)
+      end
+
+
+
+====================================================================================================
+FOUND PINKGLITTER AT OFFSET 197109
+====================================================================================================
+
+
+Context starting at line 2475:
+
+    p0.pbLearnMove(:BOOMBURST)
+    p0.pbLearnMove(:HYPERVOICE)
+    p0.pbLearnMove(:CALMMIND)
+    p0.pbLearnMove(:MUDDYWATER)
+    p0.iv[0]=31
+    p0.iv[1]=0
+    p0.iv[3]=31
+    p0.iv[4]=31
+    p0.ev[4]=250
+    p0.ev[3]=250
+    p0.setItem(:PINKGLITTER)
+    p0.setAbility(3)
+    p0.name="Jawki"
+    p0.setNature(:MODEST)
+    
+    p1=createPokemon("TOGEKISS",lVL)
+    p1.pbLearnMove(:TAILWIND)
+    p1.pbLearnMove(:FOLLOWME)
+    p1.pbLearnMove(:AIRSLASH)
+    p1.pbLearnMove(:HELPINGHAND)
+    p1.iv[0]=31
+    p1.iv[4]=31
+    p1.iv[5]=31
+    p1.ev[5]=250
+    p1.ev[0]=250
+    p1.setAbility(1)
+    p1.setItem(:SITRUSBERRY)
+    p1.setNature(:CALM)
+   
+    p2=createPokemon("MRMIME",lVL)
+    p2.pbLearnMove(:FOLLOWME)
+    p2.pbLearnMove(:HELPINGHAND)
+    p2.pbLearnMove(:LIFEDEW)
+    p2.pbLearnMove(:DAZZLINGGLEAM)
+    p2.iv[0]=31
+    p2.iv[2]=31
+    p2.iv[3]=31
+    p2.ev[0]=250
+    p2.ev[2]=250
+    p2.name="Zux"
+    p2.setItem(:SITRUSBERRY)
+    p2.setAbility(0)
+    p2.setNature(:BOLD)
+    
+    p3=createPokemon("MORELULL",lVL)
+    p3.pbLearnMove(:JUNGLEHEALING)
+    p3.pbLearnMove(:SPORE)
+    p3.pbLearnMove(:STRENGTHSAP)
+    p3.pbLearnMove(:DAZZLINGGLEAM)
+    p3.iv[0]=31
+    p3.iv[2]=31
+    p3.iv[4]=31
+    p3.ev[0]=250
+    p3.ev[2]=250
+    p3.setItem(:LEGENDITE)
+    p3.setAbility(3)
+    p3.setNature(:BOLD)
+    
+    p4=createPokemon("MAGEARNA",lVL)
+    p4.pbLearnMove(:DAZZLINGGLEAM)
+
+
+
+====================================================================================================
+FOUND LEGENDITE AT OFFSET 224215
+====================================================================================================
+
+
+Context starting at line 165:
+
+
+def competitivemegabanlist
+  return [PBItems::GENGARITE,PBItems::BLASTOISINITE,PBItems::ALAKAZITE,PBItems::METAGROSSITE,PBItems::KANGASKHANITE,PBItems::GRENINJITE,PBItems::NECROZMITE,PBItems::SALAMENCITE,PBItems::URSHIFUNITE,PBItems::LUCARIONITE,PBItems::WELlSPRINGMASK]
+end
+
+def competitiveformbanlist
+  return [PBSpecies::CALYREX,PBSpecies::DARMANITAN,PBSpecies::KYUREM,PBSpecies::NECROZMA,PBSpecies::SHAYMIN,PBSpecies::ZYGARDE]
+end
+
+def pbIsBasicTier?(poke)
+    return (basictier.include? poke.species) && !(poke.item==PBItems::LEGENDITE)  && !(poke.item==PBItems::LIGHTBALL)  && !(pbIsMegaStone?(poke.item))
+end
+  
+def pbIsNormalTier?(poke)
+    return ((normaltier.include? poke.species) || (basictier.include? poke.species)) && !(poke.item==PBItems::LEGENDITE) && !(pbIsMegaStone?(poke.item)) && !((normalformbanlist.include? poke.species) && poke.form>0)  && !((poke.species==PBSpecies::DUGTRIO) && (poke.form==0))  && !((poke.species==PBSpecies::LYCANROC) && (poke.form>1))
+end
+  
+def legenditeatk(poke)
+ return poke.attack*(600-poke.hp)/(poke.attack+poke.defense+poke.spatk+poke.spdef+poke.speed)
+end
+def legenditespatk(poke)
+  return poke.spatk*(600-poke.hp)/(poke.attack+poke.defense+poke.spatk+poke.spdef+poke.speed)
+end
+  
+def pbIsCompetitiveTier?(poke)
+  return(((competitivetier.include? poke.species) || (
+  normaltier.include? poke.species) || (basictier.include? poke.species)) && !(
+  competitivemegabanlist.include? poke.item) && !((competitiveformbanlist.include? poke.species) && poke.form>0) && !(
+  (poke.species==PBSpecies::URSHIFU) && (poke.form==0)) && !(
+  (poke.item==PBItems::LEGENDITE) && ((legenditeatk(poke)>160) || (
+  legenditespatk(poke)>160) || (poke.ability==PBAbilities::HUGEPOWER) || (
+  poke.ability==PBAbilities::PUREPOWER))) || ((poke.species==PBSpecies::LANDORUS)&&(poke.form==1)))
+end
+
+def pbIsUltraTier?(poke)
+  return 1==1
+end
+
+ALPHABET = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789,:"'
+
+#generated with ALPHABET.split('').shuffle.join
+ENCODING = 'MOhqm0PnycUZeLdK8YvDCgNfb7"FJtiHT52B,rxo:Akas9RWlXpEujSGI64VzQ31w'
+def BTencode(text)
+  text.tr(ALPHABET, ENCODING)
+end
+
+def BTdecode(text)
+  text.tr(ENCODING, ALPHABET)
+end
+
+
+def pbEncryptBT
+  for k in ['Basic','Normal','Competitive','Ultra']
+    if safeExists?("Data/BattleTower"+k+".dat")
+      File.delete("Data/BattleTower"+k+".dat") 
+    end  
+    f=File.open("PBS/BattleTower"+k+".txt","rb")
+    numtier=f.readlines().size
+    
+    i=0
+
+
+
+Context starting at line 169:
+
+
+def competitiveformbanlist
+  return [PBSpecies::CALYREX,PBSpecies::DARMANITAN,PBSpecies::KYUREM,PBSpecies::NECROZMA,PBSpecies::SHAYMIN,PBSpecies::ZYGARDE]
+end
+
+def pbIsBasicTier?(poke)
+    return (basictier.include? poke.species) && !(poke.item==PBItems::LEGENDITE)  && !(poke.item==PBItems::LIGHTBALL)  && !(pbIsMegaStone?(poke.item))
+end
+  
+def pbIsNormalTier?(poke)
+    return ((normaltier.include? poke.species) || (basictier.include? poke.species)) && !(poke.item==PBItems::LEGENDITE) && !(pbIsMegaStone?(poke.item)) && !((normalformbanlist.include? poke.species) && poke.form>0)  && !((poke.species==PBSpecies::DUGTRIO) && (poke.form==0))  && !((poke.species==PBSpecies::LYCANROC) && (poke.form>1))
+end
+  
+def legenditeatk(poke)
+ return poke.attack*(600-poke.hp)/(poke.attack+poke.defense+poke.spatk+poke.spdef+poke.speed)
+end
+def legenditespatk(poke)
+  return poke.spatk*(600-poke.hp)/(poke.attack+poke.defense+poke.spatk+poke.spdef+poke.speed)
+end
+  
+def pbIsCompetitiveTier?(poke)
+  return(((competitivetier.include? poke.species) || (
+  normaltier.include? poke.species) || (basictier.include? poke.species)) && !(
+  competitivemegabanlist.include? poke.item) && !((competitiveformbanlist.include? poke.species) && poke.form>0) && !(
+  (poke.species==PBSpecies::URSHIFU) && (poke.form==0)) && !(
+  (poke.item==PBItems::LEGENDITE) && ((legenditeatk(poke)>160) || (
+  legenditespatk(poke)>160) || (poke.ability==PBAbilities::HUGEPOWER) || (
+  poke.ability==PBAbilities::PUREPOWER))) || ((poke.species==PBSpecies::LANDORUS)&&(poke.form==1)))
+end
+
+def pbIsUltraTier?(poke)
+  return 1==1
+end
+
+ALPHABET = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789,:"'
+
+#generated with ALPHABET.split('').shuffle.join
+ENCODING = 'MOhqm0PnycUZeLdK8YvDCgNfb7"FJtiHT52B,rxo:Akas9RWlXpEujSGI64VzQ31w'
+def BTencode(text)
+  text.tr(ALPHABET, ENCODING)
+end
+
+def BTdecode(text)
+  text.tr(ENCODING, ALPHABET)
+end
+
+
+def pbEncryptBT
+  for k in ['Basic','Normal','Competitive','Ultra']
+    if safeExists?("Data/BattleTower"+k+".dat")
+      File.delete("Data/BattleTower"+k+".dat") 
+    end  
+    f=File.open("PBS/BattleTower"+k+".txt","rb")
+    numtier=f.readlines().size
+    
+    i=0
+    while i<numtier
+      btlines=IO.readlines("PBS/BattleTower"+k+".txt")[i]
+      btlinesenc = BTencode(btlines)
+      File.open("Data/BattleTower"+k+".dat","a"){
+
+
+
+Context starting at line 184:
+
+end
+def legenditespatk(poke)
+  return poke.spatk*(600-poke.hp)/(poke.attack+poke.defense+poke.spatk+poke.spdef+poke.speed)
+end
+  
+def pbIsCompetitiveTier?(poke)
+  return(((competitivetier.include? poke.species) || (
+  normaltier.include? poke.species) || (basictier.include? poke.species)) && !(
+  competitivemegabanlist.include? poke.item) && !((competitiveformbanlist.include? poke.species) && poke.form>0) && !(
+  (poke.species==PBSpecies::URSHIFU) && (poke.form==0)) && !(
+  (poke.item==PBItems::LEGENDITE) && ((legenditeatk(poke)>160) || (
+  legenditespatk(poke)>160) || (poke.ability==PBAbilities::HUGEPOWER) || (
+  poke.ability==PBAbilities::PUREPOWER))) || ((poke.species==PBSpecies::LANDORUS)&&(poke.form==1)))
+end
+
+def pbIsUltraTier?(poke)
+  return 1==1
+end
+
+ALPHABET = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789,:"'
+
+#generated with ALPHABET.split('').shuffle.join
+ENCODING = 'MOhqm0PnycUZeLdK8YvDCgNfb7"FJtiHT52B,rxo:Akas9RWlXpEujSGI64VzQ31w'
+def BTencode(text)
+  text.tr(ALPHABET, ENCODING)
+end
+
+def BTdecode(text)
+  text.tr(ENCODING, ALPHABET)
+end
+
+
+def pbEncryptBT
+  for k in ['Basic','Normal','Competitive','Ultra']
+    if safeExists?("Data/BattleTower"+k+".dat")
+      File.delete("Data/BattleTower"+k+".dat") 
+    end  
+    f=File.open("PBS/BattleTower"+k+".txt","rb")
+    numtier=f.readlines().size
+    
+    i=0
+    while i<numtier
+      btlines=IO.readlines("PBS/BattleTower"+k+".txt")[i]
+      btlinesenc = BTencode(btlines)
+      File.open("Data/BattleTower"+k+".dat","a"){
+      |f| f.write btlinesenc}
+      i+=1
+    end
+  end
+  
+end  
+def pbDecryptBT(tier)
+  f=File.open("Data/BattleTower"+tier+".dat","rb")
+  numtier=f.readlines().size
+  
+  i=0
+  while i<numtier
+    btlines=IO.readlines("Data/BattleTower"+tier+".dat")[i]
+    btlinesenc = BTdecode(btlines)
+    File.open("Data/BattleTower"+tier+".txt","a"){
+
+
+
+====================================================================================================
+FOUND LEGENDITE AT OFFSET 243470
+====================================================================================================
+
+
+Context starting at line 703:
+
+                    !isConst?(@ability,PBAbilities,:NEUTRALIZINGGAS) &&
+                    !isConst?(@ability,PBAbilities,:STANCECHANGE) &&
+                    !isConst?(@ability,PBAbilities,:SCHOOLING)
+    return isConst?(@ability,PBAbilities,ability)
+  end
+
+  def hasWorkingItem(item,ignorefainted=false)
+    return false if self.isFainted? && !ignorefainted
+    return false if @effects[PBEffects::Embargo]>0
+    return false if @effects[PBEffects::CorrosiveGas]
+    #Kernel.pbMessage(_INTL("{1}, {2}",@battle.field.effects[PBEffects::StellarRadiation],!(isConst?(@item,PBItems,:LEGENDITE))))
+    return false if ((@battle.field.effects[PBEffects::StellarRadiation]) && (isConst?(@item,PBItems,:LEGENDITE))) #Ryan
+    return false if @battle.field.effects[PBEffects::MagicRoom]>0
+    return false if self.hasWorkingAbility(:KLUTZ,ignorefainted)
+    return isConst?(@item,PBItems,item)
+  end
+
+  def hasWorkingBerry(ignorefainted=false)
+    return false if self.isFainted? && !ignorefainted
+    return false if @effects[PBEffects::Embargo]>0
+    return false if @battle.field.effects[PBEffects::MagicRoom]>0
+    return false if self.hasWorkingAbility(:KLUTZ,ignorefainted)
+    return pbIsBerry?(@item)
+  end
+
+  def isAirborne?(ignoreability=false)
+    return false if self.hasWorkingItem(:IRONBALL)
+    return false if @effects[PBEffects::Ingrain]
+    return false if @effects[PBEffects::SmackDown]
+    return false if @battle.field.effects[PBEffects::Gravity]>0
+    return true if self.pbHasType?(:FLYING) && !@effects[PBEffects::Roost]
+    return true if self.hasWorkingAbility(:LEVITATE) && !ignoreability
+    return true if self.hasWorkingItem(:AIRBALLOON)
+    return true if @effects[PBEffects::MagnetRise]>0
+    return true if @effects[PBEffects::Telekinesis]>0
+    return false
+  end
+  
+  
+  
+  def pbSpeed()
+    stagemul=[10,10,10,10,10,10,10,15,20,25,30,35,40]
+    stagediv=[40,35,30,25,20,15,10,10,10,10,10,10,10]
+    speed=@speed
+    stage=@stages[PBStats::SPEED]+6
+    speed=(speed*stagemul[stage]/stagediv[stage]).floor
+    speedmult=0x1000
+    case @battle.pbWeather
+    when PBWeather::RAINDANCE, PBWeather::HEAVYRAIN
+      speedmult=speedmult*2 if self.hasWorkingAbility(:SWIFTSWIM) && !self.hasWorkingItem(:UTILITYUMBRELLA)
+    when PBWeather::SUNNYDAY, PBWeather::HARSHSUN
+      speedmult=speedmult*2 if self.hasWorkingAbility(:CHLOROPHYLL) && !self.hasWorkingItem(:UTILITYUMBRELLA)
+    when PBWeather::SANDSTORM
+      speedmult=speedmult*2 if self.hasWorkingAbility(:SANDRUSH)
+    when PBWeather::HAIL
+      speedmult=speedmult*2 if self.hasWorkingAbility(:SLUSHRUSH) # changed
+    end
+    if self.hasWorkingAbility(:QUICKFEET) && self.status>0
+      speedmult=(speedmult*1.5).round
+    end
+
+
+
+Context starting at line 704:
+
+                    !isConst?(@ability,PBAbilities,:STANCECHANGE) &&
+                    !isConst?(@ability,PBAbilities,:SCHOOLING)
+    return isConst?(@ability,PBAbilities,ability)
+  end
+
+  def hasWorkingItem(item,ignorefainted=false)
+    return false if self.isFainted? && !ignorefainted
+    return false if @effects[PBEffects::Embargo]>0
+    return false if @effects[PBEffects::CorrosiveGas]
+    #Kernel.pbMessage(_INTL("{1}, {2}",@battle.field.effects[PBEffects::StellarRadiation],!(isConst?(@item,PBItems,:LEGENDITE))))
+    return false if ((@battle.field.effects[PBEffects::StellarRadiation]) && (isConst?(@item,PBItems,:LEGENDITE))) #Ryan
+    return false if @battle.field.effects[PBEffects::MagicRoom]>0
+    return false if self.hasWorkingAbility(:KLUTZ,ignorefainted)
+    return isConst?(@item,PBItems,item)
+  end
+
+  def hasWorkingBerry(ignorefainted=false)
+    return false if self.isFainted? && !ignorefainted
+    return false if @effects[PBEffects::Embargo]>0
+    return false if @battle.field.effects[PBEffects::MagicRoom]>0
+    return false if self.hasWorkingAbility(:KLUTZ,ignorefainted)
+    return pbIsBerry?(@item)
+  end
+
+  def isAirborne?(ignoreability=false)
+    return false if self.hasWorkingItem(:IRONBALL)
+    return false if @effects[PBEffects::Ingrain]
+    return false if @effects[PBEffects::SmackDown]
+    return false if @battle.field.effects[PBEffects::Gravity]>0
+    return true if self.pbHasType?(:FLYING) && !@effects[PBEffects::Roost]
+    return true if self.hasWorkingAbility(:LEVITATE) && !ignoreability
+    return true if self.hasWorkingItem(:AIRBALLOON)
+    return true if @effects[PBEffects::MagnetRise]>0
+    return true if @effects[PBEffects::Telekinesis]>0
+    return false
+  end
+  
+  
+  
+  def pbSpeed()
+    stagemul=[10,10,10,10,10,10,10,15,20,25,30,35,40]
+    stagediv=[40,35,30,25,20,15,10,10,10,10,10,10,10]
+    speed=@speed
+    stage=@stages[PBStats::SPEED]+6
+    speed=(speed*stagemul[stage]/stagediv[stage]).floor
+    speedmult=0x1000
+    case @battle.pbWeather
+    when PBWeather::RAINDANCE, PBWeather::HEAVYRAIN
+      speedmult=speedmult*2 if self.hasWorkingAbility(:SWIFTSWIM) && !self.hasWorkingItem(:UTILITYUMBRELLA)
+    when PBWeather::SUNNYDAY, PBWeather::HARSHSUN
+      speedmult=speedmult*2 if self.hasWorkingAbility(:CHLOROPHYLL) && !self.hasWorkingItem(:UTILITYUMBRELLA)
+    when PBWeather::SANDSTORM
+      speedmult=speedmult*2 if self.hasWorkingAbility(:SANDRUSH)
+    when PBWeather::HAIL
+      speedmult=speedmult*2 if self.hasWorkingAbility(:SLUSHRUSH) # changed
+    end
+    if self.hasWorkingAbility(:QUICKFEET) && self.status>0
+      speedmult=(speedmult*1.5).round
+    end
+    if self.hasWorkingAbility(:UNBURDEN) && @effects[PBEffects::Unburden] &&
+
+
+
+Context starting at line 775:
+
+       self.hasWorkingItem(:POWERBRACER) ||
+       self.hasWorkingItem(:POWERBELT) ||
+       self.hasWorkingItem(:POWERANKLET) ||
+       self.hasWorkingItem(:POWERLENS) ||
+       self.hasWorkingItem(:POWERBAND)
+      speedmult=(speedmult/2).round
+    end
+    if self.hasWorkingItem(:CHOICESCARF)
+      speedmult=(speedmult*1.5).round
+    end
+    if self.hasWorkingItem(:LEGENDITE) #Ryan
+      speedmult=(speedmult*650/(pbBaseStatTotal(self.species))).round
+    end
+    if isConst?(self.item,PBItems,:IRONBALL)
+      speedmult=(speedmult/2).round
+    end
+    if self.hasWorkingItem(:QUICKPOWDER) && isConst?(self.species,PBSpecies,:DITTO) &&
+       !@effects[PBEffects::Transform]
+      speedmult=speedmult*2
+    end
+    if self.pbOwnSide.effects[PBEffects::Tailwind]>0
+      speedmult=speedmult*2
+    end
+    if self.pbOwnSide.effects[PBEffects::Swamp]>0
+      speedmult=(speedmult/2).round
+    end
+    if self.status==PBStatuses::PARALYSIS && !self.hasWorkingAbility(:QUICKFEET)
+      speedmult=(speedmult/2).round # Changed
+    end
+    if @battle.internalbattle && @battle.pbOwnedByPlayer?(@index) &&
+       @battle.pbPlayer.numbadges>=BADGESBOOSTSPEED
+      speedmult=(speedmult*1.1).round
+    end
+    speed=(speed*speedmult*1.0/0x1000).round
+    return [speed,1].max
+  end
+
+################################################################################
+# Change HP
+################################################################################
+  def pbReduceHP(amt,anim=false,registerDamage=true)
+    if amt>=self.hp
+      amt=self.hp
+    elsif amt<1 && !self.isFainted?
+      amt=1
+    end
+    oldhp=self.hp
+    self.hp-=amt
+    raise _INTL("HP less than 0") if self.hp<0
+    raise _INTL("HP greater than total HP") if self.hp>@totalhp
+    @battle.scene.pbHPChanged(self,oldhp,anim) if amt>0
+    @tookDamage=true if amt>0 && registerDamage
+    return amt
+  end
+
+  def pbRecoverHP(amt,anim=false)
+    if self.hp+amt>@totalhp
+      amt=@totalhp-self.hp
+    elsif amt<1 && self.hp!=@totalhp
+      amt=1
+
+
+
+Context starting at line 1216:
+
+################################################################################
+# Ability effects
+################################################################################
+  def pbItemsOnSwitchIn(onactive)
+    return if self.isFainted?
+    if onactive
+      if self.hasWorkingItem(:AIRBALLOON)
+        @battle.pbDisplay(_INTL("{1} floats in the air with its Air Balloon!", self.pbThis))
+        PBDebug.log("[Item triggered] #{self.pbThis}'s Air Balloon")
+      end
+      if self.hasWorkingItem(:LEGENDITE)
+        @battle.pbDisplay(_INTL("{1} is glowing with a legendary aura!", self.pbThis))
+        PBDebug.log("[Item triggered] #{self.pbThis}'s Legendite")
+      end
+    end
+  end
+  
+
+  def pbAbilitiesOnSwitchIn(onactive)
+    return if self.isFainted?
+    if onactive
+      @battle.pbPrimalReversion(self.index)
+      # Neutralizing Gas
+      for i in 0...4
+        if @battle.battlers[i].hasWorkingAbility(:NEUTRALIZINGGAS) && !@battle.field.effects[PBEffects::NeutralizingGas]
+          @battle.field.effects[PBEffects::NeutralizingGas]=true
+          @battle.pbDisplay("Neutralizing gas filled the area!")
+          PBDebug.log("[Ability triggered] #{pbThis}'s Neutralizing Gas started")      
+          break
+        end
+      end
+    end
+    # Weather
+    if onactive
+      if self.hasWorkingAbility(:PRIMORDIALSEA) && @battle.weather!=PBWeather::HEAVYRAIN
+        @battle.weather=PBWeather::HEAVYRAIN
+        @battle.weatherduration=-1
+        @battle.pbCommonAnimation("HeavyRain",nil,nil)
+        @battle.pbDisplay(_INTL("{1}'s {2} made a heavy rain begin to fall!",pbThis,PBAbilities.getName(self.ability)))
+        PBDebug.log("[Ability triggered] #{pbThis}'s Primordial Sea made it rain heavily")
+      end
+      if self.hasWorkingAbility(:DESOLATELAND) && @battle.weather!=PBWeather::HARSHSUN
+        @battle.weather=PBWeather::HARSHSUN
+        @battle.weatherduration=-1
+        @battle.pbCommonAnimation("HarshSun",nil,nil)
+        @battle.pbDisplay(_INTL("{1}'s {2} turned the sunlight extremely harsh!",pbThis,PBAbilities.getName(self.ability)))
+        PBDebug.log("[Ability triggered] #{pbThis}'s Desolate Land made the sun shine harshly")
+      end
+      if self.hasWorkingAbility(:DELTASTREAM) && @battle.weather!=PBWeather::STRONGWINDS
+        @battle.weather=PBWeather::STRONGWINDS
+        @battle.weatherduration=-1
+        @battle.pbCommonAnimation("StrongWinds",nil,nil)
+        @battle.pbDisplay(_INTL("{1}'s {2} caused a mysterious air current that protects Flying-type PokÃ©mon!",pbThis,PBAbilities.getName(self.ability)))
+        PBDebug.log("[Ability triggered] #{pbThis}'s Delta Stream made an air current blow")
+      end
+      # End of Primal weather cancelling regular weather
+      # Surges
+      # https://www.pokecommunity.com/showthread.php?t=383035&page=2
+      if self.hasWorkingAbility(:ELECTRICSURGE) && @battle.field.effects[PBEffects::ElectricTerrain]<=0
+        @battle.field.effects[PBEffects::GrassyTerrain]=0
+
+
+
+====================================================================================================
+FOUND LEGENDITE AT OFFSET 283430
+====================================================================================================
+
+
+Context starting at line 1079:
+
+       attacker.turncount<=5 && pbIsPhysical?(type)
+      atkmult=(atkmult*0.5).round
+    end
+    if (@battle.pbWeather==PBWeather::SUNNYDAY ||
+       @battle.pbWeather==PBWeather::HARSHSUN) && pbIsPhysical?(type)
+      if attacker.hasWorkingAbility(:FLOWERGIFT) ||
+         attacker.pbPartner.hasWorkingAbility(:FLOWERGIFT)
+        atkmult=(atkmult*1.5).round
+      end
+    end
+    if attacker.hasWorkingItem(:LEGENDITE) #Ryan
+        atkmult=(atkmult*650/(pbBaseStatTotal(attacker.species))).round
+    end
+    if attacker.hasWorkingItem(:THICKCLUB) &&
+       (isConst?(attacker.species,PBSpecies,:CUBONE) ||
+       isConst?(attacker.species,PBSpecies,:MAROWAK)) && pbIsPhysical?(type)
+      atkmult=(atkmult*2.0).round
+    end
+    if attacker.hasWorkingItem(:DEEPSEATOOTH) &&
+       isConst?(attacker.species,PBSpecies,:CLAMPERL) && pbIsSpecial?(type)
+      atkmult=(atkmult*2.0).round
+    end
+    if attacker.hasWorkingItem(:LIGHTBALL) &&
+       isConst?(attacker.species,PBSpecies,:PIKACHU)
+      atkmult=(atkmult*2.0).round
+    end
+    # if attacker.hasWorkingItem(:SOULDEW) &&
+    #    (isConst?(attacker.species,PBSpecies,:LATIAS) ||
+    #    isConst?(attacker.species,PBSpecies,:LATIOS)) && pbIsSpecial?(type) &&
+    #    !@battle.rules["souldewclause"]
+    #   atkmult=(atkmult*1.5).round
+    # end
+    # Changed removed
+    if attacker.hasWorkingItem(:CHOICEBAND) && pbIsPhysical?(type)
+      atkmult=(atkmult*1.5).round
+    end
+    if attacker.hasWorkingAbility(:GORILLATACTICS) && pbIsPhysical?(type)
+      atkmult=(atkmult*1.5).round
+    end
+    if attacker.hasWorkingItem(:CHOICESPECS) && pbIsSpecial?(type)
+      atkmult=(atkmult*1.5).round
+    end
+    atk=(atk*atkmult*1.0/0x1000).round
+    ##### Calculate opponent's defense stat #####
+    defense=opponent.defense
+    defstage=opponent.stages[PBStats::DEFENSE]+6
+    # TODO: Wonder Room should apply around here
+    applysandstorm=false
+    if type>=0 && pbIsSpecial?(type) && @function!=0x122 # Psyshock
+      defense=opponent.spdef
+      defstage=opponent.stages[PBStats::SPDEF]+6
+      applysandstorm=true
+    end
+    if !attacker.hasWorkingAbility(:UNAWARE)
+      defstage=6 if @function==0xA9 # Chip Away (ignore stat stages)
+      defstage=6 if opponent.damagestate.critical && defstage>6
+      defense=(defense*1.0*stagemul[defstage]/stagediv[defstage]).floor
+    end
+    if @battle.pbWeather==PBWeather::SANDSTORM &&
+       opponent.pbHasType?(:ROCK) && applysandstorm
+
+
+
+Context starting at line 1173:
+
+    end
+    if opponent.hasWorkingItem(:ASSAULTVEST) && pbIsSpecial?(type)
+      defmult=(defmult*1.5).round
+    end
+    if opponent.hasWorkingItem(:EVIOLITE)
+      evos=pbGetEvolvedFormData(opponent.pokemon.fSpecies)
+      if evos && evos.length>0
+        defmult=(defmult*1.5).round
+      end
+    end
+    if opponent.hasWorkingItem(:LEGENDITE) #Ryan
+        defmult=(defmult*650/(pbBaseStatTotal(opponent.species))).round
+    end
+    if opponent.hasWorkingItem(:DEEPSEASCALE) &&
+       isConst?(opponent.species,PBSpecies,:CLAMPERL) && pbIsSpecial?(type)
+      defmult=(defmult*2.0).round
+    end
+    if opponent.hasWorkingItem(:METALPOWDER) &&
+       isConst?(opponent.species,PBSpecies,:DITTO) &&
+       !opponent.effects[PBEffects::Transform]
+      defmult=(defmult*1.5).round
+    end
+    # if opponent.hasWorkingItem(:SOULDEW) &&
+    #    (isConst?(opponent.species,PBSpecies,:LATIAS) ||
+    #    isConst?(opponent.species,PBSpecies,:LATIOS)) && pbIsSpecial?(type) &&
+    #    !@battle.rules["souldewclause"]
+    #   defmult=(defmult*1.5).round
+    # end
+    # Changed removed
+    defense=[(defense*defmult*1.0/0x1000).round,1].max
+    ##### Main damage calculation #####
+    damage=(((2.0*attacker.level/5+2).floor*basedmg*atk/defense).floor/50).floor+2
+    # Multi-targeting attacks
+    if pbTargetsMultiple?(attacker)
+      damage=(damage*0.75).round
+    end
+    # Weather
+    case @battle.pbWeather
+    when PBWeather::SUNNYDAY, PBWeather::HARSHSUN
+      if isConst?(type,PBTypes,:FIRE)
+        damage=(damage*1.5).round
+      elsif isConst?(type,PBTypes,:WATER)
+        damage=(damage*0.5).round
+      end
+    when PBWeather::RAINDANCE, PBWeather::HEAVYRAIN
+      if isConst?(type,PBTypes,:FIRE)
+        damage=(damage*0.5).round
+      elsif isConst?(type,PBTypes,:WATER)
+        damage=(damage*1.5).round
+      end
+    end
+    # Critical hits
+    if opponent.damagestate.critical
+      damage=(USENEWBATTLEMECHANICS) ? (damage*1.5).round : (damage*2.0).round
+    end
+    # Random variance
+    if (options&NOWEIGHTING)==0
+      random=85+@battle.pbRandom(16)
+      damage=(damage*random/100.0).floor
+    end
+
+
+
+====================================================================================================
+FOUND MAGNIFYINGGLASS AT OFFSET 283430
+====================================================================================================
+
+
+Context starting at line 854:
+
+       (attacker.hasWorkingItem(:SPELLTAG) && isConst?(type,PBTypes,:GHOST)) ||
+       (attacker.hasWorkingItem(:METALCOAT) && isConst?(type,PBTypes,:STEEL)) ||
+       (attacker.hasWorkingItem(:CHARCOAL) && isConst?(type,PBTypes,:FIRE)) ||
+       (attacker.hasWorkingItem(:MYSTICWATER) && isConst?(type,PBTypes,:WATER)) ||
+       (attacker.hasWorkingItem(:MIRACLESEED) && isConst?(type,PBTypes,:GRASS)) ||
+       (attacker.hasWorkingItem(:MAGNET) && isConst?(type,PBTypes,:ELECTRIC)) ||
+       (attacker.hasWorkingItem(:TWISTEDSPOON) && isConst?(type,PBTypes,:PSYCHIC)) ||
+       (attacker.hasWorkingItem(:NEVERMELTICE) && isConst?(type,PBTypes,:ICE)) ||
+       (attacker.hasWorkingItem(:DRAGONFANG) && isConst?(type,PBTypes,:DRAGON)) ||
+       (attacker.hasWorkingItem(:PINKGLITTER) && isConst?(type,PBTypes,:FAIRY)) ||
+       (attacker.hasWorkingItem(:MAGNIFYINGGLASS) && isConst?(type,PBTypes,:LIGHT)) ||
+       (attacker.hasWorkingItem(:BLACKGLASSES) && isConst?(type,PBTypes,:DARK))
+      damagemult=(damagemult*1.2).round #Ryan
+    end
+    if (attacker.hasWorkingItem(:FISTPLATE) && isConst?(type,PBTypes,:FIGHTING)) ||
+       (attacker.hasWorkingItem(:SKYPLATE) && isConst?(type,PBTypes,:FLYING)) ||
+       (attacker.hasWorkingItem(:TOXICPLATE) && isConst?(type,PBTypes,:POISON)) ||
+       (attacker.hasWorkingItem(:EARTHPLATE) && isConst?(type,PBTypes,:GROUND)) ||
+       (attacker.hasWorkingItem(:STONEPLATE) && isConst?(type,PBTypes,:ROCK)) ||
+       (attacker.hasWorkingItem(:INSECTPLATE) && isConst?(type,PBTypes,:BUG)) ||
+       (attacker.hasWorkingItem(:SPOOKYPLATE) && isConst?(type,PBTypes,:GHOST)) ||
+       (attacker.hasWorkingItem(:IRONPLATE) && isConst?(type,PBTypes,:STEEL)) ||
+       (attacker.hasWorkingItem(:FLAMEPLATE) && isConst?(type,PBTypes,:FIRE)) ||
+       (attacker.hasWorkingItem(:SPLASHPLATE) && isConst?(type,PBTypes,:WATER)) ||
+       (attacker.hasWorkingItem(:MEADOWPLATE) && isConst?(type,PBTypes,:GRASS)) ||
+       (attacker.hasWorkingItem(:ZAPPLATE) && isConst?(type,PBTypes,:ELECTRIC)) ||
+       (attacker.hasWorkingItem(:MINDPLATE) && isConst?(type,PBTypes,:PSYCHIC)) ||
+       (attacker.hasWorkingItem(:ICICLEPLATE) && isConst?(type,PBTypes,:ICE)) ||
+       (attacker.hasWorkingItem(:DRACOPLATE) && isConst?(type,PBTypes,:DRAGON)) ||
+       (attacker.hasWorkingItem(:DREADPLATE) && isConst?(type,PBTypes,:DARK)) ||
+       (attacker.hasWorkingItem(:PIXIEPLATE) && isConst?(type,PBTypes,:FAIRY)) ||
+       (attacker.hasWorkingItem(:PRISMPLATE) && isConst?(type,PBTypes,:LIGHT)) #Ryan
+      damagemult=(damagemult*1.3).round #Ryan
+    end
+    if attacker.hasWorkingItem(:ROCKINCENSE) && isConst?(type,PBTypes,:ROCK)
+      damagemult=(damagemult*1.2).round
+    end
+    if attacker.hasWorkingItem(:ROSEINCENSE) && isConst?(type,PBTypes,:GRASS)
+      damagemult=(damagemult*1.2).round
+    end
+    if attacker.hasWorkingItem(:SEAINCENSE) && isConst?(type,PBTypes,:WATER)
+      damagemult=(damagemult*1.2).round
+    end
+    if attacker.hasWorkingItem(:WAVEINCENSE) && isConst?(type,PBTypes,:WATER)
+      damagemult=(damagemult*1.2).round
+    end
+    if attacker.hasWorkingItem(:ODDINCENSE) && isConst?(type,PBTypes,:PSYCHIC)
+      damagemult=(damagemult*1.2).round
+    end
+    if attacker.hasWorkingItem(:MUSCLEBAND) && pbIsPhysical?(type)
+      damagemult=(damagemult*1.1).round
+    end
+    if attacker.hasWorkingItem(:WISEGLASSES) && pbIsSpecial?(type)
+      damagemult=(damagemult*1.1).round
+    end
+    if (isConst?(attacker.species,PBSpecies,:LATIAS) ||
+       isConst?(attacker.species,PBSpecies,:LATIOS)) &&
+       attacker.hasWorkingItem(:SOULDEW) &&
+       (isConst?(type,PBTypes,:DRAGON) || isConst?(type,PBTypes,:PSYCHIC) || isConst?(type,PBTypes,:LIGHT)) #Ryan
+      damagemult=(damagemult*1.2).round
+
+
+
+====================================================================================================
+FOUND PRISMPLATE AT OFFSET 283430
+====================================================================================================
+
+
+Context starting at line 875:
+
+       (attacker.hasWorkingItem(:IRONPLATE) && isConst?(type,PBTypes,:STEEL)) ||
+       (attacker.hasWorkingItem(:FLAMEPLATE) && isConst?(type,PBTypes,:FIRE)) ||
+       (attacker.hasWorkingItem(:SPLASHPLATE) && isConst?(type,PBTypes,:WATER)) ||
+       (attacker.hasWorkingItem(:MEADOWPLATE) && isConst?(type,PBTypes,:GRASS)) ||
+       (attacker.hasWorkingItem(:ZAPPLATE) && isConst?(type,PBTypes,:ELECTRIC)) ||
+       (attacker.hasWorkingItem(:MINDPLATE) && isConst?(type,PBTypes,:PSYCHIC)) ||
+       (attacker.hasWorkingItem(:ICICLEPLATE) && isConst?(type,PBTypes,:ICE)) ||
+       (attacker.hasWorkingItem(:DRACOPLATE) && isConst?(type,PBTypes,:DRAGON)) ||
+       (attacker.hasWorkingItem(:DREADPLATE) && isConst?(type,PBTypes,:DARK)) ||
+       (attacker.hasWorkingItem(:PIXIEPLATE) && isConst?(type,PBTypes,:FAIRY)) ||
+       (attacker.hasWorkingItem(:PRISMPLATE) && isConst?(type,PBTypes,:LIGHT)) #Ryan
+      damagemult=(damagemult*1.3).round #Ryan
+    end
+    if attacker.hasWorkingItem(:ROCKINCENSE) && isConst?(type,PBTypes,:ROCK)
+      damagemult=(damagemult*1.2).round
+    end
+    if attacker.hasWorkingItem(:ROSEINCENSE) && isConst?(type,PBTypes,:GRASS)
+      damagemult=(damagemult*1.2).round
+    end
+    if attacker.hasWorkingItem(:SEAINCENSE) && isConst?(type,PBTypes,:WATER)
+      damagemult=(damagemult*1.2).round
+    end
+    if attacker.hasWorkingItem(:WAVEINCENSE) && isConst?(type,PBTypes,:WATER)
+      damagemult=(damagemult*1.2).round
+    end
+    if attacker.hasWorkingItem(:ODDINCENSE) && isConst?(type,PBTypes,:PSYCHIC)
+      damagemult=(damagemult*1.2).round
+    end
+    if attacker.hasWorkingItem(:MUSCLEBAND) && pbIsPhysical?(type)
+      damagemult=(damagemult*1.1).round
+    end
+    if attacker.hasWorkingItem(:WISEGLASSES) && pbIsSpecial?(type)
+      damagemult=(damagemult*1.1).round
+    end
+    if (isConst?(attacker.species,PBSpecies,:LATIAS) ||
+       isConst?(attacker.species,PBSpecies,:LATIOS)) &&
+       attacker.hasWorkingItem(:SOULDEW) &&
+       (isConst?(type,PBTypes,:DRAGON) || isConst?(type,PBTypes,:PSYCHIC) || isConst?(type,PBTypes,:LIGHT)) #Ryan
+      damagemult=(damagemult*1.2).round
+    end # Changed added
+    if attacker.hasWorkingItem(:LUSTROUSORB) &&
+       isConst?(attacker.species,PBSpecies,:PALKIA) &&
+       (isConst?(type,PBTypes,:DRAGON) || isConst?(type,PBTypes,:WATER))
+      damagemult=(damagemult*1.2).round
+    end
+    if attacker.hasWorkingItem(:ADAMANTORB) &&
+       isConst?(attacker.species,PBSpecies,:DIALGA) &&
+       (isConst?(type,PBTypes,:DRAGON) || isConst?(type,PBTypes,:STEEL))
+      damagemult=(damagemult*1.2).round
+    end
+    if attacker.hasWorkingItem(:GRISEOUSORB) &&
+       isConst?(attacker.species,PBSpecies,:GIRATINA) &&
+       (isConst?(type,PBTypes,:DRAGON) || isConst?(type,PBTypes,:GHOST))
+      damagemult=(damagemult*1.2).round
+    end
+    damagemult=pbBaseDamageMultiplier(damagemult,attacker,opponent)
+    if attacker.effects[PBEffects::MeFirst]
+      damagemult=(damagemult*1.5).round
+    end
+    if attacker.effects[PBEffects::HelpingHand] && (options&SELFCONFUSE)==0
+
+
+
+====================================================================================================
+FOUND PINKGLITTER AT OFFSET 283430
+====================================================================================================
+
+
+Context starting at line 853:
+
+       (attacker.hasWorkingItem(:SILVERPOWDER) && isConst?(type,PBTypes,:BUG)) ||
+       (attacker.hasWorkingItem(:SPELLTAG) && isConst?(type,PBTypes,:GHOST)) ||
+       (attacker.hasWorkingItem(:METALCOAT) && isConst?(type,PBTypes,:STEEL)) ||
+       (attacker.hasWorkingItem(:CHARCOAL) && isConst?(type,PBTypes,:FIRE)) ||
+       (attacker.hasWorkingItem(:MYSTICWATER) && isConst?(type,PBTypes,:WATER)) ||
+       (attacker.hasWorkingItem(:MIRACLESEED) && isConst?(type,PBTypes,:GRASS)) ||
+       (attacker.hasWorkingItem(:MAGNET) && isConst?(type,PBTypes,:ELECTRIC)) ||
+       (attacker.hasWorkingItem(:TWISTEDSPOON) && isConst?(type,PBTypes,:PSYCHIC)) ||
+       (attacker.hasWorkingItem(:NEVERMELTICE) && isConst?(type,PBTypes,:ICE)) ||
+       (attacker.hasWorkingItem(:DRAGONFANG) && isConst?(type,PBTypes,:DRAGON)) ||
+       (attacker.hasWorkingItem(:PINKGLITTER) && isConst?(type,PBTypes,:FAIRY)) ||
+       (attacker.hasWorkingItem(:MAGNIFYINGGLASS) && isConst?(type,PBTypes,:LIGHT)) ||
+       (attacker.hasWorkingItem(:BLACKGLASSES) && isConst?(type,PBTypes,:DARK))
+      damagemult=(damagemult*1.2).round #Ryan
+    end
+    if (attacker.hasWorkingItem(:FISTPLATE) && isConst?(type,PBTypes,:FIGHTING)) ||
+       (attacker.hasWorkingItem(:SKYPLATE) && isConst?(type,PBTypes,:FLYING)) ||
+       (attacker.hasWorkingItem(:TOXICPLATE) && isConst?(type,PBTypes,:POISON)) ||
+       (attacker.hasWorkingItem(:EARTHPLATE) && isConst?(type,PBTypes,:GROUND)) ||
+       (attacker.hasWorkingItem(:STONEPLATE) && isConst?(type,PBTypes,:ROCK)) ||
+       (attacker.hasWorkingItem(:INSECTPLATE) && isConst?(type,PBTypes,:BUG)) ||
+       (attacker.hasWorkingItem(:SPOOKYPLATE) && isConst?(type,PBTypes,:GHOST)) ||
+       (attacker.hasWorkingItem(:IRONPLATE) && isConst?(type,PBTypes,:STEEL)) ||
+       (attacker.hasWorkingItem(:FLAMEPLATE) && isConst?(type,PBTypes,:FIRE)) ||
+       (attacker.hasWorkingItem(:SPLASHPLATE) && isConst?(type,PBTypes,:WATER)) ||
+       (attacker.hasWorkingItem(:MEADOWPLATE) && isConst?(type,PBTypes,:GRASS)) ||
+       (attacker.hasWorkingItem(:ZAPPLATE) && isConst?(type,PBTypes,:ELECTRIC)) ||
+       (attacker.hasWorkingItem(:MINDPLATE) && isConst?(type,PBTypes,:PSYCHIC)) ||
+       (attacker.hasWorkingItem(:ICICLEPLATE) && isConst?(type,PBTypes,:ICE)) ||
+       (attacker.hasWorkingItem(:DRACOPLATE) && isConst?(type,PBTypes,:DRAGON)) ||
+       (attacker.hasWorkingItem(:DREADPLATE) && isConst?(type,PBTypes,:DARK)) ||
+       (attacker.hasWorkingItem(:PIXIEPLATE) && isConst?(type,PBTypes,:FAIRY)) ||
+       (attacker.hasWorkingItem(:PRISMPLATE) && isConst?(type,PBTypes,:LIGHT)) #Ryan
+      damagemult=(damagemult*1.3).round #Ryan
+    end
+    if attacker.hasWorkingItem(:ROCKINCENSE) && isConst?(type,PBTypes,:ROCK)
+      damagemult=(damagemult*1.2).round
+    end
+    if attacker.hasWorkingItem(:ROSEINCENSE) && isConst?(type,PBTypes,:GRASS)
+      damagemult=(damagemult*1.2).round
+    end
+    if attacker.hasWorkingItem(:SEAINCENSE) && isConst?(type,PBTypes,:WATER)
+      damagemult=(damagemult*1.2).round
+    end
+    if attacker.hasWorkingItem(:WAVEINCENSE) && isConst?(type,PBTypes,:WATER)
+      damagemult=(damagemult*1.2).round
+    end
+    if attacker.hasWorkingItem(:ODDINCENSE) && isConst?(type,PBTypes,:PSYCHIC)
+      damagemult=(damagemult*1.2).round
+    end
+    if attacker.hasWorkingItem(:MUSCLEBAND) && pbIsPhysical?(type)
+      damagemult=(damagemult*1.1).round
+    end
+    if attacker.hasWorkingItem(:WISEGLASSES) && pbIsSpecial?(type)
+      damagemult=(damagemult*1.1).round
+    end
+    if (isConst?(attacker.species,PBSpecies,:LATIAS) ||
+       isConst?(attacker.species,PBSpecies,:LATIOS)) &&
+       attacker.hasWorkingItem(:SOULDEW) &&
+       (isConst?(type,PBTypes,:DRAGON) || isConst?(type,PBTypes,:PSYCHIC) || isConst?(type,PBTypes,:LIGHT)) #Ryan
+
+
+
+====================================================================================================
+FOUND CRANNBERRY AT OFFSET 283430
+====================================================================================================
+
+
+Context starting at line 1344:
+
+         (opponent.hasWorkingItem(:KASIBBERRY) && isConst?(type,PBTypes,:GHOST)) ||
+         (opponent.hasWorkingItem(:BABIRIBERRY) && isConst?(type,PBTypes,:STEEL)) ||
+         (opponent.hasWorkingItem(:OCCABERRY) && isConst?(type,PBTypes,:FIRE)) ||
+         (opponent.hasWorkingItem(:PASSHOBERRY) && isConst?(type,PBTypes,:WATER)) ||
+         (opponent.hasWorkingItem(:RINDOBERRY) && isConst?(type,PBTypes,:GRASS)) ||
+         (opponent.hasWorkingItem(:WACANBERRY) && isConst?(type,PBTypes,:ELECTRIC)) ||
+         (opponent.hasWorkingItem(:PAYAPABERRY) && isConst?(type,PBTypes,:PSYCHIC)) ||
+         (opponent.hasWorkingItem(:YACHEBERRY) && isConst?(type,PBTypes,:ICE)) ||
+         (opponent.hasWorkingItem(:HABANBERRY) && isConst?(type,PBTypes,:DRAGON)) ||
+         (opponent.hasWorkingItem(:COLBURBERRY) && isConst?(type,PBTypes,:DARK)) ||
+         (opponent.hasWorkingItem(:CRANNBERRY) && isConst?(type,PBTypes,:LIGHT)) || #Ryan
+         (opponent.hasWorkingItem(:ROSELIBERRY) && isConst?(type,PBTypes,:FAIRY))
+        finaldamagemult=(finaldamagemult*0.5).round
+        opponent.damagestate.berryweakened=true
+        @battle.pbCommonAnimation("UseItem",opponent,nil)
+      end
+    end
+    if opponent.hasWorkingItem(:CHILANBERRY) && isConst?(type,PBTypes,:NORMAL) &&
+       (options&IGNOREPKMNTYPES)==0
+      finaldamagemult=(finaldamagemult*0.5).round
+      opponent.damagestate.berryweakened=true
+      @battle.pbCommonAnimation("UseItem",opponent,nil)
+    end
+    finaldamagemult=pbModifyDamage(finaldamagemult,attacker,opponent)
+    damage=(damage*finaldamagemult*1.0/0x1000).round
+    opponent.damagestate.calcdamage=damage
+    PBDebug.log("Move's damage calculated to be #{damage}")
+    return damage
+  end
+
+  def pbReduceHPDamage(damage,attacker,opponent)
+    endure=false
+    if opponent.effects[PBEffects::Substitute]>0 && !ignoresSubstitute?(attacker) &&
+       (!attacker || attacker.index!=opponent.index)
+      PBDebug.log("[Lingering effect triggered] #{opponent.pbThis}'s Substitute took the damage")
+      damage=opponent.effects[PBEffects::Substitute] if damage>opponent.effects[PBEffects::Substitute]
+      opponent.effects[PBEffects::Substitute]-=damage
+      opponent.damagestate.substitute=true
+      @battle.scene.pbDamageAnimation(opponent,0)
+      @battle.pbDisplayPaused(_INTL("The substitute took damage for {1}!",opponent.name))
+      if opponent.effects[PBEffects::Substitute]<=0
+        opponent.effects[PBEffects::Substitute]=0
+        @battle.pbDisplayPaused(_INTL("{1}'s substitute faded!",opponent.name))
+        PBDebug.log("[End of effect] #{opponent.pbThis}'s Substitute faded")
+      end
+      opponent.damagestate.hplost=damage
+      damage=0
+    elsif isConst?(opponent.species,PBSpecies,:EISCUE) && opponent.hasWorkingAbility(:ICEFACE) && 
+          opponent.form!=1 && pbIsPhysical?(type) && !attacker.hasMoldBreaker
+      opponent.form=1; opponent.pbUpdate(true)
+      @battle.scene.pbChangePokemon(opponent,opponent.pokemon)
+      @battle.pbDisplay(_INTL("{1} transformed!",opponent.name))
+      PBDebug.log("[Form changed] #{opponent.pbThis} changed to form #{opponent.form}")
+      opponent.damagestate.hplost=damage
+      damage=0
+    else
+      opponent.damagestate.substitute=false
+      # changed - Disguise
+      if opponent.effects[PBEffects::Disguise] && !attacker.hasMoldBreaker
+        damage=0
+
+
+
+====================================================================================================
+FOUND LEGENDITE AT OFFSET 295503
+====================================================================================================
+
+
+Context starting at line 7125:
+
+               :MEWTWONITEX,:MEWTWONITEY,:ODDKEYSTONE,:OVALSTONE,:PIDGEOTITE,
+               :PINSIRITE,:PROTECTOR,:QUICKCLAW,:RAZORCLAW,:SABLENITE,:SACHET,
+               :SAFETYGOGGLES,:SALAMENCITE,:SCEPTILITE,:SCIZORITE,:SHARPEDONITE,
+               :SHINYSTONE,:SLOWBRONITE,:STEELIXITE,:STICKYBARB,:SWAMPERTITE,
+               :TYRANITARITE,:VENUSAURITE,:WEAKNESSPOLICY,:WHIPPEDDREAM,:VENUSAURITEG,
+               :BLASTOISINITEG,:CHARIZARDITEG,:BUTTERFREEITE,:PIKACHITE,:MEOWTHITE,
+               :MACHAMPITE,:GENGARITEG,:KINGLERITE,:LAPRASITE,:EEVEENITE,:SNORLAXITE,
+               :GARBODITE,:MELMETITE,:RILLABOOMITE,:CINDERITE,:INTELEONITE,:CORVINITE,
+               :ORBEETLITE,:DREDNITE,:COALOSSITE,:APPLITE,:APPLETUNITE,:SANDACONDITE,:TOXTRICITITE,
+               :CENTISKITE,:HATTERENITE,:GRIMMSNARLITE,:ALCREMITE,:COPPERAJANITE,
+               :DURALUDITE,:ETERNATITE,:GRENINJITE,:HEAVYDUTYBOOTS,:LEGENDITE, 
+               :UNREMARKABLETEACUP,:MASTERPIECETEACUP],
+        70 => [:BURNDRIVE,:CHILLDRIVE,:DOUSEDRIVE,:DRAGONFANG,:POISONBARB,
+               :POWERANKLET,:POWERBAND,:POWERBELT,:POWERBRACER,:POWERLENS,
+               :POWERWEIGHT,:SHOCKDRIVE],
+        60 => [:ADAMANTORB,:DAMPROCK,:GRISEOUSORB,:HEATROCK,:LEEK,:LUSTROUSORB,
+               :MACHOBRACE,:ROCKYHELMET,:TERRAINEXTENDER,
+               :WELLSPRINGMASK,:HEARTHFLAMEMASK,:CORNERSTONEMASK,:TEALMASK],
+        50 => [:BUGMEMORY,:DARKMEMORY,:DRAGONMEMORY,:DUBIOUSDISC,
+               :ELECTRICMEMORY,:FAIRYMEMORY,:FIGHTINGMEMORY,:FIREMEMORY,
+               :FLYINGMEMORY,:GHOSTMEMORY,:GRASSMEMORY,:GROUNDMEMORY,:ICEMEMORY,
+               :POISONMEMORY,:PSYCHICMEMORY,:ROCKMEMORY,:SHARPBEAK,:STEELMEMORY,
+               :WATERMEMORY],               
+        40 => [:EVIOLITE,:ICYROCK,:LUCKYPUNCH], #Ryan
+        30 => [:ABSORBBULB,:ADRENALINEORB,:AMAZEMULCH,:AMULETCOIN,:ANTIDOTE,
+               :AWAKENING,:BALMMUSHROOM,:BERRYJUICE,:BIGMALASADA,:BIGMUSHROOM,
+               :BIGNUGGET,:BIGPEARL,:BINDINGBAND,:BLACKBELT,:BLACKGLASSES,
+               :BLACKSLUDGE,:BLUEFLUTE,:BLUESHARD,:BOOSTMULCH,:BOTTLECAP,
+               :BURNHEAL,:CALCIUM,:CARBOS,:CASTELIACONE,:CELLBATTERY,:CHARCOAL,
+               :CLEANSETAG,:COMETSHARD,:DAMPMULCH,:DEEPSEASCALE,:DIREHIT,
+               :DRAGONSCALE,:EJECTBUTTON,:ELIXIR,:ENERGYPOWDER,:ENERGYROOT,
+               :ESCAPEROPE,:ETHER,:EVERSTONE,:EXPSHARE,:FIRESTONE,:FLAMEORB,
+               :FLOATSTONE,:FLUFFYTAIL,:FRESHWATER,:FULLHEAL,:FULLRESTORE,
+               :GOLDBOTTLECAP,:GOOEYMULCH,:GREENSHARD,:GROWTHMULCH,:GUARDSPEC,
+               :HEALPOWDER,:HEARTSCALE,:HONEY,:HPUP,:HYPERPOTION,:ICEHEAL,
+               :ICESTONE,:IRON,:KINGSROCK,:LAVACOOKIE,:LEAFSTONE,:LEMONADE,
+               :LIFEORB,:LIGHTBALL,:LIGHTCLAY,:LUCKYEGG,:LUMINOUSMOSS,
+               :LUMIOSEGALETTE,:MAGNET,:MAXELIXIR,:MAXETHER,:MAXPOTION,
+               :MAXREPEL,:MAXREVIVE,:METALCOAT,:METRONOME,:MIRACLESEED,
+               :MOOMOOMILK,:MOONSTONE,:MYSTICWATER,:NEVERMELTICE,:NUGGET,
+               :OLDGATEAU,:PARALYZEHEAL,:PASSORB,:PEARL,:PEARLSTRING,:POKEDOLL,
+               :POKETOY,:POTION,:PPMAX,:PPUP,:PRISMSCALE,:PROTECTIVEPADS,
+               :PROTEIN,:RAGECANDYBAR,:RARECANDY,:RAZORFANG,:REDFLUTE,:REDSHARD,
+               :RELICBAND,:RELICCOPPER,:RELICCROWN,:RELICGOLD,:RELICSILVER,
+               :RELICSTATUE,:RELICVASE,:REPEL,:REVIVALHERB,:REVIVE,:RICHMULCH,
+               :SACREDASH,:SCOPELENS,:SHALOURSABLE,:SHELLBELL,:SHOALSALT,
+               :SHOALSHELL,:SMOKEBALL,:SNOWBALL,:SODAPOP,:SOULDEW,:SPELLTAG,
+               :STARDUST,:STARPIECE,:STRANGESOUVENIR,:SUNSTONE,:SUPERPOTION,
+               :SUPERREPEL,:SURPRISEMULCH,:SWEETHEART,:THUNDERSTONE,
+               :TINYMUSHROOM,:TOXICORB,:TWISTEDSPOON,:UPGRADE,:WATERSTONE,
+               :XACCURACY,:XATTACK,:XDEFENSE,:XSPATK,:XSPDEF,:XSPEED,
+               :YELLOWFLUTE,:YELLOWSHARD,:ZINC,:GALARICACUFF,:AUSPICIOUSARMOR,
+               :MALICIOUSARMOR,:SCROLLOFDARKNESS,:SCROLLOFWATERS,:LEADERSCREST,
+               :BOOSTERENERGY,:ABILITYSHIELD,:CLEARAMULET,:MIRRORHERB,
+               :PUNCHINGGLOVE,:COVERTCLOAK,
+               :LOADEDDICE,:FAIRYFEATHER,:SYRUPYAPPLE,:METALALLOY
+               ],
+        20 => [:CLEVERWING,:GENIUSWING,:HEALTHWING,:MUSCLEWING,:PRETTYWING,
+               :RESISTWING,:SWIFTWING],
+        10 => [:AGUAVBERRY,:AIRBALLOON,:APICOTBERRY,:ASPEARBERRY,:BABIRIBERRY,
+
+
+
+====================================================================================================
+FOUND PRISMPLATE AT OFFSET 295503
+====================================================================================================
+
+
+Context starting at line 4185:
+
+      type=(getConst(PBTypes,:STEEL) || 0)    if attacker.hasWorkingItem(:IRONPLATE)
+      type=(getConst(PBTypes,:FIRE) || 0)     if attacker.hasWorkingItem(:FLAMEPLATE)
+      type=(getConst(PBTypes,:WATER) || 0)    if attacker.hasWorkingItem(:SPLASHPLATE)
+      type=(getConst(PBTypes,:GRASS) || 0)    if attacker.hasWorkingItem(:MEADOWPLATE)
+      type=(getConst(PBTypes,:ELECTRIC) || 0) if attacker.hasWorkingItem(:ZAPPLATE)
+      type=(getConst(PBTypes,:PSYCHIC) || 0)  if attacker.hasWorkingItem(:MINDPLATE)
+      type=(getConst(PBTypes,:ICE) || 0)      if attacker.hasWorkingItem(:ICICLEPLATE)
+      type=(getConst(PBTypes,:DRAGON) || 0)   if attacker.hasWorkingItem(:DRACOPLATE)
+      type=(getConst(PBTypes,:DARK) || 0)     if attacker.hasWorkingItem(:DREADPLATE)
+      type=(getConst(PBTypes,:FAIRY) || 0)    if attacker.hasWorkingItem(:PIXIEPLATE)
+      type=(getConst(PBTypes,:LIGHT) || 0)    if attacker.hasWorkingItem(:PRISMPLATE) #Ryan
+    elsif isConst?(@id,PBMoves,:TECHNOBLAST)
+      return getConst(PBTypes,:ELECTRIC) if attacker.hasWorkingItem(:SHOCKDRIVE)
+      return getConst(PBTypes,:FIRE)     if attacker.hasWorkingItem(:BURNDRIVE)
+      return getConst(PBTypes,:ICE)      if attacker.hasWorkingItem(:CHILLDRIVE)
+      return getConst(PBTypes,:WATER)    if attacker.hasWorkingItem(:DOUSEDRIVE)
+    elsif isConst?(@id,PBMoves,:MULTIATTACK)
+      type=(getConst(PBTypes,:FIGHTING) || 0) if attacker.hasWorkingItem(:FIGHTINGMEMORY)
+      type=(getConst(PBTypes,:FLYING) || 0)   if attacker.hasWorkingItem(:FLYINGMEMORY)
+      type=(getConst(PBTypes,:POISON) || 0)   if attacker.hasWorkingItem(:POISONMEMORY)      
+      type=(getConst(PBTypes,:GROUND) || 0)   if attacker.hasWorkingItem(:GROUNDMEMORY)
+      type=(getConst(PBTypes,:ROCK) || 0)     if attacker.hasWorkingItem(:ROCKMEMORY)
+      type=(getConst(PBTypes,:BUG) || 0)      if attacker.hasWorkingItem(:BUGMEMORY)
+      type=(getConst(PBTypes,:GHOST) || 0)    if attacker.hasWorkingItem(:GHOSTMEMORY)
+      type=(getConst(PBTypes,:STEEL) || 0)    if attacker.hasWorkingItem(:STEELMEMORY)
+      type=(getConst(PBTypes,:FIRE) || 0)     if attacker.hasWorkingItem(:FIREMEMORY)
+      type=(getConst(PBTypes,:WATER) || 0)    if attacker.hasWorkingItem(:WATERMEMORY)
+      type=(getConst(PBTypes,:GRASS) || 0)    if attacker.hasWorkingItem(:GRASSMEMORY)
+      type=(getConst(PBTypes,:ELECTRIC) || 0) if attacker.hasWorkingItem(:ELECTRICMEMORY)
+      type=(getConst(PBTypes,:PSYCHIC) || 0)  if attacker.hasWorkingItem(:PSYCHICMEMORY)
+      type=(getConst(PBTypes,:ICE) || 0)      if attacker.hasWorkingItem(:ICEMEMORY)
+      type=(getConst(PBTypes,:DRAGON) || 0)   if attacker.hasWorkingItem(:DRAGONMEMORY)
+      type=(getConst(PBTypes,:DARK) || 0)     if attacker.hasWorkingItem(:DARKMEMORY)
+      type=(getConst(PBTypes,:FAIRY) || 0)    if attacker.hasWorkingItem(:FAIRYMEMORY)
+      type=(getConst(PBTypes,:LIGHT) || 0)    if attacker.hasWorkingItem(:LIGHTMEMORY)
+    end
+    return type
+  end
+
+  def pbShowAnimation(id,attacker,opponent,hitnum=0,alltargets=nil,showanimation=true)
+    if isConst?(@id,PBMoves,:TECHNOBLAST)
+      anim=0
+      anim=1 if isConst?(pbType(@type,attacker,opponent),PBTypes,:ELECTRIC)
+      anim=2 if isConst?(pbType(@type,attacker,opponent),PBTypes,:FIRE)
+      anim=3 if isConst?(pbType(@type,attacker,opponent),PBTypes,:ICE)
+      anim=4 if isConst?(pbType(@type,attacker,opponent),PBTypes,:WATER)
+      return super(id,attacker,opponent,anim,alltargets,showanimation) # Type-specific anim
+    end
+    return super(id,attacker,opponent,hitnum,alltargets,showanimation)
+  end
+end
+
+
+
+################################################################################
+# This attack is always a critical hit. (Frost Breath, Storm Throw)
+################################################################################
+class PokeBattle_Move_0A0 < PokeBattle_Move
+  def pbCritialOverride(attacker,opponent)
+    return true
+
+
+
+Context starting at line 7106:
+
+  def flingarray
+    return {
+       130 => [:IRONBALL],
+       100 => [:ARMORFOSSIL,:CLAWFOSSIL,:COVERFOSSIL,:DOMEFOSSIL,:HARDSTONE,
+               :HELIXFOSSIL,:JAWFOSSIL,:OLDAMBER,:PLUMEFOSSIL,:RAREBONE,
+               :ROOTFOSSIL,:SAILFOSSIL,:SKULLFOSSIL],
+        90 => [:DEEPSEATOOTH,:DRACOPLATE,:DREADPLATE,:EARTHPLATE,:FISTPLATE,
+               :FLAMEPLATE,:GRIPCLAW,:ICICLEPLATE,:INSECTPLATE,:IRONPLATE,
+               :MEADOWPLATE,:MINDPLATE,:PIXIEPLATE,:SKYPLATE,:SPLASHPLATE,
+               :SPOOKYPLATE,:STONEPLATE,:THICKCLUB,:TOXICPLATE,:ZAPPLATE,
+               :PRISMPLATE], #Ryan
+        80 => [:ABOMASITE,:ABSOLITE,:AERODACTYLITE,:AGGRONITE,:ALAKAZITE,
+               :ALTARIANITE,:AMPHAROSITE,:ASSAULTVEST,:AUDINITE,:BANETTITE,
+               :BEEDRILLITE,:BLASTOISINITE,:BLAZIKENITE,:CAMERUPTITE,
+               :CHARIZARDITEX,:CHARIZARDITEY,:DAWNSTONE,:DIANCITE,:DUSKSTONE,
+               :ELECTIRIZER,:GALLADITE,:GARCHOMPITE,:GARDEVOIRITE,:GENGARITE,
+               :GLALITITE,:GYARADOSITE,:HERACRONITE,:HOUNDOOMINITE,
+               :KANGASKHANITE,:LATIASITE,:LATIOSITE,:LOPUNNITE,:LUCARIONITE,
+               :MAGMARIZER,:MANECTITE,:MAWILITE,:MEDICHAMITE,:METAGROSSITE,
+               :MEWTWONITEX,:MEWTWONITEY,:ODDKEYSTONE,:OVALSTONE,:PIDGEOTITE,
+               :PINSIRITE,:PROTECTOR,:QUICKCLAW,:RAZORCLAW,:SABLENITE,:SACHET,
+               :SAFETYGOGGLES,:SALAMENCITE,:SCEPTILITE,:SCIZORITE,:SHARPEDONITE,
+               :SHINYSTONE,:SLOWBRONITE,:STEELIXITE,:STICKYBARB,:SWAMPERTITE,
+               :TYRANITARITE,:VENUSAURITE,:WEAKNESSPOLICY,:WHIPPEDDREAM,:VENUSAURITEG,
+               :BLASTOISINITEG,:CHARIZARDITEG,:BUTTERFREEITE,:PIKACHITE,:MEOWTHITE,
+               :MACHAMPITE,:GENGARITEG,:KINGLERITE,:LAPRASITE,:EEVEENITE,:SNORLAXITE,
+               :GARBODITE,:MELMETITE,:RILLABOOMITE,:CINDERITE,:INTELEONITE,:CORVINITE,
+               :ORBEETLITE,:DREDNITE,:COALOSSITE,:APPLITE,:APPLETUNITE,:SANDACONDITE,:TOXTRICITITE,
+               :CENTISKITE,:HATTERENITE,:GRIMMSNARLITE,:ALCREMITE,:COPPERAJANITE,
+               :DURALUDITE,:ETERNATITE,:GRENINJITE,:HEAVYDUTYBOOTS,:LEGENDITE, 
+               :UNREMARKABLETEACUP,:MASTERPIECETEACUP],
+        70 => [:BURNDRIVE,:CHILLDRIVE,:DOUSEDRIVE,:DRAGONFANG,:POISONBARB,
+               :POWERANKLET,:POWERBAND,:POWERBELT,:POWERBRACER,:POWERLENS,
+               :POWERWEIGHT,:SHOCKDRIVE],
+        60 => [:ADAMANTORB,:DAMPROCK,:GRISEOUSORB,:HEATROCK,:LEEK,:LUSTROUSORB,
+               :MACHOBRACE,:ROCKYHELMET,:TERRAINEXTENDER,
+               :WELLSPRINGMASK,:HEARTHFLAMEMASK,:CORNERSTONEMASK,:TEALMASK],
+        50 => [:BUGMEMORY,:DARKMEMORY,:DRAGONMEMORY,:DUBIOUSDISC,
+               :ELECTRICMEMORY,:FAIRYMEMORY,:FIGHTINGMEMORY,:FIREMEMORY,
+               :FLYINGMEMORY,:GHOSTMEMORY,:GRASSMEMORY,:GROUNDMEMORY,:ICEMEMORY,
+               :POISONMEMORY,:PSYCHICMEMORY,:ROCKMEMORY,:SHARPBEAK,:STEELMEMORY,
+               :WATERMEMORY],               
+        40 => [:EVIOLITE,:ICYROCK,:LUCKYPUNCH], #Ryan
+        30 => [:ABSORBBULB,:ADRENALINEORB,:AMAZEMULCH,:AMULETCOIN,:ANTIDOTE,
+               :AWAKENING,:BALMMUSHROOM,:BERRYJUICE,:BIGMALASADA,:BIGMUSHROOM,
+               :BIGNUGGET,:BIGPEARL,:BINDINGBAND,:BLACKBELT,:BLACKGLASSES,
+               :BLACKSLUDGE,:BLUEFLUTE,:BLUESHARD,:BOOSTMULCH,:BOTTLECAP,
+               :BURNHEAL,:CALCIUM,:CARBOS,:CASTELIACONE,:CELLBATTERY,:CHARCOAL,
+               :CLEANSETAG,:COMETSHARD,:DAMPMULCH,:DEEPSEASCALE,:DIREHIT,
+               :DRAGONSCALE,:EJECTBUTTON,:ELIXIR,:ENERGYPOWDER,:ENERGYROOT,
+               :ESCAPEROPE,:ETHER,:EVERSTONE,:EXPSHARE,:FIRESTONE,:FLAMEORB,
+               :FLOATSTONE,:FLUFFYTAIL,:FRESHWATER,:FULLHEAL,:FULLRESTORE,
+               :GOLDBOTTLECAP,:GOOEYMULCH,:GREENSHARD,:GROWTHMULCH,:GUARDSPEC,
+               :HEALPOWDER,:HEARTSCALE,:HONEY,:HPUP,:HYPERPOTION,:ICEHEAL,
+               :ICESTONE,:IRON,:KINGSROCK,:LAVACOOKIE,:LEAFSTONE,:LEMONADE,
+               :LIFEORB,:LIGHTBALL,:LIGHTCLAY,:LUCKYEGG,:LUMINOUSMOSS,
+               :LUMIOSEGALETTE,:MAGNET,:MAXELIXIR,:MAXETHER,:MAXPOTION,
+               :MAXREPEL,:MAXREVIVE,:METALCOAT,:METRONOME,:MIRACLESEED,
+               :MOOMOOMILK,:MOONSTONE,:MYSTICWATER,:NEVERMELTICE,:NUGGET,
+               :OLDGATEAU,:PARALYZEHEAL,:PASSORB,:PEARL,:PEARLSTRING,:POKEDOLL,
+
+
+
+====================================================================================================
+FOUND CRANNBERRY AT OFFSET 295503
+====================================================================================================
+
+
+Context starting at line 3924:
+
+  end
+
+  def pbBaseDamage(basedmg,attacker,opponent)
+    damagearray={
+       80 => [:CHERIBERRY,:CHESTOBERRY,:PECHABERRY,:RAWSTBERRY,:ASPEARBERRY,
+              :LEPPABERRY,:ORANBERRY,:PERSIMBERRY,:LUMBERRY,:SITRUSBERRY,
+              :FIGYBERRY,:WIKIBERRY,:MAGOBERRY,:AGUAVBERRY,:IAPAPABERRY,
+              :RAZZBERRY,:OCCABERRY,:PASSHOBERRY,:WACANBERRY,:RINDOBERRY,
+              :YACHEBERRY,:CHOPLEBERRY,:KEBIABERRY,:SHUCABERRY,:COBABERRY,
+              :PAYAPABERRY,:TANGABERRY,:CHARTIBERRY,:KASIBBERRY,:HABANBERRY,
+              :COLBURBERRY,:BABIRIBERRY,:CHILANBERRY,:ROSELIBERRY,:CRANNBERRY],
+       90 => [:BLUKBERRY,:NANABBERRY,:WEPEARBERRY,:PINAPBERRY,:POMEGBERRY,
+              :KELPSYBERRY,:QUALOTBERRY,:HONDEWBERRY,:GREPABERRY,:TAMATOBERRY,
+              :CORNNBERRY,:MAGOSTBERRY,:RABUTABERRY,:NOMELBERRY,:SPELONBERRY,
+              :PAMTREBERRY],
+       100 => [:WATMELBERRY,:DURINBERRY,:BELUEBERRY,:LIECHIBERRY,:GANLONBERRY,
+               :SALACBERRY,:PETAYABERRY,:APICOTBERRY,:LANSATBERRY,:STARFBERRY,
+               :ENIGMABERRY,:MICLEBERRY,:CUSTAPBERRY,:JABOCABERRY,:ROWAPBERRY,
+               :KEEBERRY,:MARANGABERRY]
+    }
+    for i in damagearray.keys
+      data=damagearray[i]
+      if data
+        for j in data
+          if isConst?(@berry,PBItems,j)
+            ret=i
+            ret+=20 if USENEWBATTLEMECHANICS
+            return ret
+          end
+        end
+      end
+    end
+    return 1
+  end
+
+  def pbModifyType(type,attacker,opponent)
+    type=getConst(PBTypes,:NORMAL) || 0
+    typearray={
+       :NORMAL   => [:CHILANBERRY],
+       :FIRE     => [:CHERIBERRY,:BLUKBERRY,:WATMELBERRY,:OCCABERRY],
+       :WATER    => [:CHESTOBERRY,:NANABBERRY,:DURINBERRY,:PASSHOBERRY],
+       :ELECTRIC => [:PECHABERRY,:WEPEARBERRY,:BELUEBERRY,:WACANBERRY],
+       :GRASS    => [:RAWSTBERRY,:PINAPBERRY,:RINDOBERRY,:LIECHIBERRY],
+       :ICE      => [:ASPEARBERRY,:POMEGBERRY,:YACHEBERRY,:GANLONBERRY],
+       :FIGHTING => [:LEPPABERRY,:KELPSYBERRY,:CHOPLEBERRY,:SALACBERRY],
+       :POISON   => [:ORANBERRY,:QUALOTBERRY,:KEBIABERRY,:PETAYABERRY],
+       :GROUND   => [:PERSIMBERRY,:HONDEWBERRY,:SHUCABERRY,:APICOTBERRY],
+       :FLYING   => [:LUMBERRY,:GREPABERRY,:COBABERRY,:LANSATBERRY],
+       :PSYCHIC  => [:SITRUSBERRY,:TAMATOBERRY,:PAYAPABERRY,:STARFBERRY],
+       :BUG      => [:FIGYBERRY,:CORNNBERRY,:TANGABERRY,:ENIGMABERRY],
+       :ROCK     => [:WIKIBERRY,:MAGOSTBERRY,:CHARTIBERRY,:MICLEBERRY],
+       :GHOST    => [:MAGOBERRY,:RABUTABERRY,:KASIBBERRY,:CUSTAPBERRY],
+       :DRAGON   => [:AGUAVBERRY,:NOMELBERRY,:HABANBERRY,:JABOCABERRY],
+       :DARK     => [:IAPAPABERRY,:SPELONBERRY,:COLBURBERRY,:ROWAPBERRY,:MARANGABERRY],
+       :STEEL    => [:RAZZBERRY,:PAMTREBERRY,:BABIRIBERRY],
+       :FAIRY    => [:ROSELIBERRY,:KEEBERRY],
+       :LIGHT    => [:CRANNBERRY] #Ryan
+    }
+    for i in typearray.keys
+      data=typearray[i]
+
+
+
+Context starting at line 3970:
+
+       :GROUND   => [:PERSIMBERRY,:HONDEWBERRY,:SHUCABERRY,:APICOTBERRY],
+       :FLYING   => [:LUMBERRY,:GREPABERRY,:COBABERRY,:LANSATBERRY],
+       :PSYCHIC  => [:SITRUSBERRY,:TAMATOBERRY,:PAYAPABERRY,:STARFBERRY],
+       :BUG      => [:FIGYBERRY,:CORNNBERRY,:TANGABERRY,:ENIGMABERRY],
+       :ROCK     => [:WIKIBERRY,:MAGOSTBERRY,:CHARTIBERRY,:MICLEBERRY],
+       :GHOST    => [:MAGOBERRY,:RABUTABERRY,:KASIBBERRY,:CUSTAPBERRY],
+       :DRAGON   => [:AGUAVBERRY,:NOMELBERRY,:HABANBERRY,:JABOCABERRY],
+       :DARK     => [:IAPAPABERRY,:SPELONBERRY,:COLBURBERRY,:ROWAPBERRY,:MARANGABERRY],
+       :STEEL    => [:RAZZBERRY,:PAMTREBERRY,:BABIRIBERRY],
+       :FAIRY    => [:ROSELIBERRY,:KEEBERRY],
+       :LIGHT    => [:CRANNBERRY] #Ryan
+    }
+    for i in typearray.keys
+      data=typearray[i]
+      if data
+        for j in data
+          if isConst?(@berry,PBItems,j)
+            type=getConst(PBTypes,i) || type
+          end
+        end
+      end
+    end
+    return type
+  end
+
+  def pbEffectAfterHit(attacker,opponent,turneffects)
+    if turneffects[PBEffects::TotalDamage]>0
+      attacker.pbConsumeItem
+    end
+  end
+end
+
+
+
+################################################################################
+# Power increases the less PP this move has. (Trump Card)
+################################################################################
+class PokeBattle_Move_097 < PokeBattle_Move
+  def pbBaseDamage(basedmg,attacker,opponent)
+    dmgs=[200,80,60,50,40]
+    ppleft=[@pp,4].min   # PP is reduced before the move is used
+    basedmg=dmgs[ppleft]
+    return basedmg
+  end
+end
+
+
+
+################################################################################
+# Power increases the less HP the user has. (Flail, Reversal)
+################################################################################
+class PokeBattle_Move_098 < PokeBattle_Move
+  def pbBaseDamage(basedmg,attacker,opponent)
+    n=(48*attacker.hp/attacker.totalhp).floor
+    ret=20
+    ret=40 if n<33
+    ret=80 if n<17
+    ret=100 if n<10
+    ret=150 if n<5
+    ret=200 if n<2
+
+
+
+Context starting at line 7198:
+
+               :PERSIMBERRY,:PETAYABERRY,:PINAPBERRY,:PINKNECTAR,:PINKSCARF,
+               :POMEGBERRY,:POWERHERB,:PSYCHICSEED,:PUREINCENSE,:PURPLENECTAR,
+               :QUALOTBERRY,:QUICKPOWDER,:RABUTABERRY,:RAWSTBERRY,:RAZZBERRY,
+               :REAPERCLOTH,:REDCARD,:REDNECTAR,:REDSCARF,:RINDOBERRY,
+               :RINGTARGET,:ROCKINCENSE,:ROSEINCENSE,:ROSELIBERRY,:ROWAPBERRY,
+               :SALACBERRY,:SEAINCENSE,:SHEDSHELL,:SHUCABERRY,:SILKSCARF,
+               :SILVERPOWDER,:SITRUSBERRY,:SMOOTHROCK,:SOFTSAND,:SOOTHEBELL,
+               :SPELONBERRY,:STARFBERRY,:TAMATOBERRY,:TANGABERRY,:WACANBERRY,
+               :WATMELBERRY,:WAVEINCENSE,:WEPEARBERRY,:WHITEHERB,:WIDELENS,
+               :WIKIBERRY,:WISEGLASSES,:YACHEBERRY,:YELLOWNECTAR,:YELLOWSCARF,
+               :ZOOMLENS,:CRANNBERRY,:GIMMIGHOULCOIN] #Ryan
+    }
+  end
+
+  def pbMoveFailed(attacker,opponent)
+    return true if attacker.item==0 ||
+                   @battle.pbIsUnlosableItem(attacker,attacker.item) ||
+                   pbIsPokeBall?(attacker.item) ||
+                   @battle.field.effects[PBEffects::MagicRoom]>0 ||
+                   attacker.hasWorkingAbility(:KLUTZ) ||
+                   attacker.effects[PBEffects::Embargo]>0
+    for i in flingarray.keys
+      if flingarray[i]
+        for j in flingarray[i]
+          return false if isConst?(attacker.item,PBItems,j)
+        end
+      end
+    end
+    return false if pbIsBerry?(attacker.item) &&
+                    !attacker.pbOpposing1.hasWorkingAbility(:UNNERVE) &&
+                    !attacker.pbOpposing2.hasWorkingAbility(:UNNERVE) &&
+                    !attacker.pbOpposing1.hasWorkingAbility(:ICERIDER) &&
+                    !attacker.pbOpposing2.hasWorkingAbility(:ICERIDER) &&
+                    !attacker.pbOpposing1.hasWorkingAbility(:SHADOWRIDER) &&
+                    !attacker.pbOpposing2.hasWorkingAbility(:SHADOWRIDER)
+    return true
+  end
+
+  def pbBaseDamage(basedmg,attacker,opponent)
+    return 10 if pbIsBerry?(attacker.item)
+    return 80 if pbIsMegaStone?(attacker.item)
+    for i in flingarray.keys
+      if flingarray[i]
+        for j in flingarray[i]
+          return i if isConst?(attacker.item,PBItems,j)
+        end
+      end
+    end
+    return 1
+  end
+
+  def pbEffect(attacker,opponent,hitnum=0,alltargets=nil,showanimation=true)
+    if attacker.item==0
+      @battle.pbDisplay(_INTL("But it failed!"))
+      return 0
+    end
+    attacker.effects[PBEffects::Unburden]=true
+    @battle.pbDisplay(_INTL("{1} flung its {2}!",attacker.pbThis,PBItems.getName(attacker.item)))
+    ret=super(attacker,opponent,hitnum,alltargets,showanimation)
+    if opponent.damagestate.calcdamage>0 && !opponent.damagestate.substitute &&
+
+
+
+====================================================================================================
+FOUND LIGHTMEMORY AT OFFSET 295503
+====================================================================================================
+
+
+Context starting at line 4209:
+
+      type=(getConst(PBTypes,:STEEL) || 0)    if attacker.hasWorkingItem(:STEELMEMORY)
+      type=(getConst(PBTypes,:FIRE) || 0)     if attacker.hasWorkingItem(:FIREMEMORY)
+      type=(getConst(PBTypes,:WATER) || 0)    if attacker.hasWorkingItem(:WATERMEMORY)
+      type=(getConst(PBTypes,:GRASS) || 0)    if attacker.hasWorkingItem(:GRASSMEMORY)
+      type=(getConst(PBTypes,:ELECTRIC) || 0) if attacker.hasWorkingItem(:ELECTRICMEMORY)
+      type=(getConst(PBTypes,:PSYCHIC) || 0)  if attacker.hasWorkingItem(:PSYCHICMEMORY)
+      type=(getConst(PBTypes,:ICE) || 0)      if attacker.hasWorkingItem(:ICEMEMORY)
+      type=(getConst(PBTypes,:DRAGON) || 0)   if attacker.hasWorkingItem(:DRAGONMEMORY)
+      type=(getConst(PBTypes,:DARK) || 0)     if attacker.hasWorkingItem(:DARKMEMORY)
+      type=(getConst(PBTypes,:FAIRY) || 0)    if attacker.hasWorkingItem(:FAIRYMEMORY)
+      type=(getConst(PBTypes,:LIGHT) || 0)    if attacker.hasWorkingItem(:LIGHTMEMORY)
+    end
+    return type
+  end
+
+  def pbShowAnimation(id,attacker,opponent,hitnum=0,alltargets=nil,showanimation=true)
+    if isConst?(@id,PBMoves,:TECHNOBLAST)
+      anim=0
+      anim=1 if isConst?(pbType(@type,attacker,opponent),PBTypes,:ELECTRIC)
+      anim=2 if isConst?(pbType(@type,attacker,opponent),PBTypes,:FIRE)
+      anim=3 if isConst?(pbType(@type,attacker,opponent),PBTypes,:ICE)
+      anim=4 if isConst?(pbType(@type,attacker,opponent),PBTypes,:WATER)
+      return super(id,attacker,opponent,anim,alltargets,showanimation) # Type-specific anim
+    end
+    return super(id,attacker,opponent,hitnum,alltargets,showanimation)
+  end
+end
+
+
+
+################################################################################
+# This attack is always a critical hit. (Frost Breath, Storm Throw)
+################################################################################
+class PokeBattle_Move_0A0 < PokeBattle_Move
+  def pbCritialOverride(attacker,opponent)
+    return true
+  end
+end
+
+
+
+################################################################################
+# For 5 rounds, foes' attacks cannot become critical hits. (Lucky Chant)
+################################################################################
+class PokeBattle_Move_0A1 < PokeBattle_Move
+  def pbEffect(attacker,opponent,hitnum=0,alltargets=nil,showanimation=true)
+    if attacker.pbOwnSide.effects[PBEffects::LuckyChant]>0
+      @battle.pbDisplay(_INTL("But it failed!"))
+      return -1
+    end
+    pbShowAnimation(@id,attacker,opponent,hitnum,alltargets,showanimation)
+    attacker.pbOwnSide.effects[PBEffects::LuckyChant]=5
+    if !@battle.pbIsOpposing?(attacker.index)
+      @battle.pbDisplay(_INTL("The Lucky Chant shielded your team from critical hits!"))
+    else
+      @battle.pbDisplay(_INTL("The Lucky Chant shielded the opposing team from critical hits!"))
+    end  
+    return 0
+  end
+end
+
+
+
+====================================================================================================
+FOUND PRISMPLATE AT OFFSET 361166
+====================================================================================================
+
+
+Context starting at line 507:
+
+
+# Checks whether an item can be removed from a PokÃ©mon.
+  def pbIsUnlosableItem(pkmn,item)
+    return true if pbIsMail?(item)
+    return false if pkmn.effects[PBEffects::Transform]
+    return true if pkmn.pokemon && pkmn.pokemon.getMegaForm(true)!=0 # Mega Stone
+    if isConst?(pkmn.ability,PBAbilities,:MULTITYPE)
+      plates=[:FISTPLATE,:SKYPLATE,:TOXICPLATE,:EARTHPLATE,:STONEPLATE,
+              :INSECTPLATE,:SPOOKYPLATE,:IRONPLATE,:FLAMEPLATE,:SPLASHPLATE,
+              :MEADOWPLATE,:ZAPPLATE,:MINDPLATE,:ICICLEPLATE,:DRACOPLATE,
+              :DREADPLATE,:PIXIEPLATE,:PRISMPLATE] #Ryan
+      for i in plates
+        return true if isConst?(item,PBItems,i)
+      end
+    end
+    if isConst?(pkmn.ability,PBAbilities,:RKSSYSTEM)
+      plates=[:BUGMEMORY,:DARKMEMORY,:DRAGONMEMORY,:ELECTRICMEMORY,:FAIRYMEMORY,
+              :FIGHTINGMEMORY,:FIREMEMORY,:FLYINGMEMORY,:GHOSTMEMORY,:GRASSMEMORY,
+              :GROUNDMEMORY,:ICEMEMORY,:POISONMEMORY,:PSYCHICMEMORY,:ROCKMEMORY,
+              :STEELMEMORY,:WATERMEMORY,:LIGHTMEMORY] #Ryan
+      for i in plates
+        return true if isConst?(item,PBItems,i)
+      end
+    end
+    combos=[[:GIRATINA,:GRISEOUSORB],
+            [:GENESECT,:BURNDRIVE],
+            [:GENESECT,:CHILLDRIVE],
+            [:GENESECT,:DOUSEDRIVE],
+            [:GENESECT,:SHOCKDRIVE],
+            # Primal Reversion stones
+            [:KYOGRE,:BLUEORB],
+            [:GROUDON,:REDORB],
+            [:ZACIAN,:RUSTEDSWORD],
+            [:ZAMAZENTA,:RUSTEDSHIELD]
+           ]
+    for i in combos
+      if isConst?(pkmn.species,PBSpecies,i[0]) && isConst?(item,PBItems,i[1])
+        return true
+      end
+    end
+    return false
+  end
+
+  def pbCheckGlobalAbility(a)
+    for i in 0...4 # in order from own first, opposing first, own second, opposing second
+      if @battlers[i].hasWorkingAbility(a)
+        return @battlers[i]
+      end
+    end
+    return nil
+  end
+
+  def nextPickupUse
+    @nextPickupUse+=1
+    return @nextPickupUse
+  end
+
+################################################################################
+# Player-related info.
+################################################################################
+
+
+
+====================================================================================================
+FOUND LIGHTMEMORY AT OFFSET 361166
+====================================================================================================
+
+
+Context starting at line 516:
+
+              :MEADOWPLATE,:ZAPPLATE,:MINDPLATE,:ICICLEPLATE,:DRACOPLATE,
+              :DREADPLATE,:PIXIEPLATE,:PRISMPLATE] #Ryan
+      for i in plates
+        return true if isConst?(item,PBItems,i)
+      end
+    end
+    if isConst?(pkmn.ability,PBAbilities,:RKSSYSTEM)
+      plates=[:BUGMEMORY,:DARKMEMORY,:DRAGONMEMORY,:ELECTRICMEMORY,:FAIRYMEMORY,
+              :FIGHTINGMEMORY,:FIREMEMORY,:FLYINGMEMORY,:GHOSTMEMORY,:GRASSMEMORY,
+              :GROUNDMEMORY,:ICEMEMORY,:POISONMEMORY,:PSYCHICMEMORY,:ROCKMEMORY,
+              :STEELMEMORY,:WATERMEMORY,:LIGHTMEMORY] #Ryan
+      for i in plates
+        return true if isConst?(item,PBItems,i)
+      end
+    end
+    combos=[[:GIRATINA,:GRISEOUSORB],
+            [:GENESECT,:BURNDRIVE],
+            [:GENESECT,:CHILLDRIVE],
+            [:GENESECT,:DOUSEDRIVE],
+            [:GENESECT,:SHOCKDRIVE],
+            # Primal Reversion stones
+            [:KYOGRE,:BLUEORB],
+            [:GROUDON,:REDORB],
+            [:ZACIAN,:RUSTEDSWORD],
+            [:ZAMAZENTA,:RUSTEDSHIELD]
+           ]
+    for i in combos
+      if isConst?(pkmn.species,PBSpecies,i[0]) && isConst?(item,PBItems,i[1])
+        return true
+      end
+    end
+    return false
+  end
+
+  def pbCheckGlobalAbility(a)
+    for i in 0...4 # in order from own first, opposing first, own second, opposing second
+      if @battlers[i].hasWorkingAbility(a)
+        return @battlers[i]
+      end
+    end
+    return nil
+  end
+
+  def nextPickupUse
+    @nextPickupUse+=1
+    return @nextPickupUse
+  end
+
+################################################################################
+# Player-related info.
+################################################################################
+  def pbPlayer
+    if @player.is_a?(Array)
+      return @player[0]
+    else
+      return @player
+    end
+  end
+
+  def pbGetOwnerItems(battlerIndex)
+
+
+
+====================================================================================================
+FOUND LEGENDITE AT OFFSET 393670
+====================================================================================================
+
+
+Context starting at line 3562:
+
+          atk=(atk*1.5).round
+        end
+      end
+    end
+    # Attack-boosting items
+    if attacker.hasWorkingItem(:THICKCLUB) &&
+       (isConst?(attacker.species,PBSpecies,:CUBONE) ||
+       isConst?(attacker.species,PBSpecies,:MAROWAK)) && move.pbIsPhysical?(type)
+      atk=(atk*2.0).round
+    end
+    if attacker.hasWorkingItem(:LEGENDITE) #Ryan
+        atk=(atk*650/(pbBaseStatTotal(attacker.species))).round
+    end
+    if attacker.hasWorkingItem(:DEEPSEATOOTH) &&
+       isConst?(attacker.species,PBSpecies,:CLAMPERL) && move.pbIsSpecial?(type)
+      atk=(atk*2.0).round
+    end
+    if attacker.hasWorkingItem(:LIGHTBALL) &&
+       isConst?(attacker.species,PBSpecies,:PIKACHU)
+      atk=(atk*2.0).round
+    end
+    # if attacker.hasWorkingItem(:SOULDEW) &&
+    #    (isConst?(attacker.species,PBSpecies,:LATIAS) ||
+    #    isConst?(attacker.species,PBSpecies,:LATIOS)) && move.pbIsSpecial?(type)
+    #   atk=(atk*1.5).round
+    # end
+    # Changed removed
+    if attacker.hasWorkingItem(:CHOICEBAND) && move.pbIsPhysical?(type)
+      atk=(atk*1.5).round
+    end
+    if attacker.hasWorkingAbility(:GORILLATACTICS) && move.pbIsPhysical?(type)
+      atk=(atk*1.5).round
+    end
+    if attacker.hasWorkingItem(:CHOICESPECS) && move.pbIsSpecial?(type)
+      atk=(atk*1.5).round
+    end
+    # Get base defense stat
+    defense=pbRoughStat(opponent,PBStats::DEFENSE,skill)
+    applysandstorm=false
+    if type>=0 && move.pbIsSpecial?(type)
+      if move.function!=0x122 # Psyshock
+        defense=pbRoughStat(opponent,PBStats::SPDEF,skill)
+        applysandstorm=true
+      end
+    end
+    # Sandstorm weather
+    if skill>=PBTrainerAI.highSkill
+      if pbWeather==PBWeather::SANDSTORM &&
+         opponent.pbHasType?(:ROCK) && applysandstorm
+        defense=(defense*1.5).round
+      end
+    end
+    # Marvel Scale
+    if skill>=PBTrainerAI.bestSkill
+      if opponent.hasWorkingAbility(:MARVELSCALE) &&
+         opponent.status>0 && move.pbIsPhysical?(type)
+        defense=(defense*1.5).round
+      end
+    end
+    # Fluffy # changed
+
+
+
+Context starting at line 3645:
+
+      end
+    end
+    # Defense-boosting items
+    if skill>=PBTrainerAI.highSkill
+      if opponent.hasWorkingItem(:EVIOLITE)
+        evos=pbGetEvolvedFormData(opponent.pokemon.fSpecies)
+        if evos && evos.length>0
+          defense=(defense*1.5).round
+        end
+      end
+      if opponent.hasWorkingItem(:LEGENDITE) #Ryan
+        defense=(defense*650/(pbBaseStatTotal(opponent.species))).round
+      end
+      if opponent.hasWorkingItem(:DEEPSEASCALE) &&
+         isConst?(opponent.species,PBSpecies,:CLAMPERL) && move.pbIsSpecial?(type)
+        defense=(defense*2.0).round
+      end
+      if opponent.hasWorkingItem(:METALPOWDER) &&
+         isConst?(opponent.species,PBSpecies,:DITTO) &&
+         !opponent.effects[PBEffects::Transform] && move.pbIsPhysical?(type)
+        defense=(defense*2.0).round
+      end
+      # if opponent.hasWorkingItem(:SOULDEW) &&
+      #    (isConst?(opponent.species,PBSpecies,:LATIAS) ||
+      #    isConst?(opponent.species,PBSpecies,:LATIOS)) && move.pbIsSpecial?(type)
+      #   defense=(defense*1.5).round
+      # end
+      # Changed removed
+    end
+    defense = [defense.round,1].max
+    # Main damage calculation
+    damage=(((2.0*attacker.level/5+2).floor*basedamage*atk/defense).floor/50).floor+2
+    # Multi-targeting attacks
+    if skill>=PBTrainerAI.highSkill
+      if move.pbTargetsMultiple?(attacker)
+        damage=(damage*0.75).round
+      end
+    end
+    # Weather
+    if skill>=PBTrainerAI.mediumSkill
+      case pbWeather
+      when PBWeather::SUNNYDAY
+        if isConst?(type,PBTypes,:FIRE)
+          damage=(damage*1.5).round
+        elsif isConst?(type,PBTypes,:WATER)
+          damage=(damage*0.5).round
+        end
+      when PBWeather::RAINDANCE
+        if isConst?(type,PBTypes,:FIRE)
+          damage=(damage*0.5).round
+        elsif isConst?(type,PBTypes,:WATER)
+          damage=(damage*1.5).round
+        end
+      end
+    end
+    # Critical hits - n/a
+    # Random variance - n/a
+    # STAB
+    if skill>=PBTrainerAI.mediumSkill
+      if attacker.pbHasType?(type)
+
+
+
+====================================================================================================
+FOUND PRISMPLATE AT OFFSET 393670
+====================================================================================================
+
+
+Context starting at line 3347:
+
+       (attacker.hasWorkingItem(:IRONPLATE) && isConst?(type,PBTypes,:STEEL)) ||
+       (attacker.hasWorkingItem(:FLAMEPLATE) && isConst?(type,PBTypes,:FIRE)) ||
+       (attacker.hasWorkingItem(:SPLASHPLATE) && isConst?(type,PBTypes,:WATER)) ||
+       (attacker.hasWorkingItem(:MEADOWPLATE) && isConst?(type,PBTypes,:GRASS)) ||
+       (attacker.hasWorkingItem(:ZAPPLATE) && isConst?(type,PBTypes,:ELECTRIC)) ||
+       (attacker.hasWorkingItem(:MINDPLATE) && isConst?(type,PBTypes,:PSYCHIC)) ||
+       (attacker.hasWorkingItem(:ICICLEPLATE) && isConst?(type,PBTypes,:ICE)) ||
+       (attacker.hasWorkingItem(:DRACOPLATE) && isConst?(type,PBTypes,:DRAGON)) ||
+       (attacker.hasWorkingItem(:DREADPLATE) && isConst?(type,PBTypes,:DARK)) ||
+       (attacker.hasWorkingItem(:PIXIEPLATE) && isConst?(type,PBTypes,:FAIRY)) ||
+       (attacker.hasWorkingItem(:PRISMPLATE) && isConst?(type,PBTypes,:LIGHT)) #Ryan
+      basedamage=(basedamage*1.3).round #Ryan
+    end
+    if (attacker.hasWorkingItem(:NORMALGEM) && isConst?(type,PBTypes,:NORMAL)) ||
+       (attacker.hasWorkingItem(:FIGHTINGGEM) && isConst?(type,PBTypes,:FIGHTING)) ||
+       (attacker.hasWorkingItem(:FLYINGGEM) && isConst?(type,PBTypes,:FLYING)) ||
+       (attacker.hasWorkingItem(:POISONGEM) && isConst?(type,PBTypes,:POISON)) ||
+       (attacker.hasWorkingItem(:GROUNDGEM) && isConst?(type,PBTypes,:GROUND)) ||
+       (attacker.hasWorkingItem(:ROCKGEM) && isConst?(type,PBTypes,:ROCK)) ||
+       (attacker.hasWorkingItem(:BUGGEM) && isConst?(type,PBTypes,:BUG)) ||
+       (attacker.hasWorkingItem(:GHOSTGEM) && isConst?(type,PBTypes,:GHOST)) ||
+       (attacker.hasWorkingItem(:STEELGEM) && isConst?(type,PBTypes,:STEEL)) ||
+       (attacker.hasWorkingItem(:FIREGEM) && isConst?(type,PBTypes,:FIRE)) ||
+       (attacker.hasWorkingItem(:WATERGEM) && isConst?(type,PBTypes,:WATER)) ||
+       (attacker.hasWorkingItem(:GRASSGEM) && isConst?(type,PBTypes,:GRASS)) ||
+       (attacker.hasWorkingItem(:ELECTRICGEM) && isConst?(type,PBTypes,:ELECTRIC)) ||
+       (attacker.hasWorkingItem(:PSYCHICGEM) && isConst?(type,PBTypes,:PSYCHIC)) ||
+       (attacker.hasWorkingItem(:ICEGEM) && isConst?(type,PBTypes,:ICE)) ||
+       (attacker.hasWorkingItem(:DRAGONGEM) && isConst?(type,PBTypes,:DRAGON)) ||
+       (attacker.hasWorkingItem(:DARKGEM) && isConst?(type,PBTypes,:DARK)) ||
+       (attacker.hasWorkingItem(:FAIRYGEM) && isConst?(type,PBTypes,:FAIRY)) ||
+       (attacker.hasWorkingItem(:LIGHTGEM) && isConst?(type,PBTypes,:LIGHT)) #Ryan
+      basedamage=(basedamage*1.5).round
+    end
+    if attacker.hasWorkingItem(:ROCKINCENSE) && isConst?(type,PBTypes,:ROCK)
+      basedamage=(basedamage*1.2).round
+    end
+    if attacker.hasWorkingItem(:ROSEINCENSE) && isConst?(type,PBTypes,:GRASS)
+      basedamage=(basedamage*1.2).round
+    end
+    if attacker.hasWorkingItem(:SEAINCENSE) && isConst?(type,PBTypes,:WATER)
+      basedamage=(basedamage*1.2).round
+    end
+    if attacker.hasWorkingItem(:WAVEINCENSE) && isConst?(type,PBTypes,:WATER)
+      basedamage=(basedamage*1.2).round
+    end
+    if attacker.hasWorkingItem(:ODDINCENSE) && isConst?(type,PBTypes,:PSYCHIC)
+      basedamage=(basedamage*1.2).round
+    end
+    # Muscle Band
+    if attacker.hasWorkingItem(:MUSCLEBAND) && move.pbIsPhysical?(type)
+      basedamage=(basedamage*1.1).round
+    end
+    # Wise Glasses
+    if attacker.hasWorkingItem(:WISEGLASSES) && move.pbIsSpecial?(type)
+      basedamage=(basedamage*1.1).round
+    end
+    # Legendary Orbs
+    if (isConst?(attacker.species,PBSpecies,:LATIAS) ||
+       isConst?(attacker.species,PBSpecies,:LATIOS)) &&
+
+
+
+====================================================================================================
+FOUND PRISMPLATE AT OFFSET 558206
+====================================================================================================
+
+
+Context starting at line 402:
+
+   next 8  if isConst?(pokemon.item,PBItems,:IRONPLATE)
+   next 9  if isConst?(pokemon.item,PBItems,:FLAMEPLATE)
+   next 10 if isConst?(pokemon.item,PBItems,:SPLASHPLATE)
+   next 11 if isConst?(pokemon.item,PBItems,:MEADOWPLATE)
+   next 12 if isConst?(pokemon.item,PBItems,:ZAPPLATE)
+   next 13 if isConst?(pokemon.item,PBItems,:MINDPLATE)
+   next 14 if isConst?(pokemon.item,PBItems,:ICICLEPLATE)
+   next 15 if isConst?(pokemon.item,PBItems,:DRACOPLATE)
+   next 16 if isConst?(pokemon.item,PBItems,:DREADPLATE)
+   next 17 if isConst?(pokemon.item,PBItems,:PIXIEPLATE)
+   next 18 if isConst?(pokemon.item,PBItems,:PRISMPLATE) #Ryan
+   next 0
+},
+"getMoveCompatibility"=>proc{|pokemon|
+   next if pokemon.form!=15
+   movelist=[:AERIALACE,:ANCIENTPOWER,:AQUATAIL,:AVALANCHE,:BLASTBURN,:BLIZZARD,
+             :BRICKBREAK,:BRINE,:BULLDOZE,:BULLETSEED,:CALMMIND,:CHARGEBEAM,
+             :CONFIDE,:COSMICPOWER,:CUT,:DARKPULSE,:DEFOG,:DIVE,:DOUBLETEAM,
+             :DRACOMETEOR,:DRAGONCLAW,:DRAGONPULSE,:DREAMEATER,:EARTHPOWER,
+             :EARTHQUAKE,:ECHOEDVOICE,:ENDURE,:ENERGYBALL,:EXTREMESPEED,:FACADE,
+             :FIREBLAST,:FLAMETHROWER,:FLASH,:FLASHCANNON,:FLY,:FOCUSBLAST,
+             :FRUSTRATION,:FURYCUTTER,:FUTURESIGHT,:GIGADRAIN,:GIGAIMPACT,
+             :GRASSKNOT,:GRAVITY,:HAIL,:HEADBUTT,:HEATWAVE,:HIDDENPOWER,
+             :HONECLAWS,:HYDROCANNON,:HYPERBEAM,:HYPERVOICE,:ICEBEAM,:ICYWIND,
+             :INCINERATE,:IRONDEFENSE,:IRONHEAD,:IRONTAIL,:JUDGMENT,:LASERFOCUS,
+             :LASTRESORT,:LIGHTSCREEN,:LIQUIDATION,:MAGICCOAT,:MUDSLAP,
+             :NATURALGIFT,:OMINOUSWIND,:OUTRAGE,:OVERHEAT,:PAYBACK,:PERISHSONG,
+             :POISONJAB,:PROTECT,:PSYCHIC,:PSYCHUP,:PSYSHOCK,:PUNISHMENT,:QUASH,
+             :RAINDANCE,:RECOVER,:RECYCLE,:REFLECT,:REFRESH,:REST,:RETALIATE,
+             :RETURN,:ROAR,:ROAROFTIME,:ROCKCLIMB,:ROCKSLIDE,:ROCKSMASH,
+             :ROCKTOMB,:ROUND,:SAFEGUARD,:SANDSTORM,:SECRETPOWER,:SEISMICTOSS,
+             :SHADOWBALL,:SHADOWCLAW,:SHADOWFORCE,:SHOCKWAVE,:SIGNALBEAM,
+             :SILVERWIND,:SLEEPTALK,:SLUDGEBOMB,:SNARL,:SNORE,:SOLARBEAM,
+             :SPACIALREND,:STEALTHROCK,:STONEEDGE,:STRENGTH,:SUBSTITUTE,
+             :SUNNYDAY,:SURF,:SWAGGER,:SWIFT,:SWORDSDANCE,:TAILWIND,
+             :TELEKINESIS,:THUNDER,:THUNDERBOLT,:THUNDERWAVE,:TOXIC,:TRICK,
+             :TRICKROOM,:TWISTER,:WATERFALL,:WATERPULSE,:WHIRLPOOL,:WILLOWISP,
+             :WORKUP,:XSCISSOR,:ZENHEADBUTT]
+   for i in 0...movelist.length
+     movelist[i]=getConst(PBMoves,movelist[i])
+   end
+   next movelist
+}
+})
+
+MultipleForms.register(:BASCULIN,{
+"getFormOnCreation"=>proc{|pokemon|
+   maps=[132]   # Map IDs for second form (Diglett's Cave
+   mapswhite=[93] #Route 13
+   if $game_map && maps.include?($game_map.map_id)
+     next 1
+   elsif  $game_map && mapswhite.include?($game_map.map_id)
+     next 2
+   else
+     next 0
+   end
+}
+})
+
+MultipleForms.register(:DEERLING,{
+
+
+
+====================================================================================================
+FOUND LIGHTMEMORY AT OFFSET 558206
+====================================================================================================
+
+
+Context starting at line 640:
+
+   next 8 if isConst?(pokemon.item,PBItems,:STEELMEMORY)
+   next 9 if isConst?(pokemon.item,PBItems,:FIREMEMORY)
+   next 10 if isConst?(pokemon.item,PBItems,:WATERMEMORY)
+   next 11 if isConst?(pokemon.item,PBItems,:GRASSMEMORY)
+   next 12 if isConst?(pokemon.item,PBItems,:ELECTRICMEMORY)
+   next 13 if isConst?(pokemon.item,PBItems,:PSYCHICMEMORY)
+   next 14 if isConst?(pokemon.item,PBItems,:ICEMEMORY)
+   next 15 if isConst?(pokemon.item,PBItems,:DRAGONMEMORY)
+   next 16 if isConst?(pokemon.item,PBItems,:DARKMEMORY)
+   next 17 if isConst?(pokemon.item,PBItems,:FAIRYMEMORY)
+   next 18 if  isConst?(pokemon.item,PBItems,:LIGHTMEMORY)
+   next 0
+},
+"getMoveCompatibility"=>proc{|pokemon|
+   next if pokemon.form>19
+   movelist=[:AERIALACE,:AIRSLASH,:BITE,:CONFIDE,:CRUNCH,:CRUSHCLAW,:DEFOG,
+             :DOUBLEEDGE,:DOUBLEHIT,:DOUBLETEAM,:DRACOMETEOR,:DRAGONCLAW,
+             :EXPLOSION,:FACADE,:FIREFANG,:FLAMECHARGE,:FLAMETHROWER,
+             :FLASHCANNON,:FRUSTRATION,:GIGAIMPACT,:GRASSPLEDGE,:HAIL,
+             :HEALBLOCK,:HEATWAVE,:HIDDENPOWER,:HYPERBEAM,:HYPERVOICE,:ICEBEAM,
+             :ICEFANG,:ICYWIND,:IMPRISON,:IRONDEFENSE,:IRONHEAD,:LASERFOCUS,
+             :LASTRESORT,:MAGICCOAT,:METALSOUND,:MULTIATTACK,:OUTRAGE,
+             :PARTINGSHOT,:PAYBACK,:POISONFANG,:PROTECT,:PUNISHMENT,:PURSUIT,
+             :RAGE,:RAINDANCE,:RAZORWIND,:REST,:RETURN,:ROAR,:ROCKSLIDE,:ROUND,
+             :SANDSTORM,:SCARYFACE,:SHADOWBALL,:SHADOWCLAW,:SIGNALBEAM,
+             :SLEEPTALK,:SNARL,:SNORE,:STEELWING,:SUBSTITUTE,:SUNNYDAY,:SURF,
+             :SWAGGER,:SWORDSDANCE,:TACKLE,:TAILWIND,:TAKEDOWN,:THUNDERBOLT,
+             :THUNDERFANG,:THUNDERWAVE,:TOXIC,:TRIATTACK,:UTURN,:WORKUP,
+             :XSCISSOR,:ZENHEADBUTT]
+   for i in 0...movelist.length
+     movelist[i]=getConst(PBMoves,movelist[i])
+   end
+   next movelist
+}
+})
+
+MultipleForms.register(:MINIOR,{
+"getFormOnCreation"=>proc{|pokemon|
+ 
+  next rand(7)
+}
+})
+
+MultipleForms.register(:NECROZMA,{
+"onSetForm"=>proc{|pokemon,form|
+   moves=[
+      :SUNSTEELSTRIKE, # Dusk Mane
+      :MOONGEISTBEAM   # Dawn Wings
+   ]
+   hasoldmove=-1
+   for i in 0...4
+     for j in 0...moves.length
+       if isConst?(pokemon.moves[i].id,PBMoves,moves[j])
+         hasoldmove=i; break
+       end
+     end
+     break if hasoldmove>=0
+   end
+   if form==1 || form==2
+     newmove = moves[form-1]
+
+
+
+====================================================================================================
+FOUND LEGENDITE AT OFFSET 571677
+====================================================================================================
+
+
+Context starting at line 959:
+
+ 
+  end
+  return -1
+end
+
+# Checks whether a Pokemon can evolve now. If a block is given, calls the block
+# with the following parameters:
+#  Pokemon to check; evolution type; level or other parameter; ID of the new Pokemon species
+def pbCheckEvolutionEx(pokemon)
+  return -1 if pokemon.species<=0 || pokemon.isEgg?
+  return -1 if isConst?(pokemon.item,PBItems,:EVERSTONE) || isConst?(pokemon.item,PBItems,:LEGENDITE) ||
+   isConst?(pokemon.item,PBItems,:MEOWTHITE) || isConst?(pokemon.item,PBItems,:PIKACHITE) || isConst?(pokemon.item,PBItems,:EEVEENITE)#Ryan
+  return -1 if isConst?(pokemon.species,PBSpecies,:PICHU) && pokemon.form==1
+  ret=-1
+  for form in pbGetEvolvedFormData(pbGetFSpeciesFromForm(pokemon.species,pokemon.form))
+    ret=yield pokemon,form[0],form[1],form[2]
+    break if ret>0
+  end
+  return ret
+end
+
+# Checks whether a Pokemon can evolve now. If an item is used on the PokÃ©mon,
+# checks whether the Pokemon can evolve with the given item.
+def pbCheckEvolution(pokemon,item=0)
+  if item==0
+    return pbCheckEvolutionEx(pokemon){|pokemon,evonib,level,poke|
+       next pbMiniCheckEvolution(pokemon,evonib,level,poke)
+    }
+  else
+    return pbCheckEvolutionEx(pokemon){|pokemon,evonib,level,poke|
+       next pbMiniCheckEvolutionItem(pokemon,evonib,level,poke,item)
+    }
+  end
+end
+

@@ -1,0 +1,160 @@
+================================================================================
+POKEMON SUNDAY V17 TO V21 MIGRATION REPORT
+CUSTOM HELD ITEMS AND IMPLEMENTATIONS
+================================================================================
+
+CUSTOM ITEMS IDENTIFIED (6 items total)
+All are Light-type and Fairy-type related, none with custom Ruby handlers.
+
+1. LEGENDITE (Item ID 1374)
+   Effect: "When held, boosts the stats of the holding Pokémon to be on par with legendary Pokémon."
+   Pocket: 1 (Items), Price: 200
+   Usage: Elite Four battles (5+ trainer Pokémon)
+   Status in v21: NOT PRESENT - CUSTOM ITEM
+
+2. CRANNBERRY (Item ID 1375)
+   Effect: "Weakens a Light-type attack against the Pokémon holding this berry."
+   Pocket: 5 (Berries), Price: 100
+   Usage: Light-type resistance berry
+   Status in v21: NOT PRESENT - CUSTOM ITEM
+
+3. MAGNIFYINGGLASS (Item ID 1376)
+   Effect: "An item to be held by a Pokémon. It is a lens that boosts the power of Light-type moves."
+   Pocket: 1 (Items), Price: 100
+   Usage: Elite Four battle (Ampharos)
+   Status in v21: NOT PRESENT - CUSTOM ITEM
+
+4. PRISMPLATE (Item ID 1377)
+   Effect: "An item to be held by a Pokémon. It is a stone tablet that boosts the power of Light-type moves."
+   Pocket: 1 (Items), Price: 1000
+   Usage: Light-type move booster (Arceus-like plate item)
+   Status in v21: NOT PRESENT - CUSTOM ITEM
+
+5. PINKGLITTER (Item ID 1386)
+   Effect: "An item to be held by a Pokémon. It is sparkly powdered glitter that boosts the power of Fairy-type moves."
+   Pocket: 1 (Items), Price: 100
+   Usage: Fairy-type move booster
+   Status in v21: NOT PRESENT - CUSTOM ITEM
+
+6. LIGHTMEMORY (Item ID 1425)
+   Effect: "A memory disc that contains Light-type data. It changes the type of the holder if held by a certain Pokémon."
+   Pocket: 1 (Items), Price: 1000
+   Usage: Form/Type change item (Silvally equivalent)
+   Status in v21: NOT PRESENT - CUSTOM ITEM
+
+================================================================================
+ITEMS FOUND IN V17 BUT NOT IN V21 (11 total)
+================================================================================
+
+Items from v17 that don't exist in v21:
+- ABILITYSHIELD
+- AUSPICIOUSARMOR
+- BIGBAMBOOSHOOT
+- BOOSTERENERGY
+- CLEARAMULET
+- COVERTCLOAK
+- GIMMIGHOULCOIN
+- LEADERSCREST
+- MALICIOUSARMOR
+- MIRRORHERB
+- TINYBAMBOOSHOOT
+
+(These are Gen 8+ items that ARE in v21's plugins but not in base v21)
+
+================================================================================
+CUSTOM ITEM USAGE IN V17 SCRIPTS
+================================================================================
+
+Location: C:/Users/rucra/Documents/GitHub/Pokemon-Sunday-Dev/Data/Scripts.rxdata
+(Offset: 197109 - Elite Four battle definitions)
+
+LEGENDITE References:
+- SEISMITOAD (E4 Trainer: Europa, Water type master)
+- BRUXISH (E4 Trainer: Europa, Water type master)
+- HOUNDOOM (E4 Trainer: Io, Fire type master)
+- TORRACAT (E4 Trainer: Io, Fire type master)
+- DEDENNE (E4 Trainer: Callisto, Electric type master)
+- RAICHU (E4 Trainer: Callisto, Electric type master)
+
+MAGNIFYINGGLASS References:
+- AMPHAROS (E4 Trainer: Callisto, Electric type master)
+
+NO CUSTOM RUBY HANDLER CODE FOUND:
+These items have NO custom effect implementations in v17 scripts.
+All effects rely on Essentials' standard item system and PBS definitions.
+
+================================================================================
+MIGRATION STRATEGY FOR V21
+================================================================================
+
+Since v21 uses a different item handling system (Battle::ItemEffects), 
+custom handlers must be created. Here's the expected v21 handler structure:
+
+For Type-Power Boosters:
+  Battle::ItemEffects::DamageCalcFromUser.add(:MAGNIFYINGGLASS, 
+    proc { |item, user, target, move, mults, baseDmg, type|
+      mults[:power_multiplier] *= 1.1 if type == :LIGHT
+    }
+  )
+
+For Stat Boosters:
+  Battle::ItemEffects::OnSwitchIn.add(:LEGENDITE,
+    proc { |item, battler, battle|
+      # Implementation needed - boost stats significantly
+    }
+  )
+
+For Memory Items:
+  Requires form change implementation via:
+  - MultipleForms registration
+  - GameData::ItemEffects for type changes
+  - Compatibility with specific species
+
+For Berry Items:
+  Battle::ItemEffects::OnEndOfRound or similar for damage/status mitigation
+
+================================================================================
+KEY IMPLEMENTATION REQUIREMENTS
+================================================================================
+
+1. Light Type Support:
+   - Verify "Light" type is defined in GameData::Type
+   - All move data must include Light type where applicable
+   - Item effects must reference :LIGHT as the type ID
+
+2. Item Registries:
+   - Add items to PBS/items.txt in v21 format
+   - Update all internal name references
+   - Ensure pocket assignments match v21 structure
+
+3. Handler Implementation:
+   - Create plugin file in Plugins/ directory
+   - Use Battle::ItemEffects:: system (not older Essentials v17 system)
+   - Test all trainer battles with equipped items
+
+4. Battle Code Updates:
+   - Find E4 trainer definitions in v21
+   - Update all setItem() calls for affected Pokémon
+   - Ensure items are properly loaded during battle init
+
+5. Type-Change Items (LIGHTMEMORY):
+   - Implement species-specific type change mechanics
+   - Similar to how Silvally Memory items work in v21
+   - Requires custom battle effect or form change system
+
+================================================================================
+FILE LOCATIONS
+================================================================================
+
+V17 Sources:
+  Compiled Scripts: C:/Users/rucra/Documents/GitHub/Pokemon-Sunday-Dev/Data/Scripts.rxdata
+  Item Definitions: C:/Users/rucra/Documents/GitHub/Pokemon-Sunday-Dev/PBS/items.txt
+  Lines 897-948 contain all custom item definitions
+
+V21 Targets:
+  Item Handlers: C:/Users/rucra/Documents/GitHub/Pokemon-Sunday-3/Plugins/Generation 9 Pack v3.3.4/
+                 Plugins/Generation 9 Pack Scripts/[005] Items/
+  Item PBS: C:/Users/rucra/Documents/GitHub/Pokemon-Sunday-3/PBS/items.txt
+  Trainer Data: (To be determined in v21 structure)
+
+================================================================================
