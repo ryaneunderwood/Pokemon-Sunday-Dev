@@ -1,5 +1,5 @@
 [0]
-Name=
+Name=Kiraki
 Filename=mapRegion0.png
 Point=13,12,Precious Metal Bridge,,,,,
 Point=13,11,Silver Town,Ferry Terminal,43,13,42,
