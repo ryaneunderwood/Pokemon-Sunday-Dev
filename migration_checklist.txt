@@ -1,0 +1,100 @@
+Pokemon Sunday v17 -> v21 Migration Checklist
+==============================================
+Last updated: 2026-04-13
+
+COMPLETED
+---------
+[x] Custom Move Function Codes (D00-D06) — ported to v21 plugin scripts
+[x] Custom Abilities (5) — LIGHTSHOW, WITCHESBREW, SNOWFORT, DOWNPOUR, STELLARRADIATION
+[x] Custom Held Items (6) — CRANNBERRY, PRISMPLATE, LIGHTMEMORY, MAGNIFYINGGLASS, PINKGLITTER, LEGENDITE
+[x] Gen 9 Pack forms imported into PBS/pokemon_forms.txt
+[x] Custom Mega forms + Kiraki regional variants in PBS/pokemon_forms.txt
+[x] Breeding mechanics migration
+[x] #Ryan audit complete — all 53 scripts catalogued below
+[!] PBS/moves.txt — ~331 lines of new moves added but NOT YET COMMITTED
+
+TODO — PBS Data
+---------------
+[ ] Encounters PBS migration (v17 -> v21 format)
+[ ] Update encounter settings in scripts
+[ ] Metadata PBS migration (map metadata v17 -> v21 format)
+[ ] Trainers PBS migration (v17 -> v21 format)
+
+TODO — Battle Systems
+---------------------
+[ ] Battle Tower functionality
+[ ] Battle Tower move pools for new Fakemon + finish Gen 9 Megas
+[ ] Port Battle Tower move selection AI + Battle Points system
+      - v17 Script #186: addMove weights, pbGetLegalMoves2, SunsetClause (1495 lines)
+      - v17 Script #239: $PokemonGlobal.bpoints, POINTCARD item handler
+
+TODO — Type Effectiveness
+-------------------------
+[ ] Port type effectiveness float system
+      - v17 Script #76: NVE e<6.5, Normal 6.5<=e<=9.3, SE e>9.3
+      - SE against first type does slightly more damage, against second slightly less
+      - Ripples through Scripts #101, #103, #104, #105, #106 (all battle damage checks)
+
+TODO — Settings & Scripts
+-------------------------
+[ ] Game general settings
+[ ] Port intro scene code (LUKA SJ animated title screen script)
+[ ] Port Level Care / Hyperleveler system
+      - v17 Scripts #122 + #133: Custom daycare for leveling, $PokemonGlobal.levelcare
+      - Deposit/withdraw/cost functions (pbLevelCareDeposit, etc.)
+[ ] Port Jirachi Time + Valentines Day events
+      - v17 Script #132: isJirachiOut? (2-3am), isValentines? (Feb 14), custom hourly tones
+[ ] Port Championship Marks / Trainer Card
+      - v17 Script #167: Full PokemonTrainerCardScene rewrite (644 lines) with marks
+      - v17 Script #156: Trainer card accessible from pause menu
+[ ] Port Evolution Moves system
+      - v17 Script #238: Evolution-triggered move changes (115 lines)
+      - v17 Script #151: Evolution blocking for Legendite/Meowthite/Pikachite/Eeveenite
+[ ] Port IVs display in move selection screen
+      - v17 Scripts #147 + #161: ivsread attribute shown in move selection UI
+[ ] Port Rotom Lamp form (GAMMARAYBURST move)
+      - v17 Script #148: Rotom Lamp form move, muted form-change msgs for E4/BT
+[ ] Port DexNav in Pokegear
+      - v17 Script #163: DexNav option added to Pokegear
+[ ] Port Hatchet item (Cut from bag)
+      - v17 Script #139: HATCHET UseFromBag handler for field Cut
+[ ] Port Legendary/UltraBeast checker + regional form maps
+      - v17 Script #238: isUltraBeast?, isLegendaryMythicalOrUltra?, ALOLAMAPS
+      - Includes Fakemon (PROTOSOLARIA etc.)
+
+TODO — Items & Mechanics
+-------------------------
+[ ] Custom Pokeball migration
+[ ] Nuzlocke Rules system
+      - v17 Script #139+: $game_variables[100]==1 blocks Revives, Rare Candy on fainted
+      - Forces set mode in Battle Tower (map 211)
+[ ] Roaming Legendary tracker
+[ ] Port custom encounter types (Rt1, Rt15a-f)
+      - v17 Script #124: Types 13-19, custom densities/probabilities
+      - Randomizer mode ($game_switches[200]), boosted shiny for legendaries
+
+TODO — Graphics & Art
+---------------------
+[ ] Battle sprites migration for Fakemon
+[ ] Fix backsprites to Gen 5 animated style (matching v17)
+[ ] Create party icons for new Fakemon
+[ ] Create backsprites and shiny sprites for new Fakemon
+[ ] Track down changed graphics (names/locations/sizes between v17 and v21)
+
+TODO — Misc Small Tweaks (from #Ryan audit)
+--------------------------------------------
+[ ] Running shoes / cycling speed (Script #22, switch 71 disables movement)
+[ ] Furfrou form persistence in PC (Scripts #154, #172)
+[ ] Save file backups (Scripts #54, #169)
+[ ] VERSION display in options screen (Script #170)
+[ ] PC storage naming ("Item Storage", player's PC) (Script #174)
+[ ] Shadow always visible (Script #224)
+[ ] Flame Body breeding stacking (Script #175 — break removed)
+[ ] Default player names blank (Script #202)
+[ ] Scatterbug random form on creation (Script #148)
+[ ] Pokedex suppression on Battle Tower map 211 (Script #105)
+[ ] Animation caching $pkmn_animations (Scripts #108, #222, #227)
+[ ] EXP changes — easy mode half XP via expall, map 40 custom exp/EVs (Script #105)
+[ ] Payday money multiplier 5->20 (Script #104 L8023)
+[ ] Map event need_update flag (Scripts #20, #23, #33)
+[ ] Shiny wild Pokemon switch (Script #66)
