@@ -1,6 +1,6 @@
 Pokemon Sunday v17 -> v21 Migration Checklist
 ==============================================
-Last updated: 2026-04-13
+Last updated: 2026-04-15
 
 COMPLETED
 ---------
@@ -11,19 +11,42 @@ COMPLETED
 [x] Custom Mega forms + Kiraki regional variants in PBS/pokemon_forms.txt
 [x] Breeding mechanics migration
 [x] #Ryan audit complete — all 53 scripts catalogued below
-[!] PBS/moves.txt — ~331 lines of new moves added but NOT YET COMMITTED
+[x] PBS/moves.txt — ~331 lines of new moves added but NOT YET COMMITTED
+[x] Castform Sandy Form (form 4, ROCK type) — PBS + battle script handler
+[x] Payday multiplier applied to Make it Rain (Gen 9 move)
+[x] Hail weather set to classic (Gen 9 Pack HAIL_WEATHER_TYPE = 0)
+[x] Snowfort ability handler fixed for v21 weather system
+[x] Legends Z-A / Champions Mega abilities — 23 canon abilities added to PBS
+[x] Redundant HiddenAbilities lines cleaned from all Mega forms
+[x] New abilities: MEGASOL, DRAGONIZE, PIERCINGDRILL, SPICYSPRAY — PBS + handlers
+[x] Battle Tower pools — 29 ZA Megas filled in, 19 Mega Dimensions DLC Megas added
+[x] Battle Tower pool item name fixes (RAICHUNITEX/Y, GRENINJITE, DRAGALGITE)
+[x] Regional form TutorMoves ported from v17 Script #237 (59 forms updated)
+[x] Yanma Kiraki form entry created in PBS
+[x] Darumaka Galarian TutorMoves updated with v17 moves
+[x] Missing TutorMoves added to 13 forms that had empty tutor lists in v21
+[x] Gen 9 moves distributed to 261 not-in-SV Pokemon + Fakemon (400 move additions)
+[x] Tidy Up added as egg move for Kiraki Sentret
 
 TODO — PBS Data
 ---------------
 [ ] Encounters PBS migration (v17 -> v21 format)
 [ ] Update encounter settings in scripts
 [ ] Metadata PBS migration (map metadata v17 -> v21 format)
-[ ] Trainers PBS migration (v17 -> v21 format)
+[x] Trainers PBS migration (v17 -> v21 format) — 377 trainers, lose texts from map events
+      - Trainer items (potions etc.) ported
+      - CHANELLER -> CHANELER type name fix
+      - Gym leaders: 31 IVs all stats
+      - Special trainers (Reysh, Cherry, Moira, Shin, Samekh, Tsadek, Khof, Tes, Giovanni, Jet): 22 IVs, ace at 31
+      - Reysh starter (Broski): 16 IVs, HARDY nature, consistent across all battles
+      - All 963 Pokemon have explicit IVs, Natures, and AbilityIndex
+      - Recurring Pokemon keep consistent nature/ability across rematch battles
+      - Generic trainers get random IVs (0-31 per stat)
 
 TODO — Battle Systems
 ---------------------
 [ ] Battle Tower functionality
-[ ] Battle Tower move pools for new Fakemon + finish Gen 9 Megas
+[x] Battle Tower move pools for new Fakemon + finish Gen 9 Megas
 [ ] Port Battle Tower move selection AI + Battle Points system
       - v17 Script #186: addMove weights, pbGetLegalMoves2, SunsetClause (1495 lines)
       - v17 Script #239: $PokemonGlobal.bpoints, POINTCARD item handler
@@ -37,7 +60,7 @@ TODO — Type Effectiveness
 
 TODO — Settings & Scripts
 -------------------------
-[ ] Game general settings
+[x] Game general settings
 [ ] Port intro scene code (LUKA SJ animated title screen script)
 [ ] Port Level Care / Hyperleveler system
       - v17 Scripts #122 + #133: Custom daycare for leveling, $PokemonGlobal.levelcare
@@ -49,10 +72,10 @@ TODO — Settings & Scripts
       - v17 Script #156: Trainer card accessible from pause menu
 [ ] Port Evolution Moves system
       - v17 Script #238: Evolution-triggered move changes (115 lines)
-      - v17 Script #151: Evolution blocking for Legendite/Meowthite/Pikachite/Eeveenite
+      - v17 Script #151: Evolution blocking for Legendite/Meowthite/Pikachite/Eeveenite [DONE]
 [ ] Port IVs display in move selection screen
       - v17 Scripts #147 + #161: ivsread attribute shown in move selection UI
-[ ] Port Rotom Lamp form (GAMMARAYBURST move)
+[x] Port Rotom Lamp form (GAMMARAYBURST move)
       - v17 Script #148: Rotom Lamp form move, muted form-change msgs for E4/BT
 [ ] Port DexNav in Pokegear
       - v17 Script #163: DexNav option added to Pokegear
@@ -89,12 +112,12 @@ TODO — Misc Small Tweaks (from #Ryan audit)
 [ ] VERSION display in options screen (Script #170)
 [ ] PC storage naming ("Item Storage", player's PC) (Script #174)
 [ ] Shadow always visible (Script #224)
-[ ] Flame Body breeding stacking (Script #175 — break removed)
+[x] Flame Body breeding stacking (Script #175 — break removed)
 [ ] Default player names blank (Script #202)
 [ ] Scatterbug random form on creation (Script #148)
-[ ] Pokedex suppression on Battle Tower map 211 (Script #105)
+[x] Pokedex suppression on Battle Tower map 211 (Script #105)
 [ ] Animation caching $pkmn_animations (Scripts #108, #222, #227)
 [ ] EXP changes — easy mode half XP via expall, map 40 custom exp/EVs (Script #105)
-[ ] Payday money multiplier 5->20 (Script #104 L8023)
+[x] Payday money multiplier 5->20 (Script #104 L8023)
 [ ] Map event need_update flag (Scripts #20, #23, #33)
 [ ] Shiny wild Pokemon switch (Script #66)
