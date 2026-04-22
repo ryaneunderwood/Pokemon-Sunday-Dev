@@ -1,6 +1,6 @@
 Pokemon Sunday v17 -> v21 Migration Checklist
 ==============================================
-Last updated: 2026-04-15
+Last updated: 2026-04-21
 
 COMPLETED
 ---------
@@ -27,12 +27,47 @@ COMPLETED
 [x] Missing TutorMoves added to 13 forms that had empty tutor lists in v21
 [x] Gen 9 moves distributed to 261 not-in-SV Pokemon + Fakemon (400 move additions)
 [x] Tidy Up added as egg move for Kiraki Sentret
+[x] [2026-04-21] Wait for Move's Completion hang fixed — Interpreter#update
+      now skips parallel-process events in the wait check so background
+      auto-graphic events (e.g. Map 044 ev4 "crumbled" sprite selector)
+      don't pin move_route_forcing true forever
+[x] [2026-04-21] Pokegear setter migrated: $player.pokegear= -> $player.has_pokegear=
+[x] [2026-04-21] Running Shoes setter migrated: $PokemonGlobal.runningShoes= ->
+      $player.has_running_shoes=
+[x] [2026-04-21] Overworld menu key restored to X (Input::BACK) to match v17
+      muscle memory (v21 defaulted it to Z/Input::ACTION)
+[x] [2026-04-21] Field-item hotkeys ported via mkxp-z Input.triggerex? scancode:
+      R=Bicycle toggle, L=Flashlight/FLASH, F=Fly Whistle/FLY, I=Itemfinder,
+      J=Fishing rod (tries SUPERROD, then GOODROD, then OLDROD)
+[x] [2026-04-21] HM field-move prompts fully suppressed — party menu, ready menu,
+      and on-water auto-interact no longer surface CUT/FLY/SURF/STRENGTH/
+      ROCKSMASH/FLASH/WATERFALL/DIVE/HEADBUTT/DIG. All field effects must go
+      through their item substitutes.
+[x] [2026-04-21] Custom item handlers ported as ItemHandlers::UseInField:
+      - FLASHLIGHT -> FLASH (darkness radius 0.7s lerp, $PokemonGlobal.flashUsed)
+      - FLYWHISTLE -> FLY (opens region-map fly screen, transfers without
+        requiring a party Pokemon)
+      - HATCHET -> CUT (matches events named /cuttree/i or "Tree")
+      - DYNAMITE -> ROCK SMASH (matches /smashrock/i or "Rock";
+        rolls rock-smash random encounter)
+      - STIMPACKS -> STRENGTH (sets $PokemonMap.strengthUsed)
+      - PONDPATCH -> SURF (full terrain gating, surf BGM cue, pbStartSurfing)
 
 TODO — PBS Data
 ---------------
 [ ] Encounters PBS migration (v17 -> v21 format)
 [ ] Update encounter settings in scripts
-[ ] Metadata PBS migration (map metadata v17 -> v21 format)
+[x] [2026-04-21] Metadata PBS migration — PBS/map_metadata.txt rewritten with
+      209 per-map entries from v17 (Daycare, Silver Town, Silver Town Poke
+      Center, Route 5, Precious Metal Bridge, etc.), replacing the v21
+      Essentials sample data (Lappet Town / Cedolan City / etc.) that had
+      been left in the tree. v17 syntax [NNN]/# Name/Field=val converted to
+      v21 [NNN] # Name/Name = .../Field = val. Global-only fields (PlayerA/B,
+      Home, Surf/BicycleBGM, Trainer/WildVictoryME) stripped since they live
+      in metadata.txt now.
+[x] [2026-04-21] Arceus/Silvally Light-type form 19 added to pokemon_forms.txt
+      - [ARCEUS,19]   FormName = Light Type / Types = LIGHT
+      - [SILVALLY,19] FormName = Type: Light / Types = LIGHT
 [x] Trainers PBS migration (v17 -> v21 format) — 377 trainers, lose texts from map events
       - Trainer items (potions etc.) ported
       - CHANELLER -> CHANELER type name fix
@@ -79,8 +114,10 @@ TODO — Settings & Scripts
       - v17 Script #148: Rotom Lamp form move, muted form-change msgs for E4/BT
 [ ] Port DexNav in Pokegear
       - v17 Script #163: DexNav option added to Pokegear
-[ ] Port Hatchet item (Cut from bag)
-      - v17 Script #139: HATCHET UseFromBag handler for field Cut
+[x] Port Hatchet item (Cut from bag)  [2026-04-21]
+      - HATCHET registered as ItemHandlers::UseInField; v21 routes UseFromBag
+        through the same handler in v21, so no separate UseFromBag entry
+        needed. Recognizes events named "cuttree" (v21) or "Tree" (v17 legacy).
 [ ] Port Legendary/UltraBeast checker + regional form maps
       - v17 Script #238: isUltraBeast?, isLegendaryMythicalOrUltra?, ALOLAMAPS
       - Includes Fakemon (PROTOSOLARIA etc.)
@@ -98,10 +135,55 @@ TODO — Items & Mechanics
 
 TODO — Graphics & Art
 ---------------------
-[ ] Battle sprites migration for Fakemon
-[ ] Fix backsprites to Gen 5 animated style (matching v17)
+[x] [2026-04-21] Gen 9 pack sprite import
+      - Front / Front shiny / Icons / Icons shiny / Followers / Followers
+        shiny: add-missing (7183 new files, v21 vanilla art kept where it
+        already existed)
+      - Back / Back shiny: overwrite (1644 v21 back sprites replaced with
+        Gen 9 versions, plus 1488 new ones)
+      - Female sprites: force-overwrite pass (267 files) so
+        ABOMASNOW_female, COMBEE_female, etc. use Gen 9 art in Front /
+        Icons / Followers categories
+[x] [2026-04-21] Battle sprites migration for Sunday fakemon
+      - 23 species imported from v17 Battlers/ (numeric NUM.png layout
+        converted to v21 SPECIES.png symbol-named layout):
+          891-900  CLOWD, STORRM, GALEFRONT, PHOTOWYRM, CHROMASP,
+                   CHORDALUX (+ form 1), CAULDREAM, CRUCIBLEAK, CAULDREAD,
+                   PHOTEON
+          904-907  HOVEON, YAMSELIA, NIMBEE, YIMBEE
+          913      PROTOSOLARIA
+          1041-1048 SNOWYGAST, PALOSSNOW, TARFELON, ROOBOP, WIKINIKI,
+                    ACTINOTOX, LEOTERYGI, SPUDNICK
+[x] [2026-04-21] Alternate-form sprites on official species (178 files)
+      - Rotom Lamp form 6, Castform Sandy form 4, Vivillon Kiraki form 20
+      - Bonus Megas: Venusaur form 2, Charizard form 3, Blastoise form 2,
+        Gengar form 2, Aerodactyl form 2, Skarmory form 2 (Kiraki)
+      - Kirakian regional variants: Pikachu/Meowth/Sentret/Furret/Yanma/
+        Taillow/Swellow/Lapras/Eevee/Snorlax/Garbodor and many more
+      - v17->v21 form-number translation: FormName match first, Type1/Types
+        match second; unmatched forms skipped (logged to v21's
+        FORM_SPRITES_UNMATCHED.md)
+[x] [2026-04-21] Arceus / Silvally form reshuffle to match v21 numbering
+      - v17 forms 1-8 = v21 forms 1-8 (Fighting..Steel, identity)
+      - v17 forms 9-17 (Fire..Fairy) = v21 forms 10-18 (offset by 1 because
+        v21 inserts Unknown/??? at form 9)
+      - v21 form 9 deliberately has NO sprite (Gen 9 pack doesn't ship
+        Unknown-type art, v17 used that slot for Fire which now lands at 10)
+      - v17 form 18 Light = v21 form 19 Light (new form slot added)
+[x] [2026-04-21] v21 stock female back-sprite orphans deleted (20 files)
+      - No Gen 9 or v17 replacement available; base-species fallback now
+        renders for ABOMASNOW/BIBAREL/CACTURNE/COMBEE/GOLBAT/PACHIRISU/
+        STARAPTOR/WOBBUFFET _female, plus PICHU_2 and WEEPINBELL_shadow.
+[ ] Fix backsprites to Gen 5 animated style (matching v17) — Gen 9 pack ships
+      static back sprites; Gen 5-style animated back sprites not yet sourced.
 [ ] Create party icons for new Fakemon
+      - Remaining gaps (tracked in v21 FAKEMON_SPRITES_MISSING.md):
+        GALEFRONT_1, SNOWYGAST, PALOSSNOW, TARFELON, ROOBOP, WIKINIKI,
+        ACTINOTOX, LEOTERYGI, SPUDNICK
 [ ] Create backsprites and shiny sprites for new Fakemon
+      - Remaining gaps: SPUDNICK (everything), SNOWYGAST/PALOSSNOW/ROOBOP
+        (Back/Back shiny), TARFELON/WIKINIKI/ACTINOTOX (Back shiny),
+        LEOTERYGI (Back/Back shiny)
 [ ] Track down changed graphics (names/locations/sizes between v17 and v21)
 
 TODO — Misc Small Tweaks (from #Ryan audit)
