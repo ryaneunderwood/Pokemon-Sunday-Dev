@@ -1,6 +1,6 @@
 Pokemon Sunday v17 -> v21 Migration Checklist
 ==============================================
-Last updated: 2026-04-21
+Last updated: 2026-04-22
 
 COMPLETED
 ---------
@@ -52,6 +52,33 @@ COMPLETED
         rolls rock-smash random encounter)
       - STIMPACKS -> STRENGTH (sets $PokemonMap.strengthUsed)
       - PONDPATCH -> SURF (full terrain gating, surf BGM cue, pbStartSurfing)
+[x] [2026-04-22] rxdata legacy-syntax sweep — built reusable Ruby rewriters
+      with byte-identical Marshal round-trip verification (Table/Color/Tone
+      stubs preserve @_raw dump bytes). Applied across Map*.rxdata +
+      CommonEvents.rxdata:
+      - PBItems::X   -> :X   (214 edits across 94 files)
+      - PBSpecies::X -> :X   (253 edits across 89 files)
+      - $player.pokedexSeen(N)/pokedexOwned(N) ->
+        $player.pokedex.seen_count(N)/owned_count(N) (20 edits, fixed
+        Germanium Village door-exit crash on Map135 event 59)
+[x] [2026-04-22] PBS/map_connections.txt ported from v17 PBS/connections.txt
+      — 197 directional connections (North/South/East/West -> N/S/E/W);
+      5 non-standard 4-number v17 entries logged for manual review
+      (interior warp-point stitches, not edge-scroll connections)
+[x] [2026-04-22] showSpeciesIntro / showSpeciesIntroB ported as v21 plugin
+      at [005] Overworld/[005] Species Intro.rb — GameData::Species.try_get,
+      sp.category, $player.pokedex.set_seen, play_cry_from_species,
+      pbResolveBitmap against Graphics/Pokemon/Front/<INTERNAL>.png with a
+      female-sprite fallback.
+[x] [2026-04-22] Reflection bleed fix at interior bottom edges — plugin
+      [005] Overworld/[006] Reflection Hide Offmap.rb aliases
+      Sprite_Reflection#update to hide the player's reflection when the
+      tile row 1 or 2 below (y+1, y+2) is off-map OR a fully-blank tile
+      stack (all 3 layers = 0). Skips the hide for bridge/fixedheight
+      reflections.
+[x] [2026-04-22] Missing graphics imported from v17:
+      - Graphics/Characters/bike.png (Map135 event 48 had no sprite)
+      - Graphics/Icons/arrow{N,NE,E,SE,S,SW,W,NW}.png (arrowW-not-found crash)
 
 TODO — PBS Data
 ---------------
