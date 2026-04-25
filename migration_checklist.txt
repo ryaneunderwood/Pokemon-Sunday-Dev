@@ -1,6 +1,6 @@
 Pokemon Sunday v17 -> v21 Migration Checklist
 ==============================================
-Last updated: 2026-04-22
+Last updated: 2026-04-24
 
 COMPLETED
 ---------
@@ -82,8 +82,25 @@ COMPLETED
 
 TODO — PBS Data
 ---------------
-[ ] Encounters PBS migration (v17 -> v21 format)
-[ ] Update encounter settings in scripts
+[x] [2026-04-23] Encounters PBS migration (v17 -> v21 format) — 57 maps
+      - Converter at /tmp/convert_encounters.rb translates v17 fixed slot
+        chances into explicit per-entry percentages for v21 format.
+      - Density triplet "A,B,C" mapped to v21 per-type step_chance:
+        A=Land/LandMorning/LandDay/LandNight/BugContest/Rt1 density,
+        B=Cave, C=Water. Rod/RockSmash/Headbutt types get no step chance
+        (matches v17 EnctypeCompileDens zeros).
+      - Stock v21 Essentials sample data ([002]/[005]/[021]/[028]) replaced.
+      - Dedup pass: duplicate slots (same species + same level range within a
+        single type block) collapsed to a single entry with summed percent
+        (e.g., Cauldream 5+5+4 in Germanium Village Land -> 14).
+      - Water step-chance lowered from 10 to 5 on all maps.
+[x] [2026-04-23] Update encounter settings in scripts
+      - Plugin [005] Overworld/[007] Custom Encounter Types.rb registers
+        :Rt1 (land, trigger_chance 25) and aliases
+        PokemonEncounters#encounter_type to return :Rt1 when on map 112
+        with x<30 && y<30 (matches v17 Script #124).
+      - Rt15a-f not ported: no PBS entries used them in v17, they were
+        dead-coded to map 40 coords that no longer have those y-rows.
 [x] [2026-04-21] Metadata PBS migration — PBS/map_metadata.txt rewritten with
       209 per-map entries from v17 (Daycare, Silver Town, Silver Town Poke
       Center, Route 5, Precious Metal Bridge, etc.), replacing the v21
@@ -107,18 +124,48 @@ TODO — PBS Data
 
 TODO — Battle Systems
 ---------------------
-[ ] Battle Tower functionality
-[x] Battle Tower move pools for new Fakemon + finish Gen 9 Megas
+[x] [2026-04-24] Battle Tower functionality (custom v17 Script #93 ported)
+      - Plugin [001] Battle/[003] Battle Tower.rb: tier lists (basic/normal/
+        competitive), ban lists (form/mega/Legendite), pbReadBattlers
+        opponent generator, hazard-setter rotation, BT intro/win/lose
+        banter, scaling.
+      - Mega ban list extended for PLZA Z-stones + Smogon-Uber legacy
+        megas (Blaziken/Latias/Latios) + Hearthflame Mask (Wellspring
+        swap was wrong; Hearthflame's Mold Breaker is the Uber form).
+      - Tier sets for Fakemon: Actinotox basic, Wikiniki/Tarfelon normal,
+        Leoterygi/Roobop/Spudnick/Palossnow competitive.
+      - Roobop got PLAYROUGH for Dragon coverage.
+[x] [2026-04-24] Battle Tower Rental Mode (new feature)
+      - Plugin [001] Battle/[004] Rental Battle Tower.rb. Player rents 3
+        Pokemon from a 6-Basic-tier draft pool, swap-in/swap-out per win
+        from a 6-slot pool drawn from previous + most recent opponent
+        with random fills for slots already taken. Tier probabilities
+        scale: B1-3 Basic-only, B4-8 Normal mixes in 10/20/30/40/50%,
+        B9-23 Competitive climbs slot 3 -> 2 -> 1, B24-38 Ultra climbs
+        same order, B39-48 Ultra fills toward 100% in slots 3 then 2;
+        Slot 1 locks at 50C/50U forever.
+      - Suspend/resume via $game_variables[210]; loss restores real party.
+      - Map 211 signup dialog edited to a 5-choice menu adding Rental.
+      - PokemonPartyScreen used for picker UI (full summary access).
 [ ] Port Battle Tower move selection AI + Battle Points system
       - v17 Script #186: addMove weights, pbGetLegalMoves2, SunsetClause (1495 lines)
       - v17 Script #239: $PokemonGlobal.bpoints, POINTCARD item handler
 
 TODO — Type Effectiveness
 -------------------------
-[ ] Port type effectiveness float system
-      - v17 Script #76: NVE e<6.5, Normal 6.5<=e<=9.3, SE e>9.3
-      - SE against first type does slightly more damage, against second slightly less
-      - Ripples through Scripts #101, #103, #104, #105, #106 (all battle damage checks)
+[x] [2026-04-23] Port type effectiveness float system
+      - Plugin [001] Battle/[002] Type Effectiveness Floats.rb overrides
+        Effectiveness.calculate to apply v17's primary/secondary asymmetry:
+        primary SE 2.1x (vs 2.0), primary NVE 0.45x (vs 0.5),
+        secondary SE 1.9x, secondary NVE 0.55x.
+      - Bucket predicates retuned to v17 thresholds: NVE <0.8125,
+        Normal 0.8125..1.1625, SE >1.1625 (6.5/8 and 9.3/8 scaled).
+      - resistant? tightened to <0.8125 so Poison/Dark vs Fighting
+        (0.855) no longer reads as "resistant" — matches v17 normal bucket.
+      - Works with v21's existing float multiplier system, so AI
+        (AI_Switch, AI_MoveEffects_*), Move_UsageCalculations, ability
+        effects, battle messages, and type chart UI all see the asymmetric
+        numbers without extra patching.
 
 TODO — Settings & Scripts
 -------------------------
@@ -139,6 +186,89 @@ TODO — Settings & Scripts
       - v17 Scripts #147 + #161: ivsread attribute shown in move selection UI
 [x] Port Rotom Lamp form (GAMMARAYBURST move)
       - v17 Script #148: Rotom Lamp form move, muted form-change msgs for E4/BT
+[x] [2026-04-24] Mystery Gift Manager (Map 162 EV011 page 2) extracted to
+      Plugins/.../[001] Battle/[005] Mystery Gift.rb. 79 unique codes
+      (DAFTPK duplicate removed) parsed from the v17 event scripts,
+      structured into MYSTERY_GIFT_CODES hash with species/level/IVs/EVs/
+      nature/ability/ball/moves/OT/nickname/shiny per entry. Single entry
+      point pbReceiveMysteryGift(code) returns :success/:already_used/
+      :unknown.
+      - Per-code switches (203/235/239/...) consolidated into a single
+        Array stored at $game_variables[220]; redemption pushes the code
+        string into the array. v17 had 79 distinct $game_switches entries
+        for this; now one variable covers all of them.
+      - Verified all 78 unique species exist in v21 PBS pokemon.txt.
+      - Map 162 rxdata cascade replaced with 9-line script. Map shrank
+        168KB -> 31KB. Original 80-COND_BRANCH cascade removed.
+[x] [2026-04-24] v17 trainer-helper compatibility layer added to BT plugin:
+      createPokemon, createTrainer, customTrainerBattle (with BR_WIN/LOSS/
+      DRAW/RUN constants), plus Pokemon aliases setItem/setNature/
+      setAbility/calcStats/pbLearnMove/setGender/makeShiny/ballused=/
+      ot=/otgender=/trainerID=, plus integer-keyed iv/ev hash extension
+      (SundayIndexedStatHash). 18 maps' Gym/Elite Four/Rival/Mystery Gift
+      events that called these v17 helpers will now resolve cleanly in v21.
+[x] [2026-04-24] Universal tutor moves backfilled on Gen-9 species
+      - Audited 879 pre-Gen-9 species' TutorMoves; identified 16 moves
+        present on >=80% of older-gen Pokemon but missing systemically
+        from Gen 9 (the Gen 9 Pack uses canonical Gen 8/9 movepools that
+        cut a lot of legacy TM/tutor universals).
+      - Patched all 120 Gen-9 species in pokemon.txt with any of these
+        missing universals (1676 total move additions):
+          ATTRACT, CAPTIVATE, CONFIDE, DOUBLETEAM, ENDURE, FACADE,
+          FRUSTRATION, HIDDENPOWER, MIMIC, NATURALGIFT, PROTECT, REST,
+          RETURN, ROUND, SECRETPOWER, SLEEPTALK, SNORE, SUBSTITUTE,
+          SWAGGER, TOXIC.
+      - Hidden Power kept its IV-based type calculation in v21 core
+        (Settings::MECHANICS_GENERATION default + GameData::Type.each
+        loop honors custom types). Light-type HP is reachable via IV
+        tuning (Light is icon_position 19, last in the enumeration).
+[x] [2026-04-23] Kiraki regional forms default for wild encounters
+      - Plugin [000] Forms/[004] Kiraki Form On Creation.rb registers
+        MultipleForms getFormOnCreation for the 6 species with Kiraki
+        variants: SENTRET/FURRET/YANMA/TAILLOW/SWELLOW (form 1) and
+        SKARMORY (form 2 — form 1 is Mega).
+      - Gate: $game_map.metadata.town_map_position[0] == 0 (Kiraki region
+        per town_map.txt). Effectively always true in-game, gated anyway
+        so Ultra-Space-style detours don't mis-form.
+      - v17 had getFormOnCreation procs wired to isOnAlolaMap? but
+        ALOLAMAPS was left empty, so it never actually activated. This
+        port corrects that for Kiraki.
+[x] [2026-04-23] Ported pbPickRegionalTrade from v17 (Kiraki Museum event)
+      - Plugin [005] Overworld/[008] Regional Trade Picker.rb registers
+        top-level pbPickRegionalTrade that Map016 (Kiraki Museum) event
+        already calls.
+      - Species list converted from v17 PBSpecies::X constants to v21
+        Symbols. Added Gen 9 base forms with regional variants:
+          WOOPER (Paldean), TAUROS (Combat / Blaze / Aqua).
+      - New-species-only evolutions (Clodsire, Kingambit, Runerigus,
+        Obstagoon, Perrserker, Sirfetch'd, Mr. Rime, Cursola, Kleavor,
+        etc.) deliberately NOT listed — only the shared base species
+        belong in the regional-trade chooser.
+[x] [2026-04-23] Replaced in-game PINKGLITTER with canon FAIRYFEATHER
+      - PBS: 3 trainer Item lines (trainers.txt), 1 WildItemUncommon each in
+        pokemon.txt and pokemon_forms.txt sed-replaced.
+      - rxdata: Map009 (Silver Town), Map088, Map110 events that called
+        pbReceiveItem(:PINKGLITTER) rewritten to :FAIRYFEATHER via
+        Marshal-safe roundtrip (not naive byte sub — item names differ in
+        length by 1 char, so the string length prefix had to regen).
+      - [PINKGLITTER] item entry retained in items.txt and handler in
+        Plugins/.../Custom Held Item Handlers.rb left intact per request
+        (legacy users with pre-patch PINKGLITTER in party or PC boxes
+        will still get the +20% Fairy boost).
+[x] [2026-04-23] Galarian Yamask -> Runerigus location-triggered evolution
+      - v17: Evolutions=RUNERIGUS,TookDamage,10 with extra gate
+        (pokemon.totalHPLost>=49 AND map 10 AND player at x=8..11, y=19)
+      - v21: keep Evolutions = RUNERIGUS,EventAfterDamageTaken,2 (core
+        method already sets pkmn.ready_to_evolve after a battle where it
+        took >=49 damage).  New plugin [000] Forms/[002] Yamask Bridge
+        Evolution.rb hooks :on_player_step_taken and calls
+        pkmn.trigger_event_evolution(2) for each Galarian Yamask in party
+        when standing on map 10 (Precious Metal Bridge) tiles
+        (8..11, 19). Matches v17 location exactly.
+      - Also overrode :EventAfterDamageTaken to skip fainted Pokemon and
+        registered :on_start_battle handler that clears ready_to_evolve on
+        every party member, so the "took 49+ damage" window is limited to
+        the most recent battle (canon Sword/Shield behavior, matches v17).
 [ ] Port DexNav in Pokegear
       - v17 Script #163: DexNav option added to Pokegear
 [x] Port Hatchet item (Cut from bag)  [2026-04-21]
