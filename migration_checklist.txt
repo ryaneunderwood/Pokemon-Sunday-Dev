@@ -1,6 +1,6 @@
 Pokemon Sunday v17 -> v21 Migration Checklist
 ==============================================
-Last updated: 2026-04-24
+Last updated: 2026-07-06
 
 COMPLETED
 ---------
@@ -79,9 +79,72 @@ COMPLETED
 [x] [2026-04-22] Missing graphics imported from v17:
       - Graphics/Characters/bike.png (Map135 event 48 had no sprite)
       - Graphics/Icons/arrow{N,NE,E,SE,S,SW,W,NW}.png (arrowW-not-found crash)
+[x] [2026-07-06] Custom-script bug sweep (7 v17->v21 migration defects) in
+      Plugins/Pokemon Sunday:
+      - Custom Held Item Handlers: check_evolution_internal override now
+        forwards its block (&block) — was raising LocalJumpError on EVERY
+        evolution game-wide (level-up/trade/item/event/after-battle).
+      - Type Effectiveness Floats: divisor NORMAL_EFFECTIVE -> NORMAL_EFFECTIVE_ONE
+        (single-type neutral resolved to 0.5, skewing all type damage).
+      - Battle Tower pbBTScale: dropped clone.iv=/clone.ev= (no v21 setter;
+        clone already deep-copies).
+      - STELLARRADIATION OnSwitchOut proc arity fixed to v21
+        (ability,battler,end_of_battle) + reach battle via battler.battle;
+        pbItemsOnSwitchIn -> Battle::ItemEffects.triggerOnSwitchIn.
+      - Slot Machine Payouts: reversed tick throttle (last_paid_tick = this_tick)
+        so payout meter drains at the intended 20/sec, not per-frame.
+      - Mystery Gift move typos :BEARKBLAST->:BEAKBLAST, :HIDDEPOWER->:HIDDENPOWER.
+[x] [2026-07-06] FULL native v17->v21 event/script port — retired ALL
+      compatibility shims; every Map*.rxdata event + common event now uses
+      native v21 Pokemon/GameData APIs. Verified: 53 map files changed
+      script-text ONLY (Marshal skeleton diff identical to committed HEAD),
+      every changed script run passes `ruby -c`, zero PB* constants and zero
+      undefined v17 method calls remain across all events (only .mp3/.png/.txt
+      file-path string literals flagged — harmless).
+      Mechanical rewrites across trade/gift + trainer-battle events (~68 blocks):
+      - PokeBattle_Pokemon.new / pbGenPkmn -> Pokemon.new
+      - setItem/setAbility/setNature/setGender/setHappiness ->
+        item= / ability_index= / nature= / gender= / happiness=
+      - resetMoves/pbClearFirstMoves/pbLearnMove/calcStats ->
+        reset_moves / clear_first_moves / learn_move / calc_stats
+      - makeShiny/makeFemale/isShiny? -> shiny=true / gender=1 / shiny?
+      - iv[0..5]/ev[0..5] and iv=[...] -> symbol keys :HP.. :SPECIAL_DEFENSE
+      - ballused=<int> -> poke_ball=:SYMBOL (v17 index table)
+      - ot=/trainerID= -> owner = Pokemon::Owner.new_foreign(name)
+      - PBSpecies/PBItems/PBTypes.getName, ::CONST, getID() ->
+        GameData::X.get(id).name / :CONST / removed
+      - pbCheckEvolution/pbTradeCheckEvolution ->
+        check_evolution_on_use_item/check_evolution_on_trade (+ >0 guard fix)
+      Standard v17 API renamed at call sites:
+      - $player.pokemonParty/pokemonCount -> pokemon_party/pokemon_count
+      - pbDeleteMoveAtIndex -> forget_move_at_index ; isShadow? -> shadowPokemon?
+      - $PokemonTemp.darknessSprite -> $game_temp.darkness_sprite
+        (Silver Town Gym Map008 dark-reveal effect preserved)
+      Hand-rewritten (non-mechanical):
+      - Hidden-Power reader NPCs (Map056/Map169) now call pbHiddenPower helper
+      - Ball remasker (Map108) maps menu index straight to ball symbols
+      - Kiraki Museum trade machine (Map016 ev2): pbRegionalFormSwap helper adds
+        Paldean Tauros 4-form cycle (base->Combat->Blaze->Aqua->base) alongside
+        Meowth 3-cycle, single-variant 2-cycle, Darmanitan pairs
+      Removed-in-v21 base mechanics preserved (native) in new plugin
+      [001] Battle/[006] Ported v17 Base Mechanics.rb:
+      - Pokemon#beauty/beauty= (contest stat), PokemonGlobalMetadata
+        daycareEgg/daycareEggSteps, PokemonStorage#pbUnlockBox
+      Compat layers deleted: [006] v17 Event Compat shim + the Battle Tower
+      plugin's Pokemon-method/iv-index/ballused/ot shim block; Mystery Gift
+      ported off ballused (numeric :ball data -> ball symbols).
 
 TODO — PBS Data
 ---------------
+[ ] [2026-07-06] Add missing Gen 9 wild encounters — marked 'y' in the Dex tab
+      of Pokemon RPG.xls with a wild location, but absent from PBS/encounters.txt
+      (target maps already exist; likely wiped by an ill-timed reboot):
+      Pawmi (#921, Argon), Tandemaus (#924, Argon), Wiglett (#960, Boron).
+      (Maushold #925 has no Dex-tab row at all — evolve-only, cosmetic.)
+[ ] [2026-07-06] In-game smoke test of the native v17->v21 event port (can't run
+      the Windows/mkxp build headless): vendor purchase, gym battle movesets/
+      items/IVs, Kiraki trade machine Tauros cycle, ball remasker, day-care
+      reset, beauty NPC, move deleter, storage box-unlock reward.
 [x] [2026-04-23] Encounters PBS migration (v17 -> v21 format) — 57 maps
       - Converter at /tmp/convert_encounters.rb translates v17 fixed slot
         chances into explicit per-entry percentages for v21 format.
