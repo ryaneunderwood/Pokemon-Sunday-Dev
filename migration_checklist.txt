@@ -397,6 +397,23 @@ TODO — Items & Mechanics
       Nuzlockes are covered; Map138 (route balls) still tests == 1 on purpose.
 [x] Roaming Legendary tracker
   [2026-07-28] Roaming table restored (17 species, both roam graphs) in [006] Settings.
+  [2026-07-28] CORRECTION: the entry above restored the roaming *mechanic*, not
+      the tracker, and should not have been ticked for the tracker. The tracker
+      is the Poke Scanner (:POKESCAN, switch 199) and none of it had been
+      ported: no UseInField handler, so v21's triggerUseInField returned 0 and
+      the Key Item did nothing at all - and Map152 ev89 hands it to the player
+      with dialogue promising it helps find the roaming beasts. The on-map
+      indicator was gone, switch 199 was read by nothing, the Pokedex Area page
+      no longer marked the roamer's location, and the 17 Graphics/Icons/roam*.png
+      had never been copied across.
+      Ported in [003] Items/[003] Poke Scan.rb, with the icons copied and
+      renamed by species (roam_ARTICUNO.png) instead of v17's numeric Dex ID -
+      all 17 roamers happen to have kept their numbers, but 158 species did not,
+      which is the same trap that broke the Map029 Regi door.
+      One deliberate change: v17 drove the indicator off Events.onStepTaken and
+      created a PictureWindow on every single step taken on a roamer's map,
+      never disposing any of them. This announces once on entering the map and
+      disposes the window, so the information is the same but nothing leaks.
 [x] Port custom encounter types (Rt1, Rt15a-f)
   [2026-07-28] Rt1 ported in [007] Custom Encounter Types.rb; Rt15a-f confirmed dead in v17.
       - v17 Script #124: Types 13-19, custom densities/probabilities
