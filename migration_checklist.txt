@@ -976,6 +976,18 @@ INTEGRATION VERIFIED
       same spot as the champ label, so they overlapped - the D moves right when
       both are shown.
 
+[x] pbCut / pbRockSmash were no-oped by the HM-prompt suppression, which broke
+      the 10 "CutTree" and 21 "SmashRock" events - they test those calls in a
+      conditional and only break when it returns true, so pressing A on every
+      tree and rock did nothing at all, silently. They were still clearable from
+      the Bag, but that is not how v17 played. Restored to v17's item-gated
+      versions (badge + Hatchet/Dynamite, no Pokemon involved).
+[ ] Rock Smash items (v17 #241, Zerokid) not ported - 25% item / 25% encounter
+      on smashing a rock. Worth knowing it never fired in v17 either: nothing
+      called pbRockSmashRandomEncounter, since Kernel.pbRockSmash and the rock
+      events both omit it. v21's Bag route for :DYNAMITE does call the stock
+      encounter roll, so the two routes differ slightly until this is decided.
+
 ALSO FIXED (found while checking EBDX's metrics dependency)
 [x] pokedex_names used [name, region] pairs numbered 0-10, but that number is a
       TOWN MAP region and PBS/town_map.txt defines only region 0. Opening an
