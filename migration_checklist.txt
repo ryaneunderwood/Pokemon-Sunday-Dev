@@ -43,10 +43,17 @@ COMPLETED
       that, so scenery it never touched cannot block it and self-routing events
       still pace themselves. Interpreter#update is wrapped, not copied.
       The underlying event problem is unchanged and no longer matters: 17
-      parallel pages force a route then loop with nothing pacing them, Map044
-      ev4 among them. Optional tidy-up, not needed for correctness: give
-      Map044 ev4 a self-switch guard so it sets the crumbled graphic once
-      instead of every frame forever.
+      parallel pages force a route then loop with nothing pacing them.
+  [2026-08-04] Map044 ev4 tidied up as well (tools/fix_map044_crumbled_event.rb):
+      guarded by self switch A so the crumbled graphic is applied once instead
+      of every frame forever. Safe only because the event has a single
+      unconditional page - Game_Event#refresh returns early when the resolved
+      page is already active, so the self switch cannot wipe the graphic the
+      move route applied; a second page would have. Also restored the else
+      branch that the v17 -> v21 port had turned into a nested
+      "if character_ID == 2", which left any other character_ID with no
+      graphic. The other 16 unpaced parallel pages are harmless now and were
+      left alone.
 [x] [2026-04-21] Pokegear setter migrated: $player.pokegear= -> $player.has_pokegear=
 [x] [2026-04-21] Running Shoes setter migrated: $PokemonGlobal.runningShoes= ->
       $player.has_running_shoes=
