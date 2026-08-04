@@ -31,6 +31,22 @@ COMPLETED
       now skips parallel-process events in the wait check so background
       auto-graphic events (e.g. Map 044 ev4 "crumbled" sprite selector)
       don't pin move_route_forcing true forever
+  [2026-08-04] REPLACED. That fix worked but caused the lag and glitching Ryan
+      reported. v21's command 210 is a map-wide barrier, and the old patch made
+      it ignore every trigger-4 event - which also broke the ordinary idiom
+      those same events use: force a route on self, wait for it, loop. Their
+      wait then returned instantly, so ~10 ambient scenery events (Map174/179/
+      193-200 and others) re-issued a move route every frame instead of every
+      fifth. A harness modelling v21's interpreter measured 60 cycles per 60
+      frames against a correct 12.
+      Each interpreter now records what it force-routed and waits for exactly
+      that, so scenery it never touched cannot block it and self-routing events
+      still pace themselves. Interpreter#update is wrapped, not copied.
+      The underlying event problem is unchanged and no longer matters: 17
+      parallel pages force a route then loop with nothing pacing them, Map044
+      ev4 among them. Optional tidy-up, not needed for correctness: give
+      Map044 ev4 a self-switch guard so it sets the crumbled graphic once
+      instead of every frame forever.
 [x] [2026-04-21] Pokegear setter migrated: $player.pokegear= -> $player.has_pokegear=
 [x] [2026-04-21] Running Shoes setter migrated: $PokemonGlobal.runningShoes= ->
       $player.has_running_shoes=
