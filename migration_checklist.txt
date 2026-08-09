@@ -1,6 +1,6 @@
 Pokemon Sunday v17 -> v21 Migration Checklist
 ==============================================
-Last updated: 2026-07-28
+Last updated: 2026-08-09
 
 COMPLETED
 ---------
@@ -156,6 +156,23 @@ COMPLETED
       Compat layers deleted: [006] v17 Event Compat shim + the Battle Tower
       plugin's Pokemon-method/iv-index/ballused/ot shim block; Mystery Gift
       ported off ballused (numeric :ball data -> ball symbols).
+[x] [2026-08-08] Save files from pre-port builds made unloadable by that shim
+      removal — fixed. Deleting SundayIndexedStatHash broke Marshal.load on any
+      existing save: the shim had been extend'd into each Pokemon's @iv/@ev
+      Hash, and Marshal records extended modules by name in the stream, so
+      loading raised "ArgumentError: undefined class/module SundayIndexedStatHash"
+      in SaveData.get_data_from_file (StartGame:22).
+      Fix: new plugin [008] Compatibility/[000] Save File Compatibility.rb
+      redeclares SundayIndexedStatHash as an EMPTY module — enough for Marshal
+      to resolve the name, with no method overrides, so the affected hashes
+      behave as plain symbol-keyed Hashes. Confirmed safe: zero integer iv/ev
+      subscripts remain in any Map*.rxdata or CommonEvents.rxdata.
+      Verified by replaying the real save (AppData/Roaming/Pokemon Sunday 3.0/
+      Game.rxdata, game_version 2.9.6) through Marshal.load with stand-ins for
+      the RGSS/Essentials classes: the stream now resolves end to end, and
+      SundayIndexedStatHash was the ONLY name in it not defined by stock v21.
+      NOTE: this module must not be deleted — every save written before the
+      2026-07-06 port depends on it existing.
 
 TODO — PBS Data
 ---------------
@@ -500,14 +517,24 @@ TODO — Graphics & Art
         STARAPTOR/WOBBUFFET _female, plus PICHU_2 and WEEPINBELL_shadow.
 [ ] Fix backsprites to Gen 5 animated style (matching v17) — Gen 9 pack ships
       static back sprites; Gen 5-style animated back sprites not yet sourced.
-[ ] Create party icons for new Fakemon
-      - Remaining gaps (tracked in v21 FAKEMON_SPRITES_MISSING.md):
-        GALEFRONT_1, SNOWYGAST, PALOSSNOW, TARFELON, ROOBOP, WIKINIKI,
-        ACTINOTOX, LEOTERYGI, SPUDNICK
+[x] Create party icons for new Fakemon
+  [2026-08-09] DONE for the normal icons — every Fakemon base species and form
+      now has one, derived from the battle sprites (5:1 reduction, 2x re-up, hard
+      dark border to match the canon icons). Only two SHINY icons are outstanding:
+      SPUDNICK (blocked — it has no shiny front sprite to derive from) and
+      HOVEON (cannot be derived mechanically: its normal and shiny fronts are
+      different drawings, 27% palette vote purity, so it needs hand-drawing).
 [ ] Create backsprites and shiny sprites for new Fakemon
       - Remaining gaps: SPUDNICK (everything), SNOWYGAST/PALOSSNOW/ROOBOP
         (Back/Back shiny), TARFELON/WIKINIKI/ACTINOTOX (Back shiny),
         LEOTERYGI (Back/Back shiny)
+  [2026-08-09] Unchanged, and now tracked automatically: run
+      `ruby tools/report_missing_sprites.rb` in the v21 tree to regenerate
+      MISSING_SPRITES.md. It checks every species and numbered form against all
+      eight graphic sets and separates a BASE species with no file (falls through
+      to 000.png, renders blank) from a FORM with no file (falls back to its base
+      form's art, wrong but visible). These 9 are the only base-species gaps left
+      in the whole game.
 [x] Track down changed graphics (names/locations/sizes between v17 and v21)
   [2026-07-28] Effectively done. Swept every asset the game actually REFERENCES
       (event page sprites, map BGM/BGS, event Play SE/ME, battlebacks, trainer
@@ -1024,12 +1051,112 @@ ALSO FIXED (found while checking EBDX's metrics dependency)
       file, so with Switch 147 on it crashed the Town Map and Pokedex Area page.
 
 KNOWN LIMITATIONS
-[ ] The 22 Fakemon have no entry in PBS/EBDX/pokemon.txt, so they render at
+[x] The 22 Fakemon have no entry in PBS/EBDX/pokemon.txt, so they render at
       neutral battler offsets. EliteBattle.get_data returns nil and callers
       default to 0, so this is cosmetic, not a crash. Fix in-game with EBDX's
       Sprite Positioner, which writes back to that file.
+  [2026-08-09] RESOLVED. All 23 Fakemon now have entries, and every offset in the
+      file is measured from the art rather than hand-placed — see the
+      2026-08-09 section at the end.
 [ ] Battle backdrop base assignment (Concrete/Dirt/Water) was inferred from
       backdrop names; a few may want swapping by eye.
 [ ] Untested in-game - none of this can run headless. First launch must be from
       the editor/debug so EBDX compiles PBS/EBDX -> Data/*.ebdx and
       PluginScripts.rxdata is rebuilt.
+
+================================================================================
+[2026-08-09] GEN 9 PACK 3.3.7, PLZA MEGA ART, SPRITE AUDIT
+================================================================================
+
+GENERATION 9 PACK UPGRADED 3.3.4 -> 3.3.7
+-----------------------------------------
+[x] Plugins/Generation 9 Pack v3.3.4 replaced with v3.3.7 (14,725 files).
+      The pack folder is the whole distribution, not just its scripts, and the
+      root meta.txt is added at install time - it is NOT in the archive, so it
+      has to be copied up from Plugins/Generation 9 Pack Scripts/meta.txt or
+      Essentials will not see the folder as a plugin at all.
+[x] Dependency bumped: Plugins/Pokemon Sunday/meta.txt
+      Requires = Generation 9 Pack,3.3.4 -> 3.3.7
+[x] tools/port_pack_form_icons.rb repointed; the newer tools glob for
+      "Generation 9 Pack v*" and take the highest, so the next bump is free.
+
+PLZA MEGA ART - 6 FORMS THAT HAD NO SPRITES AT ALL
+--------------------------------------------------
+[x] Mega Baxcalibur, Mega Darkrai, Mega Garchomp Z, Mega Lucario Z, Mega
+      Zeraora and Mega Eelektross were defined in PBS/pokemon_forms.txt but had
+      no art in any set, so all six battled wearing their base form's sprite.
+      3.3.7 ships them (they are Legends Z-A DLC forms, added after 3.3.4).
+      All 6 sets filled for each: Front, Front shiny, Back, Back shiny, Icons,
+      Icons shiny - 61 files including 26 shiny icons for other Megas.
+[x] Matched by FormName, never by form number - this game renumbered forms when
+      every Gigantamax became a Mega. All 32 matches verified by name before
+      copying (e.g. game GARCHOMP_2 "Mega Garchomp Z" = pack GARCHOMP_2, same
+      name). New tool: tools/port_pack_sprites.rb (never overwrites an existing
+      file, so hand-drawn and hand-aligned art is safe).
+[x] The 12 imported BACK sprites were 288x288 - the pack draws backs at 3x3 unit
+      pixels, this game uses 2x2 - and were reduced to 192x192. All 12 scored
+      ZERO non-uniform 3x3 blocks at grid offset (0,0), so the reduction was
+      exactly lossless: visible unit counts identical before and after
+      (e.g. Garchomp 4298 -> 4298). New tool: tools/reduce_back_sprites.ps1,
+      which reports mixed blocks rather than majority-voting them - voting is
+      what eroded 53 sprites' edges in the 2026-08-08 incident.
+
+EBDX METRICS RE-DERIVED
+-----------------------
+[x] tools/measure_sprite_bounds.ps1 written (the measuring step had only ever
+      existed as ad-hoc inline PowerShell). Measures the alpha>=8 bounding box
+      of all 3,259 Front and Back sprites into the TSV that
+      regenerate_ebdx_metrics.rb consumes.
+[x] PBS/EBDX/pokemon.txt: 35 values corrected, 0 sections added. 24 of those are
+      the new Megas, which had been sitting on inherited placeholder offsets
+      (Mega Garchomp Z was at PlayerX 34 / PlayerY 79 against a measured 1 / 1).
+      The other 11 are 1px rounding drift (BattlerEnemyX -1 -> 0).
+      Mega Garchomp Z and Mega Darkrai measure as filling the canvas edge to
+      edge; probed for stray edge pixels and it is genuine art, not noise.
+[x] All 23 Fakemon now have EBDX entries - see the KNOWN LIMITATIONS correction
+      above.
+
+SPRITE AUDIT
+------------
+[x] tools/report_missing_sprites.rb writes v21 MISSING_SPRITES.md: every species
+      and numbered form against all eight graphic sets. Distinguishes a BASE
+      species with no file (falls to 000.png, renders blank) from a FORM with no
+      file (falls back to base form art, wrong but visible), and exempts forms
+      that are supposed to share base art.
+      CAUTION worth recording: follower art is under Graphics/CHARACTERS/
+      Followers, not Graphics/Pokemon/Followers. The first version of this tool
+      looked beside the battlers and reported all 1,540 entries as missing
+      followers when 1,362 were present.
+      Megas and battle-only forms are exempt from the follower check - you
+      cannot walk around Mega-evolved, so falling back to the base form's
+      overworld sprite is correct, not a gap.
+
+REMAINING ART GAPS (all Fakemon or custom forms; nothing canon is broken)
+------------------------------------------------------------------------
+[ ] Back / Back shiny - SPUDNICK (everything), LEOTERYGI, PALOSSNOW, ROOBOP,
+      SNOWYGAST (both), ACTINOTOX, TARFELON, WIKINIKI (shiny only). Unchanged
+      from the Graphics & Art section above.
+[ ] Shiny icons - 33 forms, all Megas whose normal icon came from v17 (v17 had
+      no shiny party icons at all). Derivable from the shiny front sprite's
+      palette rather than hand-drawn. Two exceptions: SPUDNICK has no shiny
+      front to derive from, and HOVEON's normal and shiny fronts are different
+      drawings (27% palette vote purity), so it needs hand-drawing.
+[ ] Followers - 40 entries: the 23 Fakemon, the 8 Kiraki regional forms
+      (Sentret/Furret/Yanma/Taillow/Swellow/Skarmory/Galefront/Vivillon), the 3
+      custom forms (Arceus Light, Silvally Light, Rotom Lamp), and POLTCHAGEIST,
+      which is the only canon species missing one - the pack ships a SINISTCHA
+      follower but no POLTCHAGEIST.
+
+FOLLOWING POKEMON PLUGIN - BLOCKED, NEEDS A MANUAL DOWNLOAD
+-----------------------------------------------------------
+[ ] Following Pokemon EX (Golisopod User, now maintained by nononever) is the
+      standard v21.1 follower plugin, and the Gen 9 Pack's follower art is
+      shipped specifically for it. It is NOT on GitHub - searched repositories
+      and code search, no mirrors or forks exist. It is distributed only through
+      Eevee Expo / MediaFire, which cannot be fetched non-interactively:
+        https://eeveeexpo.com/resources/1464/
+        https://www.mediafire.com/file/dp44icuwywvqwfx/Following_Pokemon_EX.rar/
+      Once the .rar is in ~/Downloads the install is: extract its Plugins/
+      folder into Plugins/, and the art is already in place from the pack
+      import - Graphics/Characters/Followers is populated with 1,365 sprites
+      and Followers shiny with 1,352.
