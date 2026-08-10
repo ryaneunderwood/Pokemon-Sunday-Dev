@@ -1475,3 +1475,25 @@ GEN 9 INTO TRAINERS, AND THE PLZA MEGA TRAINERS
       Variable 100 is now written from exactly one place in the map data - the
       intro menu - with every other difficulty transition handled in code.
       Tool: tools/hard_nuzlocke_endgame.rb.
+
+[x] End credits: acquired packages credited, scroll paced to the song.
+      Map172 ev1 (Champion's Room) rolls Scene_Credits, and it was rolling the
+      stock Essentials placeholder - "My Game by: Maruno ... Special thanks to:
+      Pizza". Settings.game_credits had never been filled in.
+      The acquired packages need no list of their own: get_text walks
+      PluginManager and prints each plugin's name, version and meta.txt credits,
+      so the roll already names Elite Battle: DX (18 people), Following Pokemon
+      EX (12), Generation 9 Pack (Caruban), Luka's Scripting Utilities, Pokemon
+      Sunday Scripts and the v21.1 Hotfixes, then Essentials, mkxp-z, RPG Maker
+      XP and the ownership notices. Anything installed later is picked up free.
+      New "[006] Settings/[004] Credits.rb" supplies the game's own block and
+      paces the scroll. Run time is (lines * 32 + Graphics.height) /
+      SCROLL_SPEED; at the stock 40 px/s the 82 lines finished in 75s against a
+      122s song. The speed is now solved for at scene start from the list about
+      to be drawn, so adding plugins or lines keeps it in time. BGM moved to
+      Credits_Final (what v17 used), measured at 122.204s by ffprobe, targeted
+      at 121.5s -> 24.76 px/s, landing 0.7s inside the music.
+[ ] credits.txt in this repo is NOT this game's credits - it names "Zerokid" as
+      lead developer and lists assets this game does not use (Sevii Islands map,
+      Jessie and James sprites). Not imported. Decide whether any of it applies
+      and, if so, what belongs in Settings.game_credits.
