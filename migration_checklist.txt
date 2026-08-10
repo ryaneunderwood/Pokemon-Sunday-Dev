@@ -1500,3 +1500,208 @@ GEN 9 INTO TRAINERS, AND THE PLZA MEGA TRAINERS
       turns out to matter. Nothing was imported from it, and nothing pointed at
       it - the game's credits are Settings.game_credits plus the automatic
       plugin roll.
+[x] 453 unreferenced graphics moved to "Unused Graphics" at the top level,
+      folder structure kept, plus a MANIFEST. Moved rather than deleted, and
+      mkxp only searches Graphics/, so putting one back is prepending
+      "Graphics/" to its path. Usage was resolved three ways, because
+      Essentials reaches art three ways: by name (every String in every
+      .rxdata, walked generically so no field is missed), by data (never named
+      anywhere - Pokemon/Front/<SPECIES>.png, Items/<ITEM>.png,
+      Trainers/<TYPE>.png, generated from the PBS ids) and by composition
+      (sprintf("Graphics/UI/Bag/bg_%d", pocket) is the only thing reaching
+      bg_1..bg_8). Three passes were needed: PkmnAnimations.rxdata was not
+      being read, so 746 of 801 animation graphics came out unused; composed
+      names were not covered, so the Bag and Summary backgrounds looked unused;
+      and the prefix rule that fixed that swallowed whole folders when a prefix
+      ended at "/". Scan now reports 0 unreferenced across 19,848 files.
+[x] Three misspelt graphics reinstated under the correct name, having never
+      been able to load: Characters/Swimming/MABOSTIFF.png and Swimming
+      Shiny/MABOSTIFF.png -> MABOSSTIFF.png, Pokemon/Footprints/LEOPTERYGI.png
+      -> LEOTERYGI.png. Copied back, misspelt originals left in the manifest.
+      Followers/POLTHCAGEIST.png and its shiny are NOT reinstated - they are
+      pixel-identical duplicates of the POLTCHAGEIST files already in place.
+      Five files were misspelt, not six as first counted.
+[x] Footprints removed entirely, Ryan's call. The Gen 9 Pack ships 131, 127 of
+      which would have filled a gap, but Game Freak stopped drawing them after
+      B2/W2, so Gens 6-8 have none anywhere and 253 entries would still be
+      blank.
+      - GameData::Species.footprint_filename always returns nil, in
+        "[006] Settings/[005] No Footprints.rb". Both callers - the core
+        Pokedex entry page and EBDX's dex entry - already skip the draw on nil,
+        so one override covers both without copying either drawing method.
+      - Neither window is drawn by code; both are painted into background art.
+        Graphics/UI/Pokedex/bg_info.png (208,120)-(283,195) repainted as plain
+        background. EBDX/Pictures/Pokedex/dexOverlay.png (194,118)-(274,210) -
+        the "Dex Registered!" screen - cleared to transparency with the panel
+        strip's columns 240..274 restored from row 215. Both patches are in
+        tools/remove_pokedex_footprint.rb and are idempotent.
+      - Graphics/Pokemon/Footprints deleted, 668 files.
+[x] PBS/trainers.txt grouped by map: 421 entries into 66 groups in map-id order
+      (roughly play order), each headed by its map name, original order kept
+      within a group so a trainer's party versions stay together. Map comes from
+      tools/trainer_map_index.tsv, rebuilt to cover the 44 Mega trainers. A
+      trainer is filed under where its earliest version is fought. The five
+      fought on more than one map carry an "also fought on" comment;
+      tools/group_trainers_by_map.rb skips comments on re-read so it is
+      idempotent.
+[x] Elite Four: one more Pokemon in each specialist's draw. The nineteen are
+      e4Trainer 1..19 in "[001] Battle/[007] Elite Four.rb", not trainers.txt.
+      Each defines p0..p8 and fights p5 plus four drawn from the rest; now five
+      from nine. Europa/Basculegion male, Io/Ceruledge, Callisto/Roobop,
+      Ganymede/Scovillain, Taranis/Bellibolt, Euanthe/Kiraki Swellow,
+      Praxidike/Tarfelon, Lysithea/Nimbee, Pasiphae/Baxcalibur,
+      Sinope/Annihilape, Harpalyke/Flamigo, Daled/Palossnow, Shin/Grafaiai,
+      Samekh/Klawf, Khof/Actinotox, Morena/Scream Tail, Saturday/Sinistcha,
+      Adison/Spudnick, Burnham/Wikiniki. Each built from its Battle Tower set,
+      higher tier winning where there were two. Callisto is the exception Ryan
+      asked for: Roobop promoted to the guaranteed p2 and the Galvantula that
+      was there moved into the new slot. Bug had neither Nimbee nor Yimbee;
+      Nimbee chosen because Yimbee's Bug/Steel duplicates Forretress exactly.
+      - Spudnick was the only one of the nineteen without a Battle Tower set,
+        so it now has one in [Competitive]: a Focus Sash suicide lead around
+        Deorbit, Naive (Supernova is physical, so Timid was costing 10% for
+        nothing).
+      - Europa's Omastar deleted. It was written as p9 and never added to the
+        draw list, so it had never been reachable.
+      - Saturday: Palossand out, Kiraki Skarmory (form 2, Ghost/Flying) in at
+        p7, Sinistcha to p9. The empty Skarmory that had been sitting at p9 is
+        deleted - a v17 copy-paste slip where the following six lines configured
+        p8, so it had no moves, item, nature or EVs. v17's typo kept it
+        harmless; the port made it a real but empty Pokemon.
+[x] Seven Battle Tower sets named a form that does not exist, so Essentials was
+      quietly building the base form instead. New
+      tools/audit_battle_tower_forms.rb checks all 1,344 sets against the
+      learnset of the form they claim. Psyduck 1->0, Darumaka 1->2 twice,
+      Alcremie 5->0 and 4->0, Basculegion 1->3, Quaquaval 1->0. Basculegion
+      mattered most: the Life Orb Mild set is the female's and was spawning a
+      male. Cause is that a form field is just a number, and the Gen 9 Pack and
+      the PLZA Megas inserted a lot of forms ahead of existing ones.
+[x] Alcremie: Vanilla Cream forms 1-6 added, so all 63 forms exist. Every other
+      cream is seven entries; Vanilla Cream had only form 0. Battle Tower sets
+      moved onto real forms chosen for looks - 39 Salted Cream, 57 Rainbow
+      Swirl. Mega Alcremie master given form 31; other Alcremie trainers 1 or 62.
+[x] Megas reachable from any base form. Essentials pairs a Mega with exactly one
+      base form through UnmegaForm, and getMegaForm skips a Mega whose
+      unmega_form is not the current form. New
+      "[000] Forms/[007] Mega From Any Form.rb" lets species in ANY_FORM reach
+      their Mega from any form and remembers the pre-Mega form to restore
+      afterwards. ANY_FORM is Alcremie (63 cosmetic forms, only form 0 could
+      Mega and it always came back Vanilla Cream), Toxtricity (Amped and Low Key
+      share types, stats and first ability) and Aerodactyl (Gen 3 Style
+      overrides nothing but its name - Ryan asked for it to reach the same Mega
+      and revert). The list is explicit, not "any Mega with unmega_form 0",
+      because seven genuine pairings must keep working: Floette 6->5, Meowstic
+      3->1, Zygarde 4->2 and 5->3, Magearna 3->1, Tatsugiri 4->1 and 5->2.
+      - Genuine bug found by tools/audit_mega_base_forms.rb: URSHIFU. Mega
+        Urshifu S (2) and R (3) share a stone and both reverted to form 0, so
+        Rapid Strike could not Mega Evolve at all and Mega Urshifu R was
+        unreachable. Form 3 now carries UnmegaForm = 1.
+      - Left alone with reasons: Floette (the Mega pairs with Eternal Flower,
+        which has its own stats), Raichu, Meowth and Slowbro (the stranded forms
+        are Alolan and Galarian, different types and stats), Necrozma, Zygarde.
+[x] Mega Greninja A given its own stone, the way Raichu X and Y work. v17's
+      Mega Greninja - stats 72/145/67/132/153/71, Protean - is form 2 here,
+      renamed "Mega Greninja A" and left with no stone, while the pack's
+      different Mega Greninja (form 3) took GRENINJITE, so Ari had been serving
+      the wrong one. Form 2 was unreachable by anything: the Gen 9 Pack sets
+      MECHANICS_GENERATION to 9, where Battle Bond no longer transforms
+      Greninja. New item GRENINJITEA and MegaStone = GRENINJITEA on form 2;
+      neither needs UnmegaForm. Trainer MEGATRAINER_M Benedikt, Greninja at 70,
+      event 64 on Map100 (46,41), day, name checked against every trainer and
+      added to the spreadsheet.
+[x] Rockruff and Lycanroc matched to v17. Two commits - the first was wrong and
+      is corrected by the second, both stand:
+      - Restored to v17: Rockruff HiddenAbility = STEADFAST,OWNTEMPO on the base
+        species (v21 had dropped Own Tempo and moved it onto form 2);
+        [ROCKRUFF-2] Evolutions = LYCANROC,Level,25 (v21 had LevelEvening,25,
+        the official Dusk route); Lycanroc's getFormOnCreation back to two
+        outcomes, Midnight at night and Midday otherwise.
+      - The correction: v17 DID have Dusk Form, through a ROCKRUFF getForm
+        handler I had not read, twelve lines above the Lycanroc one. Rockruff's
+        form tracks the clock live and carries through evolution, so levelling
+        at dusk gives Dusk Form Lycanroc. Handler restored in
+        "[000] Forms/[008] Rockruff Lycanroc Forms.rb". What v17 lacked was Game
+        Freak's Own Tempo version of the route, not the route itself.
+[x] Paradox Pokemon at 1% of encounters, in
+      "[005] Overworld/[025] Paradox Encounters.rb". Each takes 1% on any route
+      where the Pokemon it was modelled on appears, matched by evolution family
+      so a prevo or evo counts - Scream Tail wherever Jigglypuff, Igglybuff or
+      Wigglytuff are; Slither Wing and Iron Moth wherever Larvesta is. Three
+      conditions, all required: the switch is on, Celebi is in the party and not
+      an egg, and the route has a Paradox with a claim on it.
+      - The 1% comes out of the commonest species literally, not spread across
+        the table: the swap is only considered once the roll has landed on that
+        species, at 0.01 divided by its own share. Measured over 200,000 rolls
+        the Paradox lands at 1.01% while the second species holds its 40%.
+      - Switch 239 "Celebi sidequest" added to Data/System.rxdata by
+        tools/add_celebi_switch.rb. First free slot (1..238 named), so nothing
+        is renumbered and no save is disturbed.
+      - Six Paradox are modelled on Pokemon that roam here rather than sit in a
+        table, so they follow the roamer instead: while it is loose, only on the
+        route it is on; once caught, any route but only while it is in the party
+        with Celebi. Walking Wake / Gouging Fire / Raging Bolt as Ryan asked,
+        plus Iron Leaves / Iron Boulder / Iron Crown, whose Virizion, Terrakion
+        and Cobalion also roam here. Drop them from ROAMER_LINKED if only the
+        first three were meant.
+      - WORTH A DECISION: Koraidon and Miraidon are flagged Paradox and modelled
+        on Cyclizar, which is in encounter tables, so "all Paradox" puts two box
+        legendaries in the wild at 1%. Kept - one line in MODELLED_ON to drop.
+      - Verified with a stubbed harness, 17 checks. Not run in game.
+[x] Dead getMegaForm handlers removed from "[000] Custom Form Handlers.rb".
+      Aerodactyl, Meowth, Urshifu, Alcremie and Toxtricity all registered a
+      "getMegaForm" proc; no such hook exists. MultipleForms is consulted only
+      for getForm, getFormOnCreation, getFormOnEggCreation, the three battle
+      timing hooks, getPrimalForm, getUnprimalForm, onSetForm and the
+      changePokemonOn* set - Pokemon#getMegaForm walks the species data itself.
+      Aerodactyl and Alcremie registered nothing else, so those blocks are gone.
+      FLAGGED, NOT CHANGED: Toxtricity's surviving getFormOnLeavingBattle picks
+      Amped or Low Key from the nature, which was the best guess available when
+      nothing remembered the original form. "[007] Mega From Any Form.rb" now
+      records the real pre-Mega form, so the guess can disagree with it for a
+      Low Key with an Amped nature. Its own decision, not tidying.
+[x] Battle Tower set legality: 114 sets / 129 move slots down to 7 / 7.
+      tools/bt_legality.rb is the shared model; it accepts a move as legal when
+      it is in the form's own learnset (falling back to the base species field
+      by field), in ANY form of the species (forms are reachable in game, so
+      Deoxys learning Spikes as Defense Forme makes it legal on Speed Forme), or
+      granted by a form handler (Rotom's six appliance moves come from
+      onSetForm, not from any learnset). That alone cleared 15 false positives.
+      There is an empty PAST_GEN table ready for pairs that check out;
+      Bulbapedia was consulted for Darumaka/Earthquake, Gastly/Nasty Plot,
+      Mantyke/Roost and Pidgeotto/Drill Peck, all no in every generation.
+      Added to the PBS by tools/apply_learnset_fixes.rb, all into TutorMoves so
+      the player can teach them too:
+        15  Light-type moves on canon Pokemon - Gamma Ray Burst, Prism Shot,
+            Sunbeam, Holy Blade, and the Light-typed Light Screen and Tail Glow.
+         8  ordinary moves on this game's own Pokemon.
+         5  Toxic. 23 species lacked it; the cutoff of ten distinct moves picks
+            out exactly the canonical minimal-movepool set, leaving Beldum,
+            Combee, Kricketot, Spewpa and Magearna.
+         4  Eevee's Let's Go moves, given on purpose - Bouncy Bubble, Buzzy
+            Buzz, Sappy Seed, Sizzly Slide. The other five are not in moves.txt.
+         1  Furret form 1 / Earthquake. fakemon? only looked at the species
+            header, so a custom form of a canon species passed it; BTLegality
+            now has custom_form?, which recognises the Kiraki forms. The other
+            six - Sentret, Yanma, Taillow, Swellow, Skarmory, Vivillon - had no
+            illegal moves.
+      74 remaining slots across 62 sets swapped for a legal move in the same
+      niche by tools/propose_legal_swaps.rb, ranked: same function code and
+      type, same function code, same type and category within 25 power, same
+      type and category, same status role, same category within 20 power. Status
+      stays status and attacks stay attacks. Four rules it had to be taught,
+      each after a bad proposal: FunctionCode "None" is shared by 88 plain
+      damaging moves and means nothing (it paired Shadow Sneak with Tackle);
+      priority must survive; heals match by role but ranked within it or every
+      heal became Rest; setup is split by the stat it raises and weighted by the
+      Pokemon's better attacking stat, with Curse treated as an Attack booster
+      on anything that is not a Ghost.
+      SEVEN LEFT, each wanting something with no legal equivalent on that
+      Pokemon - three are priority attacks, the rest one-of-a-kind effects:
+      Applin/Protect, Floragato and Kingambit/Sucker Punch,
+      Houndstone/Shadow Sneak, Mabosstiff/Destiny Bond, Pawmo/Fake Out,
+      Spidops/Memento. Listed with their pool lines in
+      tools/battle_tower_illegal_sets.txt. Nothing in that file is broken - the
+      Tower forces the move through learn_move - so it is a list to work
+      through, not a bug queue.
+      Verified: 1,359 pool lines before and after, 62 changed, nothing but the
+      moves field touched, no set changed its move count, no repeated moves.
