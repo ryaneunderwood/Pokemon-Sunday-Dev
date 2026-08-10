@@ -1752,3 +1752,72 @@ GEN 9 INTO TRAINERS, AND THE PLZA MEGA TRAINERS
         items exist in PBS/items.txt - Teal, Wellspring, Hearthflame,
         Cornerstone - and Ogerpon has forms 1..11, but where in the museum and
         behind what, if anything, has not been said.
+[x] Cries play by species, not by v17's dex number. 101 Play SE "<dexnum>Cry"
+      across 63 maps rewritten by tools/species_cries.rb. v21 keeps cries as
+      Audio/SE/Cries/<SPECIES>.ogg and reaches them through the species, so the
+      numbers were not just redundant but wrong against this tree: v17 #903 is
+      Zarude, #912 Calyrex, #913 Protosolaria, and in v21's pokemon.txt those
+      indices are Sneasler, Quaxly and Quaxwell. Numbers resolved once against
+      v17's own PBS/pokemon.txt - the numbering the events were written against.
+      - Play SE "903Cry" -> Script: pbPlayCry(:ZARUDE, 100). Volume and pitch
+        carry over, dropped where they match pbPlayCry's defaults of 90/100.
+      - Cries inside a move route become the route's Script command (code 45)
+        rather than its Play SE (code 44), so they fire at the same step. The
+        route and its 509 commands share MoveCommand objects, so both move
+        together; that sharing is why 112 raw hits are only 101 real ones.
+      - "720Cry_1" is Hoopa Unbound, kept as Cries/HOOPA_1.ogg and reachable
+        only by form number, so its three uses call
+        GameData::Species.play_cry_from_species(:HOOPA, 1, volume, pitch) -
+        pbPlayCry has no form parameter. The trailing _1 also hid it from the
+        first scan, since \bCry\b does not end before an underscore.
+      - Nothing to port: all fifteen v17 Fakemon cries were already in
+        Audio/SE/Cries under their species name - Clowd, Storrm, Galefront,
+        Photowyrm, Chromasp, Chordalux, Cauldream, Crucibleak, Cauldread,
+        Photeon, Hoveon, Yamselia, Nimbee, Yimbee, Protosolaria.
+      - The 73 numbered files left under Audio/SE are now referenced by nothing.
+        Left in place.
+[ ] FAKEMON WITH NO CRY (8). No audio in v21 or v17; they need one recorded or
+      sourced. GameData::Species.play_cry falls through silently, so they are
+      simply silent everywhere - overworld events, the Pokedex, battle entry.
+        Snowygast   (v17 #1041)      Wikiniki    (v17 #1045)
+        Palossnow   (v17 #1042)      Actinotox   (v17 #1046)
+        Tarfelon    (v17 #1043)      Leoterygi   (v17 #1047)
+        Roobop      (v17 #1044)      Spudnick    (v17 #1048)
+      The other 15 Fakemon all have one.
+[x] pbResetLegends made complete. It clears the "already fought" self switch of
+      every legendary the Pokedex says the player does not own, so knocking one
+      out instead of catching it puts it back, and it runs from the Champion's
+      Room (Map172 ev1) after the Elite Four. Fourteen were missing and stayed
+      gone forever: Zekrom (map 175 ev2 - the only one of the sixteen original
+      lairs absent), Tapu Fini (29/72), Hoopa (197/15), Enamorus (188/7 "B"),
+      and the nine new lairs on maps 215-223.
+      - One entry was also simply wrong: :DARKRAI listed [114, 4, "A"], but
+        event 4 on Route 1 is empty and the Darkrai battle is event 1, so
+        Darkrai had never reset.
+      - Found by checking the other way: every legendary or mythical species
+        with a WildBattle.start in an event, matched against the self switch
+        that event actually sets. Now 57 species / 60 switches, nothing
+        uncovered and no entry pointing at an event that does not battle that
+        species.
+[x] Mega Terapagos. Stellar Form had no route in this game, which does not
+      Terastallize, so form 2 is now a Mega instead.
+      - [TERAPAGOS,2] renamed to Mega Terapagos, MegaStone = TERAPAGOSITE,
+        UnmegaForm = 1. New [TERAPAGOSITE] in items.txt from GRENINJITEA's
+        fields. MEGATRAINER_M Valdis, Terapagos at 70, Map100 event 65 at
+        (47,41), day - derived by tools/add_missing_mega_trainers.rb, which
+        found 129 stones with 128 already served.
+      - getTerastalForm and getUnTerastalForm removed from the Gen 9 Pack's
+        Terapagos block so Mega Evolution is the only route to form 2.
+        getFormOnLeavingBattle and getDataPageInfo stay.
+      - UnmegaForm is 1, not 0, because Terapagos is never form 0 in a battle:
+        Tera Shift changes it to the Terastal Form on switch-in through
+        pbCheckForm, which is an ability and unrelated to Terastallizing.
+        Battler#form= writes through to @pokemon.form, so form_simple is 1 by
+        the time the command menu asks getMegaForm.
+      - The HP change from 95 to 160 is deliberate, Ryan's call after asking
+        whether it breaks anything. It does not: Pokemon#calc_stats moves
+        current HP by the same amount as maximum HP and floors it at 1, the
+        same path Zygarde Complete already uses. In play it means Mega Evolving
+        heals about 130 HP at level 100 and reverting takes it back off without
+        fainting. That effect is why Game Freak froze HP on Megas; it is kept
+        on purpose.
