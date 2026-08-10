@@ -1366,3 +1366,14 @@ OVERWORLD EVENT SPRITES CONSOLIDATED ONTO THE FOLLOWER ART
         counterpart existed. Renamed.
       BOMBIRDIERs.png and ORTHWORMs.png in Followers are a third distinct image
       with both correct slots already filled; left alone rather than guessed at.
+
+NEW FEATURES (not v17 ports)
+[x] Petting the follower raises friendship. Talking to the Following Pokemon
+      gives it +1 happiness, for the first 10 interactions of each calendar day;
+      past that the dialogue still plays but pays nothing. New plugin
+      "Pokemon Sunday/[005] Overworld/[022] Follower Petting.rb", which aliases
+      FollowingPkmn.talk and keeps the day stamp and count on $PokemonGlobal.
+      The cap counts interactions rather than Pokemon, so cycling the party with
+      the S/W/A keys does not hand out a fresh 10. Stacks with FPEX's own
+      walking friendship (a "levelup" gain every 125s of walking), which is
+      untouched.
