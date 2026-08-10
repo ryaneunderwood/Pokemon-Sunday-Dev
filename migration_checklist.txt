@@ -1160,3 +1160,43 @@ FOLLOWING POKEMON PLUGIN - BLOCKED, NEEDS A MANUAL DOWNLOAD
       folder into Plugins/, and the art is already in place from the pack
       import - Graphics/Characters/Followers is populated with 1,365 sprites
       and Followers shiny with 1,352.
+
+OVERWORLD EVENT SPRITES CONSOLIDATED ONTO THE FOLLOWER ART
+----------------------------------------------------------
+[x] 107 Dex-numbered sprites sat loose in Graphics/Characters (251.png = Celebi)
+      alongside the same creatures' follower art. Every one of them was
+      referenced by an event, so they could not simply be deleted.
+      All 131 references across 80 maps repointed to "Followers/<SPECIES>" -
+      RPG::Cache.load_bitmap just concatenates folder + name, so a subdirectory
+      in an event's character_name resolves normally. The 107 loose files were
+      then deleted.
+      Numbers were resolved through v17's PBS/pokemon.txt, NOT v21's - 158
+      species were renumbered between versions, the same trap that had pointed
+      the Map029 Regi door at the wrong Pokemon. A trailing "s" (066s) means the
+      shiny sprite and maps into "Followers shiny/".
+      Only page graphics and move-route command 41 were rewritten. Script text
+      was left alone: the one numeric literal in a script was _INTL("31") in an
+      IV display, not a sprite name.
+      Tools: scan_numeric_char_sprites.rb, retarget_numeric_char_sprites.rb.
+      The rewriter refuses to edit any map whose Marshal round-trip is not
+      byte-identical; all 214 maps load and re-dump identically afterwards.
+[x] Fixed as a side effect: 5 move routes changed the graphic to 208, 481, 482,
+      571 and 867 - files that do not exist in this tree, so those events were
+      rendering nothing. They now point at Steelix, Mesprit, Azelf, Zoroark and
+      Runerigus respectively.
+[x] 913.png saved as Followers/PROTOSOLARIA.png (it had no follower art).
+[x] NOTE, worth an eyeball in game: the loose numeric sprites were NOT copies of
+      the follower art. All 105 comparable pairs differed byte for byte - they
+      are v17's overworld sprites versus the Gen 9 Pack's follower sprites for
+      the same species. 89 share dimensions (same 4x4 charset layout, different
+      drawing); 17 do not, and those will visibly change size on the map:
+      7 went 512 -> 256, 6 went 512 -> 320, and 3 went up.
+[x] Naming typos found and fixed while auditing, each of which had hidden real
+      art from every by-name lookup:
+      - POLTHCAGEIST.png -> POLTCHAGEIST.png (H and C transposed) in Followers
+        and Followers shiny. The typo is upstream in the Gen 9 Pack too.
+      - OGERPON_8s/_9s/_10s and TERAPAGOS_2s in Followers shiny had a redundant
+        trailing "s" inside an already-shiny folder, and no correctly named
+        counterpart existed. Renamed.
+      BOMBIRDIERs.png and ORTHWORMs.png in Followers are a third distinct image
+      with both correct slots already filled; left alone rather than guessed at.
