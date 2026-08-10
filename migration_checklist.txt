@@ -1455,3 +1455,23 @@ GEN 9 INTO TRAINERS, AND THE PLZA MEGA TRAINERS
       The set is derived from the PBS data rather than listed, so re-running the
       tool after new Megas arrive adds only what is still missing.
       Tool: tools/add_missing_mega_trainers.rb.
+
+[x] Hard Nuzlocke endgame corrections.
+      - Shrine of Arceus (Map040 ev1) refuses a Hard Nuzlocke run. Praying there
+        summons a wild battle against a random species you already own at your
+        top party level with a 0.5% shiny roll - an unlimited encounter and
+        shiny farm, on a route whose one encounter the mode has spent.
+      - The run ends on becoming Champion, not on Elite Four induction. The
+        inline ending in Map163 ev10 is removed; [012] Difficulty Modes.rb now
+        watches switch 117 ("Is Champion"), which Map171 ev1 p1/p2 and Map172
+        ev1 p1 all set. Applies to Funlocke too, which shared the old ending.
+      - Level cap gained two more stages: gyms (15/18/24/31/36/45/45/49), then
+        the Gold City tournament at 55 while switch 62 ("Won Pokemon League") is
+        off, then uncapped - so the Elite Four and Champion have no cap. The
+        tournament cap reads map 30's trainers (Amalthea v1 53, Themisto v1 53,
+        Reysh v3/4/5 55) and takes the highest, since it is one gauntlet rather
+        than eight gyms takeable in any order.
+      - Intro rules screen reworded for all three.
+      Variable 100 is now written from exactly one place in the map data - the
+      intro menu - with every other difficulty transition handled in code.
+      Tool: tools/hard_nuzlocke_endgame.rb.
