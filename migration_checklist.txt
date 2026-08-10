@@ -1239,13 +1239,53 @@ EBDX BATTLE FIXES
       EbdxWaiter whose @timer_end starts at System.uptime and is already in
       sync, so the clamp is a no-op for them. Only the scene's long-lived
       singleton @waiter accumulates.
-      Separately, the same file slows the HP step to HP_DRAIN_SLOWDOWN (2.0)
-      times EBDX's divisor. That divisor is framerate-compensated
-      (10 * Graphics.frame_rate/40) so it was never wrong, just fast. Note the
-      tail is unaffected by this constant: once the remaining difference falls
-      below the divisor, floor/ceil guarantees 1 HP per frame regardless.
+      The waiter clamp alone did NOT fix it. There is a second, independent way
+      into the same state: Battle::Scene#wait only calls its waiter
+      "if !EliteBattle.get(:smAnim)", and animateScene never calls
+      Graphics.update itself, so while that flag is set wait draws nothing and
+      returns at once. smAnim is a side effect of
+      EliteBattle.sun_moon_transition?, which assigns @smAnim as it returns, so
+      it can stay set outside the intro it was meant for. That guard is now
+      removed - harmless here because sun_moon_transition? needs SM transition
+      art under Graphics/EBDX/Transitions and this game ships none.
+      The real lesson: the drain was never paced by how far the bar moves per
+      update, but by how often update is called. Two attempts at shrinking the
+      per-step change both failed, because a smaller step just meant more steps
+      inside the same single rendered frame.
+      The bar is now paced with System.uptime, so no wait-plumbing fault can
+      compress it again. Duration scales with the fraction of the bar lost,
+      HP_DRAIN_MIN 0.35s to HP_DRAIN_MAX 1.60s. Simulated at one step per 0.025s
+      tick: half a bar 0.98s, full bar 1.60s, 1 HP chip 0.20s, and the same for
+      300 HP losing 150 as for 100 losing 50. @currenthp stays an Integer
+      because the databox prints it as text.
       WATCH FOR: other battle animations that were silently skipping frames will
       now play at their intended speed, so parts of the battle may feel slower.
+
+POKEMON CENTER HEALING
+----------------------
+[x] Froze on the first ball with Errno::ENOENT for
+      "Graphics/Characters/Healing balls left". The Healing balls event's page 0
+      - the zero-balls state - has always pointed at that file, in v17 too, and
+      it exists in neither project. v17's RGSS tolerated the missing file;
+      mkxp-z raises.
+      Page 0 uses direction 2, i.e. row 0 of the charset, and row 0 of both real
+      charsets is fully transparent (measured: 0 opaque pixels). "Row 0 draws
+      nothing" is the artist's convention, so page 0 now has no graphic, which
+      is what it was always meant to render.
+      Tool: tools/fix_pokecenter_healing.rb
+[x] Each ball then took 16 SECONDS. v17's pbWait took FRAMES, v21's takes
+      SECONDS:
+        v17  def pbWait(numframes) - loops numframes times
+        v21  def pbWait(duration)  - until System.uptime - start >= duration
+      The nurse loops "pbSet(6,i); pbSEPlay; pbWait(16)" per party member, so 16
+      frames (0.4s at v17's 40fps) became 16 seconds - 96 seconds for a full
+      party. Converted to pbWait(0.4).
+      A tree-wide scan found this pattern in exactly 9 places, all of them these
+      Pokemon Centers, so it is contained rather than systemic.
+      Tool: tools/scan_pbwait_units.rb re-checks.
+      Worth knowing: base v21 has NO healing-machine code to swap in. Core
+      Scripts.rxdata contains nothing for it - the whole sequence is map events,
+      exactly as in v17 - so there was nothing to replace it with.
 
 SHINY PARTY ICONS DERIVED
 -------------------------
