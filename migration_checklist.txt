@@ -1180,6 +1180,27 @@ FOLLOWING POKEMON EX 2.5.1 INSTALLED
       JUMPDOWN / AUX2 to cycle the party. This game's field-item hotkeys go
       through Input.triggerex? scancodes so they should not collide, but that
       is unconfirmed.
+[x] FPEX DOES NOT START ITSELF - no follower appeared on first run, and this is
+      the reason. The only caller of add_follower is
+      FollowingPkmn.start_following, a script command meant to be run from a map
+      event, and nothing in the plugin ever invokes it. follower_toggled is also
+      an attr_reader with no initialiser, so it reads nil and refresh_internal
+      returns straight away. The plugin's own Options entry cannot rescue this
+      either: its condition requires FollowingPkmn.get_event to be non-nil, so
+      with no follower the toggle is hidden, and with the toggle hidden there is
+      no way to make one.
+      Fixed in [005] Overworld/[021] Following Pokemon Defaults.rb:
+      - follower_toggled defaults to true, written as a reader override rather
+        than an initialiser so pre-existing saves pick it up (they have no
+        @follower_toggled at all). Switching it off still sticks, false != nil.
+      - The follower is seeded on :on_map_or_spriteset_change. add_follower only
+        reads seven members off the event it is handed, so a Struct stand-in
+        supplies them - the follower must exist on every map, not only one
+        holding a seed event. Event ids start at 1 so id 0 cannot collide.
+      - The Options entry is re-registered without the get_event condition, so
+        the toggle is always visible, and switching it on creates the follower.
+        MenuHandlers keys on the option symbol, so this replaces FPEX's row.
+      Untested in game like everything else here.
 
 SHINY PARTY ICONS DERIVED
 -------------------------
