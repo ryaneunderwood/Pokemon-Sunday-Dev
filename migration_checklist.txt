@@ -1705,3 +1705,50 @@ GEN 9 INTO TRAINERS, AND THE PLZA MEGA TRAINERS
       through, not a bug queue.
       Verified: 1,359 pool lines before and after, 62 changed, nothing but the
       moves field touched, no set changed its move count, no repeated moves.
+[x] Battle Tower legality finished: 0 illegal sets, from 114 / 129 move slots.
+      After the 74 automatic niche swaps, the last seven were decided by hand:
+      Mabosstiff Destiny Bond -> Sunset (added to its TutorMoves; Sunset is this
+      game's Light-type two-turn Perish Song, so the set still takes the
+      opponent down with it), Applin Protect -> Double Team (Applin never had
+      Protect - zero TM/TR compatibility in Sword/Shield, two TMs in
+      Scarlet/Violet), Floragato Sucker Punch -> Bite (its only damaging Dark
+      move; Meowscarada gets seven and Floragato inherits none), Kingambit
+      Sucker Punch -> Throat Chop (Foul Play is 95 but uses the target's Attack,
+      wasting 135 Atk and Swords Dance), Pawmo Fake Out -> Low Sweep (the set
+      had no Fighting move at all, and Choice Band locks Fake Out in after its
+      one turn), Spidops Memento -> U-turn (Spidops has no self-sacrifice move
+      in its pool at all), Houndstone Shadow Sneak -> Poltergeist (Shadow Claw
+      was asked for but Houndstone cannot learn it; Poltergeist is 110 and the
+      set's own Trick guarantees the target holds an item).
+[x] Nine legendary portal lairs added for the Pokemon that had none - the
+      Treasures of Ruin, the Loyal Three, Ogerpon and Terapagos. No event on any
+      map referenced any of them, so they were uncatchable.
+        Map215 Wo-Chien   Map218 Chi-Yu      Map221 Fezandipiti
+        Map216 Chien-Pao  Map219 Okidogi     Map222 Ogerpon
+        Map217 Ting-Lu    Map220 Munkidori   Map223 Terapagos
+      Built by tools/add_legendary_lairs.rb, copying the existing lairs rather
+      than drawing new ones. Two tile layouts exist across the sixteen standard
+      lairs, seven maps on one and eight on the other; both are copied verbatim
+      and alternated, with all eleven events - the Door home, the legendary at
+      (8,1), and the eight empty anchors event 11 flashes animation 7 across.
+      Same tileset, Cave_Legendary BGM, battlebgLegendary, level 50 under
+      Pokemon_Legendary1.
+      - The cry could not be copied. The old lairs use Play SE "<dexnum>Cry" and
+        Audio/SE has no 1001Cry..1024Cry; these species keep theirs in
+        Audio/SE/Cries/<SPECIES>.ogg. Event 2 calls pbPlayCry(:SPECIES), the
+        game's own helper, which resolves either way.
+      - All nine portals are in Germanium Village for now, in the open ground at
+        the bottom right: six along y=31 at x=34..39, three along y=33 at
+        x=34..36. Two rows rather than a block because a lair exits one tile
+        below its portal, and a portal on another's exit tile would retrigger as
+        the player stepped out. Copied from the village's own Protosolaria
+        portal so all three pages behave the same, gated on switch 122
+        "Consulted Reysh" like the other sixteen.
+      - Like every other lair, the legendary sets self switch A after the battle
+        and does not come back. That is the established pattern and all nine
+        have real egg groups, so they breed - which is how the repeatable-
+        obtainability rule is met for legendaries.
+      - NOT DONE: the Ogerpon masks in the Kiraki Museum (map 16). All four
+        items exist in PBS/items.txt - Teal, Wellspring, Hearthflame,
+        Cornerstone - and Ogerpon has forms 1..11, but where in the museum and
+        behind what, if anything, has not been said.
