@@ -1377,3 +1377,21 @@ NEW FEATURES (not v17 ports)
       the S/W/A keys does not hand out a fresh 10. Stacks with FPEX's own
       walking friendship (a "levelup" gain every 125s of walking), which is
       untouched.
+
+[x] ALT game speedup rebuilt for v21. The port in "[014] v17 Field Systems.rb"
+      section 6 copied v17's method - cycle Graphics.frame_rate through
+      60/105/150 - which cannot work here. v17 counted frames, so a faster frame
+      clock ran the game faster; v21 paces movement, waits, message text and
+      battle sequencing off System.uptime, a wall clock, so raising the frame
+      rate only drew more frames of the same second and burned CPU. The key
+      worked, the game just never sped up.
+      Replaced by "[023] Game Speedup.rb", which scales System.uptime itself by
+      accumulating scaled deltas (continuous and monotonic across a toggle, so
+      no jump past Game_Character's 0.25s "was in a menu" discard). Alt cycles
+      1x / 1.75x / 2.5x, matching v17's 40 -> 70 -> 100 against its base of 40.
+      $stats.play_time is held to the real clock, as v17 did by hardcoding /40
+      in the load screen; the cost is that the few effects v21 times off
+      play_time (screen tone, flash, shake, picture moves, fog) do not speed up.
+      GameSpeedup::SCALE_PLAY_TIME flips that trade if wanted.
+      Not sped up either way: audio, and the core effects still measured in
+      frames (transitions, the Exp-full flash, window flashes).
