@@ -1411,31 +1411,47 @@ NEW FEATURES (not v17 ports)
       fullscreen.
 
 GEN 9 INTO TRAINERS, AND THE PLZA MEGA TRAINERS
-[x] 46 Gen 9 evolution lines mixed into PBS/trainers.txt, one Pokemon per line,
-      each taking the place of a species two different trainers both used.
-      232 eligible duplicate slots found (145 usable; 64 skipped for holding a
-      Mega Stone, 14 for being Fakemon, 9 for a numbered Form). Untouched: 10
-      gym leader entries, 34 fought on a Gym map, 34 special names. There is no
-      trainer called Giovani or Giovanni - LEADER_Giovanni is stock Essentials
-      scenery with no entry - so that name protected nothing.
-      KINGAMBIT is the one line left behind: the only Gen 9 member of the
-      Pawniard family, and its earliest possible level is 72 against a highest
-      duplicate slot of 70. Matching is Euclidean distance over base stats, with
-      a guard that refuses a species that could not exist at the slot's level.
-      Natures, IVs, items and nicknames kept; AbilityIndex clamped; the one
-      Moves line on a replaced slot dropped.
+[x] 45 Gen 9 lines and 6 Fakemon lines mixed into PBS/trainers.txt, one Pokemon
+      per evolution line, each taking a slot where two different trainers used
+      the same species. 134 eligible duplicates (118 usable); 67 still unused.
+      KINGAMBIT is the one Gen 9 line left behind - earliest possible level 72
+      against a highest duplicate slot of 55. The Frigibax line arrives via the
+      new Mega Baxcalibur trainer instead.
+      The 8 Fakemon that were on no trainer at all (6 lines) are all placed:
+      Roobop, Snowygast, Actinotox, Spudnick, Wikiniki, Protosolaria.
+      Protosolaria is the loosest match in the plan at 76 - 720 BST against a
+      level 54 Kingdra - and is worth moving by hand.
+      215 of 383 entries protected: gym leaders, anyone on a Gym map, the named
+      specials (Daled added), every MEGATRAINER, the named-character classes
+      (AUNT/Morena, CHERRY, PTRK, RIVAL1-4, POKEMONTRAINER_Cynthia), and 79
+      teams of 3+ built to a theme - shared type, one evolution line (Brent's
+      Eeveelutions), one colour, one generation, all Fakemon, or all legendary.
+      Blocking MEGATRAINER by class rather than by held item was necessary: the
+      Primal pair carry a Red or Blue Orb, not a MegaStone-flagged item, so
+      Elena's Kyogre was being swapped out from under her.
+      There is no trainer called Giovani or Giovanni - LEADER_Giovanni is stock
+      Essentials scenery with no entry - so that name protected nothing.
+      Matching is Euclidean distance over base stats, with a guard refusing a
+      species that could not exist at the slot's level. Natures, IVs, items and
+      nicknames kept; AbilityIndex clamped; the one Moves line on a replaced
+      slot dropped.
       Tools: tools/gen9_trainer_mix.rb, tools/scan_trainer_maps.rb.
       Plan kept at tools/gen9_substitution_plan.txt.
-[x] Mega trainers added for the six PLZA Megas that had none - Baxcalibur,
-      Darkrai, Eelektross, Garchomp Z, Lucario Z, Zeraora. Six trainers.txt
-      entries in the existing shape (one Pokemon at level 70 holding its own
-      stone) and six three-page events cloned from Silver Town Gym's Mega
-      trainer, so the pages, the var 62 gate, the self-switch and the move route
-      are the game's own. Each gets a time-of-day switch (14 Day / 15 Night /
-      16 Morning / 17 Afternoon / 18 Evening).
-      Events 20-25 on Map100 (Platinum Heights, the town - 162 and 189 are its
-      interiors) at (44..49,48), the bottom-right corner, to be redistributed.
-      New names, checked against every trainer and every row of the Trainers
-      sheet: Konstantin, Isadora, Oleander, Yusra, Corvin, Anders. Added to
-      "Pokemon RPG.xls" (rows 323-328).
-      Tool: tools/add_plza_mega_trainers.rb.
+[x] Every Mega Stone now has a trainer. 127 stones have a form; only 89 had
+      anyone handing one out. 38 more added on top of the first six - Raichu X
+      and Y, Clefable, Dragonite, Heatran, Chandelure, Zygarde, Magearna and the
+      rest. One trainer per STONE rather than per form, since Meowstic, Zygarde,
+      Magearna and Tatsugiri each have several Mega forms sharing one.
+      Entries follow the existing shape (one Pokemon at level 70 holding its own
+      stone); events are cloned from Silver Town Gym's Mega trainer, so the
+      pages, the var 62 gate, the self-switch and the move route are the game's
+      own. Each gets a time-of-day switch (14 Day / 15 Night / 16 Morning /
+      17 Afternoon / 18 Evening).
+      Events 20-63 on Map100 (Platinum Heights, the town - 162 and 189 are its
+      interiors), filling the bottom-right corner upward from (44..49,48), to be
+      redistributed.
+      44 new names, checked against every trainer and every row of the Trainers
+      sheet, and added to "Pokemon RPG.xls" (rows 323-366).
+      The set is derived from the PBS data rather than listed, so re-running the
+      tool after new Megas arrive adds only what is still missing.
+      Tool: tools/add_missing_mega_trainers.rb.
