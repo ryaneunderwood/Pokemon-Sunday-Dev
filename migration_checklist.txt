@@ -1216,17 +1216,36 @@ EBDX BATTLE FIXES
       pans in the plugin - every other moveEntireScene call passes x = 0.
       Not a backdrop-size problem: 384x308 matches the 18 stock backdrops, the
       screen is the stock 512x384, and the VS bar is 768px wide.
-[x] HP bars draining too fast. EBDX eases the bar by 1/10 of the remaining
-      distance per frame, emptying a full bar in about a second. NOT a bug - the
-      divisor is framerate-compensated (10 * Graphics.frame_rate/40) so the
-      speed is constant in wall-clock terms - just a pace, and hardcoded in
-      DataBoxEBDX#update with no config entry.
-      [001] Battle/[011] EBDX Sunday Tweaks.rb now steps the HP itself at
-      HP_DRAIN_SLOWDOWN (3.0) times the divisor, then hides @animatingHP from
-      EBDX's own stepper for that frame so it cannot advance twice. Roughly
-      twice as long end to end. Not exactly proportional: once the remaining
-      difference falls below the divisor, the floor/ceil guarantees 1 HP per
-      frame regardless, so the tail is unaffected.
+[x] HP bar draining instantly. The step size was a red herring; the real fault
+      is EbdxWaiter#wait, and it affected EVERY animation in the battle.
+      The waiter keeps a running deadline: it adds its 0.025s tick to @timer_end
+      and busy-waits "until System.uptime >= @timer_end", drawing a frame per
+      pass. @timer_end is never clamped forward, so once real time overtakes it
+      - after any slow stretch, a message box, a move animation, a stutter -
+      every later wait adds 0.025s to a timestamp STILL in the past. The
+      condition is already true, the body never runs, and wait returns having
+      drawn nothing. is_too_stale? only resyncs after a full 2 seconds of
+      deficit, leaving a wide window where every wait is a no-op. EBDX's author
+      hit this: a commented-out echoln "We are overdue already!" sits on the
+      line after the increment.
+      The HP loop is "while animatingHP; update; wait(1); end", so the whole
+      drain ran inside one rendered frame no matter how small each step was -
+      which is why a first attempt at slowing the step down was invisible.
+      Fixed in [001] Battle/[011] EBDX Sunday Tweaks.rb by clamping @timer_end
+      forward to the present before delegating. EBDX loses the ability to catch
+      up after a slow frame, which is the point: catching up here means dropping
+      the animation instead of playing it.
+      Blast radius is small - almost every other call site builds a fresh
+      EbdxWaiter whose @timer_end starts at System.uptime and is already in
+      sync, so the clamp is a no-op for them. Only the scene's long-lived
+      singleton @waiter accumulates.
+      Separately, the same file slows the HP step to HP_DRAIN_SLOWDOWN (2.0)
+      times EBDX's divisor. That divisor is framerate-compensated
+      (10 * Graphics.frame_rate/40) so it was never wrong, just fast. Note the
+      tail is unaffected by this constant: once the remaining difference falls
+      below the divisor, floor/ceil guarantees 1 HP per frame regardless.
+      WATCH FOR: other battle animations that were silently skipping frames will
+      now play at their intended speed, so parts of the battle may feel slower.
 
 SHINY PARTY ICONS DERIVED
 -------------------------
