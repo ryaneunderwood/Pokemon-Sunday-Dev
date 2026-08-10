@@ -1389,9 +1389,23 @@ NEW FEATURES (not v17 ports)
       accumulating scaled deltas (continuous and monotonic across a toggle, so
       no jump past Game_Character's 0.25s "was in a menu" discard). Alt cycles
       1x / 1.75x / 2.5x, matching v17's 40 -> 70 -> 100 against its base of 40.
-      $stats.play_time is held to the real clock, as v17 did by hardcoding /40
-      in the load screen; the cost is that the few effects v21 times off
-      play_time (screen tone, flash, shake, picture moves, fog) do not speed up.
-      GameSpeedup::SCALE_PLAY_TIME flips that trade if wanted.
+      $stats.play_time scales with the game, by Ryan's call: a run played at
+      2.5x records the same play time as the same run at 1x, so speedrun times
+      compare across people who use the speed and people who do not. That also
+      speeds up the effects v21 times off play_time rather than uptime - screen
+      tone, flash, shake, picture moves, fog. The trade is that the trainer card
+      no longer measures seconds at the wall; v17 chose the other way, hardcoding
+      /40 in its load screen, but had no comparable-run-times reason to.
       Not sped up either way: audio, and the core effects still measured in
       frames (transitions, the Exp-full flash, window flashes).
+
+[x] Fullscreen moved to F11 ("[024] Fullscreen Key.rb"). Nothing else uses F11 -
+      mkxp-z keeps F1 for its keybinding menu and F12 for soft reset, Essentials
+      takes F5-F9. Alt+Enter could NOT be removed: mkxp-z handles it in its own
+      event loop before Ruby sees the key, and mkxp.json exposes only
+      anyAltToggleFS (whether the right Alt counts too), its own comment saying
+      fullscreen "can always be toggled with Alt-Enter during runtime". Short of
+      a custom mkxp-z build it stays as a second way in. The collision with the
+      Alt speedup is gone though: [023] cycles on Alt release and skips the
+      cycle if Enter was pressed during the hold, so Alt+Enter only toggles
+      fullscreen.
