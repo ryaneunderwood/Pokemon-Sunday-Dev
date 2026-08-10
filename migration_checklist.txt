@@ -1493,7 +1493,10 @@ GEN 9 INTO TRAINERS, AND THE PLZA MEGA TRAINERS
       to be drawn, so adding plugins or lines keeps it in time. BGM moved to
       Credits_Final (what v17 used), measured at 122.204s by ffprobe, targeted
       at 121.5s -> 24.76 px/s, landing 0.7s inside the music.
-[ ] credits.txt in this repo is NOT this game's credits - it names "Zerokid" as
-      lead developer and lists assets this game does not use (Sevii Islands map,
-      Jessie and James sprites). Not imported. Decide whether any of it applies
-      and, if so, what belongs in Settings.game_credits.
+[x] credits.txt deleted from this repo. It was not this game's credits - it
+      named "Zerokid" as lead developer and listed assets this game does not
+      use (Sevii Islands map, Jessie and James sprites, Officer Jenny). Origin
+      unknown; Ryan did not recognise it. Recoverable from commit ef8a811 if it
+      turns out to matter. Nothing was imported from it, and nothing pointed at
+      it - the game's credits are Settings.game_credits plus the automatic
+      plugin roll.
