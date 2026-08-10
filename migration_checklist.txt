@@ -1133,11 +1133,30 @@ SPRITE AUDIT
 
 REMAINING ART GAPS (all Fakemon or custom forms; nothing canon is broken)
 ------------------------------------------------------------------------
-[ ] Back - LEOTERYGI, PALOSSNOW, ROOBOP, SNOWYGAST (4 species).
-[ ] Back shiny - those same 4, plus ACTINOTOX, TARFELON, WIKINIKI and SPUDNICK
-      (8 total).
-      Spudnick's front shiny and back were drawn on 2026-08-09, so it is no
-      longer the "everything missing" case; only its back shiny is outstanding.
+[ ] Back - LEOTERYGI, PALOSSNOW, ROOBOP, SNOWYGAST (4 species). These are the
+      last hand-drawing job in the game's art; everything else is derivable or
+      done.
+[x] Back shiny - CLOSED for everything that has a back.
+      [2026-08-10] SPUDNICK finished by Ryan (front shiny, back, back shiny,
+      follower), and ACTINOTOX / TARFELON / WIKINIKI derived from their front
+      pairs. The remaining 4 back shinies are exactly the 4 species above with
+      no back to recolour, so nothing derivable is left.
+      Method note worth keeping: a single fitted hue/chroma rotation was tried
+      first and rejected. Only Spudnick's shiny is a uniform LCh shift (measured
+      dHue -38.5 +-5.7, matching the -40.8 Ryan used). Tarfelon scatters +-54
+      degrees and Wikiniki +-78 because they were recoloured by hand, so a
+      fitted shift would have been wrong. The per-colour map assumes nothing.
+      Coverage decided the quality: Wikiniki 100% of back colours present in the
+      front map (fully exact), Tarfelon 90%, Actinotox only 33% - its back
+      carries shading its front never uses. The uncovered colours take the
+      nearest front colour's DELTA rather than its value, so tones that round
+      together stay distinct; all three kept their colour counts exactly.
+      Tool: tools/derive_shiny_from_front.ps1 (was derive_shiny_icons.ps1, now
+      takes -Set so it serves Icons and Back alike).
+      tools/apply_hue_chroma.ps1 implements GIMP's Hue-Chroma in CIE LCh(ab)
+      against D50 - not HSV, and not D65 - with a -Verify mode that proves a
+      shift against a reference before it is applied. Verified against Ryan's
+      Spudnick front and back at worst 1 per channel.
 [x] Shiny icons - CLOSED, see the section below. All 46 derived from the
       battler palettes, including HOVEON and SPUDNICK, which the earlier entry
       had listed as needing hand-drawing.
