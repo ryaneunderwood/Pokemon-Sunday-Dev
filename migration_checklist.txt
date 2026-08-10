@@ -1202,6 +1202,32 @@ FOLLOWING POKEMON EX 2.5.1 INSTALLED
         MenuHandlers keys on the option symbol, so this replaces FPEX's row.
       Untested in game like everything else here.
 
+EBDX BATTLE FIXES
+-----------------
+[x] Blank strip at the end of every trainer battle. pbShowOpponent slides the
+      defeated trainer in by calling moveEntireScene(-6, -1) once per frame for
+      20 frames, panning the whole camera 120px left and 20px up. Backdrops are
+      384px wide - EBDX's own size, and all 52 custom ones match - so the pan
+      runs off the end of the image.
+      Fixed by EBDX's own switch: USE_TRAINER_OUT_OF_PLACE_HOTFIX false -> true
+      in [003] Config/Config.rb. The pan is skipped and only the trainer sprite
+      moves. Safe because pbShowOpponent and pbHideOpponent share the flag so
+      they stay symmetrical, and because those two are the ONLY horizontal scene
+      pans in the plugin - every other moveEntireScene call passes x = 0.
+      Not a backdrop-size problem: 384x308 matches the 18 stock backdrops, the
+      screen is the stock 512x384, and the VS bar is 768px wide.
+[x] HP bars draining too fast. EBDX eases the bar by 1/10 of the remaining
+      distance per frame, emptying a full bar in about a second. NOT a bug - the
+      divisor is framerate-compensated (10 * Graphics.frame_rate/40) so the
+      speed is constant in wall-clock terms - just a pace, and hardcoded in
+      DataBoxEBDX#update with no config entry.
+      [001] Battle/[011] EBDX Sunday Tweaks.rb now steps the HP itself at
+      HP_DRAIN_SLOWDOWN (3.0) times the divisor, then hides @animatingHP from
+      EBDX's own stepper for that frame so it cannot advance twice. Roughly
+      twice as long end to end. Not exactly proportional: once the remaining
+      difference falls below the divisor, the floor/ceil guarantees 1 HP per
+      frame regardless, so the tail is unaffected.
+
 SHINY PARTY ICONS DERIVED
 -------------------------
 [x] 46 missing shiny icons generated from the battler palettes, closing the
