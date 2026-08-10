@@ -1133,33 +1133,74 @@ SPRITE AUDIT
 
 REMAINING ART GAPS (all Fakemon or custom forms; nothing canon is broken)
 ------------------------------------------------------------------------
-[ ] Back / Back shiny - SPUDNICK (everything), LEOTERYGI, PALOSSNOW, ROOBOP,
-      SNOWYGAST (both), ACTINOTOX, TARFELON, WIKINIKI (shiny only). Unchanged
-      from the Graphics & Art section above.
-[ ] Shiny icons - 33 forms, all Megas whose normal icon came from v17 (v17 had
-      no shiny party icons at all). Derivable from the shiny front sprite's
-      palette rather than hand-drawn. Two exceptions: SPUDNICK has no shiny
-      front to derive from, and HOVEON's normal and shiny fronts are different
-      drawings (27% palette vote purity), so it needs hand-drawing.
+[ ] Back - LEOTERYGI, PALOSSNOW, ROOBOP, SNOWYGAST (4 species).
+[ ] Back shiny - those same 4, plus ACTINOTOX, TARFELON, WIKINIKI and SPUDNICK
+      (8 total).
+      Spudnick's front shiny and back were drawn on 2026-08-09, so it is no
+      longer the "everything missing" case; only its back shiny is outstanding.
+[x] Shiny icons - CLOSED, see the section below. All 46 derived from the
+      battler palettes, including HOVEON and SPUDNICK, which the earlier entry
+      had listed as needing hand-drawing.
 [ ] Followers - 40 entries: the 23 Fakemon, the 8 Kiraki regional forms
       (Sentret/Furret/Yanma/Taillow/Swellow/Skarmory/Galefront/Vivillon), the 3
       custom forms (Arceus Light, Silvally Light, Rotom Lamp), and POLTCHAGEIST,
       which is the only canon species missing one - the pack ships a SINISTCHA
       follower but no POLTCHAGEIST.
 
-FOLLOWING POKEMON PLUGIN - BLOCKED, NEEDS A MANUAL DOWNLOAD
------------------------------------------------------------
-[ ] Following Pokemon EX (Golisopod User, now maintained by nononever) is the
-      standard v21.1 follower plugin, and the Gen 9 Pack's follower art is
-      shipped specifically for it. It is NOT on GitHub - searched repositories
-      and code search, no mirrors or forks exist. It is distributed only through
-      Eevee Expo / MediaFire, which cannot be fetched non-interactively:
+FOLLOWING POKEMON EX 2.5.1 INSTALLED
+------------------------------------
+[x] The v21.1 port by nononever, from Golisopod User's original. Worth recording
+      that it is NOT on GitHub - repository and code search both come back
+      empty, no mirrors or forks. It ships only through Eevee Expo / MediaFire:
         https://eeveeexpo.com/resources/1464/
         https://www.mediafire.com/file/dp44icuwywvqwfx/Following_Pokemon_EX.rar/
-      Once the .rar is in ~/Downloads the install is: extract its Plugins/
-      folder into Plugins/, and the art is already in place from the pack
-      import - Graphics/Characters/Followers is populated with 1,365 sprites
-      and Followers shiny with 1,352.
+      so it cannot be fetched non-interactively and has to be downloaded by
+      hand whenever it is updated.
+[x] Copied: the plugin scripts, and the four graphic sets this tree had none of
+      - Levitates (264), Levitates Shiny (261), Swimming (1019), Swimming
+      Shiny (1074).
+[x] Followers / Followers shiny merged ADD-MISSING ONLY. The Gen 9 Pack art
+      already installed is the better set and the plugin's copy is older; this
+      added the 14 files each was missing and overwrote nothing.
+[x] Data/Animations.rxdata deliberately NOT copied, and this is the trap to
+      remember. The plugin references its animations by INDEX (9, 10, 12, 13,
+      15, 17, 29, 30), so the file matters - but this tree already carries them
+      at exactly those indices, same names, same Follower_Emote /
+      Follower_ComeInOut graphics (byte-identical). Its copy also holds the
+      grass-rustle volume fix, which overwriting would have silently undone.
+[x] EBDX compatibility verified rather than assumed. The plugin patches
+      EliteBattle.follower; both symbols it needs exist in the installed EBDX -
+      USE_FOLLOWER_EXCEPTION (Config.rb, true) and battle.scene.firstsendout,
+      which EBDX's own module uses identically. Its 7-argument call to
+      GameData::Species.check_graphic_file matches v21's signature, subfolder
+      last. Load order resolves with no dependency declaration because
+      "Elite Battle DX" sorts before "Following Pokemon EX".
+[x] All 17 script files pass ruby -c; no duplicate plugin names.
+[ ] TO TEST IN GAME: the plugin binds JUMPUP to toggle the follower and
+      JUMPDOWN / AUX2 to cycle the party. This game's field-item hotkeys go
+      through Input.triggerex? scancodes so they should not collide, but that
+      is unconfirmed.
+
+SHINY PARTY ICONS DERIVED
+-------------------------
+[x] 46 missing shiny icons generated from the battler palettes, closing the
+      whole category - Icons and Icons shiny are now both at zero missing.
+      Normal and shiny FRONT sprites are the same drawing in different colours,
+      so comparing them pixel by pixel yields a colour table; icon colours are
+      matched to the nearest battler colour by RGB distance and take that
+      pair's recolour.
+      Two things the measurements forced:
+      - Some shiny sheets are the same drawing nudged a pixel or two, which
+        pairs edge pixels against background. The best-overlap offset is found
+        first: Blastoise went 52.7% -> 100% at shift (-4,2).
+      - Icon palettes here share NO colours with their battlers, so substituting
+        the matched colour outright collapsed distinct icon tones into one -
+        it flattened the shading in 43 of 46, Eternatus worst at 13 colours down
+        to 6. Applying the pair's DELTA instead preserves them: 45 of 46 keep
+        every colour.
+      Least certain, worth a look: Butterfree (71%) and Hoveon (87%), which fall
+      back to palette-frequency pairing, and Zygarde form 5 (89%).
+      Tool: tools/derive_shiny_icons.ps1
 
 OVERWORLD EVENT SPRITES CONSOLIDATED ONTO THE FOLLOWER ART
 ----------------------------------------------------------
