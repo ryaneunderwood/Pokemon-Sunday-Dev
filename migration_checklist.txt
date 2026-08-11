@@ -2020,3 +2020,59 @@ GEN 9 INTO TRAINERS, AND THE PLZA MEGA TRAINERS
         anything was written, the lowest reaching row 19 of 32, well clear of
         the face. Verified afterwards: 0 pixels changed outside the table, so
         faces, hair and outlines are untouched.
+
+================================================================================
+[2026-08-11] PLAYER CHARACTER SKIN TONE
+================================================================================
+[x] Six skin tones for the player character, picked on a vertical slider right
+      after "Which will you play as?". Applied to every graphic the character
+      is drawn from - walk, run, cycle, surf, dive, fish, fish while surfing,
+      town map icon, battle sprite, ball-throwing frames. Still only character
+      1 or 2; the existing sprites are repainted, no new trainer types.
+      - One hook does all of it. Every player graphic loads through
+        RPG::Cache.load_bitmap (PngAnimatedBitmap and GifBitmap both call it,
+        and Sprite_Character, IconSprite and the trainer sprite code go through
+        those), so the plugin swaps the folder for Skin/<tone>/ there.
+        RPG::Cache.retain is hooked too so the charset still gets pinned. The
+        redirected path is a different string, so the cache keys the recoloured
+        bitmap separately and there is nothing to invalidate.
+      - The art is built ahead of time by tools/skin_tones.py, not recoloured
+        in game. Two reasons. Speed: the throwing sprites are 800x160, 128,000
+        px each, and per-pixel work in RGSS would show on every load.
+        Correctness: the same RGB is skin in one place and not in another, even
+        within one file - (248,224,176) is the skin highlight AND the satchel
+        highlight, (136,96,72) his skin shade AND the satchel outline,
+        (116,54,54) the girl's under-eye shading AND all her hair, (168,120,64)
+        the boy's hair sitting in the skin hue range. Proved by masking each
+        candidate colour magenta and looking; a flat colour table repaints bags
+        and hair.
+      - So the mask comes from connected-component analysis, done once offline:
+        flood fill over that file's skin ramp colours, keeping only components
+        containing a colour verified skin-only there. The satchel is a separate
+        component sharing the highlight, so it survives. All 22 files were
+        checked by eye at the deepest tone.
+      - Ramp colours carry an explicit slot position, not one derived from
+        luminance, because the ramps differ in length - the girl's charset has
+        no dark step, her outline being black. Noted in passing: the "_offset"
+        charsets are exactly the others times 255/248, saved through something
+        that rescaled 0-248 onto 0-255.
+      - Stored on Player, which Marshal saves, so no new save data. A save from
+        before this reads back nil, and nil means original art, so old saves are
+        not repainted behind the player's back.
+      - Intro edit by tools/add_skin_tone_prompt.rb: Map1 ev1, between Erase
+        Picture and pbTrainerName - after the character picture clears, before
+        naming, outside the choice branches so "Go back" never reaches it.
+        Anchored on pbTrainerName, and it refuses to run unless it first finds
+        exactly two pbChangePlayer branches. Map22 ev4 also calls
+        pbChangePlayer but is Essentials' stock Oak intro, left alone.
+      - Verified: Map001 round trips byte-identically, 219/219 plugin files
+        pass ruby -c, plugin file list == generator file list == the 132 files
+        on disk.
+[ ] NOT RUN IN GAME. The picker's layout, controls and sprite positions have
+      only been checked against the API definitions in Data/Scripts.rxdata.
+      Worth a look on the next playthrough of the intro.
+[ ] Pre-existing outfit mismatch, noticed while doing the above and not
+      touched: boy_surf.png and both POKEMONTRAINER_*_back.png throwing
+      sprites still wear the stock red cap and jacket, while the front sprites
+      and every other charset wear this game's green cap and vest. Skin tone
+      now matches across all of them; the outfit never did.
