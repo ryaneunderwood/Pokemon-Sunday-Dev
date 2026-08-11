@@ -2188,3 +2188,30 @@ GEN 9 INTO TRAINERS, AND THE PLZA MEGA TRAINERS
       - STILL NEVER RUN IN GAME. Layout was verified by re-implementing the
         same arithmetic in Python over the real sprites and rendering a mock,
         not by launching the game.
+      - REVISION, same session: the tone name and "n of 6" are gone, and the
+        prompt moved to the bottom in the game's own speech box
+        (pbCreateMessageWindow, letterbyletter off) instead of two hand-built
+        windows. Boxes moved up to y=80 to stay centred in what is left above
+        it. The message window is kept OUT of @sprites and disposed with
+        pbDisposeMessageWindow, because that is what clears
+        $game_temp.message_window_showing - leaving that flag set would follow
+        the player onto the map.
+[x] Graphics/Titles/pokelogo2.png redrawn: "SUNDAY VERSION" was an engraved
+      serif with a red/blue chromatic fringe, 67 colours, 1x pixels with
+      partial alpha. Now a chunky bubble face on a flat baseline, 20 colours,
+      alpha 0/255 only, and 0 of 23460 broken 2x2 blocks on the SAME grid
+      origin pokelogo.png uses. Same canvas, same rows 172-191; width 364 vs
+      373 because spacing was matched to the original rather than the glyphs
+      stretched to fill.
+      - Both ramps sampled out of pokelogo.png's 31544 opaque pixels and keyed
+        to the absolute image row, so the gradient runs through the whole word
+        rather than restarting per letter.
+      - ONE outline, not the real logo's blue-plus-black. Two rings cost 4 of
+        the 10 available rows and the leftover 6-row body needs ~17 columns a
+        letter, which is 442 px on a 408 px canvas. The single ring's gradient
+        ends near-black on the bottom row instead.
+      - tools/redraw_pokelogo2.py; glyphs are a FONT table of #/. rows authored
+        at 1x and scaled x2 NEAREST, so the block property is structural.
+      - Title Screen.rb:314-322 draws the combined bitmap at zoom 1.2, so the
+        2x blocks land at 2.4x on screen. Non-integral, but pokelogo.png gets
+        exactly the same treatment, so the two words stay consistent.
