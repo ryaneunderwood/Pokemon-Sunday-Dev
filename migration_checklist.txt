@@ -50,7 +50,6 @@ COMPLETED
 TODO — PBS Data
 ---------------
 [x] Missing Gen 9 wild encounters added and verified
-[ ] Smoke test the native event port in game
 [x] Encounters PBS migrated, 57 maps
 [x] Encounter settings updated in scripts
 [x] map_metadata.txt rewritten, 209 per-map entries
@@ -103,7 +102,6 @@ TODO — Graphics & Art
 [x] Alternate-form sprites imported, 178 files
 [x] Arceus and Silvally forms renumbered for v21
 [x] 20 orphaned stock female back sprites deleted
-[ ] Gen 5 animated back sprites not yet sourced
 [x] Party icons created for every Fakemon
 [x] Shiny icons complete, all 46 derived
 [x] Fakemon front, icon and shiny art complete
@@ -189,11 +187,6 @@ ASSETS
 [x] Battlebacks: 116 maps rendered with no background
 [x] CHANELER trainer sprite renamed to match PBS
 [x] 13 Graphics/Pictures restored
-
-DELIBERATELY NOT CHANGED
-------------------------
-[ ] Badge stat boosts stay disabled, Ryan's call
-[ ] Data/*.dat deletions left alone, Ryan's call
 
 STILL OPEN
 ----------
@@ -297,12 +290,12 @@ SPRITE AUDIT
 
 REMAINING ART GAPS
 ------------------
-[ ] Back and Back shiny: LEOTERYGI, PALOSSNOW, ROOBOP, SNOWYGAST
+[ ] Back art: LEOTERYGI, PALOSSNOW, ROOBOP, SNOWYGAST
 [x] Back shiny closed for everything that has a back
 [x] Shiny icons closed, all 46 derived from battlers
 [ ] Followers missing 37 entries, Followers shiny 40
 [x] Spudnick complete on all eight sets, first Fakemon
-[ ] Canon Hisui species still missing front and back art
+[x] Audit was blind to .PNG files, fixed
 
 FOLLOWING POKEMON EX 2.5.1 INSTALLED
 ------------------------------------
@@ -413,3 +406,9 @@ OVERWORLD EVENT SPRITES CONSOLIDATED ONTO FOLLOWER ART
 [x] Spudnick follower and levitate shinies derived
 [x] tools/derive_shiny_from_front.py added, PowerShell cannot run here
 [ ] Retire derive_shiny_from_front.ps1 if Windows is done
+
+TO DO — GAMEPLAY CONTENT
+========================
+[ ] Disperse the Mega Stone trainers around the region
+[ ] Add the Celebi paradox quest
+[ ] Add the Ogerpon masks to the museum
