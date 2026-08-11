@@ -1821,3 +1821,28 @@ GEN 9 INTO TRAINERS, AND THE PLZA MEGA TRAINERS
         heals about 130 HP at level 100 and reverting takes it back off without
         fainting. That effect is why Game Freak froze HP on Megas; it is kept
         on purpose.
+[x] Map 213 is Route 4, not Route 18, and Route 17 is gone. The last commit
+      left map_metadata disagreeing with MapInfos and with the connections:
+      MapInfos called 213 "Route 4" and it is wired to the Route 4 segments
+      124 and 127, while metadata still called it "Route 18" at town map
+      0,9,1, and the in game name comes from metadata.
+      - PBS/map_metadata.txt [213] renamed to Route 4 and moved to 0,11,10,
+        which is two squares left of Silver Town (0,13,11) and one row above
+        the Route 4 line that runs 8,11 to 12,11. town_map.txt already had an
+        unnamed Point at exactly 11,10; it is now labelled Route 4.
+      - Parameters copied from 124 and 127 verbatim: Outdoor, ShowArea,
+        BattleBack = battlebgRoutes1, Bicycle = true. No Weather line, because
+        neither Route 4 segment has ever had one - checked in this tree and in
+        v17's own PBS/metadata.txt.
+      - Dropped "MapSize = 5," which came across from v17 and is malformed:
+        MapSize takes a width and then a string of 0/1 marking which squares
+        of a multi part map exist, and the string was empty.
+      - [214] Route 17 deleted outright. It has never had a Data/Map214.rxdata
+        in either tree, and the previous commit already removed the three map
+        connections that pointed at it.
+      - The Route 17 and 18 labels in town_map.txt went with them, seven Points
+        at 9,1 to 13,1 and 8,2 to 9,2. Checked first that no other map's
+        MapPosition lands on any of the seven; only 213 and 214 did.
+      - Still drawn on mapRegion0.png: the region image has route shapes in
+        that top left area that now have no map or label behind them. Cosmetic,
+        left for Ryan.
