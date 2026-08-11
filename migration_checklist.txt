@@ -2121,3 +2121,38 @@ GEN 9 INTO TRAINERS, AND THE PLZA MEGA TRAINERS
       - tools/recolour_back_sprites.py renamed recolour_player_sprites.py and
         made re-runnable; a job whose source colours have gone reports as
         already applied.
+[x] Recolours confined to the part of the sprite they meant. Three of the four
+      things Ryan caught were one underlying mistake: a colour doing two jobs
+      on one sheet, and a flat swap repainting both.
+      - His (200,96,72)/(248,112,88) are his cap AND his lips AND the patch on
+        his chest; all three had gone green. Her (232,232,248) is her hat crown
+        AND the whites of her eyes; her eyes had gone periwinkle.
+      - A job now takes a row window and is applied to connected runs, not
+        pixels, so a shape is never half changed. Windows read off the
+        components: his cap runs start at rows 62-76 against lips at 108/112
+        and chest at 120+, so <=100. Her hat crown starts 62-72 against eye
+        whites at 82-104, so <=80. Her hat brim starts 64-92, overlapping the
+        crown's window, so brim and band are a separate job at <=95 - one
+        threshold could not serve both. Her top starts at 136+ against the same
+        colour on her hat trim at 72-101, so >=100.
+      - The two back sprites were restored from before the first recolour and
+        rebuilt from the tool, so what is committed is the tool's output rather
+        than a patch over a mistake.
+[x] The reflective spot found, after I had failed to. It is a specular on her
+      thigh, 8 px at (52,88) in POKEMONTRAINER_Leaf.png, painted in the same
+      pure white as her eyes and shoe highlights - which is why searching by
+      colour and by flood fill both missed it, her eyes being surrounded by
+      skin exactly as it is.
+      - skin_tones.py now takes a named point: the run of that colour
+        containing it joins the skin mask at t=1.0, and nothing else of that
+        colour moves. Runs (255,226,202) at the lightest tone to (140,92,62) at
+        the deepest; eyes and shoes verified unchanged at three tones.
+      - Worth remembering: "search the colour" and "flood fill from a seed"
+        both fail when the same colour is used for two things that are both
+        embedded in the same region. A named point is the fallback.
+[x] Her top on the throwing sheet gains its second shade, (112,160,192) ->
+      (193,193,193), the grey her front sprite uses. It had been left flat.
+[x] Her hat is one colour everywhere. All eight charsets and the town map icon
+      moved from pink to the battle sprites' periwinkle. This REVERSES the
+      earlier entry that closed the split as "close enough" - Ryan changed his
+      mind after seeing it; do not restore the pink.
