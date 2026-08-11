@@ -8,43 +8,25 @@ commit messages of both repos. Look there before redoing anything.
 
 OPEN
 ----
-[ ] Smoke test the native v17 event port in game
-[ ] Gen 5 animated back sprites not yet sourced
 [ ] Furfrou form persistence in the PC
-[ ] Data/PluginScripts.rxdata stale, self-heals on next debug launch
-[ ] Full in-game smoke test, nothing runs headless
-[ ] Rock Smash items not ported, never fired in v17
-[ ] Battle backdrop bases inferred from names, eyeball them
-[ ] EBDX untested in game, first launch must be debug
 [ ] Back and Back shiny art missing, four Fakemon
       LEOTERYGI, PALOSSNOW, ROOBOP, SNOWYGAST
-[ ] Followers art missing, 37 entries
-      ACTINOTOX, ARCEUS_19, CAULDREAD, CAULDREAM, CHORDALUX, CHROMASP, CLOWD,
-      CRUCIBLEAK, FURRET_1, GALEFRONT, GALEFRONT_1, HOVEON, LEOTERYGI,
-      MEOWSTIC_1, MEOWSTIC_3, NIMBEE, PALOSSNOW, PHOTEON, PHOTOWYRM,
-      ROCKRUFF_1, ROOBOP, ROTOM_6, SENTRET_1, SILVALLY_19, SKARMORY_2,
-      SNOWYGAST, STORRM, SWELLOW_1, TAILLOW_1, TARFELON, UNOWN_10, WIKINIKI,
-      YAMSELIA, YANMA_1, YIMBEE, ZYGARDE_3, ZYGARDE_5
-[ ] Followers shiny missing, those 37 plus three more
+[ ] Followers art missing, 28 listed below
+      ACTINOTOX, CAULDREAD, CAULDREAM, CHORDALUX, CHROMASP, CLOWD,
+      CRUCIBLEAK, FURRET_1, GALEFRONT, GALEFRONT_1, HOVEON, LEOTERYGI, NIMBEE, PALOSSNOW, PHOTEON, PHOTOWYRM,
+      ROOBOP, ROTOM_6, SENTRET_1, SKARMORY_2,
+      SNOWYGAST, STORRM, SWELLOW_1, TARFELON, WIKINIKI,
+      YAMSELIA, YANMA_1, YIMBEE
+[ ] Followers shiny missing, those 28 plus three
       OGERPON_4, PROTOSOLARIA, VIVILLON_20
-[ ] Test the Following Pokemon toggle keys
-[ ] Eyeball the consolidated overworld Pokemon sprites
 [ ] Eight Fakemon have no cry, none in v17
       SNOWYGAST, PALOSSNOW, TARFELON, ROOBOP, WIKINIKI, ACTINOTOX, LEOTERYGI,
       SPUDNICK
-[ ] Platinum Heights versus the drawn art, open question
-[ ] Pre-existing outfit mismatch, noticed but not touched
-[ ] Character and skin tone picker never run
-[ ] Extra/13.PNG still never shown, index 6
-[ ] Retire derive_shiny_from_front.ps1 if Windows is done
 [ ] Disperse the Mega Stone trainers around the region
 [ ] Add the Celebi paradox quest
 [ ] Add the Ogerpon masks to the museum
+[ ] Gen 9 items availability
 
-DELIBERATELY NOT CHANGED — do not action these
-----------------------------------------------
-[ ] Badge stat boosts stay disabled, Ryan's call
-[ ] Data/*.dat deletions left alone, Ryan's call
 
 COMPLETED
 ---------
@@ -313,6 +295,9 @@ REMAINING ART GAPS
 [x] Back shiny closed for everything that has a back
 [x] Shiny icons closed, all 46 derived from battlers
 [x] Spudnick complete on all eight sets, first Fakemon
+[x] Unown 10 shiny follower and levitate derived from siblings
+[x] Kiraki Taillow shiny follower and both swimmers built
+[x] Swimming Arceus renumbered; form 10 misnamed, 18 missing
 [x] Audit was blind to .PNG files, fixed
 
 FOLLOWING POKEMON EX 2.5.1 INSTALLED
