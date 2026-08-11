@@ -2160,3 +2160,31 @@ GEN 9 INTO TRAINERS, AND THE PLZA MEGA TRAINERS
       moved from pink to the battle sprites' periwinkle. This REVERSES the
       earlier entry that closed the split as "close enough" - Ryan changed his
       mind after seeing it; do not restore the pink.
+[x] The intro's character choice is one picker screen instead of three steps.
+      "Which will you play as?" + Show Picture "Trainers" + the ["1","2","Go
+      back"] choice list + the separate pbChooseSkinTone call all collapse into
+      Plugins/.../[007] Intro/[003] Character Select.rb, reached from Map1 ev1
+      page 1 by a single Conditional Branch on !pbChooseCharacter. Left/right
+      move a box between the two figures, up/down move the tone; B backs out,
+      which is what "Go back" did, so the jump to the "randomizer" label is
+      preserved.
+      - The figures are the front BATTLE sprites, not Graphics/Pictures/
+        Trainers.png. That composite is exactly those two sprites pasted side
+        by side (the boy half is pixel identical, the girl half differs in 64
+        visible px) with the "1" and "2" baked underneath. Drawing the sprites
+        instead loses nothing and gains the whole point: they load through
+        RPG::Cache, so PlayerSkinTone.redirect repaints them live as the tone
+        moves. Trainers.png is now unused by this event and was left alone -
+        the numbers did not need erasing because the picture is not shown.
+      - Boxes are SIZED FROM THE ART at runtime (content_rect scans the alpha),
+        and each figure is centred and floored by its drawn extent rather than
+        its bitmap, because Red pads 20 px left / 28 right and Leaf pads 24/24.
+        Centring the bitmaps would have left the boy sitting off inside his box.
+      - Background is a translucent scrim, not an opaque plane: the intro's own
+        picture 1 (introbg) is still on screen underneath.
+      - Erase Picture 3 was removed too. tools/character_select_prompt.rb
+        checks that command 83 was the only Show Picture 3 on the page rather
+        than assuming it.
+      - STILL NEVER RUN IN GAME. Layout was verified by re-implementing the
+        same arithmetic in Python over the real sprites and rendering a mock,
+        not by launching the game.
