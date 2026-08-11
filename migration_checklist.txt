@@ -2276,3 +2276,29 @@ GEN 9 INTO TRAINERS, AND THE PLZA MEGA TRAINERS
       behind. The two tool headers still quote "Which" because they are
       describing what the event used to contain; that is history, not a stale
       string.
+[x] Spudnick's Followers and Levitates shinies derived from the front battler
+      pair, same as the icons and backs were.
+      - The front pair maps at purity 1.0000 across 28 colours and 6308 px -
+        every normal colour has exactly one shiny colour, no ambiguity at all.
+      - Followers: all 21 colours have an exact entry, 100% coverage, and all
+        21 land inside the front shiny's palette. Levitates: 20 exact, plus
+        (232,232,248) x 848 px, a pale line under each frame that the follower
+        sheet does not have. Nearest is (238,241,248) at distance 10.8, and it
+        is SHIFTED by that pair's delta rather than substituted, so it stays
+        its own colour: (217,236,253).
+      - Verified after writing: sizes and alpha byte-identical to the source
+        sheets, 21 colours in and 21 out on both (nothing collapsed), and zero
+        pixels left at their normal colour.
+      - The Followers shiny that was already there was STALE - it was the
+        shiny of the previous Spudnick design, a different creature entirely
+        (36 colours, 12120 px vs the new 21/15800). Overwritten. Levitates
+        Shiny had no entry at all.
+      - Note the folder names disagree on case: "Followers shiny" but
+        "Levitates Shiny" and "Swimming Shiny". The tool resolves every path
+        case-insensitively rather than trusting its own strings.
+[x] tools/derive_shiny_from_front.py added: a Python port of the .ps1, because
+      this machine has no PowerShell so the original cannot run. It adds the
+      Followers/Levitates/Swimming sets the .ps1 never covered, and refuses to
+      write below 0.95 purity. The .ps1 is still there as the Windows original
+      - if it is not being used on a Windows box any more it should go rather
+      than leaving one algorithm in two files.
