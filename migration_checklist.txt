@@ -1870,9 +1870,14 @@ GEN 9 INTO TRAINERS, AND THE PLZA MEGA TRAINERS
       "Diglett's Cave". It is two maps, 122 (36x40) and 132 (50x90), both
       named Diglett's Cave, both with encounter tables; both now carry the
       same footprint so either map's encounters light all three.
-      - A third Point had been lost in migration. v17's townmap.txt names
-        4,2 / 7,1 / 2,8; v21's town_map.txt had 7,1 as "Point=7,1,,,,,," with
-        the name dropped. Restored, which is the one above Lithium Town.
+      - The third Point, 7,1 above Lithium Town, was unnamed in v21 and is now
+        named. Correction to what the v21 commit message 9ebb16b7 says: it was
+        NOT lost in migration. Committed v17 also has "Point=7,1,,,,,," blank -
+        the name exists only in v17's working tree, as an uncommitted edit to
+        PBS/townmap.txt made after the migration. So the migration was faithful
+        and the name is a later change on the v17 side that v21 had not picked
+        up. Same outcome either way, v17 and v21 now agree on three, but the
+        provenance in that commit message is wrong.
       - MapPosition moved from 0,4,2 to 0,2,1, the top left of the three, and
         MapSize = 6,000001001000000000000000000000000000000000100000 - a 6x8
         box with 3 of 48 squares set, since 0s punch holes and the rectangle
