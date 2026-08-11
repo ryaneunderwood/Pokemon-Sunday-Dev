@@ -2098,10 +2098,26 @@ GEN 9 INTO TRAINERS, AND THE PLZA MEGA TRAINERS
       - Skin/<n>/ rebuilt afterwards, as it is generated from these files.
         Skin masks unchanged at 6188 and 8912 px, which shows the hat work did
         not disturb the connected-component analysis.
-[ ] Player 2's hat is two colours depending on where you look: pink on the
-      charset and town map icon, periwinkle on both battle sprites. The split
-      predates this work; the back sprite was matched to her front sprite so
-      the two battle sprites at least agree. Ryan to pick one for all four.
-[ ] boy_surf.png still has a stock red cap. v17's copy is red too, so there is
-      no green original to take - it needs the same recolour treatment the back
-      sprite got.
+[x] Player 2's hat being pink on the charset and icon but periwinkle on both
+      battle sprites is CLOSED, not a defect: Ryan judged them close enough at
+      this level of detail and confirmed matching the back sprite to her front
+      sprite was the right call. Do not "fix" this later.
+[x] boy_surf.png and boy_dive_offset.png given the green cap too. No judgement
+      needed: the fixed version was already in the tree, boy_surf_offset.png
+      being the same artwork with this game's palette. Diffing the three
+      palettes gives exactly six colours that differ, each with an identical
+      pixel count on both sides (1792, 2080, 1728, 1280, 224, 416), so the
+      mapping was read off rather than chosen.
+      - Table written in the offset scale; boy_surf is in the base scale, so it
+        is converted by 248/255 rather than typed twice.
+      - The fourth pair is not clothing. (120,64,64) -> (63,34,34) is the dark
+        skin slot: those two files shaded skin with a colour no other player
+        sprite used, which is why skin_tones.py had reported their dark slot
+        unused. Their recoloured count goes 1088 -> 2208, identical to
+        boy_surf_offset, so the tone system covers their shading for the first
+        time.
+      - Verified after writing: both palettes now differ from boy_surf_offset
+        by nothing at all, and no red remains in any boy sprite.
+      - tools/recolour_back_sprites.py renamed recolour_player_sprites.py and
+        made re-runnable; a job whose source colours have gone reports as
+        already applied.
