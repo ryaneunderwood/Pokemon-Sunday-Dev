@@ -2252,3 +2252,27 @@ GEN 9 INTO TRAINERS, AND THE PLZA MEGA TRAINERS
       lifted from the skin) - the scene itself calls pbCreateMessageWindow and
       the game draws the real thing. Do not read the mock's box as a preview of
       the windowskin.
+[x] The showcase's closing card is the new lettering. It was a chrome wordmark
+      off coollogo.com - the same word in a different face, so it dated the
+      moment the title lettering was redrawn. Now cropped straight out of
+      pokelogo2.png by tools/render_title_splash.py, which builds both Extra/
+      images since both go stale together.
+      - coollogo_com-23634138.png renamed to 14.png. The sort key is the first
+        digit run in the path, so 23634138 and 14 both land last - the rename
+        changes nothing about the order and only stops the filename claiming
+        something it no longer is. Title Screen.rb:857's comment updated.
+      - Canvas is the INKED box, 356x20, not padded. StarterShowcase centres
+        with ox = width/2, so screen x is 256 - width/2 = 78 and y is 182, both
+        even, which is what keeps the 2x blocks from being cut in half. Any
+        padding added later must keep both dimensions a multiple of 4.
+      - It is SMALLER than what it replaced (356x20 vs 490x56) and that is a
+        constraint, not a choice: doubling is 712 px on a 512 px screen, and a
+        non-integer scale breaks the 2x grid the redraw exists to honour.
+      - 13.PNG is STILL never shown; it sits at index 6 exactly where coollogo
+        used to leave it. Renaming it above 14 would put it on screen instead.
+[x] The picker prompt reads "Who will you play as?" rather than "Which". It
+      lives only in the scene now - the event's Text command was removed with
+      the choice list, and a scan of every Map*.rxdata confirms no copy is left
+      behind. The two tool headers still quote "Which" because they are
+      describing what the event used to contain; that is history, not a stale
+      string.
