@@ -1865,24 +1865,32 @@ GEN 9 INTO TRAINERS, AND THE PLZA MEGA TRAINERS
         flash Victory Road's square for Platinum Heights encounters, and the
         region cursor will read "Victory Road" in the bottom half of the map.
         Relabelling 25,16 was not done; Ryan's call.
-[ ] Diglett's Cave town map footprint - decided against, recorded so it is not
-      re-litigated. It is two maps, 122 (36x40) and 132 (50x90), both named
-      Diglett's Cave and both anchored at 0,4,2, both with encounter tables.
-      - Map 132 surfaces on four separate town map squares: Drilbur's Tunnel
-        8,0; Lithium Town 7,2; Route 2 2,4; Route 3 4,3. Map 122 surfaces only
-        on Route 3, four mouths, all into map 121.
-      - MapSize can express that, since 0s punch holes in the rectangle, but
-        the rectangle is anchored at MapPosition and only extends right and
-        down, so it would need MapPosition moved to 0,2,0 and a 7x5 shape with
-        5 squares set out of 35.
-      - The reason not to: the region map cursor never reads the shape string.
-        It only does @map_x += (player.x * sqwidth / map.width).floor, so on a
-        50x90 map inside a 7x5 box the marker sweeps all 35 squares including
-        the 30 holes, reading Route 2, Argon City and so on. Only the Pokedex
-        Area page honours the 0s. At 1x1 both are coarse but never wrong.
-      - Cheap partial if it is ever wanted: map 122 alone could take
-        MapSize = 1,11 at 0,4,2, covering 4,2 and Route 3 at 4,3, which is
-        exactly where its four mouths are.
+[x] Diglett's Cave flashes on all three of its town map squares. Ryan's call:
+      not the four surface exits, but the three Points that literally say
+      "Diglett's Cave". It is two maps, 122 (36x40) and 132 (50x90), both
+      named Diglett's Cave, both with encounter tables; both now carry the
+      same footprint so either map's encounters light all three.
+      - A third Point had been lost in migration. v17's townmap.txt names
+        4,2 / 7,1 / 2,8; v21's town_map.txt had 7,1 as "Point=7,1,,,,,," with
+        the name dropped. Restored, which is the one above Lithium Town.
+      - MapPosition moved from 0,4,2 to 0,2,1, the top left of the three, and
+        MapSize = 6,000001001000000000000000000000000000000000100000 - a 6x8
+        box with 3 of 48 squares set, since 0s punch holes and the rectangle
+        only ever extends right and down from MapPosition.
+      - Safe to move the anchor: of the sixteen readers of town_map_position,
+        every one outside the region map and the Area page uses only [0], the
+        region number - the regional form handlers, pbGetCurrentRegion, the
+        phone, the Gen 9 Pack. Only UI_RegionMap and pbGetEncounterPoints read
+        x and y, plus Ryan's own Poke Scan plugin, which reimplements the Area
+        page maths and so picks this up for free.
+      - Verified by simulating pbGetEncounterPoints against the edited PBS:
+        exactly 4,2 / 7,1 / 2,8 light for both maps, nothing dropped for want
+        of a defined Point.
+      - Known cost, accepted: the region map cursor never reads the shape
+        string, only @map_x += (player.x * sqwidth / map.width).floor, so
+        inside the cave the "you are here" marker now roams the 6x8 box and
+        will sit on holes labelled Route 2, Route 3, Lithium Town and so on.
+        Previously it was pinned to 4,2 - coarse, but never wrong.
 [x] Region map image ported. v17 kept it at Graphics/Pictures/mapRegion0.png;
       v21 moved every UI graphic into Graphics/UI/<screen>/ and UI_RegionMap
       loads "Graphics/UI/Town Map/" + the Filename field from each region
