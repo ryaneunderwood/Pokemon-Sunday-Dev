@@ -1,2304 +1,415 @@
 Pokemon Sunday v17 -> v21 Migration Checklist
 ==============================================
-Last updated: 2026-08-09
+Last updated: 2026-08-11
+
+One line per item, ten words at most. The reasoning behind every one of these
+lived here until 2026-08-11 and is still in this file's git history, and in the
+commit messages of both repos. Look there before redoing anything.
 
 COMPLETED
 ---------
-[x] Custom Move Function Codes (D00-D06) — ported to v21 plugin scripts
-[x] Custom Abilities (5) — LIGHTSHOW, WITCHESBREW, SNOWFORT, DOWNPOUR, STELLARRADIATION
-[x] Custom Held Items (6) — CRANNBERRY, PRISMPLATE, LIGHTMEMORY, MAGNIFYINGGLASS, PINKGLITTER, LEGENDITE
-[x] Gen 9 Pack forms imported into PBS/pokemon_forms.txt
-[x] Custom Mega forms + Kiraki regional variants in PBS/pokemon_forms.txt
-[x] Breeding mechanics migration
-[x] #Ryan audit complete — all 53 scripts catalogued below
-[x] PBS/moves.txt — ~331 lines of new moves added but NOT YET COMMITTED
-[x] Castform Sandy Form (form 4, ROCK type) — PBS + battle script handler
-[x] Payday multiplier applied to Make it Rain (Gen 9 move)
-[x] Hail weather set to classic (Gen 9 Pack HAIL_WEATHER_TYPE = 0)
-[x] Snowfort ability handler fixed for v21 weather system
-[x] Legends Z-A / Champions Mega abilities — 23 canon abilities added to PBS
-[x] Redundant HiddenAbilities lines cleaned from all Mega forms
-[x] New abilities: MEGASOL, DRAGONIZE, PIERCINGDRILL, SPICYSPRAY — PBS + handlers
-[x] Battle Tower pools — 29 ZA Megas filled in, 19 Mega Dimensions DLC Megas added
-[x] Battle Tower pool item name fixes (RAICHUNITEX/Y, GRENINJITE, DRAGALGITE)
-[x] Regional form TutorMoves ported from v17 Script #237 (59 forms updated)
-[x] Yanma Kiraki form entry created in PBS
-[x] Darumaka Galarian TutorMoves updated with v17 moves
-[x] Missing TutorMoves added to 13 forms that had empty tutor lists in v21
-[x] Gen 9 moves distributed to 261 not-in-SV Pokemon + Fakemon (400 move additions)
-[x] Tidy Up added as egg move for Kiraki Sentret
-[x] [2026-04-21] Wait for Move's Completion hang fixed — Interpreter#update
-      now skips parallel-process events in the wait check so background
-      auto-graphic events (e.g. Map 044 ev4 "crumbled" sprite selector)
-      don't pin move_route_forcing true forever
-  [2026-08-04] REPLACED. That fix worked but caused the lag and glitching Ryan
-      reported. v21's command 210 is a map-wide barrier, and the old patch made
-      it ignore every trigger-4 event - which also broke the ordinary idiom
-      those same events use: force a route on self, wait for it, loop. Their
-      wait then returned instantly, so ~10 ambient scenery events (Map174/179/
-      193-200 and others) re-issued a move route every frame instead of every
-      fifth. A harness modelling v21's interpreter measured 60 cycles per 60
-      frames against a correct 12.
-      Each interpreter now records what it force-routed and waits for exactly
-      that, so scenery it never touched cannot block it and self-routing events
-      still pace themselves. Interpreter#update is wrapped, not copied.
-      The underlying event problem is unchanged and no longer matters: 17
-      parallel pages force a route then loop with nothing pacing them.
-  [2026-08-04] Map044 ev4 tidied up as well (tools/fix_map044_crumbled_event.rb):
-      guarded by self switch A so the crumbled graphic is applied once instead
-      of every frame forever. Safe only because the event has a single
-      unconditional page - Game_Event#refresh returns early when the resolved
-      page is already active, so the self switch cannot wipe the graphic the
-      move route applied; a second page would have. Also restored the else
-      branch that the v17 -> v21 port had turned into a nested
-      "if character_ID == 2", which left any other character_ID with no
-      graphic. The other 16 unpaced parallel pages are harmless now and were
-      left alone.
-[x] [2026-04-21] Pokegear setter migrated: $player.pokegear= -> $player.has_pokegear=
-[x] [2026-04-21] Running Shoes setter migrated: $PokemonGlobal.runningShoes= ->
-      $player.has_running_shoes=
-[x] [2026-04-21] Overworld menu key restored to X (Input::BACK) to match v17
-      muscle memory (v21 defaulted it to Z/Input::ACTION)
-[x] [2026-04-21] Field-item hotkeys ported via mkxp-z Input.triggerex? scancode:
-      R=Bicycle toggle, L=Flashlight/FLASH, F=Fly Whistle/FLY, I=Itemfinder,
-      J=Fishing rod (tries SUPERROD, then GOODROD, then OLDROD)
-[x] [2026-04-21] HM field-move prompts fully suppressed — party menu, ready menu,
-      and on-water auto-interact no longer surface CUT/FLY/SURF/STRENGTH/
-      ROCKSMASH/FLASH/WATERFALL/DIVE/HEADBUTT/DIG. All field effects must go
-      through their item substitutes.
-[x] [2026-04-21] Custom item handlers ported as ItemHandlers::UseInField:
-      - FLASHLIGHT -> FLASH (darkness radius 0.7s lerp, $PokemonGlobal.flashUsed)
-      - FLYWHISTLE -> FLY (opens region-map fly screen, transfers without
-        requiring a party Pokemon)
-      - HATCHET -> CUT (matches events named /cuttree/i or "Tree")
-      - DYNAMITE -> ROCK SMASH (matches /smashrock/i or "Rock";
-        rolls rock-smash random encounter)
-      - STIMPACKS -> STRENGTH (sets $PokemonMap.strengthUsed)
-      - PONDPATCH -> SURF (full terrain gating, surf BGM cue, pbStartSurfing)
-[x] [2026-04-22] rxdata legacy-syntax sweep — built reusable Ruby rewriters
-      with byte-identical Marshal round-trip verification (Table/Color/Tone
-      stubs preserve @_raw dump bytes). Applied across Map*.rxdata +
-      CommonEvents.rxdata:
-      - PBItems::X   -> :X   (214 edits across 94 files)
-      - PBSpecies::X -> :X   (253 edits across 89 files)
-      - $player.pokedexSeen(N)/pokedexOwned(N) ->
-        $player.pokedex.seen_count(N)/owned_count(N) (20 edits, fixed
-        Germanium Village door-exit crash on Map135 event 59)
-[x] [2026-04-22] PBS/map_connections.txt ported from v17 PBS/connections.txt
-      — 197 directional connections (North/South/East/West -> N/S/E/W);
-      5 non-standard 4-number v17 entries logged for manual review
-      (interior warp-point stitches, not edge-scroll connections)
-[x] [2026-04-22] showSpeciesIntro / showSpeciesIntroB ported as v21 plugin
-      at [005] Overworld/[005] Species Intro.rb — GameData::Species.try_get,
-      sp.category, $player.pokedex.set_seen, play_cry_from_species,
-      pbResolveBitmap against Graphics/Pokemon/Front/<INTERNAL>.png with a
-      female-sprite fallback.
-[x] [2026-04-22] Reflection bleed fix at interior bottom edges — plugin
-      [005] Overworld/[006] Reflection Hide Offmap.rb aliases
-      Sprite_Reflection#update to hide the player's reflection when the
-      tile row 1 or 2 below (y+1, y+2) is off-map OR a fully-blank tile
-      stack (all 3 layers = 0). Skips the hide for bridge/fixedheight
-      reflections.
-[x] [2026-04-22] Missing graphics imported from v17:
-      - Graphics/Characters/bike.png (Map135 event 48 had no sprite)
-      - Graphics/Icons/arrow{N,NE,E,SE,S,SW,W,NW}.png (arrowW-not-found crash)
-[x] [2026-07-06] Custom-script bug sweep (7 v17->v21 migration defects) in
-      Plugins/Pokemon Sunday:
-      - Custom Held Item Handlers: check_evolution_internal override now
-        forwards its block (&block) — was raising LocalJumpError on EVERY
-        evolution game-wide (level-up/trade/item/event/after-battle).
-      - Type Effectiveness Floats: divisor NORMAL_EFFECTIVE -> NORMAL_EFFECTIVE_ONE
-        (single-type neutral resolved to 0.5, skewing all type damage).
-      - Battle Tower pbBTScale: dropped clone.iv=/clone.ev= (no v21 setter;
-        clone already deep-copies).
-      - STELLARRADIATION OnSwitchOut proc arity fixed to v21
-        (ability,battler,end_of_battle) + reach battle via battler.battle;
-        pbItemsOnSwitchIn -> Battle::ItemEffects.triggerOnSwitchIn.
-      - Slot Machine Payouts: reversed tick throttle (last_paid_tick = this_tick)
-        so payout meter drains at the intended 20/sec, not per-frame.
-      - Mystery Gift move typos :BEARKBLAST->:BEAKBLAST, :HIDDEPOWER->:HIDDENPOWER.
-[x] [2026-07-06] FULL native v17->v21 event/script port — retired ALL
-      compatibility shims; every Map*.rxdata event + common event now uses
-      native v21 Pokemon/GameData APIs. Verified: 53 map files changed
-      script-text ONLY (Marshal skeleton diff identical to committed HEAD),
-      every changed script run passes `ruby -c`, zero PB* constants and zero
-      undefined v17 method calls remain across all events (only .mp3/.png/.txt
-      file-path string literals flagged — harmless).
-      Mechanical rewrites across trade/gift + trainer-battle events (~68 blocks):
-      - PokeBattle_Pokemon.new / pbGenPkmn -> Pokemon.new
-      - setItem/setAbility/setNature/setGender/setHappiness ->
-        item= / ability_index= / nature= / gender= / happiness=
-      - resetMoves/pbClearFirstMoves/pbLearnMove/calcStats ->
-        reset_moves / clear_first_moves / learn_move / calc_stats
-      - makeShiny/makeFemale/isShiny? -> shiny=true / gender=1 / shiny?
-      - iv[0..5]/ev[0..5] and iv=[...] -> symbol keys :HP.. :SPECIAL_DEFENSE
-      - ballused=<int> -> poke_ball=:SYMBOL (v17 index table)
-      - ot=/trainerID= -> owner = Pokemon::Owner.new_foreign(name)
-      - PBSpecies/PBItems/PBTypes.getName, ::CONST, getID() ->
-        GameData::X.get(id).name / :CONST / removed
-      - pbCheckEvolution/pbTradeCheckEvolution ->
-        check_evolution_on_use_item/check_evolution_on_trade (+ >0 guard fix)
-      Standard v17 API renamed at call sites:
-      - $player.pokemonParty/pokemonCount -> pokemon_party/pokemon_count
-      - pbDeleteMoveAtIndex -> forget_move_at_index ; isShadow? -> shadowPokemon?
-      - $PokemonTemp.darknessSprite -> $game_temp.darkness_sprite
-        (Silver Town Gym Map008 dark-reveal effect preserved)
-      Hand-rewritten (non-mechanical):
-      - Hidden-Power reader NPCs (Map056/Map169) now call pbHiddenPower helper
-      - Ball remasker (Map108) maps menu index straight to ball symbols
-      - Kiraki Museum trade machine (Map016 ev2): pbRegionalFormSwap helper adds
-        Paldean Tauros 4-form cycle (base->Combat->Blaze->Aqua->base) alongside
-        Meowth 3-cycle, single-variant 2-cycle, Darmanitan pairs
-      Removed-in-v21 base mechanics preserved (native) in new plugin
-      [001] Battle/[006] Ported v17 Base Mechanics.rb:
-      - Pokemon#beauty/beauty= (contest stat), PokemonGlobalMetadata
-        daycareEgg/daycareEggSteps, PokemonStorage#pbUnlockBox
-      Compat layers deleted: [006] v17 Event Compat shim + the Battle Tower
-      plugin's Pokemon-method/iv-index/ballused/ot shim block; Mystery Gift
-      ported off ballused (numeric :ball data -> ball symbols).
-[x] [2026-08-08] Save files from pre-port builds made unloadable by that shim
-      removal — fixed. Deleting SundayIndexedStatHash broke Marshal.load on any
-      existing save: the shim had been extend'd into each Pokemon's @iv/@ev
-      Hash, and Marshal records extended modules by name in the stream, so
-      loading raised "ArgumentError: undefined class/module SundayIndexedStatHash"
-      in SaveData.get_data_from_file (StartGame:22).
-      Fix: new plugin [008] Compatibility/[000] Save File Compatibility.rb
-      redeclares SundayIndexedStatHash as an EMPTY module — enough for Marshal
-      to resolve the name, with no method overrides, so the affected hashes
-      behave as plain symbol-keyed Hashes. Confirmed safe: zero integer iv/ev
-      subscripts remain in any Map*.rxdata or CommonEvents.rxdata.
-      Verified by replaying the real save (AppData/Roaming/Pokemon Sunday 3.0/
-      Game.rxdata, game_version 2.9.6) through Marshal.load with stand-ins for
-      the RGSS/Essentials classes: the stream now resolves end to end, and
-      SundayIndexedStatHash was the ONLY name in it not defined by stock v21.
-      NOTE: this module must not be deleted — every save written before the
-      2026-07-06 port depends on it existing.
+[x] Custom move function codes D00-D06 ported
+[x] Five custom abilities ported
+[x] Six custom held items ported
+[x] Gen 9 Pack forms imported into pokemon_forms.txt
+[x] Custom Megas and Kiraki regional variants in PBS
+[x] Breeding mechanics migrated
+[x] Ryan audit complete, 53 scripts catalogued
+[x] PBS/moves.txt gained about 331 lines of new moves
+[x] Castform Sandy form 4, PBS plus battle handler
+[x] Payday multiplier applied to Make it Rain
+[x] Hail weather set to classic
+[x] Snowfort handler fixed for v21 weather
+[x] 23 canon Legends Z-A and Champions Mega abilities added
+[x] Redundant HiddenAbilities lines cleaned from Mega forms
+[x] Four new abilities added with handlers
+[x] Battle Tower pools: 29 ZA plus 19 DLC Megas
+[x] Battle Tower pool item names fixed
+[x] Regional form TutorMoves ported, 59 forms
+[x] Yanma Kiraki form entry created
+[x] Darumaka Galarian TutorMoves updated
+[x] TutorMoves added to 13 empty forms
+[x] Gen 9 moves spread over 261 species, 400 additions
+[x] Tidy Up added as Kiraki Sentret egg move
+[x] Wait for Move's Completion hang fixed, then rewritten
+[x] Pokegear setter migrated to has_pokegear=
+[x] Running shoes setter migrated
+[x] Overworld menu key restored to X
+[x] Field-item hotkeys ported via mkxp-z scancodes
+[x] HM field-move prompts fully suppressed
+[x] Custom item handlers ported as UseInField
+[x] rxdata legacy-syntax sweep, byte-identical Marshal round trip
+[x] map_connections.txt ported, 197 directional connections
+[x] showSpeciesIntro and showSpeciesIntroB ported as plugin
+[x] Reflection bleed fixed at interior bottom edges
+[x] Missing graphics imported from v17
+[x] Seven v17 to v21 custom-script defects swept
+[x] Full native event and script port, all shims retired
+[x] Pre-port saves made loadable again
 
 TODO — PBS Data
 ---------------
-[x] [2026-07-06] Add missing Gen 9 wild encounters — marked 'y' in the Dex tab
-  [2026-07-28] VERIFIED: Pawmi, Tandemaus and Wiglett are all in encounters.txt.
-      of Pokemon RPG.xls with a wild location, but absent from PBS/encounters.txt
-      (target maps already exist; likely wiped by an ill-timed reboot):
-      Pawmi (#921, Argon), Tandemaus (#924, Argon), Wiglett (#960, Boron).
-      (Maushold #925 has no Dex-tab row at all — evolve-only, cosmetic.)
-[ ] [2026-07-06] In-game smoke test of the native v17->v21 event port (can't run
-      the Windows/mkxp build headless): vendor purchase, gym battle movesets/
-      items/IVs, Kiraki trade machine Tauros cycle, ball remasker, day-care
-      reset, beauty NPC, move deleter, storage box-unlock reward.
-[x] [2026-04-23] Encounters PBS migration (v17 -> v21 format) — 57 maps
-      - Converter at /tmp/convert_encounters.rb translates v17 fixed slot
-        chances into explicit per-entry percentages for v21 format.
-      - Density triplet "A,B,C" mapped to v21 per-type step_chance:
-        A=Land/LandMorning/LandDay/LandNight/BugContest/Rt1 density,
-        B=Cave, C=Water. Rod/RockSmash/Headbutt types get no step chance
-        (matches v17 EnctypeCompileDens zeros).
-      - Stock v21 Essentials sample data ([002]/[005]/[021]/[028]) replaced.
-      - Dedup pass: duplicate slots (same species + same level range within a
-        single type block) collapsed to a single entry with summed percent
-        (e.g., Cauldream 5+5+4 in Germanium Village Land -> 14).
-      - Water step-chance lowered from 10 to 5 on all maps.
-[x] [2026-04-23] Update encounter settings in scripts
-      - Plugin [005] Overworld/[007] Custom Encounter Types.rb registers
-        :Rt1 (land, trigger_chance 25) and aliases
-        PokemonEncounters#encounter_type to return :Rt1 when on map 112
-        with x<30 && y<30 (matches v17 Script #124).
-      - Rt15a-f not ported: no PBS entries used them in v17, they were
-        dead-coded to map 40 coords that no longer have those y-rows.
-[x] [2026-04-21] Metadata PBS migration — PBS/map_metadata.txt rewritten with
-      209 per-map entries from v17 (Daycare, Silver Town, Silver Town Poke
-      Center, Route 5, Precious Metal Bridge, etc.), replacing the v21
-      Essentials sample data (Lappet Town / Cedolan City / etc.) that had
-      been left in the tree. v17 syntax [NNN]/# Name/Field=val converted to
-      v21 [NNN] # Name/Name = .../Field = val. Global-only fields (PlayerA/B,
-      Home, Surf/BicycleBGM, Trainer/WildVictoryME) stripped since they live
-      in metadata.txt now.
-[x] [2026-04-21] Arceus/Silvally Light-type form 19 added to pokemon_forms.txt
-      - [ARCEUS,19]   FormName = Light Type / Types = LIGHT
-      - [SILVALLY,19] FormName = Type: Light / Types = LIGHT
-[x] Trainers PBS migration (v17 -> v21 format) — 377 trainers, lose texts from map events
-      - Trainer items (potions etc.) ported
-      - CHANELLER -> CHANELER type name fix
-      - Gym leaders: 31 IVs all stats
-      - Special trainers (Reysh, Cherry, Moira, Shin, Samekh, Tsadek, Khof, Tes, Giovanni, Jet): 22 IVs, ace at 31
-      - Reysh starter (Broski): 16 IVs, HARDY nature, consistent across all battles
-      - All 963 Pokemon have explicit IVs, Natures, and AbilityIndex
-      - Recurring Pokemon keep consistent nature/ability across rematch battles
-      - Generic trainers get random IVs (0-31 per stat)
+[x] Missing Gen 9 wild encounters added and verified
+[ ] Smoke test the native event port in game
+[x] Encounters PBS migrated, 57 maps
+[x] Encounter settings updated in scripts
+[x] map_metadata.txt rewritten, 209 per-map entries
+[x] Arceus and Silvally Light form 19 added
+[x] Trainers PBS migrated, 377 trainers
 
 TODO — Battle Systems
 ---------------------
-[x] [2026-04-24] Battle Tower functionality (custom v17 Script #93 ported)
-      - Plugin [001] Battle/[003] Battle Tower.rb: tier lists (basic/normal/
-        competitive), ban lists (form/mega/Legendite), pbReadBattlers
-        opponent generator, hazard-setter rotation, BT intro/win/lose
-        banter, scaling.
-      - Mega ban list extended for PLZA Z-stones + Smogon-Uber legacy
-        megas (Blaziken/Latias/Latios) + Hearthflame Mask (Wellspring
-        swap was wrong; Hearthflame's Mold Breaker is the Uber form).
-      - Tier sets for Fakemon: Actinotox basic, Wikiniki/Tarfelon normal,
-        Leoterygi/Roobop/Spudnick/Palossnow competitive.
-      - Roobop got PLAYROUGH for Dragon coverage.
-[x] [2026-04-24] Battle Tower Rental Mode (new feature)
-      - Plugin [001] Battle/[004] Rental Battle Tower.rb. Player rents 3
-        Pokemon from a 6-Basic-tier draft pool, swap-in/swap-out per win
-        from a 6-slot pool drawn from previous + most recent opponent
-        with random fills for slots already taken. Tier probabilities
-        scale: B1-3 Basic-only, B4-8 Normal mixes in 10/20/30/40/50%,
-        B9-23 Competitive climbs slot 3 -> 2 -> 1, B24-38 Ultra climbs
-        same order, B39-48 Ultra fills toward 100% in slots 3 then 2;
-        Slot 1 locks at 50C/50U forever.
-      - Suspend/resume via $game_variables[210]; loss restores real party.
-      - Map 211 signup dialog edited to a 5-choice menu adding Rental.
-      - PokemonPartyScreen used for picker UI (full summary access).
-[x] Port Battle Tower move selection AI + Battle Points system
-  [2026-07-28] CLOSED - the item was wrong on every count, nothing to port.
-      - 'move selection AI' is a misnomer. addMove / pbGetLegalMoves2 are not
-        battle AI; they live in v17 Script #187 PBattle_OrgBattleGenerator and
-        pick a random legal MOVESET when generating a random cup opponent.
-      - v21 already ships both, at 357_ChallengeGenerator_Pokemon.rb lines 50
-        and 105. There is nothing missing.
-      - The Sunday Battle Tower never used them anyway: opponents come from the
-        hand-authored pools in PBS/battle_tower_pools.txt with explicit 4-move
-        sets. pbReadBattlers builds a plain NPCTrainer and runs a normal battle,
-        so the AI is v21's standard trainer AI, same as any other trainer.
-      - AI strength is already maxed: the BATTLETOWERM1-5 / BATTLETOWERF1-5
-        trainer types set SkillLevel = 255, versus 150 for gym leaders, and
-        206_AITrainer.rb:42 feeds that straight into @skill.
-      - Battle Points were the other half of this item and are stock in v21
-        ($player.battle_points + 313_UI_BattlePointShop.rb).
-      - SunsetClause, also cited here, is dead code in v17: it sets
-        battle.rules['sunset'] and nothing ever reads it.
-      - v17 Script #186: addMove weights, pbGetLegalMoves2, SunsetClause (1495 lines)
-      - v17 Script #239: $PokemonGlobal.bpoints, POINTCARD item handler
+[x] Battle Tower ported from v17 script 93
+[x] Battle Tower rental mode added
+[x] Battle Tower AI item closed, nothing to port
 
 TODO — Type Effectiveness
 -------------------------
-[x] [2026-04-23] Port type effectiveness float system
-      - Plugin [001] Battle/[002] Type Effectiveness Floats.rb overrides
-        Effectiveness.calculate to apply v17's primary/secondary asymmetry:
-        primary SE 2.1x (vs 2.0), primary NVE 0.45x (vs 0.5),
-        secondary SE 1.9x, secondary NVE 0.55x.
-      - Bucket predicates retuned to v17 thresholds: NVE <0.8125,
-        Normal 0.8125..1.1625, SE >1.1625 (6.5/8 and 9.3/8 scaled).
-      - resistant? tightened to <0.8125 so Poison/Dark vs Fighting
-        (0.855) no longer reads as "resistant" — matches v17 normal bucket.
-      - Works with v21's existing float multiplier system, so AI
-        (AI_Switch, AI_MoveEffects_*), Move_UsageCalculations, ability
-        effects, battle messages, and type chart UI all see the asymmetric
-        numbers without extra patching.
+[x] Type effectiveness float system ported
 
 TODO — Settings & Scripts
 -------------------------
 [x] Game general settings
-[x] Port intro scene code (LUKA SJ animated title screen script)
-  [2026-07-28] Already done - [007] Intro/[000] Title Screen.rb, 964-line port.
-[x] Port Level Care / Hyperleveler system
-  [2026-07-28] Ported - [005] Overworld/[010] Level Care.rb.
-      - v17 Scripts #122 + #133: Custom daycare for leveling, $PokemonGlobal.levelcare
-      - Deposit/withdraw/cost functions (pbLevelCareDeposit, etc.)
-[x] Port Jirachi Time + Valentines Day events
-  [2026-07-28] Ported - PBDayNight.isJirachiOut?/isValentines? in [011] v17 Event Gates.rb.
-      - v17 Script #132: isJirachiOut? (2-3am), isValentines? (Feb 14), custom hourly tones
-[ ] Port Championship Marks / Trainer Card
-      - v17 Script #167: Full PokemonTrainerCardScene rewrite (644 lines) with marks
-      - v17 Script #156: Trainer card accessible from pause menu
-[x] Port Evolution Moves system
-  [2026-07-28] Done - mechanism is stock in v21; added the 4 missing level-0 moves to PBS.
-      - v17 Script #238: Evolution-triggered move changes (115 lines)
-      - v17 Script #151: Evolution blocking for Legendite/Meowthite/Pikachite/Eeveenite [DONE]
-[x] Port IVs display in move selection screen
-  [2026-07-28] DONE - [006] Settings/[003] Summary IV Display.rb.
-      Note the item title was wrong: it is the SUMMARY / Skills page, not move
-      selection. Each stat renders as 'value - IV' with max HP instead of
-      cur/max. v17 gated it on @pokemon.ivsread >= 0, but ivsread was set to 0
-      and never reassigned, so it was always on; ported unconditionally.
-      - v17 Scripts #147 + #161: ivsread attribute shown in move selection UI
-[x] Port Rotom Lamp form (GAMMARAYBURST move)
-      - v17 Script #148: Rotom Lamp form move, muted form-change msgs for E4/BT
-[x] [2026-04-24] Mystery Gift Manager (Map 162 EV011 page 2) extracted to
-      Plugins/.../[001] Battle/[005] Mystery Gift.rb. 79 unique codes
-      (DAFTPK duplicate removed) parsed from the v17 event scripts,
-      structured into MYSTERY_GIFT_CODES hash with species/level/IVs/EVs/
-      nature/ability/ball/moves/OT/nickname/shiny per entry. Single entry
-      point pbReceiveMysteryGift(code) returns :success/:already_used/
-      :unknown.
-      - Per-code switches (203/235/239/...) consolidated into a single
-        Array stored at $game_variables[220]; redemption pushes the code
-        string into the array. v17 had 79 distinct $game_switches entries
-        for this; now one variable covers all of them.
-      - Verified all 78 unique species exist in v21 PBS pokemon.txt.
-      - Map 162 rxdata cascade replaced with 9-line script. Map shrank
-        168KB -> 31KB. Original 80-COND_BRANCH cascade removed.
-[x] [2026-04-24] v17 trainer-helper compatibility layer added to BT plugin:
-      createPokemon, createTrainer, customTrainerBattle (with BR_WIN/LOSS/
-      DRAW/RUN constants), plus Pokemon aliases setItem/setNature/
-      setAbility/calcStats/pbLearnMove/setGender/makeShiny/ballused=/
-      ot=/otgender=/trainerID=, plus integer-keyed iv/ev hash extension
-      (SundayIndexedStatHash). 18 maps' Gym/Elite Four/Rival/Mystery Gift
-      events that called these v17 helpers will now resolve cleanly in v21.
-[x] [2026-04-24] Universal tutor moves backfilled on Gen-9 species
-      - Audited 879 pre-Gen-9 species' TutorMoves; identified 16 moves
-        present on >=80% of older-gen Pokemon but missing systemically
-        from Gen 9 (the Gen 9 Pack uses canonical Gen 8/9 movepools that
-        cut a lot of legacy TM/tutor universals).
-      - Patched all 120 Gen-9 species in pokemon.txt with any of these
-        missing universals (1676 total move additions):
-          ATTRACT, CAPTIVATE, CONFIDE, DOUBLETEAM, ENDURE, FACADE,
-          FRUSTRATION, HIDDENPOWER, MIMIC, NATURALGIFT, PROTECT, REST,
-          RETURN, ROUND, SECRETPOWER, SLEEPTALK, SNORE, SUBSTITUTE,
-          SWAGGER, TOXIC.
-      - Hidden Power kept its IV-based type calculation in v21 core
-        (Settings::MECHANICS_GENERATION default + GameData::Type.each
-        loop honors custom types). Light-type HP is reachable via IV
-        tuning (Light is icon_position 19, last in the enumeration).
-[x] [2026-04-23] Kiraki regional forms default for wild encounters
-      - Plugin [000] Forms/[004] Kiraki Form On Creation.rb registers
-        MultipleForms getFormOnCreation for the 6 species with Kiraki
-        variants: SENTRET/FURRET/YANMA/TAILLOW/SWELLOW (form 1) and
-        SKARMORY (form 2 — form 1 is Mega).
-      - Gate: $game_map.metadata.town_map_position[0] == 0 (Kiraki region
-        per town_map.txt). Effectively always true in-game, gated anyway
-        so Ultra-Space-style detours don't mis-form.
-      - v17 had getFormOnCreation procs wired to isOnAlolaMap? but
-        ALOLAMAPS was left empty, so it never actually activated. This
-        port corrects that for Kiraki.
-[x] [2026-04-23] Ported pbPickRegionalTrade from v17 (Kiraki Museum event)
-      - Plugin [005] Overworld/[008] Regional Trade Picker.rb registers
-        top-level pbPickRegionalTrade that Map016 (Kiraki Museum) event
-        already calls.
-      - Species list converted from v17 PBSpecies::X constants to v21
-        Symbols. Added Gen 9 base forms with regional variants:
-          WOOPER (Paldean), TAUROS (Combat / Blaze / Aqua).
-      - New-species-only evolutions (Clodsire, Kingambit, Runerigus,
-        Obstagoon, Perrserker, Sirfetch'd, Mr. Rime, Cursola, Kleavor,
-        etc.) deliberately NOT listed — only the shared base species
-        belong in the regional-trade chooser.
-[x] [2026-04-23] Replaced in-game PINKGLITTER with canon FAIRYFEATHER
-      - PBS: 3 trainer Item lines (trainers.txt), 1 WildItemUncommon each in
-        pokemon.txt and pokemon_forms.txt sed-replaced.
-      - rxdata: Map009 (Silver Town), Map088, Map110 events that called
-        pbReceiveItem(:PINKGLITTER) rewritten to :FAIRYFEATHER via
-        Marshal-safe roundtrip (not naive byte sub — item names differ in
-        length by 1 char, so the string length prefix had to regen).
-      - [PINKGLITTER] item entry retained in items.txt and handler in
-        Plugins/.../Custom Held Item Handlers.rb left intact per request
-        (legacy users with pre-patch PINKGLITTER in party or PC boxes
-        will still get the +20% Fairy boost).
-[x] [2026-04-23] Galarian Yamask -> Runerigus location-triggered evolution
-      - v17: Evolutions=RUNERIGUS,TookDamage,10 with extra gate
-        (pokemon.totalHPLost>=49 AND map 10 AND player at x=8..11, y=19)
-      - v21: keep Evolutions = RUNERIGUS,EventAfterDamageTaken,2 (core
-        method already sets pkmn.ready_to_evolve after a battle where it
-        took >=49 damage).  New plugin [000] Forms/[002] Yamask Bridge
-        Evolution.rb hooks :on_player_step_taken and calls
-        pkmn.trigger_event_evolution(2) for each Galarian Yamask in party
-        when standing on map 10 (Precious Metal Bridge) tiles
-        (8..11, 19). Matches v17 location exactly.
-      - Also overrode :EventAfterDamageTaken to skip fainted Pokemon and
-        registered :on_start_battle handler that clears ready_to_evolve on
-        every party member, so the "took 49+ damage" window is limited to
-        the most recent battle (canon Sword/Shield behavior, matches v17).
-[x] Port DexNav in Pokegear
-  [2026-07-28] DONE - [005] Overworld/[017] DexNav.rb, gated on switch 209/7.
-      Grid of encounter icons for the current map, tinted by Pokedex status.
-      v17's 'search' half was dead code: the Input::C branch was commented out,
-      main2 was unreachable, and $currentDexSearch was never assigned - so the
-      viewer is the whole feature. Navigation rewritten to scroll (v17 hardcoded
-      row bounds up to 21 entries; the largest map here has 43 species).
-      - v17 Script #163: DexNav option added to Pokegear
-[x] Port Hatchet item (Cut from bag)  [2026-04-21]
-      - HATCHET registered as ItemHandlers::UseInField; v21 routes UseFromBag
-        through the same handler in v21, so no separate UseFromBag entry
-        needed. Recognizes events named "cuttree" (v21) or "Tree" (v17 legacy).
-[x] Port Legendary/UltraBeast checker + regional form maps
-  [2026-07-28] Ported - isUltraBeast?/isLegendaryMythicalOrUltra? in [011] v17 Event Gates.rb,
-      driving the wild shiny boost, the legendary gift IV floor and the non-Beast-Ball penalty.
-      - v17 Script #238: isUltraBeast?, isLegendaryMythicalOrUltra?, ALOLAMAPS
-      - Includes Fakemon (PROTOSOLARIA etc.)
+[x] Luka SJ animated title screen ported
+[x] Level Care and Hyperleveler ported
+[x] Jirachi Time and Valentines Day events ported
+[ ] Championship Marks and Trainer Card rewrite still unported
+[x] Evolution moves: stock in v21, four PBS gaps filled
+[x] IV display in move selection ported
+[x] Rotom Lamp form and GAMMARAYBURST ported
+[x] Mystery Gift Manager extracted from Map162
+[x] v17 trainer-helper compatibility layer added to Battle Tower
+[x] Universal tutor moves backfilled on Gen 9 species
+[x] Kiraki regional forms default for wild encounters
+[x] pbPickRegionalTrade ported for the Kiraki Museum
+[x] In-game PINKGLITTER replaced with canon FAIRYFEATHER
+[x] Galarian Yamask to Runerigus location evolution restored
+[x] DexNav ported into the Pokegear
+[x] Hatchet item ported, Cut from bag
+[x] Legendary and Ultra Beast checkers ported
 
 TODO — Items & Mechanics
--------------------------
-[x] Custom Pokeball migration
-  [2026-07-28] Ported - 39 route/trophy balls + Custom Ball in [013] Custom Poke Balls.rb.
-[x] Nuzlocke Rules system
-  [2026-07-28] Ported - [012] Difficulty Modes.rb restores every consumer of $game_variables[100].
-      - v17 Script #139+: $game_variables[100]==1 blocks Revives, Rare Candy on fainted
-      - Forces set mode in Battle Tower (map 211)
-  [2026-07-28] Renamed to Funlocke, and a fourth mode added. var 100 is now
-      0 Normal / 1 Funlocke / 2 Easy / 3 Hard Nuzlocke. Mode 2 was always Easy
-      in behaviour; the first v21 pass mislabelled it "Hard" (pbHardMode? ->
-      pbEasyMode?). Hard Nuzlocke is new, in [019] Hard Nuzlocke.rb:
-      ordinary balls with one shot per route (dupes clause across the evolution
-      family), no EXP bonus, a level cap set by the easiest gym leader still
-      outstanding, forced Set style with the Options entry hidden, and a
-      Poke Ball-only battle bag. Randomizer is not offered for it.
-      Map gates that tested "var 100 == 1" now call pbNuzlockeMode? so both
-      Nuzlockes are covered; Map138 (route balls) still tests == 1 on purpose.
-[x] Roaming Legendary tracker
-  [2026-07-28] Roaming table restored (17 species, both roam graphs) in [006] Settings.
-  [2026-07-28] CORRECTION: the entry above restored the roaming *mechanic*, not
-      the tracker, and should not have been ticked for the tracker. The tracker
-      is the Poke Scanner (:POKESCAN, switch 199) and none of it had been
-      ported: no UseInField handler, so v21's triggerUseInField returned 0 and
-      the Key Item did nothing at all - and Map152 ev89 hands it to the player
-      with dialogue promising it helps find the roaming beasts. The on-map
-      indicator was gone, switch 199 was read by nothing, the Pokedex Area page
-      no longer marked the roamer's location, and the 17 Graphics/Icons/roam*.png
-      had never been copied across.
-      Ported in [003] Items/[003] Poke Scan.rb, with the icons copied and
-      renamed by species (roam_ARTICUNO.png) instead of v17's numeric Dex ID -
-      all 17 roamers happen to have kept their numbers, but 158 species did not,
-      which is the same trap that broke the Map029 Regi door.
-      One deliberate change: v17 drove the indicator off Events.onStepTaken and
-      created a PictureWindow on every single step taken on a roamer's map,
-      never disposing any of them. This announces once on entering the map and
-      disposes the window, so the information is the same but nothing leaks.
-[x] Port custom encounter types (Rt1, Rt15a-f)
-  [2026-07-28] Rt1 ported in [007] Custom Encounter Types.rb; Rt15a-f confirmed dead in v17.
-      - v17 Script #124: Types 13-19, custom densities/probabilities
-      - Randomizer mode ($game_switches[200]), boosted shiny for legendaries
-[x] Randomizer mode ($game_switches[200])
-  [2026-07-28] Ported - [018] Randomizer.rb. The switch survived the migration
-      but every consumer was lost, so "Randomized Mode" in the intro set a
-      switch nothing read. Restores the wild encounter swap (v17 #124), the
-      trainer party swap with custom movesets/forms/abilities dropped (#136),
-      and the Pokedex Area reverse lookup (#159). DexNav now shares the table.
-      The permutation moved out of $game_variables[98] into $PokemonGlobal:
-      var 98 is also the Champion Tournament win streak, so a randomizer run
-      made Map186 do "Array + 1" and finishing it wiped the table.
-      Three v17 bugs fixed by construction - the table was one entry longer
-      than the Dex, trainers indexed it one slot off from wild encounters, and
-      the Map029 Regi door plus the Map136 starter pages used hard-coded v17
-      Dex numbers that point at different Pokemon in v21 (908/909 were
-      Regieleki/Regidrago, now Meowscarada/Fuecoco). Those events name their
-      species directly now.
+------------------------
+[x] Custom Pokeballs migrated
+[x] Nuzlocke rules system ported
+[x] Roaming legendary tracker restored, 17 species
+[x] Custom encounter types ported
+[x] Randomizer mode restored on switch 200
 
 TODO — Graphics & Art
 ---------------------
-[x] [2026-04-21] Gen 9 pack sprite import
-      - Front / Front shiny / Icons / Icons shiny / Followers / Followers
-        shiny: add-missing (7183 new files, v21 vanilla art kept where it
-        already existed)
-      - Back / Back shiny: overwrite (1644 v21 back sprites replaced with
-        Gen 9 versions, plus 1488 new ones)
-      - Female sprites: force-overwrite pass (267 files) so
-        ABOMASNOW_female, COMBEE_female, etc. use Gen 9 art in Front /
-        Icons / Followers categories
-[x] [2026-04-21] Battle sprites migration for Sunday fakemon
-      - 23 species imported from v17 Battlers/ (numeric NUM.png layout
-        converted to v21 SPECIES.png symbol-named layout):
-          891-900  CLOWD, STORRM, GALEFRONT, PHOTOWYRM, CHROMASP,
-                   CHORDALUX (+ form 1), CAULDREAM, CRUCIBLEAK, CAULDREAD,
-                   PHOTEON
-          904-907  HOVEON, YAMSELIA, NIMBEE, YIMBEE
-          913      PROTOSOLARIA
-          1041-1048 SNOWYGAST, PALOSSNOW, TARFELON, ROOBOP, WIKINIKI,
-                    ACTINOTOX, LEOTERYGI, SPUDNICK
-[x] [2026-04-21] Alternate-form sprites on official species (178 files)
-      - Rotom Lamp form 6, Castform Sandy form 4, Vivillon Kiraki form 20
-      - Bonus Megas: Venusaur form 2, Charizard form 3, Blastoise form 2,
-        Gengar form 2, Aerodactyl form 2, Skarmory form 2 (Kiraki)
-      - Kirakian regional variants: Pikachu/Meowth/Sentret/Furret/Yanma/
-        Taillow/Swellow/Lapras/Eevee/Snorlax/Garbodor and many more
-      - v17->v21 form-number translation: FormName match first, Type1/Types
-        match second; unmatched forms skipped (logged to v21's
-        FORM_SPRITES_UNMATCHED.md)
-[x] [2026-04-21] Arceus / Silvally form reshuffle to match v21 numbering
-      - v17 forms 1-8 = v21 forms 1-8 (Fighting..Steel, identity)
-      - v17 forms 9-17 (Fire..Fairy) = v21 forms 10-18 (offset by 1 because
-        v21 inserts Unknown/??? at form 9)
-      - v21 form 9 deliberately has NO sprite (Gen 9 pack doesn't ship
-        Unknown-type art, v17 used that slot for Fire which now lands at 10)
-      - v17 form 18 Light = v21 form 19 Light (new form slot added)
-[x] [2026-04-21] v21 stock female back-sprite orphans deleted (20 files)
-      - No Gen 9 or v17 replacement available; base-species fallback now
-        renders for ABOMASNOW/BIBAREL/CACTURNE/COMBEE/GOLBAT/PACHIRISU/
-        STARAPTOR/WOBBUFFET _female, plus PICHU_2 and WEEPINBELL_shadow.
-[ ] Fix backsprites to Gen 5 animated style (matching v17) — Gen 9 pack ships
-      static back sprites; Gen 5-style animated back sprites not yet sourced.
-[x] Create party icons for new Fakemon
-  [2026-08-09] DONE for the normal icons — every Fakemon base species and form
-      now has one, derived from the battle sprites (5:1 reduction, 2x re-up, hard
-      dark border to match the canon icons). Only two SHINY icons are outstanding:
-      SPUDNICK (blocked — it has no shiny front sprite to derive from) and
-      HOVEON (cannot be derived mechanically: its normal and shiny fronts are
-      different drawings, 27% palette vote purity, so it needs hand-drawing).
-[ ] Create backsprites and shiny sprites for new Fakemon
-      - Remaining gaps: SPUDNICK (everything), SNOWYGAST/PALOSSNOW/ROOBOP
-        (Back/Back shiny), TARFELON/WIKINIKI/ACTINOTOX (Back shiny),
-        LEOTERYGI (Back/Back shiny)
-  [2026-08-09] Unchanged, and now tracked automatically: run
-      `ruby tools/report_missing_sprites.rb` in the v21 tree to regenerate
-      MISSING_SPRITES.md. It checks every species and numbered form against all
-      eight graphic sets and separates a BASE species with no file (falls through
-      to 000.png, renders blank) from a FORM with no file (falls back to its base
-      form's art, wrong but visible). These 9 are the only base-species gaps left
-      in the whole game.
-[x] Track down changed graphics (names/locations/sizes between v17 and v21)
-  [2026-07-28] Effectively done. Swept every asset the game actually REFERENCES
-      (event page sprites, map BGM/BGS, event Play SE/ME, battlebacks, trainer
-      sprites, species sprites) against the v21 tree and imported what was
-      recoverable. Remaining unresolved: 5 event sprites and 2 BGM that do not
-      exist in v17 either (pre-existing), and the unfinished Fakemon art below.
-      0 unresolved battlebacks, 0 missing trainer sprites.
+[x] Gen 9 pack sprites imported
+[x] Battle sprites migrated for 23 Sunday Fakemon
+[x] Alternate-form sprites imported, 178 files
+[x] Arceus and Silvally forms renumbered for v21
+[x] 20 orphaned stock female back sprites deleted
+[ ] Gen 5 animated back sprites not yet sourced
+[x] Party icons created for every Fakemon
+[x] Shiny icons complete, all 46 derived
+[x] Fakemon front, icon and shiny art complete
+[x] Changed graphics tracked down and reimported
 
 TODO — Misc Small Tweaks (from #Ryan audit)
 --------------------------------------------
-[x] Running shoes / cycling speed (Script #22, switch 71 disables movement)
-  [2026-07-28] Done - [000] Player Movement.rb (speeds, switch 71, map 198).
-[ ] Furfrou form persistence in PC (Scripts #154, #172)
-[x] Save file backups (Scripts #54, #169)
-  [2026-07-28] Done - pbSave in [009] v17 Field Helpers.rb rotates .bkup1/.bkup2.
-[x] VERSION display in options screen (Script #170)
-  [2026-07-28] Done - [006] Settings/[002] v17 UI Restorations.rb.
-[x] PC storage naming ("Item Storage", player's PC) (Script #174)
-  [2026-07-28] Done - same file; PC labels swapped back to v17.
-[x] Shadow always visible (Script #224)
-  [2026-07-28] Done via EBDX - [001] Battle/[011] EBDX Sunday Tweaks.rb. NOTE the item
-      description was BACKWARDS: v17 forced shadows always HIDDEN, not visible.
-[x] Flame Body breeding stacking (Script #175 — break removed)
-[x] Default player names blank (Script #202)
-  [2026-07-28] Non-issue - v21's pbTrainerName already passes no default name.
-[x] Scatterbug random form on creation (Script #148)
-  [2026-07-28] Non-issue - v21 core registers SCATTERBUG forms itself and copies to
-      SPEWPA/VIVILLON, so the plugin's registration matches v21's own design.
-[x] Pokedex suppression on Battle Tower map 211 (Script #105)
-[x] Animation caching $pkmn_animations (Scripts #108, #222, #227)
-  [2026-07-28] Obsolete - v21 caches via $game_temp.battle_animations_data, and the EBDX
-      port already loads PkmnAnimations once into a module ivar.
-[x] EXP changes — easy mode half XP via expall, map 40 custom exp/EVs (Script #105)
-  [2026-07-28] Done - wild EXP x1.3/x1.5/x3 and the map 40 facility in [014] v17 Field Systems.rb.
-[x] Payday money multiplier 5->20 (Script #104 L8023)
-[ ] Map event need_update flag (Scripts #20, #23, #33)
-[x] Shiny wild Pokemon switch (Script #66)
-  [2026-07-28] Done - switch reset on map entry in [014] v17 Field Systems.rb.
+[x] Running shoes and cycling speed restored
+[ ] Furfrou form persistence in the PC
+[x] Save file backups rotate two copies
+[x] Version shown in the options header
+[x] PC storage naming reverted to v17
+[x] Shadow setting restored, v17 hid it
+[x] Flame Body breeding stacking restored
+[x] Default player names left blank
+[x] Scatterbug random form on creation
+[x] Pokedex suppressed on the Battle Tower map
+[x] Animation caching restored
+[x] EXP changes and Map 40 facility restored
+[x] Payday money multiplier raised to 20
+[ ] Map event need_update flag
+[x] Shiny wild Pokemon switch restored
 
-================================================================================
 [2026-07-28] FULL AUDIT + REPAIR PASS
-================================================================================
-Audited the whole v21 tree against v17 (plugins, map events, PBS, assets) and
-fixed what the audit found. The single biggest discovery: the "native v17->v21
-event port" recorded on 2026-07-06 had NOT actually removed all v17 API — 392
-trainer battles and ~180 other calls still referenced constants and methods that
-do not exist in v21.
+=====================================
 
-CRASH FIXES — map events (tools/fix_v17_event_api.rb, Marshal-safe, verified)
-----------------------------------------------------------------------------
-[x] PBTrainers::X -> :X — 392 call sites across 92 maps. EVERY trainer, gym
-      leader, rival and Elite Four battle raised "uninitialized constant
-      PBTrainers" before this. The 2026-07-06 port rewrote pbTrainerBattle ->
-      TrainerBattle.start but left the argument constant untouched.
-[x] getID(PBSpecies,X)==getID(PBSpecies,:Y) -> X==:Y — 174 edits / 87 blocks.
-      Every MegaTrainer gate on 72 maps raised NameError on approach.
-[x] pbWildBattle(...) -> WildBattle.start(...) — all 68 sites, including 15
-      split across a 355/655 command boundary. v17's 3rd/4th/5th args are
-      converted to setBattleRule("outcome"/"cannotRun"/"canLose") lines exactly
-      as v21's own Compiler#replace_old_battle_scripts would. Covers every
-      scripted legendary/Ultra Beast encounter.
-[x] $player.pokemonParty -> pokemon_party (58), .isEgg? -> .egg? (10),
-      .isShiny? -> .shiny? (2)
-[x] Map100 ev9 p3 — "if itemquant <1:" Python-style colon (a SyntaxError that
-      also existed in v17). Platinum Heights MegaTrainer now works.
-[x] Map040 Arceus shrine — numeric dex id fed to WildBattle.start, and
-      $player.owned[n] -> $player.pokedex.owned?(n)
-[x] Map136 ev9 — $player.pokedex used as the v17 boolean flag. In v21 that
-      reader returns the Pokedex object (always truthy), so the page condition
-      never fired and the setter raised. Now $player.has_pokedex.
-[x] Map097 — isTempSwitchOff?("A") -> tsOff?("A") (v21 dropped the v17 alias)
-[x] VERIFIED: all 4958 event script blocks parse, and 0 undefined method calls
-      remain anywhere in Map*.rxdata + CommonEvents.rxdata.
+CRASH FIXES — map events
+------------------------
+[x] PBTrainers::X to :X, 392 sites, 92 maps
+[x] getID species comparisons rewritten, 174 edits
+[x] pbWildBattle to WildBattle.start, all 68 sites
+[x] pokemonParty, isEgg? and friends renamed
+[x] Map100 Python-style colon syntax error fixed
+[x] Map040 Arceus shrine dex id and owned check fixed
+[x] Map136 pokedex used as a boolean, fixed
+[x] Map097 isTempSwitchOff? aliased to tsOff?
+[x] Verified: 4958 script blocks parse, no undefined calls
 
 CRASH FIXES — plugins
 ---------------------
-[x] Type Effectiveness Floats used Effectiveness::NORMAL_EFFECTIVE_ONE, which
-      does not exist in v21 — NameError on EVERY damage calculation. Also the
-      primary/secondary asymmetry was dead code, because v21 calls
-      Effectiveness.calculate once per defending type. Rewritten to remap by
-      type slot inside pbCalcTypeMod, preserving the pbCalcTypeModSingle
-      overrides used by Freeze-Dry / Flying Press / Tera Blast / Gen 9 Pack.
-      Dual-type products now match v17: SE/SE 3.99, NVE/NVE 0.2475, SE/NVE 1.155
-[x] Rental Battle Tower: "rental_state = st" assigned a local instead of calling
-      the writer, so $game_variables[210] was never written and rental mode
-      died on the next read. Now self.rental_state =. (5 sites)
-[x] Custom Held Item Handlers: pokemon.base_stats -> pokemon.baseStats (3 sites).
-      LEGENDITE raised NoMethodError on the first speed calc of any battle.
-[x] Battle Tower: competitivemegabanlist.include?(poke.item) compared a Symbol
-      against a GameData::Item and was always false — the Competitive Mega ban
-      was silently unenforced. Now poke.item_id.
-[x] Rental Battle Tower: pool.compact shifted indices so the wrong previous-
-      opponent slot was flagged as taken; st[:prev_taken] could also be nil.
-      Each candidate now carries its origin slot.
-[x] createPokemon lost v17's baseline (never shiny, ability index 0, EV spread
-      HP250/Atk50/Def50/Spe0/SpA50/SpD50). Every gym leader, rival and E4 team
-      was tuned on top of it. Restored in the shared helper.
-[x] Player Movement: v17 ran on Input::A and opened the menu on Input::B; v21
-      swapped them, and [002] Menu on Back Key.rb moved the menu back to BACK
-      without moving running — holding X while standing still opened the menu
-      instead of running. Running moved to Input::ACTION.
-[x] Player Movement: switch 71 freeze no longer swallows Game_Player#update
-      while a move route is forcing (could pin move_route_forcing forever).
-[x] meta.txt now declares Requires for v21.1 Hotfixes and Generation 9 Pack
-      (the ability handlers use the pack's PBEffects::OneUseAbility).
+[x] Type effectiveness NameError on every damage calculation fixed
+[x] Rental Battle Tower state never written, fixed
+[x] Custom held items base_stats renamed to baseStats
+[x] Battle Tower mega ban compared Symbol to Item
+[x] Rental Battle Tower pool.compact shifted indices
+[x] createPokemon lost v17's baseline, restored
+[x] Player Movement keys corrected for v21
+[x] Player Movement switch 71 no longer pins move routes
+[x] meta.txt declares Hotfixes and Gen 9 Pack
 
-PORTED — v17 code that events called but that was never migrated
-----------------------------------------------------------------
-[x] Elite Four — [001] Battle/[007] Elite Four.rb (4396 lines). pbEliteFour,
-      pbE4check, pbCheckPartyType. Verified by canonical-token diff against the
-      v17 source: 269 createPokemon, 35 createTrainer, 1076 learn_move,
-      856 iv / 554 ev, 268 items, 189 abilities, 103 natures — 0 differences.
-      7 v17 move/item typos corrected (they silently no-op'd in v17).
-[x] PokemonSelection + tier restrictions — [001] Battle/[008]. The entire
-      Battle Tower entry flow (Map211, 35 call sites). Delegates to the existing
-      pbIs*Tier? helpers rather than duplicating tier lists.
-[x] v17 field helpers — [005] Overworld/[009]. pbPsyRand, pbShowImageInWindow,
-      pbPickTradeMon, pbMaxPartyLevel, pbFuseLegend, pbResetLegends, pbFossilGuy,
-      pbFossilConvertGen8, pbChooseMoveTutorList, pbChooseBPItemList, pbSave,
-      pbUnlockDex, pbHasRelearnableMove?, pbfixbike, pbUpdateFix, pbPlayCry,
-      numFormsSeen, hasOwned?
-[x] Level Care / Hyperleveler — [005] Overworld/[010]. All six pbLevelCare*
-      functions + $PokemonGlobal.levelcare, per-step exp via :on_player_step_taken
-[x] Event gates — [005] Overworld/[011]. PBDayNight.isJirachiOut? (2-3am Jirachi)
-      and .isValentines? (Feb 14), isUltraBeast? (driven off the PBS UltraBeast
-      flag), isLegendaryMythicalOrUltra? (82 symbols, all verified)
-[x] pbRegionalFormSwap — called by Map016 ev2 but NEVER WRITTEN, in either
-      version. Reconstructed from v17's inline logic and rebuilt against v21's
-      renumbered forms (Megas interleaved, Darumaka Galar 1->2, Paldean Tauros
-      added, Darmanitan renumbered). Simulated over all 60 regional-trade species.
-[x] Badge get animation — [005] Overworld/[015]. renderBadgeAnimation, called by
-      16 events on 9 gym maps. NOT cosmetic: its first line awards the badge, so
-      without it the player never received any badge. Award is bounds-guarded and
-      happens even if the animation fails.
-[x] Braille — [005] Overworld/[016]. pbCreateBrailleImage (Map022 Regi chamber,
-      4 events) was undefined in v17 too; implemented, and the 30 Braille_*
-      icons imported.
-[x] UI restorations — [006] Settings/[002]. Options header shows the version;
-      PC labels swapped back to v17 ("Item Storage" / "<player>'s PC").
+PORTED — v17 code events called but never migrated
+--------------------------------------------------
+[x] Elite Four, 4396 lines
+[x] PokemonSelection and Battle Tower tier restrictions
+[x] v17 field helpers
+[x] Level Care and Hyperleveler
+[x] Event gates including Jirachi and Valentines
+[x] pbRegionalFormSwap, never written in either version
+[x] Badge get animation
+[x] Braille image builder
+[x] UI restorations, options header and PC labels
 
 PBS DATA REPAIRS
 ----------------
-[x] map_metadata.txt had ZERO Flags lines, so every LocationFlag evolution was
-      dead. Added Magnetic (Route 8 / Iron Town), MossRock (Mt. Silicon Forest),
-      IceRock (Mt. Silicon).
-[x] CRABOMINABLE was unobtainable — its only route was the dead LocationFlag and
-      v17's Item,ICESTONE route had been dropped. Restored.
-[x] PHOTEON and HOVEON were unobtainable — Eevee lost its DUSKSTONE / DAWNSTONE
-      routes (and SUNSTONE/MOONSTONE/SHINYSTONE). All restored. The Map016 Dusk
-      Stone / Dawn Stone events were still intact, which is what gave it away.
-[x] ARCHALUDON was unobtainable — Duraludon had no Evolutions line at all.
-      Restored ARCHALUDON,Item,METALALLOY.
-[x] CRANNBERRY had only Fling_10 — no Berry flag and no Natural Gift, so it was
-      invisible to Natural Gift, Bug Bite, Pluck, Harvest, Belch and Ripen.
-      Now Berry,Fling_10,NaturalGift_LIGHT_80.
-[x] SUNSET had no Accuracy line so it defaulted to 100 and could miss; v17 had
-      accuracy 0 (never misses). Restored.
-[x] StartMoney 3000 -> 7000 (v17 INITIALMONEY)
-[x] StorageCreator Bill -> Zayen
-[x] Custom species data the v21 regen reverted to canon: Lunatone ROCK/DARK,
-      Mesprit FAIRY, Gallade STEADFAST/SHARPNESS, and the dropped hidden
-      abilities on Gengar, Solrock, Vikavolt, Gourgeist, Pumpkaboo.
-      (Deliberately NOT reverted: Milotic/Zygarde/Enamorus/Basculegion, where
-      v21 is canon-correct and v17 was wrong; and Roobop/Spudnick, where v21 is
-      an intentional redesign away from shared placeholder data.)
-[x] Evolution-learned moves restored for the 4 Fakemon that lost them:
-      STORRM/RAZORWIND, CRUCIBLEAK/HEAVYSLAM, CHROMASP/SUNBEAM, FOMANTIS/HOLYBLADE
-[x] encounters.txt map 124 LandNight summed to 99 (SANDYGAST 1 -> 2).
-      NOTE map 154 Cave sums to 90 and is fine — v21 normalises by the actual
-      total, so relative weights are all that matter.
-[x] VERIFIED: 0 dangling species/move/item/ability/type references across all PBS.
+[x] map_metadata.txt had no Flags, every LocationFlag evolution dead
+[x] CRABOMINABLE was unobtainable, ICESTONE route restored
+[x] PHOTEON and HOVEON were unobtainable, stone routes restored
+[x] ARCHALUDON was unobtainable, Duraludon had no Evolutions
+[x] CRANNBERRY had no Berry flag or Natural Gift
+[x] SUNSET had no Accuracy line, could miss
+[x] StartMoney raised to 7000
+[x] StorageCreator changed to Zayen
+[x] Custom species data the v21 regen reverted, restored
+[x] Evolution moves restored for four Fakemon
+[x] encounters.txt map 124 LandNight summed to 99
+[x] Verified: no dangling references anywhere in PBS
 
 ASSETS
 ------
-[x] CRIES: 399 of 1046 species were silent. The Gen 9 Pack ships its own
-      Audio/SE/Cries folder (1167 files) that was never installed when the pack's
-      sprites were imported — installed it (512 new files). The 15 Fakemon cries
-      were converted from v17's numeric names (891Cry.wav -> CLOWD.wav etc).
-      Now only 8 species are silent: SNOWYGAST, PALOSSNOW, TARFELON, ROOBOP,
-      WIKINIKI, ACTINOTOX, LEOTERYGI, SPUDNICK — these never had cries in v17
-      either and need new audio (same 8 as FAKEMON_SPRITES_MISSING.md).
-[x] OVERWORLD SPRITES: 140 event sprites imported from v17 — 111 numeric
-      Pokemon sprites (every static legendary: Cresselia, Lugia, Ho-oh, Xerneas,
-      Yveltal, Giratina, Dialga, Kyogre, Groudon, Rayquaza, Deoxys, Necrozma,
-      Celebi, Zarude, Calyrex, Hoopa and the Ultra Beasts), plus doors10, Chess,
-      Lily, Bubble and 60 berry trees. Only 5 remain missing, none of which
-      existed in v17 either (Healing balls left, Pokemon 16/18/21/25).
-[x] AUDIO: 148 of 151 referenced audio files were missing, now restored from
-      v17 — including "Exit Door" (465 refs), "shiny" (89), "ItemGet" (53),
-      MiningItemGet, all the Slots SFX, the Pokemon Center heal jingle and 48
-      legendary cries used by Play SE commands. Remaining: BGM "Neon District"
-      and "begin", neither of which exists in v17 either.
-[x] BATTLEBACKS: all 116 maps with a BattleBack entry rendered with NO background
-      and NO platforms. v17 used Elite Battle DX, which loaded a single flat
-      image; stock v21 needs <name>_bg / _base0 / _base1 / _message. Generated
-      _bg and _message for all 33 custom backdrops (3 recovered from v17's
-      battlebg/ subfolder); platforms come from v21's environment-base fallback.
-[x] Graphics/Trainers/CHANELER.png — the PBS trainer type was renamed
-      CHANELLER -> CHANELER but the sprite was not, so 5 trainers had no sprite.
-[x] 13 Graphics/Pictures restored (Regirock, Regice, Registeel, Regigigas,
-      Regidrago, Regieleki, Absol, Froslass, Kabuto, Mareep, Present, Serperior,
-      Vibrava) + Audio/ME/getBadge.wav + 30 Braille icons.
+[x] Cries: 399 silent species fixed, pack folder installed
+[x] Overworld sprites: 140 event sprites imported
+[x] Audio: 148 of 151 missing files restored
+[x] Battlebacks: 116 maps rendered with no background
+[x] CHANELER trainer sprite renamed to match PBS
+[x] 13 Graphics/Pictures restored
 
 DELIBERATELY NOT CHANGED
 ------------------------
-[ ] Badge stat boosts stay DISABLED (v21 NUM_BADGES_BOOST_* = 999 under
-      MECHANICS_GENERATION >= 8). v17 had them at 1/5/3/4/7 — user's call to
-      leave them off.
-[ ] Data/*.dat deletions in the working tree left as-is per user instruction.
-      Note Compiler.main returns early when !$DEBUG and GameData.load has no
-      rescue, so a non-debug launch would raise Errno::ENOENT. Restore with
-      `git checkout -- Data/` or launch once from the editor.
+[ ] Badge stat boosts stay disabled, Ryan's call
+[ ] Data/*.dat deletions left alone, Ryan's call
 
 STILL OPEN
 ----------
-[x] Elite Battle DX (v17 #218-#227, ~19,900 lines + 45 EBS art files) was never
-  [2026-07-28] DONE - EBDX 1.4.7.1 installed; see the section at the end of this file.
-      ported and is the largest remaining visual regression. Decide explicitly:
-      source a v21 EBDX build, or accept stock v21 battles.
-[ ] Data/PluginScripts.rxdata is stale (dated 2026-04-23). It self-heals on the
-      next debug/editor launch because PluginManager compares mtimes, but
-      needCompiling? returns false immediately when !$DEBUG — so launch once in
-      debug BEFORE packaging a build, or the new plugins ship missing.
-[ ] Cries and sprites for the 8 Fakemon listed above.
-[x] Summary/Skills page IV display (v17 #161 L638 — note the checklist previously
-      [2026-07-28] DONE - see above.
-      described this as the "move selection" screen, which was wrong).
-[ ] In-game smoke test — none of this could be run headless.
+[x] Elite Battle DX installed, see its section below
+[ ] Data/PluginScripts.rxdata stale, self-heals on next debug launch
+[ ] Cries and sprites for eight Fakemon
+[x] Summary IV display done
+[ ] In-game smoke test, nothing runs headless
 
---------------------------------------------------------------------------------
-[2026-07-28] SECOND WAVE — restored systems + Battle Tower data rework
---------------------------------------------------------------------------------
-BATTLE MECHANICS ([001] Battle/[009] v17 Battle Restorations.rb + edits)
-[x] All 17 type Plates back to 1.3x (v21 had copied them off BLACKBELT at 1.2x);
-      PRISMPLATE moved to 1.3 too. Fangs/scarves/Fairy Feather stay 1.2x.
-[x] LIGHT GEM handler added (one-shot 1.3x + consume) — the item was buyable and
-      did nothing.
-[x] Soul Dew extended to LIGHT-type moves.
-[x] DOWNPOUR blacklisted from Skill Swap / Entrainment / Role Play / Trace /
-      Doodle / Power of Alchemy. ALSO FIXED: its Electric immunity had no species
-      guard, so ANY Pokemon in form 1 got full Electric immunity. Now gated to
-      GALEFRONT as v17 did.
-[x] Sunset restored properly: dedicated PBEffects::Sunset counter on all four
-      battlers, Air-Lock aware, clears Crafty Shield, own end-of-round tick.
-      PBS Accuracy set to 0 (never misses) and Target changed NearOther ->
-      AllBattlers to match the effect. Also kills the PerishSongUser = -1 bug
-      that attributed a Sunset KO to @battlers[-1].
-[x] Pay Day paid 25x and printed its message TWICE — the override hooked
-      pbEffectWhenDealingDamage while v21's stock 5x lives in pbEffectGeneral
-      and still ran. Now exactly 20x, once.
-[x] Castform reverts its weather form on switch-out again (the custom handler
-      had replaced v21's unconditional revert); Sandy Form unaffected.
-[x] Ultra Beasts: non-Beast-Ball catch rate x0.1 restored (wrapped at the
-      PokeBallEffects table level, and v21's UB fast-path re-routed through it).
-      Legendary/mythical/UB gifts get 3 random 31 IVs again, plus the 1/75 shiny
-      roll on the non-silent path.
-[x] Arceus + PRISMPLATE and Silvally + LIGHTMEMORY now actually give form 19
-      (the PBS forms existed but no handler referenced the items). Patched in
-      place so the other 18 type forms are untouched.
-[x] Everstone regional inheritance: InheritFormWithEverStone added to the 6
-      Kiraki forms (Sentret/Furret/Yanma/Taillow/Swellow/Skarmory) and Yamselia.
+[2026-07-28] SECOND WAVE — restored systems + Battle Tower rework
+=================================================================
+[x] All 17 type Plates back to 1.3x
+[x] LIGHT GEM handler added, item did nothing
+[x] Soul Dew extended to LIGHT moves
+[x] DOWNPOUR blacklisted from ability copying moves
+[x] Sunset restored with its own effect counter
+[x] Pay Day paid 25x and printed twice
+[x] Castform reverts its weather form on switch-out
+[x] Ultra Beast non-Beast-Ball catch rate restored
+[x] PRISMPLATE and LIGHTMEMORY now give form 19
+[x] Everstone regional inheritance added to six lines
+[x] Funlocke and Nuzlocke modes: nothing read variable 100
+[x] 39 route and trophy balls made purchasable
+[x] Shiny-wild switch 31 resets on map entry
+[x] v17 hourly screen tones and day window restored
+[x] Wild EXP multipliers and Map 40 facility restored
+[x] Switch 108 locks the Bag in battle
+[x] ALT turbo restored, rescaled for 60fps
+[x] Roaming legendaries replaced Essentials sample data
+[x] Battle Tower data moved off four hand-read text files
+[x] Compile-time validation rejects unknown PBS references
+[x] 43 latent data errors found by that validation
+[x] pbReadBattlers no longer spins on an all-item pool
+[x] Old PBS/BattleTower*.txt removed, recoverable in git
+[x] Verified: no undefined method calls in any map
+[x] Verified: 4958 event script blocks parse
+[x] Verified: 47 plugin files pass ruby -c
+[x] Verified: no dangling PBS references
 
-FIELD SYSTEMS ([005] Overworld/[012]-[014], [006] Settings/[000])
-[x] Funlocke / Nuzlocke modes — the difficulty menu on Map001 wrote
-      $game_variables[100] and NOTHING read it. Restored every consumer: no
-      reviving fainted Pokemon (heal_HP, Revive/Max Revive/Revival Herb/Sacred
-      Ash/Max Honey, field and battle), Rare Candy blocked on fainted, forced
-      nickname on capture, "Challenge mode is over" on whiteout, forced Set
-      style on the Battle Tower map.
-[x] 39 route/trophy balls + Custom Ball — all purchasable, all with zero
-      handlers. Guaranteed catch on their own map list in Challenge mode, 0
-      elsewhere; Custom Ball reads vars 56/57/58 at x2.5 each.
-[x] Shiny-wild switch 31 now resets on map entry — without it, leaving a static
-      shiny event mid-way left EVERY wild Pokemon shiny permanently.
-[x] v17's 24-row hourly screen tones and its 06:00-18:00 day window restored
-      (v21 had reverted to Essentials' much flatter default).
-[x] Wild EXP x1.3 (x1.5 Funlocke, x3 Easy, x1 Hard Nuzlocke) restored, and the
-      Map 40 EV/EXP facility (base exp 800 + flat 15 EVs into the stat in var 1).
-[x] Switch 108 locks the Bag in battle again (set by every E4/Champion fight).
-[x] ALT turbo restored, scaled to v21's 60fps baseline (60 -> 105 -> 150).
-[x] Roaming legendaries — v21 still shipped Essentials' 4-entry sample data.
-      All 17 v17 roamers restored with both roam graphs.
-      NOTE trainer EXP is still x1.0 vs v17's x1.5; that's
-      Settings::MORE_EXP_FROM_TRAINER_POKEMON, off because MECHANICS_GENERATION
-      is 8. Left alone deliberately — flag if you want it back.
-
-BATTLE TOWER POOLS — now a real PBS file
-[x] Replaced the hand-rolled setup (four PBS/BattleTower<Tier>.txt files read as
-      raw text at runtime, "encrypted" with a custom transposition cipher into
-      Data/BattleTower<Tier>.dat) with a normal GameData class:
-        PBS/battle_tower_pools.txt  ->  Data/battle_tower_pools.dat
-      New plugin [001] Battle/[010] Battle Tower Pools.rb defines
-      GameData::BattleTowerPool (DATA_FILENAME + PBS_BASE_FILENAME), so it is
-      picked up automatically by GameData.load_all, the recompile mtime check,
-      and PBS file discovery. Compiles through Compiler.compile_pbs_files and
-      writes back through Compiler.write_all, using standard save_data/load_data
-      — so it is Marshal'd and swept into Game.rgssad like every other .dat.
-      BTencode/BTdecode/pbEncryptBT/pbDecryptBT are gone.
-      Format is a section per tier, one Pokemon per line, matching v21's own
-      battle_tower_pokemon.txt for the first five fields:
-        SPECIES;ITEM;NATURE;EVS;MOVES;ATTACKIV;ABILITYINDEX;FORM
-      All 1343 entries converted and verified (378/477/357/131 per tier).
-[x] Compile-time validation now rejects unknown species/moves/items/natures,
-      bad EV tokens, empty or >4 movesets, out-of-range Attack IVs and
-      hidden-ability indices that don't exist — with proper line reports.
-[x] 43 latent data errors the old loader silently swallowed, found by that
-      validation and fixed:
-      - 29 entries used EV tokens "atk"/"def", which BT_STAT_KEY did not
-        recognise, so those Pokemon were quietly running 0 EVs in that stat.
-      - items: STICK->LEEK, ROCKHELMET->ROCKYHELMET, ABOMASNOWITE->ABOMASITE,
-        COALOSSALITE->COALOSSITE; TERAPAGITE and a stray MILD in the item column
-        cleared (no such items exist, so both were already resolving to nil).
-      - moves: BUGBUZ->BUGBUZZ, STEALTHROCKS->STEALTHROCK, U-TURN->UTURN (x2),
-        VOLTAGE->VOLTSWITCH (Iron Crown's only legal Volt move), ICEWALL->PROTECT
-        (ICEWALL was a dead v17 placeholder that no species could learn).
-      - Primarina and Aggron had ability index 3, which is past their single
-        hidden ability, so v21 fell back to a RANDOM natural ability — Primarina
-        lost Liquid Voice (the whole point of its Boomburst set) and Aggron lost
-        Heavy Metal (its Heavy Slam set). Both corrected to 2.
-[x] pbReadBattlers no longer spins forever when a pool is all mega stones or
-      smaller than the requested party size.
-[x] Old PBS/BattleTower*.txt removed (git-tracked, recoverable).
-
-VERIFIED AT END OF SESSION
-[x] 0 undefined method calls across all Map*.rxdata + CommonEvents.rxdata
-[x] 0 of 4958 event script blocks fail to parse
-[x] 47 Pokemon Sunday plugin files pass ruby -c
-[x] 0 dangling species/move/item/ability/type references in PBS
-
---------------------------------------------------------------------------------
 [2026-07-28] BATTLE ANIMATIONS + EBDX GROUNDWORK
---------------------------------------------------------------------------------
-BATTLE ANIMATIONS — PORTED (tools/import_v17_animations.rb)
-[x] v21 was still running Essentials' 311 stock sample animations. v17 had 1250
-      (32,713 frames, 334 sprite sheets), so ~940 custom move animations were
-      missing — the single biggest reason battles didn't look like v17.
-      PBAnimation/PBAnimations/PBAnimTiming are structurally identical between
-      the versions (v21 only raises the per-frame sprite cap 30 -> 60), so the
-      data transfers directly. Now installed: 1250 animations / 32,713 frames.
-      NOTE the round-trip guard here is structural, not byte-identical: RGSS's
-      Ruby 1.8 Marshal wrote Floats with a longer mantissa than Ruby 3 does, so
-      a re-dump is legitimately ~5KB smaller while holding the same numbers.
-      The old v21 file is kept at Data/PkmnAnimations.rxdata.v21stock.bak.
-[x] Data/move2anim.dat regenerated in the same pass, replicating
-      Compiler#compile_animations exactly (symbol-keyed, [0]=player side,
-      [1]=opponent side): 643 player-side and 252 opponent-side mappings, up
-      from the stock set. Doing it here means the animations work without
-      needing a debug launch to recompile first.
-[x] 3 animations renamed so they actually bind to their moves — v17 spelled the
-      moves differently and the compiler would silently skip them:
-        HIJUMPKICK -> HIGHJUMPKICK, VICEGRIP -> VISEGRIP,
-        LIHTIUMBURN -> LITHIUMBURN  (a v17 typo for this game's own move)
-      Verified bound afterwards: GAMMARAYBURST, PRISMSHOT, SUNSET, LITHIUMBURN.
-      46 names remain unmapped and are meant to be — the author's "xxxx"-suffixed
-      disabled entries, per-type HIDDENPOWER*/WEATHERBALL* variants, and the
-      DOOMDUMMY/FUTUREDUMMY placeholders.
-[x] 1121 animation sound effects imported from v17 Audio/SE/Anim (the PRSFX move
-      library was never migrated). 6 remain absent, none of which exist in v17
-      either. 8 background sheets are also referenced but missing from both
-      versions — those animations simply play without a backdrop, as in v17.
+================================================
+[x] 1250 v17 animations imported over Essentials 311 samples
+[x] Data/move2anim.dat regenerated in the same pass
+[x] Three animations renamed so they bind to moves
+[x] 1121 animation sound effects imported
+[x] 901 BackSprite y offsets were wrong after the pack import
+[x] 228 species had no metrics, generated from sprites
+[x] Sunday's three EBDX customizations identified
+[x] All EBDX art staged ahead of installing
 
-SPRITE METRICS — REPAIRED (tools/fix_sprite_metrics.py)
-[x] 901 BackSprite entries had y = 0. That was right for v21's original
-      bottom-aligned back sprites, but the Gen 9 Pack import overwrote 1644 of
-      them with 288x288 art that centres the Pokemon and leaves 27-99px of empty
-      canvas underneath. With y = 0 that margin is never compensated, so EVERY
-      Pokemon's back sprite was rendering that far above the platform.
-      Recomputed with the same formula v21's own pbAutoPositionAll uses,
-      (height - (lowest_opaque_row + 1)) / 2, but preserving the hand-tuned x
-      offsets that Essentials' tool would have zeroed.
-[x] 228 species had no metrics entry at all; generated from their sprites.
-      Metrics file now covers 1136 entries, 0 malformed.
-      FrontSprite/ShadowX/ShadowSize deliberately untouched — the Gen 9 import
-      only ADDED front sprites, so existing front values still match their art
-      (spot-checked: Bulbasaur stored 26 vs computed 27, Charizard 3 vs 4).
-      This helps the stock v21 scene too, not just EBDX.
-
-ELITE BATTLE DX — DO NOT HAND-PORT (groundwork done, blocked on a download)
-[!] v17 EBDX is scripts #218-#227, ~19,900 lines, and it does not sit on top of
-      the battle system — it REPLACES PokeBattle_Scene outright and reopens
-      PokeBattle_Battle/Battler/Move. v21 renamed and rewrote every one of those
-      (Battle::Scene, Battle, Battle::Battler). A blind hand-port would be a
-      multi-week job with a high chance of ending in a half-working battle scene,
-      which is worse than stock.
-[!] Unofficial v21.1 ports already exist and are the right route:
-      - EBDX v21.1 port by Manurocker95: https://eeveeexpo.com/resources/1338/
-      - Open-Source EBDX Renovation Project (bug/lag fixes on top of that port):
-        https://eeveeexpo.com/resources/1831/
-      Caveats from the resource page: no support, "can be buggy", NOT compatible
-      with ZUD plugins (irrelevant here — this game uses the Gen 9 Pack), and
-      "Gen 8/9 sprite packs require porting", which WILL matter since this game
-      is built on the Generation 9 Pack. Requires sprite metrics — now done.
-[x] Sunday's own EBDX customizations identified, and there are only THREE, all
-      one-liners. Re-applying them after installing a v21.1 build is trivial:
-      - #222 EliteBattle_Animations L1118 and #227 EliteBattle_MoveAnimations
-        L75: animations = $pkmn_animations instead of re-reading
-        load_data("Data/PkmnAnimations.rxdata") on every animation. This matters
-        much more now that the file is 11MB. v21 already caches animations in
-        $game_temp.battle_animations_data, so point EBDX at that instead of
-        reintroducing a global.
-      - #224 EliteBattle_Sprites L350: @shadow.visible = false, i.e. battler
-        ground shadows always hidden. (The old checklist described this item as
-        "Shadow always visible" — that was backwards.)
-      No Sunday species, moves or types are referenced anywhere in the EBDX
-      scripts, so nothing else is game-specific.
-[x] All EBDX art staged so it's ready the moment the plugin goes in:
-      - Graphics/Pictures/EBS/ + EBS/nextGen/ — 64 files
-      - Graphics/Battlebacks/battlebg/ (52), playerbase/ (34), enemybase/ (34),
-        Animation/ (12) — EBDX's own layout, imported alongside (not replacing)
-        the stock-format *_bg/_base0/_base1/_message files, so battles keep
-        working on the stock scene until EBDX is installed.
-      - Graphics/Animations/Ballburst (64) and the egg sprites were already
-        migrated; EBS/DS and Battlers/Cut don't exist in v17 either.
-
---------------------------------------------------------------------------------
 [2026-07-28] ELITE BATTLE DX INSTALLED
---------------------------------------------------------------------------------
-Installed from the ChromeValiant fork of the unofficial Essentials 21.1 EBDX
-port (git@github.com:ChromeValiant/Pokemon-Essentials-21-With-Unofficial-EBDX).
-Chosen over Manurocker95's original: same EBDX version (1.4.7.1) but a year
-newer, with ~1100 lines of additional fixes across battle core, scenes, UI and
-entry animations. Manu's repo is a drop-in swap if this one misbehaves.
+======================================
+[x] Luka's Scripting Utilities 3.3.2 installed
+[x] EBDX 1.4.7.1 installed, 97 files pass ruby -c
+[x] Graphics/EBDX and its audio installed
+[x] PBS/EBDX data files, covering 1026 species
+[x] Move animation code and art installed
+[x] EBDX Stat Boost Overlay deliberately not installed
+[x] PRIORITIZE_ANIMATED_SPRITES left false
+[x] FORCE_EBDX_ALTITUDE false, altitude from repaired metrics
+[x] CUSTOM_COMMON_ANIM left false
+[x] Sunday's surviving EBDX customization re-applied
+[x] EBDX declared Optional, so removing it reverts cleanly
+[x] EBDX resolves backdrops through its own maps.txt
+[x] 179 plugin files pass ruby -c, no duplicates
+[x] Only four EBDX collisions, all alias-and-redefine
+[x] EBDX hardcodes no switch or variable numbers
+[x] Trainer Card extras restored on top of the core card
+[x] pbCut and pbRockSmash un-no-oped, 31 events fixed
+[ ] Rock Smash items not ported, never fired in v17
+[x] pokedex_names region numbers corrected
+[x] REGION_MAP_EXTRAS pointed at a file that never existed
+[x] All 23 Fakemon given EBDX entries
+[ ] Battle backdrop bases inferred from names, eyeball them
+[ ] EBDX untested in game, first launch must be debug
 
-All on branch migration/v17-port-and-ebdx, one commit per step so any single
-piece can be reverted on its own.
-
-[x] Luka's Scripting Utilities 3.3.2 (EBDX's declared dependency)
-[x] EBDX 1.4.7.1 - 97 script files, 20,884 lines, all pass ruby -c
-[x] Graphics/EBDX (451 files, 36MB) + Audio/{BGM,ME,SE}/EBDX (89 files)
-[x] PBS/EBDX data files; pokemon.txt covers 1026 of our 1048 species
-
-DELIBERATELY EXCLUDED - the ask was the battle interface, not the extras:
-[x] [002] Animation Code/Move Animations (405 files, ~39,500 lines) and its
-      Graphics/EBDX/Animations/Moves art (573 files, 13MB). That is 66% of EBDX
-      by volume. With it absent every move falls through to pbFindMoveAnimation,
-      so battles play the v17 animation set imported earlier rather than EBDX's
-      own. CUSTOM_MOVE_ANIM = true is what enables that fallback.
-[x] EBDX Stat Boost Overlay (ships in the Chrome fork) - not installed.
-[x] PRIORITIZE_ANIMATED_SPRITES left false, so static Gen 9 Pack sprites are
-      used. This is also what sidesteps the port's documented "Gen 8/9 sprite
-      packs require porting" caveat - that warning is about EBDX's animated
-      battler art, which we are not using.
-
-CONFIGURED
-[x] FORCE_EBDX_ALTITUDE true -> false so altitude comes from the repaired
-      PBS/pokemon_metrics.txt rather than EBDX's table.
-[x] CUSTOM_COMMON_ANIM left false - EBDX's own status/effect animations are part
-      of the interface look, not move animations.
-[x] Sunday's single surviving v17 EBDX customization re-applied in
-      Plugins/Pokemon Sunday/[001] Battle/[011] EBDX Sunday Tweaks.rb: battler
-      ground shadows always hidden (v17 #224 L350). Kept out of the vendored
-      plugin so EBDX can be replaced wholesale later. The other two v17 tweaks
-      are obsolete - the port already caches PkmnAnimations in a module ivar and
-      already prefers static sprites.
-[x] EBDX declared an Optional (not Requires) dependency of Pokemon Sunday
-      Scripts: guarantees load order, but removing EBDX to revert won't break
-      boot.
-
-BACKDROPS WIRED
-[x] EBDX ignores Essentials' BattleBack metadata and resolves backdrops through
-      its own EnvironmentEBDX constants, mapped per map in PBS/EBDX/maps.txt.
-      Left alone, all 34 custom backdrops across 115 maps would have been
-      dropped for EBDX defaults. Generated an environment per backdrop pointing
-      at the existing Graphics/Battlebacks/battlebg art by full path (EBDX tries
-      pbResolveBitmap on the raw value first), so nothing is duplicated.
-      Platforms use EBDX's own Concrete/Dirt/Water bases, drawn for its
-      perspective camera. Regenerate: tools/generate_ebdx_environments.py
-
-INTEGRATION VERIFIED
-[x] 179 plugin script files across all 5 plugins pass ruby -c; no duplicate
-      plugin names; dependency graph resolves.
-[x] Only 4 method collisions between EBDX and Pokemon Sunday, and all six
-      definitions involved use alias-and-redefine, so they chain rather than
-      clobber: Battle#pbEndOfBattle, Battle::Battler#pbSuccessCheckAgainstTarget,
-      Battle::CatchAndStoreMixin#pbStorePokemon, plus the intentional
-      DynamicPokemonSprite#formatShadow tweak. Sunday loads after EBDX, so the
-      chain is core -> EBDX -> Sunday.
-[x] EBDX uses NO hardcoded switch or variable numbers, so nothing clashes with
-      Challenge Mode (var 100), Battle Tower rental (210) or Mystery Gift (220).
-      Its own Nuzlocke/Randomizer are opt-in and never invoked by this game.
-
-[x] Trainer Card extras (v17 #167) — the v21 port kept only Essentials' own
-      card. Restored in [020] Trainer Card Extras.rb, drawn on top of the core
-      card rather than replacing it: the "Nuzlocke Champ" label (switch 145,
-      set by Map163 and read by nothing until now), the row of championship
-      pips ($game_variables[99], written by Map001/Map162/Map172), and the "D"
-      debug-used marker (switch 225). Graphics/Pictures/Championships.png was
-      copied over from v17; it was missing entirely. v17 drew the "D" at the
-      same spot as the champ label, so they overlapped - the D moves right when
-      both are shown.
-
-[x] pbCut / pbRockSmash were no-oped by the HM-prompt suppression, which broke
-      the 10 "CutTree" and 21 "SmashRock" events - they test those calls in a
-      conditional and only break when it returns true, so pressing A on every
-      tree and rock did nothing at all, silently. They were still clearable from
-      the Bag, but that is not how v17 played. Restored to v17's item-gated
-      versions (badge + Hatchet/Dynamite, no Pokemon involved).
-[ ] Rock Smash items (v17 #241, Zerokid) not ported - 25% item / 25% encounter
-      on smashing a rock. Worth knowing it never fired in v17 either: nothing
-      called pbRockSmashRandomEncounter, since Kernel.pbRockSmash and the rock
-      events both omit it. v21's Bag route for :DYNAMITE does call the stock
-      encounter roll, so the two routes differ slightly until this is decided.
-
-ALSO FIXED (found while checking EBDX's metrics dependency)
-[x] pokedex_names used [name, region] pairs numbered 0-10, but that number is a
-      TOWN MAP region and PBS/town_map.txt defines only region 0. Opening an
-      entry from any Dex but the first raised "Unknown ID" from
-      GameData::TownMap.get. Now plain strings, so the region falls back to the
-      player's current one. Also dropped a spurious "Legendary Pokedex" entry
-      that occupied the National Dex's index and made the real National string
-      unreachable.
-[x] REGION_MAP_EXTRAS pointed at "mapHiddenBeryllium", which exists in neither
-      version. v21 draws these via AnimatedBitmap.new, which raises on a missing
-      file, so with Switch 147 on it crashed the Town Map and Pokedex Area page.
-
-KNOWN LIMITATIONS
-[x] The 22 Fakemon have no entry in PBS/EBDX/pokemon.txt, so they render at
-      neutral battler offsets. EliteBattle.get_data returns nil and callers
-      default to 0, so this is cosmetic, not a crash. Fix in-game with EBDX's
-      Sprite Positioner, which writes back to that file.
-  [2026-08-09] RESOLVED. All 23 Fakemon now have entries, and every offset in the
-      file is measured from the art rather than hand-placed — see the
-      2026-08-09 section at the end.
-[ ] Battle backdrop base assignment (Concrete/Dirt/Water) was inferred from
-      backdrop names; a few may want swapping by eye.
-[ ] Untested in-game - none of this can run headless. First launch must be from
-      the editor/debug so EBDX compiles PBS/EBDX -> Data/*.ebdx and
-      PluginScripts.rxdata is rebuilt.
-
-================================================================================
 [2026-08-09] GEN 9 PACK 3.3.7, PLZA MEGA ART, SPRITE AUDIT
-================================================================================
+==========================================================
 
 GENERATION 9 PACK UPGRADED 3.3.4 -> 3.3.7
 -----------------------------------------
-[x] Plugins/Generation 9 Pack v3.3.4 replaced with v3.3.7 (14,725 files).
-      The pack folder is the whole distribution, not just its scripts, and the
-      root meta.txt is added at install time - it is NOT in the archive, so it
-      has to be copied up from Plugins/Generation 9 Pack Scripts/meta.txt or
-      Essentials will not see the folder as a plugin at all.
-[x] Dependency bumped: Plugins/Pokemon Sunday/meta.txt
-      Requires = Generation 9 Pack,3.3.4 -> 3.3.7
-[x] tools/port_pack_form_icons.rb repointed; the newer tools glob for
-      "Generation 9 Pack v*" and take the highest, so the next bump is free.
+[x] Pack replaced, 14,725 files
+[x] Dependency bumped in meta.txt
+[x] Tools repointed to glob for the highest version
 
-PLZA MEGA ART - 6 FORMS THAT HAD NO SPRITES AT ALL
---------------------------------------------------
-[x] Mega Baxcalibur, Mega Darkrai, Mega Garchomp Z, Mega Lucario Z, Mega
-      Zeraora and Mega Eelektross were defined in PBS/pokemon_forms.txt but had
-      no art in any set, so all six battled wearing their base form's sprite.
-      3.3.7 ships them (they are Legends Z-A DLC forms, added after 3.3.4).
-      All 6 sets filled for each: Front, Front shiny, Back, Back shiny, Icons,
-      Icons shiny - 61 files including 26 shiny icons for other Megas.
-[x] Matched by FormName, never by form number - this game renumbered forms when
-      every Gigantamax became a Mega. All 32 matches verified by name before
-      copying (e.g. game GARCHOMP_2 "Mega Garchomp Z" = pack GARCHOMP_2, same
-      name). New tool: tools/port_pack_sprites.rb (never overwrites an existing
-      file, so hand-drawn and hand-aligned art is safe).
-[x] The 12 imported BACK sprites were 288x288 - the pack draws backs at 3x3 unit
-      pixels, this game uses 2x2 - and were reduced to 192x192. All 12 scored
-      ZERO non-uniform 3x3 blocks at grid offset (0,0), so the reduction was
-      exactly lossless: visible unit counts identical before and after
-      (e.g. Garchomp 4298 -> 4298). New tool: tools/reduce_back_sprites.ps1,
-      which reports mixed blocks rather than majority-voting them - voting is
-      what eroded 53 sprites' edges in the 2026-08-08 incident.
+PLZA MEGA ART — 6 forms that had no sprites
+-------------------------------------------
+[x] Six Megas were defined in PBS with no art
+[x] Matched by FormName, never by form number
+[x] Twelve back sprites reduced from 288 to 192
 
 EBDX METRICS RE-DERIVED
 -----------------------
-[x] tools/measure_sprite_bounds.ps1 written (the measuring step had only ever
-      existed as ad-hoc inline PowerShell). Measures the alpha>=8 bounding box
-      of all 3,259 Front and Back sprites into the TSV that
-      regenerate_ebdx_metrics.rb consumes.
-[x] PBS/EBDX/pokemon.txt: 35 values corrected, 0 sections added. 24 of those are
-      the new Megas, which had been sitting on inherited placeholder offsets
-      (Mega Garchomp Z was at PlayerX 34 / PlayerY 79 against a measured 1 / 1).
-      The other 11 are 1px rounding drift (BattlerEnemyX -1 -> 0).
-      Mega Garchomp Z and Mega Darkrai measure as filling the canvas edge to
-      edge; probed for stray edge pixels and it is genuine art, not noise.
-[x] All 23 Fakemon now have EBDX entries - see the KNOWN LIMITATIONS correction
-      above.
+[x] tools/measure_sprite_bounds.ps1 written
+[x] 35 EBDX metric values corrected
+[x] All 23 Fakemon have EBDX entries
 
 SPRITE AUDIT
 ------------
-[x] tools/report_missing_sprites.rb writes v21 MISSING_SPRITES.md: every species
-      and numbered form against all eight graphic sets. Distinguishes a BASE
-      species with no file (falls to 000.png, renders blank) from a FORM with no
-      file (falls back to base form art, wrong but visible), and exempts forms
-      that are supposed to share base art.
-      CAUTION worth recording: follower art is under Graphics/CHARACTERS/
-      Followers, not Graphics/Pokemon/Followers. The first version of this tool
-      looked beside the battlers and reported all 1,540 entries as missing
-      followers when 1,362 were present.
-      Megas and battle-only forms are exempt from the follower check - you
-      cannot walk around Mega-evolved, so falling back to the base form's
-      overworld sprite is correct, not a gap.
+[x] tools/report_missing_sprites.rb writes MISSING_SPRITES.md
 
-REMAINING ART GAPS (all Fakemon or custom forms; nothing canon is broken)
-------------------------------------------------------------------------
-[ ] Back - LEOTERYGI, PALOSSNOW, ROOBOP, SNOWYGAST (4 species). These are the
-      last hand-drawing job in the game's art; everything else is derivable or
-      done.
-[x] Back shiny - CLOSED for everything that has a back.
-      [2026-08-10] SPUDNICK finished by Ryan (front shiny, back, back shiny,
-      follower), and ACTINOTOX / TARFELON / WIKINIKI derived from their front
-      pairs. The remaining 4 back shinies are exactly the 4 species above with
-      no back to recolour, so nothing derivable is left.
-      Method note worth keeping: a single fitted hue/chroma rotation was tried
-      first and rejected. Only Spudnick's shiny is a uniform LCh shift (measured
-      dHue -38.5 +-5.7, matching the -40.8 Ryan used). Tarfelon scatters +-54
-      degrees and Wikiniki +-78 because they were recoloured by hand, so a
-      fitted shift would have been wrong. The per-colour map assumes nothing.
-      Coverage decided the quality: Wikiniki 100% of back colours present in the
-      front map (fully exact), Tarfelon 90%, Actinotox only 33% - its back
-      carries shading its front never uses. The uncovered colours take the
-      nearest front colour's DELTA rather than its value, so tones that round
-      together stay distinct; all three kept their colour counts exactly.
-      Tool: tools/derive_shiny_from_front.ps1 (was derive_shiny_icons.ps1, now
-      takes -Set so it serves Icons and Back alike).
-      tools/apply_hue_chroma.ps1 implements GIMP's Hue-Chroma in CIE LCh(ab)
-      against D50 - not HSV, and not D65 - with a -Verify mode that proves a
-      shift against a reference before it is applied. Verified against Ryan's
-      Spudnick front and back at worst 1 per channel.
-[x] Shiny icons - CLOSED, see the section below. All 46 derived from the
-      battler palettes, including HOVEON and SPUDNICK, which the earlier entry
-      had listed as needing hand-drawing.
-[ ] Followers - 40 entries: the 23 Fakemon, the 8 Kiraki regional forms
-      (Sentret/Furret/Yanma/Taillow/Swellow/Skarmory/Galefront/Vivillon), the 3
-      custom forms (Arceus Light, Silvally Light, Rotom Lamp), and POLTCHAGEIST,
-      which is the only canon species missing one - the pack ships a SINISTCHA
-      follower but no POLTCHAGEIST.
+REMAINING ART GAPS
+------------------
+[ ] Back and Back shiny: LEOTERYGI, PALOSSNOW, ROOBOP, SNOWYGAST
+[x] Back shiny closed for everything that has a back
+[x] Shiny icons closed, all 46 derived from battlers
+[ ] Followers missing 37 entries, Followers shiny 40
+[x] Spudnick complete on all eight sets, first Fakemon
+[ ] Canon Hisui species still missing front and back art
 
 FOLLOWING POKEMON EX 2.5.1 INSTALLED
 ------------------------------------
-[x] The v21.1 port by nononever, from Golisopod User's original. Worth recording
-      that it is NOT on GitHub - repository and code search both come back
-      empty, no mirrors or forks. It ships only through Eevee Expo / MediaFire:
-        https://eeveeexpo.com/resources/1464/
-        https://www.mediafire.com/file/dp44icuwywvqwfx/Following_Pokemon_EX.rar/
-      so it cannot be fetched non-interactively and has to be downloaded by
-      hand whenever it is updated.
-[x] Copied: the plugin scripts, and the four graphic sets this tree had none of
-      - Levitates (264), Levitates Shiny (261), Swimming (1019), Swimming
-      Shiny (1074).
-[x] Followers / Followers shiny merged ADD-MISSING ONLY. The Gen 9 Pack art
-      already installed is the better set and the plugin's copy is older; this
-      added the 14 files each was missing and overwrote nothing.
-[x] Data/Animations.rxdata deliberately NOT copied, and this is the trap to
-      remember. The plugin references its animations by INDEX (9, 10, 12, 13,
-      15, 17, 29, 30), so the file matters - but this tree already carries them
-      at exactly those indices, same names, same Follower_Emote /
-      Follower_ComeInOut graphics (byte-identical). Its copy also holds the
-      grass-rustle volume fix, which overwriting would have silently undone.
-[x] EBDX compatibility verified rather than assumed. The plugin patches
-      EliteBattle.follower; both symbols it needs exist in the installed EBDX -
-      USE_FOLLOWER_EXCEPTION (Config.rb, true) and battle.scene.firstsendout,
-      which EBDX's own module uses identically. Its 7-argument call to
-      GameData::Species.check_graphic_file matches v21's signature, subfolder
-      last. Load order resolves with no dependency declaration because
-      "Elite Battle DX" sorts before "Following Pokemon EX".
-[x] All 17 script files pass ruby -c; no duplicate plugin names.
-[ ] TO TEST IN GAME: the plugin binds JUMPUP to toggle the follower and
-      JUMPDOWN / AUX2 to cycle the party. This game's field-item hotkeys go
-      through Input.triggerex? scancodes so they should not collide, but that
-      is unconfirmed.
-[x] FPEX DOES NOT START ITSELF - no follower appeared on first run, and this is
-      the reason. The only caller of add_follower is
-      FollowingPkmn.start_following, a script command meant to be run from a map
-      event, and nothing in the plugin ever invokes it. follower_toggled is also
-      an attr_reader with no initialiser, so it reads nil and refresh_internal
-      returns straight away. The plugin's own Options entry cannot rescue this
-      either: its condition requires FollowingPkmn.get_event to be non-nil, so
-      with no follower the toggle is hidden, and with the toggle hidden there is
-      no way to make one.
-      Fixed in [005] Overworld/[021] Following Pokemon Defaults.rb:
-      - follower_toggled defaults to true, written as a reader override rather
-        than an initialiser so pre-existing saves pick it up (they have no
-        @follower_toggled at all). Switching it off still sticks, false != nil.
-      - The follower is seeded on :on_map_or_spriteset_change. add_follower only
-        reads seven members off the event it is handed, so a Struct stand-in
-        supplies them - the follower must exist on every map, not only one
-        holding a seed event. Event ids start at 1 so id 0 cannot collide.
-      - The Options entry is re-registered without the get_event condition, so
-        the toggle is always visible, and switching it on creates the follower.
-        MenuHandlers keys on the option symbol, so this replaces FPEX's row.
-      Untested in game like everything else here.
+[x] v21.1 port by nononever, not on GitHub
+[x] Plugin scripts and four missing graphic sets copied
+[x] Followers merged add-missing-only, pack art kept
+[x] Data/Animations.rxdata deliberately not copied
+[x] EBDX compatibility verified rather than assumed
+[x] 17 script files pass ruby -c
+[ ] Test the follower toggle keys in game
+[x] FPEX does not start itself, must be enabled
 
 EBDX BATTLE FIXES
 -----------------
-[x] Blank strip at the end of every trainer battle. pbShowOpponent slides the
-      defeated trainer in by calling moveEntireScene(-6, -1) once per frame for
-      20 frames, panning the whole camera 120px left and 20px up. Backdrops are
-      384px wide - EBDX's own size, and all 52 custom ones match - so the pan
-      runs off the end of the image.
-      Fixed by EBDX's own switch: USE_TRAINER_OUT_OF_PLACE_HOTFIX false -> true
-      in [003] Config/Config.rb. The pan is skipped and only the trainer sprite
-      moves. Safe because pbShowOpponent and pbHideOpponent share the flag so
-      they stay symmetrical, and because those two are the ONLY horizontal scene
-      pans in the plugin - every other moveEntireScene call passes x = 0.
-      Not a backdrop-size problem: 384x308 matches the 18 stock backdrops, the
-      screen is the stock 512x384, and the VS bar is 768px wide.
-[x] HP bar draining instantly. The step size was a red herring; the real fault
-      is EbdxWaiter#wait, and it affected EVERY animation in the battle.
-      The waiter keeps a running deadline: it adds its 0.025s tick to @timer_end
-      and busy-waits "until System.uptime >= @timer_end", drawing a frame per
-      pass. @timer_end is never clamped forward, so once real time overtakes it
-      - after any slow stretch, a message box, a move animation, a stutter -
-      every later wait adds 0.025s to a timestamp STILL in the past. The
-      condition is already true, the body never runs, and wait returns having
-      drawn nothing. is_too_stale? only resyncs after a full 2 seconds of
-      deficit, leaving a wide window where every wait is a no-op. EBDX's author
-      hit this: a commented-out echoln "We are overdue already!" sits on the
-      line after the increment.
-      The HP loop is "while animatingHP; update; wait(1); end", so the whole
-      drain ran inside one rendered frame no matter how small each step was -
-      which is why a first attempt at slowing the step down was invisible.
-      Fixed in [001] Battle/[011] EBDX Sunday Tweaks.rb by clamping @timer_end
-      forward to the present before delegating. EBDX loses the ability to catch
-      up after a slow frame, which is the point: catching up here means dropping
-      the animation instead of playing it.
-      Blast radius is small - almost every other call site builds a fresh
-      EbdxWaiter whose @timer_end starts at System.uptime and is already in
-      sync, so the clamp is a no-op for them. Only the scene's long-lived
-      singleton @waiter accumulates.
-      The waiter clamp alone did NOT fix it. There is a second, independent way
-      into the same state: Battle::Scene#wait only calls its waiter
-      "if !EliteBattle.get(:smAnim)", and animateScene never calls
-      Graphics.update itself, so while that flag is set wait draws nothing and
-      returns at once. smAnim is a side effect of
-      EliteBattle.sun_moon_transition?, which assigns @smAnim as it returns, so
-      it can stay set outside the intro it was meant for. That guard is now
-      removed - harmless here because sun_moon_transition? needs SM transition
-      art under Graphics/EBDX/Transitions and this game ships none.
-      The real lesson: the drain was never paced by how far the bar moves per
-      update, but by how often update is called. Two attempts at shrinking the
-      per-step change both failed, because a smaller step just meant more steps
-      inside the same single rendered frame.
-      The bar is now paced with System.uptime, so no wait-plumbing fault can
-      compress it again. Duration scales with the fraction of the bar lost,
-      HP_DRAIN_MIN 0.35s to HP_DRAIN_MAX 1.60s. Simulated at one step per 0.025s
-      tick: half a bar 0.98s, full bar 1.60s, 1 HP chip 0.20s, and the same for
-      300 HP losing 150 as for 100 losing 50. @currenthp stays an Integer
-      because the databox prints it as text.
-      WATCH FOR: other battle animations that were silently skipping frames will
-      now play at their intended speed, so parts of the battle may feel slower.
+[x] Blank strip at the end of trainer battles
+[x] HP bar drained instantly, fault was EbdxWaiter#wait
 
 POKEMON CENTER HEALING
 ----------------------
-[x] Froze on the first ball with Errno::ENOENT for
-      "Graphics/Characters/Healing balls left". The Healing balls event's page 0
-      - the zero-balls state - has always pointed at that file, in v17 too, and
-      it exists in neither project. v17's RGSS tolerated the missing file;
-      mkxp-z raises.
-      Page 0 uses direction 2, i.e. row 0 of the charset, and row 0 of both real
-      charsets is fully transparent (measured: 0 opaque pixels). "Row 0 draws
-      nothing" is the artist's convention, so page 0 now has no graphic, which
-      is what it was always meant to render.
-      Tool: tools/fix_pokecenter_healing.rb
-[x] Each ball then took 16 SECONDS. v17's pbWait took FRAMES, v21's takes
-      SECONDS:
-        v17  def pbWait(numframes) - loops numframes times
-        v21  def pbWait(duration)  - until System.uptime - start >= duration
-      The nurse loops "pbSet(6,i); pbSEPlay; pbWait(16)" per party member, so 16
-      frames (0.4s at v17's 40fps) became 16 seconds - 96 seconds for a full
-      party. Converted to pbWait(0.4).
-      A tree-wide scan found this pattern in exactly 9 places, all of them these
-      Pokemon Centers, so it is contained rather than systemic.
-      Tool: tools/scan_pbwait_units.rb re-checks.
-      Worth knowing: base v21 has NO healing-machine code to swap in. Core
-      Scripts.rxdata contains nothing for it - the whole sequence is map events,
-      exactly as in v17 - so there was nothing to replace it with.
+[x] Froze on the first ball, missing graphic
+[x] Each ball took 16 seconds, pbWait units changed
 
 SHINY PARTY ICONS DERIVED
 -------------------------
-[x] 46 missing shiny icons generated from the battler palettes, closing the
-      whole category - Icons and Icons shiny are now both at zero missing.
-      Normal and shiny FRONT sprites are the same drawing in different colours,
-      so comparing them pixel by pixel yields a colour table; icon colours are
-      matched to the nearest battler colour by RGB distance and take that
-      pair's recolour.
-      Two things the measurements forced:
-      - Some shiny sheets are the same drawing nudged a pixel or two, which
-        pairs edge pixels against background. The best-overlap offset is found
-        first: Blastoise went 52.7% -> 100% at shift (-4,2).
-      - Icon palettes here share NO colours with their battlers, so substituting
-        the matched colour outright collapsed distinct icon tones into one -
-        it flattened the shading in 43 of 46, Eternatus worst at 13 colours down
-        to 6. Applying the pair's DELTA instead preserves them: 45 of 46 keep
-        every colour.
-      Least certain, worth a look: Butterfree (71%) and Hoveon (87%), which fall
-      back to palette-frequency pairing, and Zygarde form 5 (89%).
-      Tool: tools/derive_shiny_icons.ps1
+[x] 46 shiny icons generated from battler palettes
 
-OVERWORLD EVENT SPRITES CONSOLIDATED ONTO THE FOLLOWER ART
-----------------------------------------------------------
-[x] 107 Dex-numbered sprites sat loose in Graphics/Characters (251.png = Celebi)
-      alongside the same creatures' follower art. Every one of them was
-      referenced by an event, so they could not simply be deleted.
-      All 131 references across 80 maps repointed to "Followers/<SPECIES>" -
-      RPG::Cache.load_bitmap just concatenates folder + name, so a subdirectory
-      in an event's character_name resolves normally. The 107 loose files were
-      then deleted.
-      Numbers were resolved through v17's PBS/pokemon.txt, NOT v21's - 158
-      species were renumbered between versions, the same trap that had pointed
-      the Map029 Regi door at the wrong Pokemon. A trailing "s" (066s) means the
-      shiny sprite and maps into "Followers shiny/".
-      Only page graphics and move-route command 41 were rewritten. Script text
-      was left alone: the one numeric literal in a script was _INTL("31") in an
-      IV display, not a sprite name.
-      Tools: scan_numeric_char_sprites.rb, retarget_numeric_char_sprites.rb.
-      The rewriter refuses to edit any map whose Marshal round-trip is not
-      byte-identical; all 214 maps load and re-dump identically afterwards.
-[x] Fixed as a side effect: 5 move routes changed the graphic to 208, 481, 482,
-      571 and 867 - files that do not exist in this tree, so those events were
-      rendering nothing. They now point at Steelix, Mesprit, Azelf, Zoroark and
-      Runerigus respectively.
-[x] 913.png saved as Followers/PROTOSOLARIA.png (it had no follower art).
-[x] NOTE, worth an eyeball in game: the loose numeric sprites were NOT copies of
-      the follower art. All 105 comparable pairs differed byte for byte - they
-      are v17's overworld sprites versus the Gen 9 Pack's follower sprites for
-      the same species. 89 share dimensions (same 4x4 charset layout, different
-      drawing); 17 do not, and those will visibly change size on the map:
-      7 went 512 -> 256, 6 went 512 -> 320, and 3 went up.
-[x] Naming typos found and fixed while auditing, each of which had hidden real
-      art from every by-name lookup:
-      - POLTHCAGEIST.png -> POLTCHAGEIST.png (H and C transposed) in Followers
-        and Followers shiny. The typo is upstream in the Gen 9 Pack too.
-      - OGERPON_8s/_9s/_10s and TERAPAGOS_2s in Followers shiny had a redundant
-        trailing "s" inside an already-shiny folder, and no correctly named
-        counterpart existed. Renamed.
-      BOMBIRDIERs.png and ORTHWORMs.png in Followers are a third distinct image
-      with both correct slots already filled; left alone rather than guessed at.
+OVERWORLD EVENT SPRITES CONSOLIDATED ONTO FOLLOWER ART
+------------------------------------------------------
+[x] 107 loose Dex-numbered sprites consolidated
+[x] Five move routes repointed as a side effect
+[x] 913.png saved as Followers/PROTOSOLARIA.png
+[ ] Eyeball the consolidated sprites in game
+[x] Naming typos fixed, each hid real art
 
-NEW FEATURES (not v17 ports)
-[x] Petting the follower raises friendship. Talking to the Following Pokemon
-      gives it +1 happiness, for the first 10 interactions of each calendar day;
-      past that the dialogue still plays but pays nothing. New plugin
-      "Pokemon Sunday/[005] Overworld/[022] Follower Petting.rb", which aliases
-      FollowingPkmn.talk and keeps the day stamp and count on $PokemonGlobal.
-      The cap counts interactions rather than Pokemon, so cycling the party with
-      the S/W/A keys does not hand out a fresh 10. Stacks with FPEX's own
-      walking friendship (a "levelup" gain every 125s of walking), which is
-      untouched.
+[2026-08-09] QUALITY OF LIFE AND DATA
+=====================================
+[x] Petting the follower raises friendship
+[x] ALT game speedup rebuilt for v21
+[x] Fullscreen moved to F11
+[x] 51 Gen 9 and Fakemon lines added to trainers.txt
+[x] Every Mega Stone now has a trainer
+[x] Hard Nuzlocke endgame corrected
+[x] End credits: packages credited, scroll paced to song
+[x] credits.txt deleted, it was not this game's
+[x] 453 unreferenced graphics moved to Unused Graphics
+[x] Three misspelt graphics reinstated
+[x] Footprints removed entirely, Ryan's call
+[x] trainers.txt grouped by map, 421 entries, 66 groups
+[x] Elite Four specialists each drew one more Pokemon
+[x] Seven Battle Tower sets named nonexistent forms
+[x] Alcremie Vanilla Cream forms 1-6 added
+[x] Megas made reachable from any base form
+[x] Mega Greninja A given its own stone
+[x] Rockruff and Lycanroc matched to v17
+[x] Paradox Pokemon added at 1% of encounters
+[x] Dead getMegaForm handlers removed
+[x] Battle Tower legality: 114 illegal sets down to 7
+[x] Battle Tower legality finished, zero illegal sets
+[x] Nine legendary portal lairs added
+[x] Cries play by species, not v17 dex number
+[ ] Eight Fakemon have no cry in either version
+[x] pbResetLegends made complete
+[x] Mega Terapagos replaces the unreachable Stellar form
 
-[x] ALT game speedup rebuilt for v21. The port in "[014] v17 Field Systems.rb"
-      section 6 copied v17's method - cycle Graphics.frame_rate through
-      60/105/150 - which cannot work here. v17 counted frames, so a faster frame
-      clock ran the game faster; v21 paces movement, waits, message text and
-      battle sequencing off System.uptime, a wall clock, so raising the frame
-      rate only drew more frames of the same second and burned CPU. The key
-      worked, the game just never sped up.
-      Replaced by "[023] Game Speedup.rb", which scales System.uptime itself by
-      accumulating scaled deltas (continuous and monotonic across a toggle, so
-      no jump past Game_Character's 0.25s "was in a menu" discard). Alt cycles
-      1x / 1.75x / 2.5x, matching v17's 40 -> 70 -> 100 against its base of 40.
-      $stats.play_time scales with the game, by Ryan's call: a run played at
-      2.5x records the same play time as the same run at 1x, so speedrun times
-      compare across people who use the speed and people who do not. That also
-      speeds up the effects v21 times off play_time rather than uptime - screen
-      tone, flash, shake, picture moves, fog. The trade is that the trainer card
-      no longer measures seconds at the wall; v17 chose the other way, hardcoding
-      /40 in its load screen, but had no comparable-run-times reason to.
-      Not sped up either way: audio, and the core effects still measured in
-      frames (transitions, the Exp-full flash, window flashes).
-
-[x] Fullscreen moved to F11 ("[024] Fullscreen Key.rb"). Nothing else uses F11 -
-      mkxp-z keeps F1 for its keybinding menu and F12 for soft reset, Essentials
-      takes F5-F9. Alt+Enter could NOT be removed: mkxp-z handles it in its own
-      event loop before Ruby sees the key, and mkxp.json exposes only
-      anyAltToggleFS (whether the right Alt counts too), its own comment saying
-      fullscreen "can always be toggled with Alt-Enter during runtime". Short of
-      a custom mkxp-z build it stays as a second way in. The collision with the
-      Alt speedup is gone though: [023] cycles on Alt release and skips the
-      cycle if Enter was pressed during the hold, so Alt+Enter only toggles
-      fullscreen.
-
-GEN 9 INTO TRAINERS, AND THE PLZA MEGA TRAINERS
-[x] 45 Gen 9 lines and 6 Fakemon lines mixed into PBS/trainers.txt, one Pokemon
-      per evolution line, each taking a slot where two different trainers used
-      the same species. 134 eligible duplicates (118 usable); 67 still unused.
-      KINGAMBIT is the one Gen 9 line left behind - earliest possible level 72
-      against a highest duplicate slot of 55. The Frigibax line arrives via the
-      new Mega Baxcalibur trainer instead.
-      The 8 Fakemon that were on no trainer at all (6 lines) are all placed:
-      Roobop, Snowygast, Actinotox, Spudnick, Wikiniki, Protosolaria.
-      Protosolaria is the loosest match in the plan at 76 - 720 BST against a
-      level 54 Kingdra - and is worth moving by hand.
-      215 of 383 entries protected: gym leaders, anyone on a Gym map, the named
-      specials (Daled added), every MEGATRAINER, the named-character classes
-      (AUNT/Morena, CHERRY, PTRK, RIVAL1-4, POKEMONTRAINER_Cynthia), and 79
-      teams of 3+ built to a theme - shared type, one evolution line (Brent's
-      Eeveelutions), one colour, one generation, all Fakemon, or all legendary.
-      Blocking MEGATRAINER by class rather than by held item was necessary: the
-      Primal pair carry a Red or Blue Orb, not a MegaStone-flagged item, so
-      Elena's Kyogre was being swapped out from under her.
-      There is no trainer called Giovani or Giovanni - LEADER_Giovanni is stock
-      Essentials scenery with no entry - so that name protected nothing.
-      Matching is Euclidean distance over base stats, with a guard refusing a
-      species that could not exist at the slot's level. Natures, IVs, items and
-      nicknames kept; AbilityIndex clamped; the one Moves line on a replaced
-      slot dropped.
-      Tools: tools/gen9_trainer_mix.rb, tools/scan_trainer_maps.rb.
-      Plan kept at tools/gen9_substitution_plan.txt.
-[x] Every Mega Stone now has a trainer. 127 stones have a form; only 89 had
-      anyone handing one out. 38 more added on top of the first six - Raichu X
-      and Y, Clefable, Dragonite, Heatran, Chandelure, Zygarde, Magearna and the
-      rest. One trainer per STONE rather than per form, since Meowstic, Zygarde,
-      Magearna and Tatsugiri each have several Mega forms sharing one.
-      Entries follow the existing shape (one Pokemon at level 70 holding its own
-      stone); events are cloned from Silver Town Gym's Mega trainer, so the
-      pages, the var 62 gate, the self-switch and the move route are the game's
-      own. Each gets a time-of-day switch (14 Day / 15 Night / 16 Morning /
-      17 Afternoon / 18 Evening).
-      Events 20-63 on Map100 (Platinum Heights, the town - 162 and 189 are its
-      interiors), filling the bottom-right corner upward from (44..49,48), to be
-      redistributed.
-      44 new names, checked against every trainer and every row of the Trainers
-      sheet, and added to "Pokemon RPG.xls" (rows 323-366).
-      The set is derived from the PBS data rather than listed, so re-running the
-      tool after new Megas arrive adds only what is still missing.
-      Tool: tools/add_missing_mega_trainers.rb.
-
-[x] Hard Nuzlocke endgame corrections.
-      - Shrine of Arceus (Map040 ev1) refuses a Hard Nuzlocke run. Praying there
-        summons a wild battle against a random species you already own at your
-        top party level with a 0.5% shiny roll - an unlimited encounter and
-        shiny farm, on a route whose one encounter the mode has spent.
-      - The run ends on becoming Champion, not on Elite Four induction. The
-        inline ending in Map163 ev10 is removed; [012] Difficulty Modes.rb now
-        watches switch 117 ("Is Champion"), which Map171 ev1 p1/p2 and Map172
-        ev1 p1 all set. Applies to Funlocke too, which shared the old ending.
-      - Level cap gained two more stages: gyms (15/18/24/31/36/45/45/49), then
-        the Gold City tournament at 55 while switch 62 ("Won Pokemon League") is
-        off, then uncapped - so the Elite Four and Champion have no cap. The
-        tournament cap reads map 30's trainers (Amalthea v1 53, Themisto v1 53,
-        Reysh v3/4/5 55) and takes the highest, since it is one gauntlet rather
-        than eight gyms takeable in any order.
-      - Intro rules screen reworded for all three.
-      Variable 100 is now written from exactly one place in the map data - the
-      intro menu - with every other difficulty transition handled in code.
-      Tool: tools/hard_nuzlocke_endgame.rb.
-
-[x] End credits: acquired packages credited, scroll paced to the song.
-      Map172 ev1 (Champion's Room) rolls Scene_Credits, and it was rolling the
-      stock Essentials placeholder - "My Game by: Maruno ... Special thanks to:
-      Pizza". Settings.game_credits had never been filled in.
-      The acquired packages need no list of their own: get_text walks
-      PluginManager and prints each plugin's name, version and meta.txt credits,
-      so the roll already names Elite Battle: DX (18 people), Following Pokemon
-      EX (12), Generation 9 Pack (Caruban), Luka's Scripting Utilities, Pokemon
-      Sunday Scripts and the v21.1 Hotfixes, then Essentials, mkxp-z, RPG Maker
-      XP and the ownership notices. Anything installed later is picked up free.
-      New "[006] Settings/[004] Credits.rb" supplies the game's own block and
-      paces the scroll. Run time is (lines * 32 + Graphics.height) /
-      SCROLL_SPEED; at the stock 40 px/s the 82 lines finished in 75s against a
-      122s song. The speed is now solved for at scene start from the list about
-      to be drawn, so adding plugins or lines keeps it in time. BGM moved to
-      Credits_Final (what v17 used), measured at 122.204s by ffprobe, targeted
-      at 121.5s -> 24.76 px/s, landing 0.7s inside the music.
-[x] credits.txt deleted from this repo. It was not this game's credits - it
-      named "Zerokid" as lead developer and listed assets this game does not
-      use (Sevii Islands map, Jessie and James sprites, Officer Jenny). Origin
-      unknown; Ryan did not recognise it. Recoverable from commit ef8a811 if it
-      turns out to matter. Nothing was imported from it, and nothing pointed at
-      it - the game's credits are Settings.game_credits plus the automatic
-      plugin roll.
-[x] 453 unreferenced graphics moved to "Unused Graphics" at the top level,
-      folder structure kept, plus a MANIFEST. Moved rather than deleted, and
-      mkxp only searches Graphics/, so putting one back is prepending
-      "Graphics/" to its path. Usage was resolved three ways, because
-      Essentials reaches art three ways: by name (every String in every
-      .rxdata, walked generically so no field is missed), by data (never named
-      anywhere - Pokemon/Front/<SPECIES>.png, Items/<ITEM>.png,
-      Trainers/<TYPE>.png, generated from the PBS ids) and by composition
-      (sprintf("Graphics/UI/Bag/bg_%d", pocket) is the only thing reaching
-      bg_1..bg_8). Three passes were needed: PkmnAnimations.rxdata was not
-      being read, so 746 of 801 animation graphics came out unused; composed
-      names were not covered, so the Bag and Summary backgrounds looked unused;
-      and the prefix rule that fixed that swallowed whole folders when a prefix
-      ended at "/". Scan now reports 0 unreferenced across 19,848 files.
-[x] Three misspelt graphics reinstated under the correct name, having never
-      been able to load: Characters/Swimming/MABOSTIFF.png and Swimming
-      Shiny/MABOSTIFF.png -> MABOSSTIFF.png, Pokemon/Footprints/LEOPTERYGI.png
-      -> LEOTERYGI.png. Copied back, misspelt originals left in the manifest.
-      Followers/POLTHCAGEIST.png and its shiny are NOT reinstated - they are
-      pixel-identical duplicates of the POLTCHAGEIST files already in place.
-      Five files were misspelt, not six as first counted.
-[x] Footprints removed entirely, Ryan's call. The Gen 9 Pack ships 131, 127 of
-      which would have filled a gap, but Game Freak stopped drawing them after
-      B2/W2, so Gens 6-8 have none anywhere and 253 entries would still be
-      blank.
-      - GameData::Species.footprint_filename always returns nil, in
-        "[006] Settings/[005] No Footprints.rb". Both callers - the core
-        Pokedex entry page and EBDX's dex entry - already skip the draw on nil,
-        so one override covers both without copying either drawing method.
-      - Neither window is drawn by code; both are painted into background art.
-        Graphics/UI/Pokedex/bg_info.png (208,120)-(283,195) repainted as plain
-        background. EBDX/Pictures/Pokedex/dexOverlay.png (194,118)-(274,210) -
-        the "Dex Registered!" screen - cleared to transparency with the panel
-        strip's columns 240..274 restored from row 215. Both patches are in
-        tools/remove_pokedex_footprint.rb and are idempotent.
-      - Graphics/Pokemon/Footprints deleted, 668 files.
-[x] PBS/trainers.txt grouped by map: 421 entries into 66 groups in map-id order
-      (roughly play order), each headed by its map name, original order kept
-      within a group so a trainer's party versions stay together. Map comes from
-      tools/trainer_map_index.tsv, rebuilt to cover the 44 Mega trainers. A
-      trainer is filed under where its earliest version is fought. The five
-      fought on more than one map carry an "also fought on" comment;
-      tools/group_trainers_by_map.rb skips comments on re-read so it is
-      idempotent.
-[x] Elite Four: one more Pokemon in each specialist's draw. The nineteen are
-      e4Trainer 1..19 in "[001] Battle/[007] Elite Four.rb", not trainers.txt.
-      Each defines p0..p8 and fights p5 plus four drawn from the rest; now five
-      from nine. Europa/Basculegion male, Io/Ceruledge, Callisto/Roobop,
-      Ganymede/Scovillain, Taranis/Bellibolt, Euanthe/Kiraki Swellow,
-      Praxidike/Tarfelon, Lysithea/Nimbee, Pasiphae/Baxcalibur,
-      Sinope/Annihilape, Harpalyke/Flamigo, Daled/Palossnow, Shin/Grafaiai,
-      Samekh/Klawf, Khof/Actinotox, Morena/Scream Tail, Saturday/Sinistcha,
-      Adison/Spudnick, Burnham/Wikiniki. Each built from its Battle Tower set,
-      higher tier winning where there were two. Callisto is the exception Ryan
-      asked for: Roobop promoted to the guaranteed p2 and the Galvantula that
-      was there moved into the new slot. Bug had neither Nimbee nor Yimbee;
-      Nimbee chosen because Yimbee's Bug/Steel duplicates Forretress exactly.
-      - Spudnick was the only one of the nineteen without a Battle Tower set,
-        so it now has one in [Competitive]: a Focus Sash suicide lead around
-        Deorbit, Naive (Supernova is physical, so Timid was costing 10% for
-        nothing).
-      - Europa's Omastar deleted. It was written as p9 and never added to the
-        draw list, so it had never been reachable.
-      - Saturday: Palossand out, Kiraki Skarmory (form 2, Ghost/Flying) in at
-        p7, Sinistcha to p9. The empty Skarmory that had been sitting at p9 is
-        deleted - a v17 copy-paste slip where the following six lines configured
-        p8, so it had no moves, item, nature or EVs. v17's typo kept it
-        harmless; the port made it a real but empty Pokemon.
-[x] Seven Battle Tower sets named a form that does not exist, so Essentials was
-      quietly building the base form instead. New
-      tools/audit_battle_tower_forms.rb checks all 1,344 sets against the
-      learnset of the form they claim. Psyduck 1->0, Darumaka 1->2 twice,
-      Alcremie 5->0 and 4->0, Basculegion 1->3, Quaquaval 1->0. Basculegion
-      mattered most: the Life Orb Mild set is the female's and was spawning a
-      male. Cause is that a form field is just a number, and the Gen 9 Pack and
-      the PLZA Megas inserted a lot of forms ahead of existing ones.
-[x] Alcremie: Vanilla Cream forms 1-6 added, so all 63 forms exist. Every other
-      cream is seven entries; Vanilla Cream had only form 0. Battle Tower sets
-      moved onto real forms chosen for looks - 39 Salted Cream, 57 Rainbow
-      Swirl. Mega Alcremie master given form 31; other Alcremie trainers 1 or 62.
-[x] Megas reachable from any base form. Essentials pairs a Mega with exactly one
-      base form through UnmegaForm, and getMegaForm skips a Mega whose
-      unmega_form is not the current form. New
-      "[000] Forms/[007] Mega From Any Form.rb" lets species in ANY_FORM reach
-      their Mega from any form and remembers the pre-Mega form to restore
-      afterwards. ANY_FORM is Alcremie (63 cosmetic forms, only form 0 could
-      Mega and it always came back Vanilla Cream), Toxtricity (Amped and Low Key
-      share types, stats and first ability) and Aerodactyl (Gen 3 Style
-      overrides nothing but its name - Ryan asked for it to reach the same Mega
-      and revert). The list is explicit, not "any Mega with unmega_form 0",
-      because seven genuine pairings must keep working: Floette 6->5, Meowstic
-      3->1, Zygarde 4->2 and 5->3, Magearna 3->1, Tatsugiri 4->1 and 5->2.
-      - Genuine bug found by tools/audit_mega_base_forms.rb: URSHIFU. Mega
-        Urshifu S (2) and R (3) share a stone and both reverted to form 0, so
-        Rapid Strike could not Mega Evolve at all and Mega Urshifu R was
-        unreachable. Form 3 now carries UnmegaForm = 1.
-      - Left alone with reasons: Floette (the Mega pairs with Eternal Flower,
-        which has its own stats), Raichu, Meowth and Slowbro (the stranded forms
-        are Alolan and Galarian, different types and stats), Necrozma, Zygarde.
-[x] Mega Greninja A given its own stone, the way Raichu X and Y work. v17's
-      Mega Greninja - stats 72/145/67/132/153/71, Protean - is form 2 here,
-      renamed "Mega Greninja A" and left with no stone, while the pack's
-      different Mega Greninja (form 3) took GRENINJITE, so Ari had been serving
-      the wrong one. Form 2 was unreachable by anything: the Gen 9 Pack sets
-      MECHANICS_GENERATION to 9, where Battle Bond no longer transforms
-      Greninja. New item GRENINJITEA and MegaStone = GRENINJITEA on form 2;
-      neither needs UnmegaForm. Trainer MEGATRAINER_M Benedikt, Greninja at 70,
-      event 64 on Map100 (46,41), day, name checked against every trainer and
-      added to the spreadsheet.
-[x] Rockruff and Lycanroc matched to v17. Two commits - the first was wrong and
-      is corrected by the second, both stand:
-      - Restored to v17: Rockruff HiddenAbility = STEADFAST,OWNTEMPO on the base
-        species (v21 had dropped Own Tempo and moved it onto form 2);
-        [ROCKRUFF-2] Evolutions = LYCANROC,Level,25 (v21 had LevelEvening,25,
-        the official Dusk route); Lycanroc's getFormOnCreation back to two
-        outcomes, Midnight at night and Midday otherwise.
-      - The correction: v17 DID have Dusk Form, through a ROCKRUFF getForm
-        handler I had not read, twelve lines above the Lycanroc one. Rockruff's
-        form tracks the clock live and carries through evolution, so levelling
-        at dusk gives Dusk Form Lycanroc. Handler restored in
-        "[000] Forms/[008] Rockruff Lycanroc Forms.rb". What v17 lacked was Game
-        Freak's Own Tempo version of the route, not the route itself.
-[x] Paradox Pokemon at 1% of encounters, in
-      "[005] Overworld/[025] Paradox Encounters.rb". Each takes 1% on any route
-      where the Pokemon it was modelled on appears, matched by evolution family
-      so a prevo or evo counts - Scream Tail wherever Jigglypuff, Igglybuff or
-      Wigglytuff are; Slither Wing and Iron Moth wherever Larvesta is. Three
-      conditions, all required: the switch is on, Celebi is in the party and not
-      an egg, and the route has a Paradox with a claim on it.
-      - The 1% comes out of the commonest species literally, not spread across
-        the table: the swap is only considered once the roll has landed on that
-        species, at 0.01 divided by its own share. Measured over 200,000 rolls
-        the Paradox lands at 1.01% while the second species holds its 40%.
-      - Switch 239 "Celebi sidequest" added to Data/System.rxdata by
-        tools/add_celebi_switch.rb. First free slot (1..238 named), so nothing
-        is renumbered and no save is disturbed.
-      - Six Paradox are modelled on Pokemon that roam here rather than sit in a
-        table, so they follow the roamer instead: while it is loose, only on the
-        route it is on; once caught, any route but only while it is in the party
-        with Celebi. Walking Wake / Gouging Fire / Raging Bolt as Ryan asked,
-        plus Iron Leaves / Iron Boulder / Iron Crown, whose Virizion, Terrakion
-        and Cobalion also roam here. Drop them from ROAMER_LINKED if only the
-        first three were meant.
-      - WORTH A DECISION: Koraidon and Miraidon are flagged Paradox and modelled
-        on Cyclizar, which is in encounter tables, so "all Paradox" puts two box
-        legendaries in the wild at 1%. Kept - one line in MODELLED_ON to drop.
-      - Verified with a stubbed harness, 17 checks. Not run in game.
-[x] Dead getMegaForm handlers removed from "[000] Custom Form Handlers.rb".
-      Aerodactyl, Meowth, Urshifu, Alcremie and Toxtricity all registered a
-      "getMegaForm" proc; no such hook exists. MultipleForms is consulted only
-      for getForm, getFormOnCreation, getFormOnEggCreation, the three battle
-      timing hooks, getPrimalForm, getUnprimalForm, onSetForm and the
-      changePokemonOn* set - Pokemon#getMegaForm walks the species data itself.
-      Aerodactyl and Alcremie registered nothing else, so those blocks are gone.
-      FLAGGED, NOT CHANGED: Toxtricity's surviving getFormOnLeavingBattle picks
-      Amped or Low Key from the nature, which was the best guess available when
-      nothing remembered the original form. "[007] Mega From Any Form.rb" now
-      records the real pre-Mega form, so the guess can disagree with it for a
-      Low Key with an Amped nature. Its own decision, not tidying.
-[x] Battle Tower set legality: 114 sets / 129 move slots down to 7 / 7.
-      tools/bt_legality.rb is the shared model; it accepts a move as legal when
-      it is in the form's own learnset (falling back to the base species field
-      by field), in ANY form of the species (forms are reachable in game, so
-      Deoxys learning Spikes as Defense Forme makes it legal on Speed Forme), or
-      granted by a form handler (Rotom's six appliance moves come from
-      onSetForm, not from any learnset). That alone cleared 15 false positives.
-      There is an empty PAST_GEN table ready for pairs that check out;
-      Bulbapedia was consulted for Darumaka/Earthquake, Gastly/Nasty Plot,
-      Mantyke/Roost and Pidgeotto/Drill Peck, all no in every generation.
-      Added to the PBS by tools/apply_learnset_fixes.rb, all into TutorMoves so
-      the player can teach them too:
-        15  Light-type moves on canon Pokemon - Gamma Ray Burst, Prism Shot,
-            Sunbeam, Holy Blade, and the Light-typed Light Screen and Tail Glow.
-         8  ordinary moves on this game's own Pokemon.
-         5  Toxic. 23 species lacked it; the cutoff of ten distinct moves picks
-            out exactly the canonical minimal-movepool set, leaving Beldum,
-            Combee, Kricketot, Spewpa and Magearna.
-         4  Eevee's Let's Go moves, given on purpose - Bouncy Bubble, Buzzy
-            Buzz, Sappy Seed, Sizzly Slide. The other five are not in moves.txt.
-         1  Furret form 1 / Earthquake. fakemon? only looked at the species
-            header, so a custom form of a canon species passed it; BTLegality
-            now has custom_form?, which recognises the Kiraki forms. The other
-            six - Sentret, Yanma, Taillow, Swellow, Skarmory, Vivillon - had no
-            illegal moves.
-      74 remaining slots across 62 sets swapped for a legal move in the same
-      niche by tools/propose_legal_swaps.rb, ranked: same function code and
-      type, same function code, same type and category within 25 power, same
-      type and category, same status role, same category within 20 power. Status
-      stays status and attacks stay attacks. Four rules it had to be taught,
-      each after a bad proposal: FunctionCode "None" is shared by 88 plain
-      damaging moves and means nothing (it paired Shadow Sneak with Tackle);
-      priority must survive; heals match by role but ranked within it or every
-      heal became Rest; setup is split by the stat it raises and weighted by the
-      Pokemon's better attacking stat, with Curse treated as an Attack booster
-      on anything that is not a Ghost.
-      SEVEN LEFT, each wanting something with no legal equivalent on that
-      Pokemon - three are priority attacks, the rest one-of-a-kind effects:
-      Applin/Protect, Floragato and Kingambit/Sucker Punch,
-      Houndstone/Shadow Sneak, Mabosstiff/Destiny Bond, Pawmo/Fake Out,
-      Spidops/Memento. Listed with their pool lines in
-      tools/battle_tower_illegal_sets.txt. Nothing in that file is broken - the
-      Tower forces the move through learn_move - so it is a list to work
-      through, not a bug queue.
-      Verified: 1,359 pool lines before and after, 62 changed, nothing but the
-      moves field touched, no set changed its move count, no repeated moves.
-[x] Battle Tower legality finished: 0 illegal sets, from 114 / 129 move slots.
-      After the 74 automatic niche swaps, the last seven were decided by hand:
-      Mabosstiff Destiny Bond -> Sunset (added to its TutorMoves; Sunset is this
-      game's Light-type two-turn Perish Song, so the set still takes the
-      opponent down with it), Applin Protect -> Double Team (Applin never had
-      Protect - zero TM/TR compatibility in Sword/Shield, two TMs in
-      Scarlet/Violet), Floragato Sucker Punch -> Bite (its only damaging Dark
-      move; Meowscarada gets seven and Floragato inherits none), Kingambit
-      Sucker Punch -> Throat Chop (Foul Play is 95 but uses the target's Attack,
-      wasting 135 Atk and Swords Dance), Pawmo Fake Out -> Low Sweep (the set
-      had no Fighting move at all, and Choice Band locks Fake Out in after its
-      one turn), Spidops Memento -> U-turn (Spidops has no self-sacrifice move
-      in its pool at all), Houndstone Shadow Sneak -> Poltergeist (Shadow Claw
-      was asked for but Houndstone cannot learn it; Poltergeist is 110 and the
-      set's own Trick guarantees the target holds an item).
-[x] Nine legendary portal lairs added for the Pokemon that had none - the
-      Treasures of Ruin, the Loyal Three, Ogerpon and Terapagos. No event on any
-      map referenced any of them, so they were uncatchable.
-        Map215 Wo-Chien   Map218 Chi-Yu      Map221 Fezandipiti
-        Map216 Chien-Pao  Map219 Okidogi     Map222 Ogerpon
-        Map217 Ting-Lu    Map220 Munkidori   Map223 Terapagos
-      Built by tools/add_legendary_lairs.rb, copying the existing lairs rather
-      than drawing new ones. Two tile layouts exist across the sixteen standard
-      lairs, seven maps on one and eight on the other; both are copied verbatim
-      and alternated, with all eleven events - the Door home, the legendary at
-      (8,1), and the eight empty anchors event 11 flashes animation 7 across.
-      Same tileset, Cave_Legendary BGM, battlebgLegendary, level 50 under
-      Pokemon_Legendary1.
-      - The cry could not be copied. The old lairs use Play SE "<dexnum>Cry" and
-        Audio/SE has no 1001Cry..1024Cry; these species keep theirs in
-        Audio/SE/Cries/<SPECIES>.ogg. Event 2 calls pbPlayCry(:SPECIES), the
-        game's own helper, which resolves either way.
-      - All nine portals are in Germanium Village for now, in the open ground at
-        the bottom right: six along y=31 at x=34..39, three along y=33 at
-        x=34..36. Two rows rather than a block because a lair exits one tile
-        below its portal, and a portal on another's exit tile would retrigger as
-        the player stepped out. Copied from the village's own Protosolaria
-        portal so all three pages behave the same, gated on switch 122
-        "Consulted Reysh" like the other sixteen.
-      - Like every other lair, the legendary sets self switch A after the battle
-        and does not come back. That is the established pattern and all nine
-        have real egg groups, so they breed - which is how the repeatable-
-        obtainability rule is met for legendaries.
-      - NOT DONE: the Ogerpon masks in the Kiraki Museum (map 16). All four
-        items exist in PBS/items.txt - Teal, Wellspring, Hearthflame,
-        Cornerstone - and Ogerpon has forms 1..11, but where in the museum and
-        behind what, if anything, has not been said.
-[x] Cries play by species, not by v17's dex number. 101 Play SE "<dexnum>Cry"
-      across 63 maps rewritten by tools/species_cries.rb. v21 keeps cries as
-      Audio/SE/Cries/<SPECIES>.ogg and reaches them through the species, so the
-      numbers were not just redundant but wrong against this tree: v17 #903 is
-      Zarude, #912 Calyrex, #913 Protosolaria, and in v21's pokemon.txt those
-      indices are Sneasler, Quaxly and Quaxwell. Numbers resolved once against
-      v17's own PBS/pokemon.txt - the numbering the events were written against.
-      - Play SE "903Cry" -> Script: pbPlayCry(:ZARUDE, 100). Volume and pitch
-        carry over, dropped where they match pbPlayCry's defaults of 90/100.
-      - Cries inside a move route become the route's Script command (code 45)
-        rather than its Play SE (code 44), so they fire at the same step. The
-        route and its 509 commands share MoveCommand objects, so both move
-        together; that sharing is why 112 raw hits are only 101 real ones.
-      - "720Cry_1" is Hoopa Unbound, kept as Cries/HOOPA_1.ogg and reachable
-        only by form number, so its three uses call
-        GameData::Species.play_cry_from_species(:HOOPA, 1, volume, pitch) -
-        pbPlayCry has no form parameter. The trailing _1 also hid it from the
-        first scan, since \bCry\b does not end before an underscore.
-      - Nothing to port: all fifteen v17 Fakemon cries were already in
-        Audio/SE/Cries under their species name - Clowd, Storrm, Galefront,
-        Photowyrm, Chromasp, Chordalux, Cauldream, Crucibleak, Cauldread,
-        Photeon, Hoveon, Yamselia, Nimbee, Yimbee, Protosolaria.
-      - The 73 numbered files left under Audio/SE are now referenced by nothing.
-        Left in place.
-[ ] FAKEMON WITH NO CRY (8). No audio in v21 or v17; they need one recorded or
-      sourced. GameData::Species.play_cry falls through silently, so they are
-      simply silent everywhere - overworld events, the Pokedex, battle entry.
-        Snowygast   (v17 #1041)      Wikiniki    (v17 #1045)
-        Palossnow   (v17 #1042)      Actinotox   (v17 #1046)
-        Tarfelon    (v17 #1043)      Leoterygi   (v17 #1047)
-        Roobop      (v17 #1044)      Spudnick    (v17 #1048)
-      The other 15 Fakemon all have one.
-[x] pbResetLegends made complete. It clears the "already fought" self switch of
-      every legendary the Pokedex says the player does not own, so knocking one
-      out instead of catching it puts it back, and it runs from the Champion's
-      Room (Map172 ev1) after the Elite Four. Fourteen were missing and stayed
-      gone forever: Zekrom (map 175 ev2 - the only one of the sixteen original
-      lairs absent), Tapu Fini (29/72), Hoopa (197/15), Enamorus (188/7 "B"),
-      and the nine new lairs on maps 215-223.
-      - One entry was also simply wrong: :DARKRAI listed [114, 4, "A"], but
-        event 4 on Route 1 is empty and the Darkrai battle is event 1, so
-        Darkrai had never reset.
-      - Found by checking the other way: every legendary or mythical species
-        with a WildBattle.start in an event, matched against the self switch
-        that event actually sets. Now 57 species / 60 switches, nothing
-        uncovered and no entry pointing at an event that does not battle that
-        species.
-[x] Mega Terapagos. Stellar Form had no route in this game, which does not
-      Terastallize, so form 2 is now a Mega instead.
-      - [TERAPAGOS,2] renamed to Mega Terapagos, MegaStone = TERAPAGOSITE,
-        UnmegaForm = 1. New [TERAPAGOSITE] in items.txt from GRENINJITEA's
-        fields. MEGATRAINER_M Valdis, Terapagos at 70, Map100 event 65 at
-        (47,41), day - derived by tools/add_missing_mega_trainers.rb, which
-        found 129 stones with 128 already served.
-      - getTerastalForm and getUnTerastalForm removed from the Gen 9 Pack's
-        Terapagos block so Mega Evolution is the only route to form 2.
-        getFormOnLeavingBattle and getDataPageInfo stay.
-      - UnmegaForm is 1, not 0, because Terapagos is never form 0 in a battle:
-        Tera Shift changes it to the Terastal Form on switch-in through
-        pbCheckForm, which is an ability and unrelated to Terastallizing.
-        Battler#form= writes through to @pokemon.form, so form_simple is 1 by
-        the time the command menu asks getMegaForm.
-      - The HP change from 95 to 160 is deliberate, Ryan's call after asking
-        whether it breaks anything. It does not: Pokemon#calc_stats moves
-        current HP by the same amount as maximum HP and floors it at 1, the
-        same path Zygarde Complete already uses. In play it means Mega Evolving
-        heals about 130 HP at level 100 and reverting takes it back off without
-        fainting. That effect is why Game Freak froze HP on Megas; it is kept
-        on purpose.
-================================================================================
 [2026-08-10] QUALITY OF LIFE
-================================================================================
-[x] Page Up / Page Down jump a whole screenful in list menus - Bag, Pokedex,
-      every debug menu and the pause menu, plus mart, item storage, options,
-      phone, BP shop and the dex list.
-      Worth knowing: v21 ALREADY implemented the jump.
-      SpriteWindow_Selectable#update moves by page_item_max, clamped, with the
-      cursor sound and the view scrolled by page_row_max. It was only bound to
-      Input::JUMPUP / JUMPDOWN, which are Input::X and Input::Y - the A and S
-      keys - so nobody would ever find it. The physical keys are now added
-      alongside, via the same mkxp-z scancode API the field hotkeys use.
-      Patching the window, not Input, was deliberate: Page Down is already
-      Input::AUX2, which Following Pokemon EX binds to cycling the party
-      backwards on the map, so a remap at the Input layer would have made one
-      key mean two contradictory things. A selectable window only reads input
-      while active, and Scene_Map#update - where FPEX reads its keys - does not
-      run while a menu owns the loop.
-      Inheritance verified to actually reach the patch: Window_DrawableCommand
-      < SpriteWindow_SelectableEx < SpriteWindow_Selectable, SelectableEx does
-      not override update, and all four subclasses that do override it call
-      super. The PC storage grid and party screen use their own cursor code and
-      are untouched.
-      Plugin: [006] Settings/[006] Page Scroll Keys.rb
-[x] The follower goes into its ball while the nurse has the party, and comes
-      back when the balls are returned.
-      Driven off variable 6, the healing machine's ball counter - set 1..party
-      size as each ball is placed, back to 0 when they are handed back. That
-      variable is used by nothing else in the game (81 sites, all nine Pokemon
-      Centers), so no events had to be edited and no map ids hard-coded, and any
-      Pokemon Center added later is covered for free.
-      Hooked at Game_Variables#[]=, which both the Control Variables command and
-      pbSet assign through, so the follower vanishes on the same frame the first
-      ball lands rather than a poll later.
-      Only a follower this plugin hid is un-hidden again - FPEX hides it for map
-      transfers, surfing and cutscenes, and clearing that state would pop the
-      sprite back mid-transition. The flag resets on map setup so a save made
-      mid-heal cannot leave the follower hidden for good.
-      Plugin: [005] Overworld/[026] Pokecenter Hide Follower.rb
-================================================================================
-[2026-08-11] TOWN MAP AND REGION MAP
-================================================================================
-[x] Map 213 is Route 4, not Route 18, and Route 17 is gone. The last commit
-      left map_metadata disagreeing with MapInfos and with the connections:
-      MapInfos called 213 "Route 4" and it is wired to the Route 4 segments
-      124 and 127, while metadata still called it "Route 18" at town map
-      0,9,1, and the in game name comes from metadata.
-      - PBS/map_metadata.txt [213] renamed to Route 4 and moved to 0,11,10,
-        which is two squares left of Silver Town (0,13,11) and one row above
-        the Route 4 line that runs 8,11 to 12,11. town_map.txt already had an
-        unnamed Point at exactly 11,10; it is now labelled Route 4.
-      - Parameters copied from 124 and 127 verbatim: Outdoor, ShowArea,
-        BattleBack = battlebgRoutes1, Bicycle = true. No Weather line, because
-        neither Route 4 segment has ever had one - checked in this tree and in
-        v17's own PBS/metadata.txt.
-      - Dropped "MapSize = 5," which came across from v17 and is malformed:
-        MapSize takes a width and then a string of 0/1 marking which squares
-        of a multi part map exist, and the string was empty.
-      - [214] Route 17 deleted outright. It has never had a Data/Map214.rxdata
-        in either tree, and the previous commit already removed the three map
-        connections that pointed at it.
-      - The Route 17 and 18 labels in town_map.txt went with them, seven Points
-        at 9,1 to 13,1 and 8,2 to 9,2. Checked first that no other map's
-        MapPosition lands on any of the seven; only 213 and 214 did.
-      - Still drawn on mapRegion0.png: the region image has route shapes in
-        that top left area that now have no map or label behind them. Cosmetic,
-        left for Ryan.
-[x] Platinum Heights is two town map squares tall. MapSize was "0,1;1", which
-      is a width of 0 and so failed UI_Pokedex_Entry's "map_size[0] > 0" guard
-      and silently fell back to a single square. The ";" looks like someone
-      guessing at a row separator; Essentials wants one flat string of 0/1 and
-      derives the height as ceil(shape.length / width). Now "1,11".
-      - What MapSize actually drives, from Data/Scripts.rxdata: the Pokedex
-        Area page (pbGetEncounterPoints marks map_width x map_height squares
-        from MapPosition, skipping any the shape marks 0, and drawPageArea
-        fills them cyan on the pulsing "areahighlight" sprite), and the region
-        map "you are here" cursor, which subdivides $game_player.x/y across
-        the squares.
-      - Absent, it defaults to width 1 / shape "1", so "MapSize = 1,1" is the
-        same as no line at all. Arevelyan Ocean and Route 6 both carry that
-        redundant line.
-      - The second square is 25,16, currently labelled Victory Road on the
-        town map, and no map is anchored there. So the Area page will now
-        flash Victory Road's square for Platinum Heights encounters, and the
-        region cursor will read "Victory Road" in the bottom half of the map.
-        Relabelling 25,16 was not done; Ryan's call.
-[x] Diglett's Cave flashes on all three of its town map squares. Ryan's call:
-      not the four surface exits, but the three Points that literally say
-      "Diglett's Cave". It is two maps, 122 (36x40) and 132 (50x90), both
-      named Diglett's Cave, both with encounter tables; both now carry the
-      same footprint so either map's encounters light all three.
-      - The third Point, 7,1 above Lithium Town, was unnamed in v21 and is now
-        named. Correction to what the v21 commit message 9ebb16b7 says: it was
-        NOT lost in migration. Committed v17 also has "Point=7,1,,,,,," blank -
-        the name exists only in v17's working tree, as an uncommitted edit to
-        PBS/townmap.txt made after the migration. So the migration was faithful
-        and the name is a later change on the v17 side that v21 had not picked
-        up. Same outcome either way, v17 and v21 now agree on three, but the
-        provenance in that commit message is wrong.
-      - MapPosition moved from 0,4,2 to 0,2,1, the top left of the three, and
-        MapSize = 6,000001001000000000000000000000000000000000100000 - a 6x8
-        box with 3 of 48 squares set, since 0s punch holes and the rectangle
-        only ever extends right and down from MapPosition.
-      - Safe to move the anchor: of the sixteen readers of town_map_position,
-        every one outside the region map and the Area page uses only [0], the
-        region number - the regional form handlers, pbGetCurrentRegion, the
-        phone, the Gen 9 Pack. Only UI_RegionMap and pbGetEncounterPoints read
-        x and y, plus Ryan's own Poke Scan plugin, which reimplements the Area
-        page maths and so picks this up for free.
-      - Verified by simulating pbGetEncounterPoints against the edited PBS:
-        exactly 4,2 / 7,1 / 2,8 light for both maps, nothing dropped for want
-        of a defined Point.
-      - Known cost, accepted: the region map cursor never reads the shape
-        string, only @map_x += (player.x * sqwidth / map.width).floor, so
-        inside the cave the "you are here" marker now roams the 6x8 box and
-        will sit on holes labelled Route 2, Route 3, Lithium Town and so on.
-        Previously it was pinned to 4,2 - coarse, but never wrong.
-[x] Region map image ported. v17 kept it at Graphics/Pictures/mapRegion0.png;
-      v21 moved every UI graphic into Graphics/UI/<screen>/ and UI_RegionMap
-      loads "Graphics/UI/Town Map/" + the Filename field from each region
-      block of PBS/town_map.txt. town_map.txt itself was ported long ago, but
-      the image under it never was, so Kiraki's town names were being drawn
-      over Essentials' stock sample island. Copied across byte for byte; same
-      480x320 and same 30x20 grid of 16px squares, so nothing else moves.
-      - Still stock, and left alone because they are v21 UI chrome rather than
-        region art: bg.png, cursor.png, icon_fly.png, player_POKEMONTRAINER_*.
-        v17's equivalents (mapbg, mapCursor, mapFly, mapPlayer000/001) are
-        v17-styled and the v21 screen lays out differently.
-      - Settings::REGION_MAP_EXTRAS still points at the stock hidden_Berth and
-        hidden_Faraday overlays for maps 51 and 52. Worth revisiting if Kiraki
-        has hidden areas that should appear on the map.
-      - Graphics/UI/Town Map/mapRegion1.png went missing from the working tree
-        during this, not by anything done here. Unreferenced, since town_map
-        defines only region [0]. Left unstaged pending Ryan.
-[ ] Platinum Heights vs the drawn art - open question, not a defect. With the
-      real region map in place, the Elite Four gem icon occupies exactly one
-      square, 25,15. Below it 25,16 is drawn as the tan Victory Road path and
-      labelled Victory Road; above it 25,14 is plain green with no Point at
-      all. So the "two squares tall" MapSize now set claims a square the art
-      draws as Victory Road. Options if that reads wrong in game: relabel the
-      Point at 25,16, move MapPosition up to 25,14 and add a Point there, or
-      go back to a single square.
-[x] Beryllium Island hidden behind the Ultra Beast quest. It is drawn over the
-      region map through Essentials' REGION_MAP_EXTRAS rather than into
-      mapRegion0.png, so it only appears once the player has found it.
-      - Switch 147 "Finished UB quest", v17's own choice for this entry. Set
-        in exactly one place: Map197 Ultra Space event 8 "PLM", which turns it
-        ON and transfers to Map43 (18,35), Silver Town. So it fires precisely
-        on leaving Ultra Space and returning to Silver Town, once.
-      - Entry is [0, 147, 27, 8, "hidden_Beryllium", false] in
-        Plugins/Pokemon Sunday/[006] Settings/[000] Game Settings.rb, which
-        already overrode REGION_MAP_EXTRAS to []. v17 had asked for
-        [0, 147, 9, 29, "mapHiddenBeryllium", false], but that art never
-        existed in either tree and 9,29 is off a 30x20 map, so x and y look
-        transposed. Position derived rather than guessed.
-      - Aligning it: sliding the 80x80 overlay over the map at every square
-        aligned position gave a best fit of 55%, which is only ocean matching
-        ocean, so it did not line up as drawn. Aligned by the blue location
-        dot instead - 10x10 core at map x467-476 y164-173, sitting at x38-47
-        y36-45 inside the overlay, so the origin had to be map x429, not a
-        multiple of 16. Shifted the overlay contents 3px left, which puts the
-        dot at x35-44 and lets square 27,8 draw it back to exactly x467-476
-        y164-173. Content then runs to map x478; column 479 is already fully
-        transparent for the map's whole height, so nothing is clipped.
-      - At that position all 764 opaque overlay pixels matched the island
-        exactly as drawn, which is what made erasing safe. Those pixels are
-        now 51,153,204, the ocean colour taken from the 2938 surrounding
-        pixels of the same 5x5 block.
-      - Verified by compositing the overlay back over the erased map:
-        153600 of 153600 pixels identical to the original.
-      - Last field left false so the island stays off Pokemon Center wall
-        maps; location_shown? returns that field directly for a wall map
-        without consulting the switch, so true would give it away early.
-      - Both PNGs got much smaller (mapRegion0 18291 -> 6538 bytes, the
-        overlay 4486 -> 414) purely from re-encoding. Pixels are unchanged,
-        as the composite check shows.
-      - Removed as dead while here: mapRegion1.png, town_map.txt defines only
-        region [0]; and hidden_Berth.png / hidden_Faraday.png, stock sample
-        overlays for maps 51 and 52 that the [] override already disabled.
-[x] Town map player markers recoloured to this game's player characters. They
-      were still Essentials' Red and Leaf, a red cap and a white cap with navy
-      trim, while the PCs have a green cap and a pink and lavender hat.
-      - Colours taken from the walking charsets PBS/metadata.txt names,
-        Graphics/Characters/trainer_POKEMONTRAINER_Red.png and _Leaf.png,
-        not picked by eye.
-      - The markers are the charset heads redrawn at 16x16 and stored at 2x,
-        same shape and same roles cell for cell, so each change is one palette
-        entry swapped for its counterpart. The white 232,232,248, the light
-        176,176,208, the navy brim and the hair brown were already identical
-        between marker and charset, which is what confirmed the pairing.
-      - Red   248,104,72 -> 7,177,9; 192,56,56 -> 45,110,32;
-              104,40,40 -> 29,60,23.  224 px.
-      - Leaf  232,232,248 -> 255,159,255; 176,176,208 -> 200,153,228;
-              56,56,120 -> 53,46,116; 248,104,72 -> 255,93,68;
-              192,56,56 -> 185,46,53.  352 px.
-      - Every source colour was checked to occur only inside the hat before
-        anything was written, the lowest reaching row 19 of 32, well clear of
-        the face. Verified afterwards: 0 pixels changed outside the table, so
-        faces, hair and outlines are untouched.
+============================
+[x] Page Up and Page Down jump a screenful
+[x] Follower waits in its ball at the nurse
 
-================================================================================
+[2026-08-11] TOWN MAP AND REGION MAP
+====================================
+[x] Map 213 is Route 4, Route 17 deleted
+[x] Platinum Heights is two town map squares tall
+[x] Diglett's Cave flashes on all three squares
+[x] Region map image ported from v17
+[ ] Platinum Heights versus the drawn art, open question
+[x] Beryllium Island hidden behind the Ultra Beast quest
+[x] Town map player markers recoloured to our characters
+
 [2026-08-11] PLAYER CHARACTER SKIN TONE
-================================================================================
-[x] Six skin tones for the player character, picked on a vertical slider right
-      after "Which will you play as?". Applied to every graphic the character
-      is drawn from - walk, run, cycle, surf, dive, fish, fish while surfing,
-      town map icon, battle sprite, ball-throwing frames. Still only character
-      1 or 2; the existing sprites are repainted, no new trainer types.
-      - One hook does all of it. Every player graphic loads through
-        RPG::Cache.load_bitmap (PngAnimatedBitmap and GifBitmap both call it,
-        and Sprite_Character, IconSprite and the trainer sprite code go through
-        those), so the plugin swaps the folder for Skin/<tone>/ there.
-        RPG::Cache.retain is hooked too so the charset still gets pinned. The
-        redirected path is a different string, so the cache keys the recoloured
-        bitmap separately and there is nothing to invalidate.
-      - The art is built ahead of time by tools/skin_tones.py, not recoloured
-        in game. Two reasons. Speed: the throwing sprites are 800x160, 128,000
-        px each, and per-pixel work in RGSS would show on every load.
-        Correctness: the same RGB is skin in one place and not in another, even
-        within one file - (248,224,176) is the skin highlight AND the satchel
-        highlight, (136,96,72) his skin shade AND the satchel outline,
-        (116,54,54) the girl's under-eye shading AND all her hair, (168,120,64)
-        the boy's hair sitting in the skin hue range. Proved by masking each
-        candidate colour magenta and looking; a flat colour table repaints bags
-        and hair.
-      - So the mask comes from connected-component analysis, done once offline:
-        flood fill over that file's skin ramp colours, keeping only components
-        containing a colour verified skin-only there. The satchel is a separate
-        component sharing the highlight, so it survives. All 22 files were
-        checked by eye at the deepest tone.
-      - Ramp colours carry an explicit slot position, not one derived from
-        luminance, because the ramps differ in length - the girl's charset has
-        no dark step, her outline being black. Noted in passing: the "_offset"
-        charsets are exactly the others times 255/248, saved through something
-        that rescaled 0-248 onto 0-255.
-      - Stored on Player, which Marshal saves, so no new save data. A save from
-        before this reads back nil, and nil means original art, so old saves are
-        not repainted behind the player's back.
-      - Intro edit by tools/add_skin_tone_prompt.rb: Map1 ev1, between Erase
-        Picture and pbTrainerName - after the character picture clears, before
-        naming, outside the choice branches so "Go back" never reaches it.
-        Anchored on pbTrainerName, and it refuses to run unless it first finds
-        exactly two pbChangePlayer branches. Map22 ev4 also calls
-        pbChangePlayer but is Essentials' stock Oak intro, left alone.
-      - Verified: Map001 round trips byte-identically, 219/219 plugin files
-        pass ruby -c, plugin file list == generator file list == the 132 files
-        on disk.
-[ ] NOT RUN IN GAME. The picker's layout, controls and sprite positions have
-      only been checked against the API definitions in Data/Scripts.rxdata.
-      Worth a look on the next playthrough of the intro.
-[ ] Pre-existing outfit mismatch, noticed while doing the above and not
-      touched: boy_surf.png and both POKEMONTRAINER_*_back.png throwing
-      sprites still wear the stock red cap and jacket, while the front sprites
-      and every other charset wear this game's green cap and vest. Skin tone
-      now matches across all of them; the outfit never did.
-[x] Ball-throwing back sprites wear this game's hats. Both were still stock
-      FRLG - red cap, white hat with an orange band - while the front battle
-      sprites and every charset had the green cap and lavender hat.
-      - v17's green back sprite, Graphics/Characters/trback000.png, could not
-        be reused. Three independent reasons: its character is 96x214 against
-        v21's 72x96, which is 1.95x once measured against the front sprite
-        (byte-identical across both trees at 80x110); it is smooth high
-        resolution art against v21's pixel art; and it has 4 frames of 160
-        while Scene_Initialize line 166 hardcodes bitmap.width / 5. Ryan's
-        call to recolour the v21 sheets instead once that was measured.
-      - tools/recolour_back_sprites.py. Red_back cap (200,96,72)->(68,110,62)
-        and (248,112,88)->(65,170,55). Leaf_back hat (232,232,248)->
-        (167,173,222), (192,192,216)->(135,143,220), band (200,96,72)->
-        (192,64,64). Replacements taken from each character's own front battle
-        sprite, the same art set at the same resolution.
-      - Every source colour was masked magenta across the whole sheet first and
-        is hat and nothing else. The boy's navy sleeve is left alone on
-        purpose - his front sprite has navy sleeves too - and so are the
-        satchels.
-      - Skin/<n>/ rebuilt afterwards, as it is generated from these files.
-        Skin masks unchanged at 6188 and 8912 px, which shows the hat work did
-        not disturb the connected-component analysis.
-[x] Player 2's hat being pink on the charset and icon but periwinkle on both
-      battle sprites is CLOSED, not a defect: Ryan judged them close enough at
-      this level of detail and confirmed matching the back sprite to her front
-      sprite was the right call. Do not "fix" this later.
-[x] boy_surf.png and boy_dive_offset.png given the green cap too. No judgement
-      needed: the fixed version was already in the tree, boy_surf_offset.png
-      being the same artwork with this game's palette. Diffing the three
-      palettes gives exactly six colours that differ, each with an identical
-      pixel count on both sides (1792, 2080, 1728, 1280, 224, 416), so the
-      mapping was read off rather than chosen.
-      - Table written in the offset scale; boy_surf is in the base scale, so it
-        is converted by 248/255 rather than typed twice.
-      - The fourth pair is not clothing. (120,64,64) -> (63,34,34) is the dark
-        skin slot: those two files shaded skin with a colour no other player
-        sprite used, which is why skin_tones.py had reported their dark slot
-        unused. Their recoloured count goes 1088 -> 2208, identical to
-        boy_surf_offset, so the tone system covers their shading for the first
-        time.
-      - Verified after writing: both palettes now differ from boy_surf_offset
-        by nothing at all, and no red remains in any boy sprite.
-      - tools/recolour_back_sprites.py renamed recolour_player_sprites.py and
-        made re-runnable; a job whose source colours have gone reports as
-        already applied.
-[x] Recolours confined to the part of the sprite they meant. Three of the four
-      things Ryan caught were one underlying mistake: a colour doing two jobs
-      on one sheet, and a flat swap repainting both.
-      - His (200,96,72)/(248,112,88) are his cap AND his lips AND the patch on
-        his chest; all three had gone green. Her (232,232,248) is her hat crown
-        AND the whites of her eyes; her eyes had gone periwinkle.
-      - A job now takes a rule and is applied to connected runs, not pixels,
-        so a shape is never half changed. His cap could NOT use a row window,
-        found by overcorrecting first: cap, shirt and lips share the same two
-        reds and the shirt sits BELOW the lips (cap 62-76, lips 108/112, shirt
-        120+), so no threshold separates them. What marks the lips is what
-        surrounds them - a 4 px run with every neighbour skin - so that job
-        drops runs of <=8 px that are >=90% skin-bordered. Exactly two match,
-        both 100%; the next candidate is 28 px at 50%. Her hat crown starts 62-72 against eye
-        whites at 82-104, so <=80. Her hat brim starts 64-92, overlapping the
-        crown's window, so brim and band are a separate job at <=95 - one
-        threshold could not serve both. Her top starts at 136+ against the same
-        colour on her hat trim at 72-101, so >=100.
-      - The two back sprites were restored from before the first recolour and
-        rebuilt from the tool, so what is committed is the tool's output rather
-        than a patch over a mistake.
-[x] The reflective spot found, after I had failed to. It is a specular on her
-      thigh, 8 px at (52,88) in POKEMONTRAINER_Leaf.png, painted in the same
-      pure white as her eyes and shoe highlights - which is why searching by
-      colour and by flood fill both missed it, her eyes being surrounded by
-      skin exactly as it is.
-      - skin_tones.py now takes a named point: the run of that colour
-        containing it joins the skin mask at t=1.0, and nothing else of that
-        colour moves. Runs (255,226,202) at the lightest tone to (140,92,62) at
-        the deepest; eyes and shoes verified unchanged at three tones.
-      - Worth remembering: "search the colour" and "flood fill from a seed"
-        both fail when the same colour is used for two things that are both
-        embedded in the same region. A named point is the fallback.
-[x] Her top on the throwing sheet gains its second shade, (112,160,192) ->
-      (193,193,193), the grey her front sprite uses. It had been left flat.
-[x] Her hat is one colour everywhere. All eight charsets and the town map icon
-      moved from pink to the battle sprites' periwinkle. This REVERSES the
-      earlier entry that closed the split as "close enough" - Ryan changed his
-      mind after seeing it; do not restore the pink.
-[x] The intro's character choice is one picker screen instead of three steps.
-      "Which will you play as?" + Show Picture "Trainers" + the ["1","2","Go
-      back"] choice list + the separate pbChooseSkinTone call all collapse into
-      Plugins/.../[007] Intro/[003] Character Select.rb, reached from Map1 ev1
-      page 1 by a single Conditional Branch on !pbChooseCharacter. Left/right
-      move a box between the two figures, up/down move the tone; B backs out,
-      which is what "Go back" did, so the jump to the "randomizer" label is
-      preserved.
-      - The figures are the front BATTLE sprites, not Graphics/Pictures/
-        Trainers.png. That composite is exactly those two sprites pasted side
-        by side (the boy half is pixel identical, the girl half differs in 64
-        visible px) with the "1" and "2" baked underneath. Drawing the sprites
-        instead loses nothing and gains the whole point: they load through
-        RPG::Cache, so PlayerSkinTone.redirect repaints them live as the tone
-        moves. Trainers.png is now unused by this event and was left alone -
-        the numbers did not need erasing because the picture is not shown.
-      - Boxes are SIZED FROM THE ART at runtime (content_rect scans the alpha),
-        and each figure is centred and floored by its drawn extent rather than
-        its bitmap, because Red pads 20 px left / 28 right and Leaf pads 24/24.
-        Centring the bitmaps would have left the boy sitting off inside his box.
-      - Background is a translucent scrim, not an opaque plane: the intro's own
-        picture 1 (introbg) is still on screen underneath.
-      - Erase Picture 3 was removed too. tools/character_select_prompt.rb
-        checks that command 83 was the only Show Picture 3 on the page rather
-        than assuming it.
-      - STILL NEVER RUN IN GAME. Layout was verified by re-implementing the
-        same arithmetic in Python over the real sprites and rendering a mock,
-        not by launching the game.
-      - REVISION, same session: the tone name and "n of 6" are gone, and the
-        prompt moved to the bottom in the game's own speech box
-        (pbCreateMessageWindow, letterbyletter off) instead of two hand-built
-        windows. Boxes moved up to y=80 to stay centred in what is left above
-        it. The message window is kept OUT of @sprites and disposed with
-        pbDisposeMessageWindow, because that is what clears
-        $game_temp.message_window_showing - leaving that flag set would follow
-        the player onto the map.
-[x] Graphics/Titles/pokelogo2.png redrawn: "SUNDAY VERSION" was an engraved
-      serif with a red/blue chromatic fringe, 67 colours, 1x pixels with
-      partial alpha. Now a chunky bubble face on a flat baseline, 20 colours,
-      alpha 0/255 only, and 0 of 23460 broken 2x2 blocks on the SAME grid
-      origin pokelogo.png uses. Same canvas, same rows 172-191; width 364 vs
-      373 because spacing was matched to the original rather than the glyphs
-      stretched to fill.
-      - Both ramps sampled out of pokelogo.png's 31544 opaque pixels and keyed
-        to the absolute image row, so the gradient runs through the whole word
-        rather than restarting per letter.
-      - ONE outline, not the real logo's blue-plus-black. Two rings cost 4 of
-        the 10 available rows and the leftover 6-row body needs ~17 columns a
-        letter, which is 442 px on a 408 px canvas. The single ring's gradient
-        ends near-black on the bottom row instead.
-      - tools/redraw_pokelogo2.py; glyphs are a FONT table of #/. rows authored
-        at 1x and scaled x2 NEAREST, so the block property is structural.
-      - Title Screen.rb:314-322 draws the combined bitmap at zoom 1.2, so the
-        2x blocks land at 2.4x on screen. Non-integral, but pokelogo.png gets
-        exactly the same treatment, so the two words stay consistent.
-      - Letter spacing fix: the pen was advancing by the width of the FONT CELL
-        a letter is drawn in, not by the letter. S has a blank column down each
-        side of its cell and R one down its right, so S sat a pixel wide of
-        each neighbour and R->S collected both - 4, 4 and 6 device px against a
-        standard of 2. Glyphs are now trimmed to their own inked extent before
-        spacing, so LETTER_GAP means the gap between what is drawn and the FONT
-        entries stay easy to write on a fixed grid. Every pair is 2 px now,
-        word space still 18. Word narrowed 364 -> 356, rows unchanged.
-[x] CORRECTION to the entry above: the logo is drawn at 1:1, NOT 1.2x. The
-      sprite is created at zoom 1.2 but intro runs 50 iterations of
-      "zoom -= 0.004", so it comes to rest at exactly 1.0. The 2x pixel grid
-      survives on screen intact. Do not "fix" the art for a 1.2x scale.
-[x] Graphics/Titles/Extra/13.PNG regenerated from the title screen's own layers
-      by tools/render_title_splash.py, rather than screenshotted.
-      - Four layers are animated (gen_6_effect and gen_6_shine rotate,
-        gen_6_glow and gen_6_effect2 pulse), so their phase was FITTED against
-        the committed 13.PNG over the region the logo does not cover. Best fit
-        is 1.02 mean abs difference per channel at effect angle 62, shine angle
-        73, glow 0, effect2 0 - close enough to call the layer stack confirmed
-        rather than guessed, and it says the original was shot with both
-        pulsing layers at the bottom of their cycle. Pokemon-logo band 1.61 and
-        the PRESS ENTER bar 1.81 confirm the placement; whole image 4.99,
-        because the word is the only thing that changed.
-      - Particles are deliberately left out: transient sparks at random
-        positions, not caught in the original, and a still frame of them reads
-        as dirt.
-      - WORTH KNOWING: 13.PNG is currently never shown. StarterShowcase sorts
-        Extra/ by the number in the filename and uses indices 0-5 and the last.
-        The order is 7,8,9,10,11,12,13,coollogo, so 13 is index 6 and falls
-        through the gap. It would need to swap with the coollogo image to be
-        seen.
-[x] The picker mock-ups were misleading and are fixed: they now set text in
-      Power Green 27 with DARK_TEXT_MAIN_COLOR and its shadow, the game's real
-      message font. The speech box in the mock is a SCHEMATIC (frame colours
-      lifted from the skin) - the scene itself calls pbCreateMessageWindow and
-      the game draws the real thing. Do not read the mock's box as a preview of
-      the windowskin.
-[x] The showcase's closing card is the new lettering. It was a chrome wordmark
-      off coollogo.com - the same word in a different face, so it dated the
-      moment the title lettering was redrawn. Now cropped straight out of
-      pokelogo2.png by tools/render_title_splash.py, which builds both Extra/
-      images since both go stale together.
-      - coollogo_com-23634138.png renamed to 14.png. The sort key is the first
-        digit run in the path, so 23634138 and 14 both land last - the rename
-        changes nothing about the order and only stops the filename claiming
-        something it no longer is. Title Screen.rb:857's comment updated.
-      - Canvas is the INKED box, 356x20, not padded. StarterShowcase centres
-        with ox = width/2, so screen x is 256 - width/2 = 78 and y is 182, both
-        even, which is what keeps the 2x blocks from being cut in half. Any
-        padding added later must keep both dimensions a multiple of 4.
-      - It is SMALLER than what it replaced (356x20 vs 490x56) and that is a
-        constraint, not a choice: doubling is 712 px on a 512 px screen, and a
-        non-integer scale breaks the 2x grid the redraw exists to honour.
-      - 13.PNG is STILL never shown; it sits at index 6 exactly where coollogo
-        used to leave it. Renaming it above 14 would put it on screen instead.
-[x] The picker prompt reads "Who will you play as?" rather than "Which". It
-      lives only in the scene now - the event's Text command was removed with
-      the choice list, and a scan of every Map*.rxdata confirms no copy is left
-      behind. The two tool headers still quote "Which" because they are
-      describing what the event used to contain; that is history, not a stale
-      string.
-[x] Spudnick's Followers and Levitates shinies derived from the front battler
-      pair, same as the icons and backs were.
-      - The front pair maps at purity 1.0000 across 28 colours and 6308 px -
-        every normal colour has exactly one shiny colour, no ambiguity at all.
-      - Followers: all 21 colours have an exact entry, 100% coverage, and all
-        21 land inside the front shiny's palette. Levitates: 20 exact, plus
-        (232,232,248) x 848 px, a pale line under each frame that the follower
-        sheet does not have. Nearest is (238,241,248) at distance 10.8, and it
-        is SHIFTED by that pair's delta rather than substituted, so it stays
-        its own colour: (217,236,253).
-      - Verified after writing: sizes and alpha byte-identical to the source
-        sheets, 21 colours in and 21 out on both (nothing collapsed), and zero
-        pixels left at their normal colour.
-      - The Followers shiny that was already there was STALE - it was the
-        shiny of the previous Spudnick design, a different creature entirely
-        (36 colours, 12120 px vs the new 21/15800). Overwritten. Levitates
-        Shiny had no entry at all.
-      - Note the folder names disagree on case: "Followers shiny" but
-        "Levitates Shiny" and "Swimming Shiny". The tool resolves every path
-        case-insensitively rather than trusting its own strings.
-[x] tools/derive_shiny_from_front.py added: a Python port of the .ps1, because
-      this machine has no PowerShell so the original cannot run. It adds the
-      Followers/Levitates/Swimming sets the .ps1 never covered, and refuses to
-      write below 0.95 purity. The .ps1 is still there as the Windows original
-      - if it is not being used on a Windows box any more it should go rather
-      than leaving one algorithm in two files.
+=======================================
+[x] Six skin tones on a vertical slider
+[ ] Pre-existing outfit mismatch, noticed but not touched
+[x] Ball-throwing back sprites wear this game's hats
+[x] Player 2's hat unified to periwinkle everywhere
+[x] boy_surf and boy_dive_offset given the green cap
+[x] Recolours confined to what they meant, three rules
+[x] Girl's reflective thigh specular now tone shifted
+[x] Girl's back top gained its second shade
+[x] Girl's hat one colour across all sheets
+[x] Character choice is one picker screen, not three steps
+[x] Prompt reads "Who will you play as?"
+[x] Picker prompt uses the game's own speech box
+[ ] Picker still not run in game
+
+[2026-08-11] TITLE LOGO AND SPLASH
+==================================
+[x] pokelogo2.png redrawn as a 2x bubble face
+[x] Letter spacing evened, three pairs were too wide
+[x] Title logo rests at 1:1, not 1.2x
+[x] Extra/13.PNG rebuilt from the title screen's layers
+[ ] Extra/13.PNG still never shown, index 6
+[x] Closing card is the new lettering, renamed 14.png
+[x] Picker mock-ups corrected to the real font
+
+[2026-08-11] FAKEMON SPRITES
+============================
+[x] Spudnick follower and levitate shinies derived
+[x] tools/derive_shiny_from_front.py added, PowerShell cannot run here
+[ ] Retire derive_shiny_from_front.ps1 if Windows is done
