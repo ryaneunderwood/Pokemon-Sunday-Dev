@@ -1883,3 +1883,28 @@ GEN 9 INTO TRAINERS, AND THE PLZA MEGA TRAINERS
       - Cheap partial if it is ever wanted: map 122 alone could take
         MapSize = 1,11 at 0,4,2, covering 4,2 and Route 3 at 4,3, which is
         exactly where its four mouths are.
+[x] Region map image ported. v17 kept it at Graphics/Pictures/mapRegion0.png;
+      v21 moved every UI graphic into Graphics/UI/<screen>/ and UI_RegionMap
+      loads "Graphics/UI/Town Map/" + the Filename field from each region
+      block of PBS/town_map.txt. town_map.txt itself was ported long ago, but
+      the image under it never was, so Kiraki's town names were being drawn
+      over Essentials' stock sample island. Copied across byte for byte; same
+      480x320 and same 30x20 grid of 16px squares, so nothing else moves.
+      - Still stock, and left alone because they are v21 UI chrome rather than
+        region art: bg.png, cursor.png, icon_fly.png, player_POKEMONTRAINER_*.
+        v17's equivalents (mapbg, mapCursor, mapFly, mapPlayer000/001) are
+        v17-styled and the v21 screen lays out differently.
+      - Settings::REGION_MAP_EXTRAS still points at the stock hidden_Berth and
+        hidden_Faraday overlays for maps 51 and 52. Worth revisiting if Kiraki
+        has hidden areas that should appear on the map.
+      - Graphics/UI/Town Map/mapRegion1.png went missing from the working tree
+        during this, not by anything done here. Unreferenced, since town_map
+        defines only region [0]. Left unstaged pending Ryan.
+[ ] Platinum Heights vs the drawn art - open question, not a defect. With the
+      real region map in place, the Elite Four gem icon occupies exactly one
+      square, 25,15. Below it 25,16 is drawn as the tan Victory Road path and
+      labelled Victory Road; above it 25,14 is plain green with no Point at
+      all. So the "two squares tall" MapSize now set claims a square the art
+      draws as Victory Road. Options if that reads wrong in game: relabel the
+      Point at 25,16, move MapPosition up to 25,14 and add a Point there, or
+      go back to a single square.
