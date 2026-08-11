@@ -2076,3 +2076,32 @@ GEN 9 INTO TRAINERS, AND THE PLZA MEGA TRAINERS
       sprites still wear the stock red cap and jacket, while the front sprites
       and every other charset wear this game's green cap and vest. Skin tone
       now matches across all of them; the outfit never did.
+[x] Ball-throwing back sprites wear this game's hats. Both were still stock
+      FRLG - red cap, white hat with an orange band - while the front battle
+      sprites and every charset had the green cap and lavender hat.
+      - v17's green back sprite, Graphics/Characters/trback000.png, could not
+        be reused. Three independent reasons: its character is 96x214 against
+        v21's 72x96, which is 1.95x once measured against the front sprite
+        (byte-identical across both trees at 80x110); it is smooth high
+        resolution art against v21's pixel art; and it has 4 frames of 160
+        while Scene_Initialize line 166 hardcodes bitmap.width / 5. Ryan's
+        call to recolour the v21 sheets instead once that was measured.
+      - tools/recolour_back_sprites.py. Red_back cap (200,96,72)->(68,110,62)
+        and (248,112,88)->(65,170,55). Leaf_back hat (232,232,248)->
+        (167,173,222), (192,192,216)->(135,143,220), band (200,96,72)->
+        (192,64,64). Replacements taken from each character's own front battle
+        sprite, the same art set at the same resolution.
+      - Every source colour was masked magenta across the whole sheet first and
+        is hat and nothing else. The boy's navy sleeve is left alone on
+        purpose - his front sprite has navy sleeves too - and so are the
+        satchels.
+      - Skin/<n>/ rebuilt afterwards, as it is generated from these files.
+        Skin masks unchanged at 6188 and 8912 px, which shows the hat work did
+        not disturb the connected-component analysis.
+[ ] Player 2's hat is two colours depending on where you look: pink on the
+      charset and town map icon, periwinkle on both battle sprites. The split
+      predates this work; the back sprite was matched to her front sprite so
+      the two battle sprites at least agree. Ryan to pick one for all four.
+[ ] boy_surf.png still has a stock red cap. v17's copy is red too, so there is
+      no green original to take - it needs the same recolour treatment the back
+      sprite got.
