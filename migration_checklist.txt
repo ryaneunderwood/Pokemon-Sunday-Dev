@@ -1953,3 +1953,23 @@ GEN 9 INTO TRAINERS, AND THE PLZA MEGA TRAINERS
       - Removed as dead while here: mapRegion1.png, town_map.txt defines only
         region [0]; and hidden_Berth.png / hidden_Faraday.png, stock sample
         overlays for maps 51 and 52 that the [] override already disabled.
+[x] Town map player markers recoloured to this game's player characters. They
+      were still Essentials' Red and Leaf, a red cap and a white cap with navy
+      trim, while the PCs have a green cap and a pink and lavender hat.
+      - Colours taken from the walking charsets PBS/metadata.txt names,
+        Graphics/Characters/trainer_POKEMONTRAINER_Red.png and _Leaf.png,
+        not picked by eye.
+      - The markers are the charset heads redrawn at 16x16 and stored at 2x,
+        same shape and same roles cell for cell, so each change is one palette
+        entry swapped for its counterpart. The white 232,232,248, the light
+        176,176,208, the navy brim and the hair brown were already identical
+        between marker and charset, which is what confirmed the pairing.
+      - Red   248,104,72 -> 7,177,9; 192,56,56 -> 45,110,32;
+              104,40,40 -> 29,60,23.  224 px.
+      - Leaf  232,232,248 -> 255,159,255; 176,176,208 -> 200,153,228;
+              56,56,120 -> 53,46,116; 248,104,72 -> 255,93,68;
+              192,56,56 -> 185,46,53.  352 px.
+      - Every source colour was checked to occur only inside the hat before
+        anything was written, the lowest reaching row 19 of 32, well clear of
+        the face. Verified afterwards: 0 pixels changed outside the table, so
+        faces, hair and outlines are untouched.
