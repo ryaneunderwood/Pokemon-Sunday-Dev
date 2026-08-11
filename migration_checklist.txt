@@ -1916,3 +1916,40 @@ GEN 9 INTO TRAINERS, AND THE PLZA MEGA TRAINERS
       draws as Victory Road. Options if that reads wrong in game: relabel the
       Point at 25,16, move MapPosition up to 25,14 and add a Point there, or
       go back to a single square.
+[x] Beryllium Island hidden behind the Ultra Beast quest. It is drawn over the
+      region map through Essentials' REGION_MAP_EXTRAS rather than into
+      mapRegion0.png, so it only appears once the player has found it.
+      - Switch 147 "Finished UB quest", v17's own choice for this entry. Set
+        in exactly one place: Map197 Ultra Space event 8 "PLM", which turns it
+        ON and transfers to Map43 (18,35), Silver Town. So it fires precisely
+        on leaving Ultra Space and returning to Silver Town, once.
+      - Entry is [0, 147, 27, 8, "hidden_Beryllium", false] in
+        Plugins/Pokemon Sunday/[006] Settings/[000] Game Settings.rb, which
+        already overrode REGION_MAP_EXTRAS to []. v17 had asked for
+        [0, 147, 9, 29, "mapHiddenBeryllium", false], but that art never
+        existed in either tree and 9,29 is off a 30x20 map, so x and y look
+        transposed. Position derived rather than guessed.
+      - Aligning it: sliding the 80x80 overlay over the map at every square
+        aligned position gave a best fit of 55%, which is only ocean matching
+        ocean, so it did not line up as drawn. Aligned by the blue location
+        dot instead - 10x10 core at map x467-476 y164-173, sitting at x38-47
+        y36-45 inside the overlay, so the origin had to be map x429, not a
+        multiple of 16. Shifted the overlay contents 3px left, which puts the
+        dot at x35-44 and lets square 27,8 draw it back to exactly x467-476
+        y164-173. Content then runs to map x478; column 479 is already fully
+        transparent for the map's whole height, so nothing is clipped.
+      - At that position all 764 opaque overlay pixels matched the island
+        exactly as drawn, which is what made erasing safe. Those pixels are
+        now 51,153,204, the ocean colour taken from the 2938 surrounding
+        pixels of the same 5x5 block.
+      - Verified by compositing the overlay back over the erased map:
+        153600 of 153600 pixels identical to the original.
+      - Last field left false so the island stays off Pokemon Center wall
+        maps; location_shown? returns that field directly for a wall map
+        without consulting the switch, so true would give it away early.
+      - Both PNGs got much smaller (mapRegion0 18291 -> 6538 bytes, the
+        overlay 4486 -> 414) purely from re-encoding. Pixels are unchanged,
+        as the composite check shows.
+      - Removed as dead while here: mapRegion1.png, town_map.txt defines only
+        region [0]; and hidden_Berth.png / hidden_Faraday.png, stock sample
+        overlays for maps 51 and 52 that the [] override already disabled.
