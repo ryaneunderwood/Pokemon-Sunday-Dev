@@ -9,7 +9,6 @@ commit messages of both repos. Look there before redoing anything.
 OPEN
 ----
 [ ] Smoke test the native v17 event port in game
-[ ] Championship Marks and Trainer Card rewrite still unported
 [ ] Gen 5 animated back sprites not yet sourced
 [ ] Furfrou form persistence in the PC
 [ ] Data/PluginScripts.rxdata stale, self-heals on next debug launch
@@ -115,6 +114,7 @@ TODO — Settings & Scripts
 [x] Jirachi Time and Valentines Day events ported
 [x] Evolution moves: stock in v21, four PBS gaps filled
 [x] IV display in move selection ported
+[x] Championship marks and trainer card extras ported
 [x] Rotom Lamp form and GAMMARAYBURST ported
 [x] Mystery Gift Manager extracted from Map162
 [x] v17 trainer-helper compatibility layer added to Battle Tower
@@ -174,7 +174,6 @@ CRASH FIXES — map events
 [x] Map040 Arceus shrine dex id and owned check fixed
 [x] Map136 pokedex used as a boolean, fixed
 [x] Map097 isTempSwitchOff? aliased to tsOff?
-[x] Verified: 4958 script blocks parse, no undefined calls
 
 CRASH FIXES — plugins
 ---------------------
@@ -213,7 +212,6 @@ PBS DATA REPAIRS
 [x] Custom species data the v21 regen reverted, restored
 [x] Evolution moves restored for four Fakemon
 [x] encounters.txt map 124 LandNight summed to 99
-[x] Verified: no dangling references anywhere in PBS
 
 ASSETS
 ------
@@ -254,10 +252,6 @@ STILL OPEN
 [x] 43 latent data errors found by that validation
 [x] pbReadBattlers no longer spins on an all-item pool
 [x] Old PBS/BattleTower*.txt removed, recoverable in git
-[x] Verified: no undefined method calls in any map
-[x] Verified: 4958 event script blocks parse
-[x] Verified: 47 plugin files pass ruby -c
-[x] Verified: no dangling PBS references
 
 [2026-07-28] BATTLE ANIMATIONS + EBDX GROUNDWORK
 ================================================
@@ -284,7 +278,6 @@ STILL OPEN
 [x] Sunday's surviving EBDX customization re-applied
 [x] EBDX declared Optional, so removing it reverts cleanly
 [x] EBDX resolves backdrops through its own maps.txt
-[x] 179 plugin files pass ruby -c, no duplicates
 [x] Only four EBDX collisions, all alias-and-redefine
 [x] EBDX hardcodes no switch or variable numbers
 [x] Trainer Card extras restored on top of the core card
@@ -329,7 +322,6 @@ FOLLOWING POKEMON EX 2.5.1 INSTALLED
 [x] Followers merged add-missing-only, pack art kept
 [x] Data/Animations.rxdata deliberately not copied
 [x] EBDX compatibility verified rather than assumed
-[x] 17 script files pass ruby -c
 [x] FPEX does not start itself, must be enabled
 
 EBDX BATTLE FIXES
