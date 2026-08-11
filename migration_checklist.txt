@@ -2215,3 +2215,40 @@ GEN 9 INTO TRAINERS, AND THE PLZA MEGA TRAINERS
       - Title Screen.rb:314-322 draws the combined bitmap at zoom 1.2, so the
         2x blocks land at 2.4x on screen. Non-integral, but pokelogo.png gets
         exactly the same treatment, so the two words stay consistent.
+      - Letter spacing fix: the pen was advancing by the width of the FONT CELL
+        a letter is drawn in, not by the letter. S has a blank column down each
+        side of its cell and R one down its right, so S sat a pixel wide of
+        each neighbour and R->S collected both - 4, 4 and 6 device px against a
+        standard of 2. Glyphs are now trimmed to their own inked extent before
+        spacing, so LETTER_GAP means the gap between what is drawn and the FONT
+        entries stay easy to write on a fixed grid. Every pair is 2 px now,
+        word space still 18. Word narrowed 364 -> 356, rows unchanged.
+[x] CORRECTION to the entry above: the logo is drawn at 1:1, NOT 1.2x. The
+      sprite is created at zoom 1.2 but intro runs 50 iterations of
+      "zoom -= 0.004", so it comes to rest at exactly 1.0. The 2x pixel grid
+      survives on screen intact. Do not "fix" the art for a 1.2x scale.
+[x] Graphics/Titles/Extra/13.PNG regenerated from the title screen's own layers
+      by tools/render_title_splash.py, rather than screenshotted.
+      - Four layers are animated (gen_6_effect and gen_6_shine rotate,
+        gen_6_glow and gen_6_effect2 pulse), so their phase was FITTED against
+        the committed 13.PNG over the region the logo does not cover. Best fit
+        is 1.02 mean abs difference per channel at effect angle 62, shine angle
+        73, glow 0, effect2 0 - close enough to call the layer stack confirmed
+        rather than guessed, and it says the original was shot with both
+        pulsing layers at the bottom of their cycle. Pokemon-logo band 1.61 and
+        the PRESS ENTER bar 1.81 confirm the placement; whole image 4.99,
+        because the word is the only thing that changed.
+      - Particles are deliberately left out: transient sparks at random
+        positions, not caught in the original, and a still frame of them reads
+        as dirt.
+      - WORTH KNOWING: 13.PNG is currently never shown. StarterShowcase sorts
+        Extra/ by the number in the filename and uses indices 0-5 and the last.
+        The order is 7,8,9,10,11,12,13,coollogo, so 13 is index 6 and falls
+        through the gap. It would need to swap with the coollogo image to be
+        seen.
+[x] The picker mock-ups were misleading and are fixed: they now set text in
+      Power Green 27 with DARK_TEXT_MAIN_COLOR and its shadow, the game's real
+      message font. The speech box in the mock is a SCHEMATIC (frame colours
+      lifted from the skin) - the scene itself calls pbCreateMessageWindow and
+      the game draws the real thing. Do not read the mock's box as a preview of
+      the windowskin.
