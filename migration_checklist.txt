@@ -1846,3 +1846,40 @@ GEN 9 INTO TRAINERS, AND THE PLZA MEGA TRAINERS
       - Still drawn on mapRegion0.png: the region image has route shapes in
         that top left area that now have no map or label behind them. Cosmetic,
         left for Ryan.
+[x] Platinum Heights is two town map squares tall. MapSize was "0,1;1", which
+      is a width of 0 and so failed UI_Pokedex_Entry's "map_size[0] > 0" guard
+      and silently fell back to a single square. The ";" looks like someone
+      guessing at a row separator; Essentials wants one flat string of 0/1 and
+      derives the height as ceil(shape.length / width). Now "1,11".
+      - What MapSize actually drives, from Data/Scripts.rxdata: the Pokedex
+        Area page (pbGetEncounterPoints marks map_width x map_height squares
+        from MapPosition, skipping any the shape marks 0, and drawPageArea
+        fills them cyan on the pulsing "areahighlight" sprite), and the region
+        map "you are here" cursor, which subdivides $game_player.x/y across
+        the squares.
+      - Absent, it defaults to width 1 / shape "1", so "MapSize = 1,1" is the
+        same as no line at all. Arevelyan Ocean and Route 6 both carry that
+        redundant line.
+      - The second square is 25,16, currently labelled Victory Road on the
+        town map, and no map is anchored there. So the Area page will now
+        flash Victory Road's square for Platinum Heights encounters, and the
+        region cursor will read "Victory Road" in the bottom half of the map.
+        Relabelling 25,16 was not done; Ryan's call.
+[ ] Diglett's Cave town map footprint - decided against, recorded so it is not
+      re-litigated. It is two maps, 122 (36x40) and 132 (50x90), both named
+      Diglett's Cave and both anchored at 0,4,2, both with encounter tables.
+      - Map 132 surfaces on four separate town map squares: Drilbur's Tunnel
+        8,0; Lithium Town 7,2; Route 2 2,4; Route 3 4,3. Map 122 surfaces only
+        on Route 3, four mouths, all into map 121.
+      - MapSize can express that, since 0s punch holes in the rectangle, but
+        the rectangle is anchored at MapPosition and only extends right and
+        down, so it would need MapPosition moved to 0,2,0 and a 7x5 shape with
+        5 squares set out of 35.
+      - The reason not to: the region map cursor never reads the shape string.
+        It only does @map_x += (player.x * sqwidth / map.width).floor, so on a
+        50x90 map inside a 7x5 box the marker sweeps all 35 squares including
+        the 30 holes, reading Route 2, Argon City and so on. Only the Pokedex
+        Area page honours the 0s. At 1x1 both are coarse but never wrong.
+      - Cheap partial if it is ever wanted: map 122 alone could take
+        MapSize = 1,11 at 0,4,2, covering 4,2 and Route 3 at 4,3, which is
+        exactly where its four mouths are.
