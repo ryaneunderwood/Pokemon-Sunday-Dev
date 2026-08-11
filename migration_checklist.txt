@@ -2127,10 +2127,14 @@ GEN 9 INTO TRAINERS, AND THE PLZA MEGA TRAINERS
       - His (200,96,72)/(248,112,88) are his cap AND his lips AND the patch on
         his chest; all three had gone green. Her (232,232,248) is her hat crown
         AND the whites of her eyes; her eyes had gone periwinkle.
-      - A job now takes a row window and is applied to connected runs, not
-        pixels, so a shape is never half changed. Windows read off the
-        components: his cap runs start at rows 62-76 against lips at 108/112
-        and chest at 120+, so <=100. Her hat crown starts 62-72 against eye
+      - A job now takes a rule and is applied to connected runs, not pixels,
+        so a shape is never half changed. His cap could NOT use a row window,
+        found by overcorrecting first: cap, shirt and lips share the same two
+        reds and the shirt sits BELOW the lips (cap 62-76, lips 108/112, shirt
+        120+), so no threshold separates them. What marks the lips is what
+        surrounds them - a 4 px run with every neighbour skin - so that job
+        drops runs of <=8 px that are >=90% skin-bordered. Exactly two match,
+        both 100%; the next candidate is 28 px at 50%. Her hat crown starts 62-72 against eye
         whites at 82-104, so <=80. Her hat brim starts 64-92, overlapping the
         crown's window, so brim and band are a separate job at <=95 - one
         threshold could not serve both. Her top starts at 136+ against the same
