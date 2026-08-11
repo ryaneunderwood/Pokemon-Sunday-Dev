@@ -1821,6 +1821,48 @@ GEN 9 INTO TRAINERS, AND THE PLZA MEGA TRAINERS
         heals about 130 HP at level 100 and reverting takes it back off without
         fainting. That effect is why Game Freak froze HP on Megas; it is kept
         on purpose.
+================================================================================
+[2026-08-10] QUALITY OF LIFE
+================================================================================
+[x] Page Up / Page Down jump a whole screenful in list menus - Bag, Pokedex,
+      every debug menu and the pause menu, plus mart, item storage, options,
+      phone, BP shop and the dex list.
+      Worth knowing: v21 ALREADY implemented the jump.
+      SpriteWindow_Selectable#update moves by page_item_max, clamped, with the
+      cursor sound and the view scrolled by page_row_max. It was only bound to
+      Input::JUMPUP / JUMPDOWN, which are Input::X and Input::Y - the A and S
+      keys - so nobody would ever find it. The physical keys are now added
+      alongside, via the same mkxp-z scancode API the field hotkeys use.
+      Patching the window, not Input, was deliberate: Page Down is already
+      Input::AUX2, which Following Pokemon EX binds to cycling the party
+      backwards on the map, so a remap at the Input layer would have made one
+      key mean two contradictory things. A selectable window only reads input
+      while active, and Scene_Map#update - where FPEX reads its keys - does not
+      run while a menu owns the loop.
+      Inheritance verified to actually reach the patch: Window_DrawableCommand
+      < SpriteWindow_SelectableEx < SpriteWindow_Selectable, SelectableEx does
+      not override update, and all four subclasses that do override it call
+      super. The PC storage grid and party screen use their own cursor code and
+      are untouched.
+      Plugin: [006] Settings/[006] Page Scroll Keys.rb
+[x] The follower goes into its ball while the nurse has the party, and comes
+      back when the balls are returned.
+      Driven off variable 6, the healing machine's ball counter - set 1..party
+      size as each ball is placed, back to 0 when they are handed back. That
+      variable is used by nothing else in the game (81 sites, all nine Pokemon
+      Centers), so no events had to be edited and no map ids hard-coded, and any
+      Pokemon Center added later is covered for free.
+      Hooked at Game_Variables#[]=, which both the Control Variables command and
+      pbSet assign through, so the follower vanishes on the same frame the first
+      ball lands rather than a poll later.
+      Only a follower this plugin hid is un-hidden again - FPEX hides it for map
+      transfers, surfing and cutscenes, and clearing that state would pop the
+      sprite back mid-transition. The flag resets on map setup so a save made
+      mid-heal cannot leave the follower hidden for good.
+      Plugin: [005] Overworld/[026] Pokecenter Hide Follower.rb
+================================================================================
+[2026-08-11] TOWN MAP AND REGION MAP
+================================================================================
 [x] Map 213 is Route 4, not Route 18, and Route 17 is gone. The last commit
       left map_metadata disagreeing with MapInfos and with the connections:
       MapInfos called 213 "Route 4" and it is wired to the Route 4 segments
