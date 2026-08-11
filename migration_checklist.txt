@@ -6,6 +6,47 @@ One line per item, ten words at most. The reasoning behind every one of these
 lived here until 2026-08-11 and is still in this file's git history, and in the
 commit messages of both repos. Look there before redoing anything.
 
+OPEN
+----
+[ ] Smoke test the native v17 event port in game
+[ ] Championship Marks and Trainer Card rewrite still unported
+[ ] Gen 5 animated back sprites not yet sourced
+[ ] Furfrou form persistence in the PC
+[ ] Data/PluginScripts.rxdata stale, self-heals on next debug launch
+[ ] Full in-game smoke test, nothing runs headless
+[ ] Rock Smash items not ported, never fired in v17
+[ ] Battle backdrop bases inferred from names, eyeball them
+[ ] EBDX untested in game, first launch must be debug
+[ ] Back and Back shiny art missing, four Fakemon
+      LEOTERYGI, PALOSSNOW, ROOBOP, SNOWYGAST
+[ ] Followers art missing, 37 entries
+      ACTINOTOX, ARCEUS_19, CAULDREAD, CAULDREAM, CHORDALUX, CHROMASP, CLOWD,
+      CRUCIBLEAK, FURRET_1, GALEFRONT, GALEFRONT_1, HOVEON, LEOTERYGI,
+      MEOWSTIC_1, MEOWSTIC_3, NIMBEE, PALOSSNOW, PHOTEON, PHOTOWYRM,
+      ROCKRUFF_1, ROOBOP, ROTOM_6, SENTRET_1, SILVALLY_19, SKARMORY_2,
+      SNOWYGAST, STORRM, SWELLOW_1, TAILLOW_1, TARFELON, UNOWN_10, WIKINIKI,
+      YAMSELIA, YANMA_1, YIMBEE, ZYGARDE_3, ZYGARDE_5
+[ ] Followers shiny missing, those 37 plus three more
+      OGERPON_4, PROTOSOLARIA, VIVILLON_20
+[ ] Test the Following Pokemon toggle keys
+[ ] Eyeball the consolidated overworld Pokemon sprites
+[ ] Eight Fakemon have no cry, none in v17
+      SNOWYGAST, PALOSSNOW, TARFELON, ROOBOP, WIKINIKI, ACTINOTOX, LEOTERYGI,
+      SPUDNICK
+[ ] Platinum Heights versus the drawn art, open question
+[ ] Pre-existing outfit mismatch, noticed but not touched
+[ ] Character and skin tone picker never run
+[ ] Extra/13.PNG still never shown, index 6
+[ ] Retire derive_shiny_from_front.ps1 if Windows is done
+[ ] Disperse the Mega Stone trainers around the region
+[ ] Add the Celebi paradox quest
+[ ] Add the Ogerpon masks to the museum
+
+DELIBERATELY NOT CHANGED — do not action these
+----------------------------------------------
+[ ] Badge stat boosts stay disabled, Ryan's call
+[ ] Data/*.dat deletions left alone, Ryan's call
+
 COMPLETED
 ---------
 [x] Custom move function codes D00-D06 ported
@@ -72,7 +113,6 @@ TODO — Settings & Scripts
 [x] Luka SJ animated title screen ported
 [x] Level Care and Hyperleveler ported
 [x] Jirachi Time and Valentines Day events ported
-[ ] Championship Marks and Trainer Card rewrite still unported
 [x] Evolution moves: stock in v21, four PBS gaps filled
 [x] IV display in move selection ported
 [x] Rotom Lamp form and GAMMARAYBURST ported
@@ -110,7 +150,6 @@ TODO — Graphics & Art
 TODO — Misc Small Tweaks (from #Ryan audit)
 --------------------------------------------
 [x] Running shoes and cycling speed restored
-[ ] Furfrou form persistence in the PC
 [x] Save file backups rotate two copies
 [x] Version shown in the options header
 [x] PC storage naming reverted to v17
@@ -122,11 +161,8 @@ TODO — Misc Small Tweaks (from #Ryan audit)
 [x] Animation caching restored
 [x] EXP changes and Map 40 facility restored
 [x] Payday money multiplier raised to 20
-[ ] Map event need_update flag
 [x] Shiny wild Pokemon switch restored
-
-[2026-07-28] FULL AUDIT + REPAIR PASS
-=====================================
+[x] Map event need_update: v21 does this natively
 
 CRASH FIXES — map events
 ------------------------
@@ -191,10 +227,7 @@ ASSETS
 STILL OPEN
 ----------
 [x] Elite Battle DX installed, see its section below
-[ ] Data/PluginScripts.rxdata stale, self-heals on next debug launch
-[ ] Cries and sprites for eight Fakemon
 [x] Summary IV display done
-[ ] In-game smoke test, nothing runs headless
 
 [2026-07-28] SECOND WAVE — restored systems + Battle Tower rework
 =================================================================
@@ -256,15 +289,9 @@ STILL OPEN
 [x] EBDX hardcodes no switch or variable numbers
 [x] Trainer Card extras restored on top of the core card
 [x] pbCut and pbRockSmash un-no-oped, 31 events fixed
-[ ] Rock Smash items not ported, never fired in v17
 [x] pokedex_names region numbers corrected
 [x] REGION_MAP_EXTRAS pointed at a file that never existed
 [x] All 23 Fakemon given EBDX entries
-[ ] Battle backdrop bases inferred from names, eyeball them
-[ ] EBDX untested in game, first launch must be debug
-
-[2026-08-09] GEN 9 PACK 3.3.7, PLZA MEGA ART, SPRITE AUDIT
-==========================================================
 
 GENERATION 9 PACK UPGRADED 3.3.4 -> 3.3.7
 -----------------------------------------
@@ -290,10 +317,8 @@ SPRITE AUDIT
 
 REMAINING ART GAPS
 ------------------
-[ ] Back art: LEOTERYGI, PALOSSNOW, ROOBOP, SNOWYGAST
 [x] Back shiny closed for everything that has a back
 [x] Shiny icons closed, all 46 derived from battlers
-[ ] Followers missing 37 entries, Followers shiny 40
 [x] Spudnick complete on all eight sets, first Fakemon
 [x] Audit was blind to .PNG files, fixed
 
@@ -305,7 +330,6 @@ FOLLOWING POKEMON EX 2.5.1 INSTALLED
 [x] Data/Animations.rxdata deliberately not copied
 [x] EBDX compatibility verified rather than assumed
 [x] 17 script files pass ruby -c
-[ ] Test the follower toggle keys in game
 [x] FPEX does not start itself, must be enabled
 
 EBDX BATTLE FIXES
@@ -327,7 +351,6 @@ OVERWORLD EVENT SPRITES CONSOLIDATED ONTO FOLLOWER ART
 [x] 107 loose Dex-numbered sprites consolidated
 [x] Five move routes repointed as a side effect
 [x] 913.png saved as Followers/PROTOSOLARIA.png
-[ ] Eyeball the consolidated sprites in game
 [x] Naming typos fixed, each hid real art
 
 [2026-08-09] QUALITY OF LIFE AND DATA
@@ -356,7 +379,6 @@ OVERWORLD EVENT SPRITES CONSOLIDATED ONTO FOLLOWER ART
 [x] Battle Tower legality finished, zero illegal sets
 [x] Nine legendary portal lairs added
 [x] Cries play by species, not v17 dex number
-[ ] Eight Fakemon have no cry in either version
 [x] pbResetLegends made complete
 [x] Mega Terapagos replaces the unreachable Stellar form
 
@@ -371,14 +393,12 @@ OVERWORLD EVENT SPRITES CONSOLIDATED ONTO FOLLOWER ART
 [x] Platinum Heights is two town map squares tall
 [x] Diglett's Cave flashes on all three squares
 [x] Region map image ported from v17
-[ ] Platinum Heights versus the drawn art, open question
 [x] Beryllium Island hidden behind the Ultra Beast quest
 [x] Town map player markers recoloured to our characters
 
 [2026-08-11] PLAYER CHARACTER SKIN TONE
 =======================================
 [x] Six skin tones on a vertical slider
-[ ] Pre-existing outfit mismatch, noticed but not touched
 [x] Ball-throwing back sprites wear this game's hats
 [x] Player 2's hat unified to periwinkle everywhere
 [x] boy_surf and boy_dive_offset given the green cap
@@ -389,7 +409,6 @@ OVERWORLD EVENT SPRITES CONSOLIDATED ONTO FOLLOWER ART
 [x] Character choice is one picker screen, not three steps
 [x] Prompt reads "Who will you play as?"
 [x] Picker prompt uses the game's own speech box
-[ ] Picker still not run in game
 
 [2026-08-11] TITLE LOGO AND SPLASH
 ==================================
@@ -397,7 +416,6 @@ OVERWORLD EVENT SPRITES CONSOLIDATED ONTO FOLLOWER ART
 [x] Letter spacing evened, three pairs were too wide
 [x] Title logo rests at 1:1, not 1.2x
 [x] Extra/13.PNG rebuilt from the title screen's layers
-[ ] Extra/13.PNG still never shown, index 6
 [x] Closing card is the new lettering, renamed 14.png
 [x] Picker mock-ups corrected to the real font
 
@@ -405,10 +423,3 @@ OVERWORLD EVENT SPRITES CONSOLIDATED ONTO FOLLOWER ART
 ============================
 [x] Spudnick follower and levitate shinies derived
 [x] tools/derive_shiny_from_front.py added, PowerShell cannot run here
-[ ] Retire derive_shiny_from_front.ps1 if Windows is done
-
-TO DO — GAMEPLAY CONTENT
-========================
-[ ] Disperse the Mega Stone trainers around the region
-[ ] Add the Celebi paradox quest
-[ ] Add the Ogerpon masks to the museum
