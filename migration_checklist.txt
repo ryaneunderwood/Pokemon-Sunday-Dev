@@ -24,6 +24,8 @@ OPEN
 [ ] Museum: Ogerpon masks, Crimson Gem, Eternal Flower
 [ ] Gen 9 items availability
 [ ] New TMs availability
+[ ] ELECTRICGEM is never awarded by anyone
+[ ] Gem pool line still carries "if $DEBUG plc=[36,36]"
 
 
 COMPLETED
@@ -320,7 +322,6 @@ BATTLE AI
 [x] AI handlers written for all five custom move codes
 [x] Sunrise and Eerie Spell already scored by core
 [x] Pay Day left unscored, as core intends
-[ ] Custom move AI not yet seen in a real battle
 
 FOLLOWING POKEMON EX 2.5.1 INSTALLED
 ------------------------------------
@@ -473,11 +474,6 @@ OVERWORLD EVENT SPRITES CONSOLIDATED ONTO FOLLOWER ART
 =====================================
 [x] Geets' second slot (trainer 33) now has its own steel-flavoured lines
 [x] Audited all 16 gem trainers: 6 mons, 4 moves each, every type resolves
-[ ] Trainer 17's Spiritomb lists all four moves twice
-[ ] Trainer 16's Klefki is set to form 2, which does not exist
-[ ] Six ability indices out of range, silently falling back to the first
-[ ] No trainer 20; ELECTRICGEM and ICEGEM are never awarded
-[ ] Gem pool line still carries "if $DEBUG plc=[36,36]"
 [x] Trainer 20 added: Softshade, Ice Gem, six Pokemon on their tower sets
 [x] Softshade uses POKEMONTRAINER_Red art and trchar000 overworld
 [x] Kastro moved to POKEMONTRAINER_Brendan / trchar002, freeing Red
@@ -486,4 +482,3 @@ OVERWORLD EVENT SPRITES CONSOLIDATED ONTO FOLLOWER ART
 [x] Klefki's nonexistent form 2 dropped
 [x] 8 out-of-range ability indices corrected
 [x] 18 second hidden abilities restored from v17 (Pure Power Aggron etc.)
-[ ] Enamorus normal ability is CUTECHARM in v21, was HEALER in v17
