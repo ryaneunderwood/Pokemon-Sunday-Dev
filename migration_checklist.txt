@@ -8,28 +8,29 @@ commit messages of both repos. Look there before redoing anything.
 
 OPEN
 ----
-[ ] Furfrou form persistence in the PC
 [ ] Back and Back shiny art missing, four Fakemon
       LEOTERYGI, PALOSSNOW, ROOBOP, SNOWYGAST
-[ ] Followers art missing, 28 listed below
+[ ] Followers art missing, 30 listed below (plus shinies and swimmers)
       ACTINOTOX, CAULDREAD, CAULDREAM, CHORDALUX, CHROMASP, CLOWD,
       CRUCIBLEAK, FURRET_1, GALEFRONT, GALEFRONT_1, HOVEON, LEOTERYGI, NIMBEE, PALOSSNOW, PHOTEON, PHOTOWYRM,
       ROOBOP, ROTOM_6, SENTRET_1, SKARMORY_2,
       SNOWYGAST, STORRM, SWELLOW_1, TARFELON, WIKINIKI,
-      YAMSELIA, YANMA_1, YIMBEE
-[ ] Followers shiny missing, those 28 plus three
-      OGERPON_4, PROTOSOLARIA, VIVILLON_20
+      YAMSELIA, YANMA_1, YIMBEE, PROTOSOLARIA, VIVILLON_20
 [ ] Eight Fakemon have no cry, none in v17
       SNOWYGAST, PALOSSNOW, TARFELON, ROOBOP, WIKINIKI, ACTINOTOX, LEOTERYGI,
       SPUDNICK
 [ ] Disperse the Mega Stone trainers around the region
 [ ] Add the Celebi paradox quest
-[ ] Add the Ogerpon masks to the museum
+[ ] Museum: Ogerpon masks, Crimson Gem, Eternal Flower
 [ ] Gen 9 items availability
+[ ] New TMs availability
+[ ] Ursaluna Bloodmoon: pbCrimsonGem written, item unplaced
 
 
 COMPLETED
 ---------
+[x] pbEternalFlower and pbCrimsonGem, repeatable one-way form changes
+[x] Furfrou form persistence in the PC: v21 core already does it
 [x] Custom move function codes D00-D06 ported
 [x] Five custom abilities ported
 [x] Six custom held items ported
@@ -43,6 +44,14 @@ COMPLETED
 [x] Hail weather set to classic
 [x] Snowfort handler fixed for v21 weather
 [x] 23 canon Legends Z-A and Champions Mega abilities added
+[x] Remaining 15 Champions Mega abilities wired, all 33 match
+[x] Eelevate and Fire Mane implemented, they had no handlers
+[x] Nihil Light nerfed 200 to 100, it one-shot 98% of the dex
+[x] Battle Tower mega sets recovered, 129 of 129 stones
+[x] Migration had dropped 46 sets and blanked 4 stones
+[x] Icy Terrain added as TM109, 49 Ice species plus 9 forms
+[x] Ice Wall = Protect plus Icy Terrain, Palossnow learns it
+[x] Greninja: Ash form removed, canon Mega renumbered to form 1
 [x] Redundant HiddenAbilities lines cleaned from Mega forms
 [x] Four new abilities added with handlers
 [x] Battle Tower pools: 29 ZA plus 19 DLC Megas
@@ -299,6 +308,19 @@ REMAINING ART GAPS
 [x] Kiraki Taillow shiny follower and both swimmers built
 [x] Swimming Arceus renumbered; form 10 misnamed, 18 missing
 [x] Audit was blind to .PNG files, fixed
+[x] Zygarde Complete followers from larryturbo's sheet
+[x] larryturbo credited in the roll and credits.txt
+[x] Ogerpon Terastal art deleted, no Terastallizing in game
+[x] DLC water art built: 15 swimmers, 3 levitators
+[x] Waterline convention measured, not guessed
+[x] tools/report_water_followers.py: 0 hidden, 0 walking on water
+
+BATTLE AI
+---------
+[x] AI handlers written for all five custom move codes
+[x] Sunrise and Eerie Spell already scored by core
+[x] Pay Day left unscored, as core intends
+[ ] Custom move AI not yet seen in a real battle
 
 FOLLOWING POKEMON EX 2.5.1 INSTALLED
 ------------------------------------
@@ -341,6 +363,19 @@ OVERWORLD EVENT SPRITES CONSOLIDATED ONTO FOLLOWER ART
 [x] End credits: packages credited, scroll paced to song
 [x] credits.txt deleted, it was not this game's
 [x] 453 unreferenced graphics moved to Unused Graphics
+[x] That sweep never read PkmnAnimations.rxdata — 85 restored
+[x] Absorb had no animation because of it
+[x] tools/report_animation_graphics.rb guards it now
+[x] Timing-referenced sheets also checked, 28 more restored
+[x] Gen 9 Move Animation Project merged, 202 moves gained animations
+[x] Merge adds only; customs verified intact
+[x] Four broken animations swapped for working versions
+[x] Sappy Seed and Terra Firma stitched from stock animations
+[x] Sketch and Lick recovered from Reborn, it was a rename
+[x] White BG and Darkness BG generated, dead in Reborn too
+[x] Two dead image timings stripped, audit now reports 0 missing
+[x] Pokemon Reborn credited at last, 1575 assets in use
+[x] KRLW890 and St. Cooler credited for the animation projects
 [x] Three misspelt graphics reinstated
 [x] Footprints removed entirely, Ryan's call
 [x] trainers.txt grouped by map, 421 entries, 66 groups
@@ -400,3 +435,55 @@ OVERWORLD EVENT SPRITES CONSOLIDATED ONTO FOLLOWER ART
 ============================
 [x] Spudnick follower and levitate shinies derived
 [x] tools/derive_shiny_from_front.py added, PowerShell cannot run here
+
+[2026-08-12] NEW MOVES PUT TO USE
+=================================
+[x] "Needs Follower Art" folder: 29 front sprites, Fakemon plus my regionals
+[x] tools/collect_missing_follower_art.py, canon judged per FORM not species
+[x] Elite Four Light: Uxie sets Bright Terrain over Zen Headbutt
+[x] Elite Four Bug: Forretress leads Locust Plague, Nimbee gets Swarm Leader
+[x] Elite Four Ice: Cryogonal sets Icy Terrain, Palossnow walls with Ice Wall
+[x] Daled's Cryogonal and Palossnow use the two new ice moves
+[x] Five bug trainers already pick up Locust Plague from the level-up pools
+[x] Twelve Battle Tower sets carry a new move, filler only, no combos broken
+[x] Swarm Leader is now Nimbee and Yimbee's only ability
+[x] Every index for the pair reset to 0: 4 Elite Four, 2 tower sets
+[x] tools/give_trainers_custom_moves.py: custom moves onto 313 party slots
+[x] Trainers fielding a custom move: 23 -> 217 of 423
+[x] Signature moves protected by learner count, not a hand-kept list
+[x] Recovery, setup, hazards, weather never swapped out
+[x] Variable-power moves no longer read as 0 power and thrown away
+[x] Flicker, Shine and Sunbeam exempted from the level-16 floor
+[x] Nikolai's Actinotox set written out so Fetid Freeze is guaranteed
+[x] Khof's Crobat replaced by Leoterygi, the Fetid Freeze line
+[x] Elite Four Khof evolved to LEOTERYGI, Hidden Power -> Fetid Freeze
+[x] Fetid Freeze on both Battle Tower sets, Basic and Competitive
+
+[2026-08-12] WINDOW TITLE AND GAME ICON
+=======================================
+[x] Window bar reads "Pokemon Sunday v<Settings::GAME_VERSION>"
+[x] mkxp.json opens on the plain name; the script appends the version
+[x] Game.ini Title left alone, mkxp-z derives the save directory from it
+[x] pbSetWindowText(nil) restores our title, so EBDX cannot clobber it
+[x] Game.exe icon patched in place with Kiraki Skarmory, byte size unchanged
+[x] Graphics/Icon.png for the Linux window icon, same source sprite
+[x] GAME_VERSION 2.9.6 -> 3.0.0; the plugin overrides core's 1.0.0
+
+[2026-08-12] GOLD CITY GEM TOURNAMENT
+=====================================
+[x] Geets' second slot (trainer 33) now has its own steel-flavoured lines
+[x] Audited all 16 gem trainers: 6 mons, 4 moves each, every type resolves
+[ ] Trainer 17's Spiritomb lists all four moves twice
+[ ] Trainer 16's Klefki is set to form 2, which does not exist
+[ ] Six ability indices out of range, silently falling back to the first
+[ ] No trainer 20; ELECTRICGEM and ICEGEM are never awarded
+[ ] Gem pool line still carries "if $DEBUG plc=[36,36]"
+[x] Trainer 20 added: Softshade, Ice Gem, six Pokemon on their tower sets
+[x] Softshade uses POKEMONTRAINER_Red art and trchar000 overworld
+[x] Kastro moved to POKEMONTRAINER_Brendan / trchar002, freeing Red
+[x] Map186: pool is now [20..36], new branch, Kastro's sprite reassigned
+[x] Spiritomb's duplicated move block removed
+[x] Klefki's nonexistent form 2 dropped
+[x] 8 out-of-range ability indices corrected
+[x] 18 second hidden abilities restored from v17 (Pure Power Aggron etc.)
+[ ] Enamorus normal ability is CUTECHARM in v21, was HEALER in v17
