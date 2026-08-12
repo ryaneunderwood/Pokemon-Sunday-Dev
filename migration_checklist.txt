@@ -8,14 +8,6 @@ commit messages of both repos. Look there before redoing anything.
 
 OPEN
 ----
-[ ] Smoke test the native v17 event port in game
-[ ] Gen 5 animated back sprites not yet sourced
-[ ] Data/PluginScripts.rxdata stale, self-heals on next debug launch
-[ ] Full in-game smoke test, nothing runs headless
-[ ] Rock Smash items not ported, never fired in v17
-[ ] Battle backdrop bases inferred from names, eyeball them
-[ ] EBDX untested in game, first launch must be debug
-[ ] Opponent trainer now 1.5x, player back 2x, eyeball both
 [ ] Back and Back shiny art missing, four Fakemon
       LEOTERYGI, PALOSSNOW, ROOBOP, SNOWYGAST
 [ ] Followers art missing, 30 listed below (plus shinies and swimmers)
@@ -32,7 +24,6 @@ OPEN
 [ ] Museum: Ogerpon masks, Crimson Gem, Eternal Flower
 [ ] Gen 9 items availability
 [ ] New TMs availability
-[ ] Ursaluna Bloodmoon: pbCrimsonGem written, item unplaced
 
 
 COMPLETED
@@ -40,11 +31,6 @@ COMPLETED
 [x] Evolution stones removed as wild held items, seven species
 [x] pbEternalFlower and pbCrimsonGem, repeatable one-way form changes
 [x] Furfrou form persistence in the PC: v21 core already does it
-[x] Crumpled Route 15 sprite follows the skin tone
-[x] Stock EBDX VS splash art deleted, six files
-[x] Beaten trainer walks the full distance again
-[x] EbdxWaiter deficit bounded, battle speed confirmed better
-[x] Trainer lose_text uses the same box as everything else
 [x] Custom move function codes D00-D06 ported
 [x] Five custom abilities ported
 [x] Six custom held items ported
