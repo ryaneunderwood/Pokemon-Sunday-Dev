@@ -29,6 +29,7 @@ OPEN
 
 COMPLETED
 ---------
+[x] Evolution stones removed as wild held items, seven species
 [x] pbEternalFlower and pbCrimsonGem, repeatable one-way form changes
 [x] Furfrou form persistence in the PC: v21 core already does it
 [x] Custom move function codes D00-D06 ported
