@@ -1,6 +1,6 @@
 Pokemon Sunday v17 -> v21 Migration Checklist
 ==============================================
-Last updated: 2026-08-11
+Last updated: 2026-08-13
 
 One line per item, ten words at most. The reasoning behind every one of these
 lived here until 2026-08-11 and is still in this file's git history, and in the
@@ -19,17 +19,19 @@ OPEN
 [ ] Eight Fakemon have no cry, none in v17
       SNOWYGAST, PALOSSNOW, TARFELON, ROOBOP, WIKINIKI, ACTINOTOX, LEOTERYGI,
       SPUDNICK
-[ ] Disperse the Mega Stone trainers around the region
 [ ] Add the Celebi paradox quest
 [ ] Museum: Ogerpon masks, Crimson Gem, Eternal Flower
-[ ] Gen 9 items availability
-[ ] New TMs availability
+[ ] Route 8 "Man warning of fog" matches no event
+[ ] Locust Castform has no art: CASTFORM_5 front, back, shiny and icon
 [ ] ELECTRICGEM is never awarded by anyone
-[ ] Gem pool line still carries "if $DEBUG plc=[36,36]"
+
 
 
 COMPLETED
 ---------
+[x] Mega Stone trainers dispersed around the region
+[x] All 1,048 Pokemon pages regenerated and re-uploaded
+[x] Route 5 render approved, every other map followed
 [x] Evolution stones removed as wild held items, seven species
 [x] pbEternalFlower and pbCrimsonGem, repeatable one-way form changes
 [x] Furfrou form persistence in the PC: v21 core already does it
@@ -482,3 +484,170 @@ OVERWORLD EVENT SPRITES CONSOLIDATED ONTO FOLLOWER ART
 [x] Klefki's nonexistent form 2 dropped
 [x] 8 out-of-range ability indices corrected
 [x] 18 second hidden abilities restored from v17 (Pure Power Aggron etc.)
+
+[2026-08-13] WIKI FRONT PAGE
+============================
+[x] Graphics/Titles/WebSplash.png uploaded as "Pokemon Sunday splash.png"
+[x] Front page rebuilt: splash art, current counts, Fakemon roster grid
+[x] Gen 8 -> Gen 9, 15 -> 23 Fakemon, 1100 -> 1390 Battle Tower sets
+[x] Fakemon backdrop already served by the .page-Pokemon_Sunday_Wiki CSS rule
+[x] Five red links written as real pages, sourced from PBS and map events:
+      Kiraki, Battle Tower, Elite Four, Legendite, Professor Cherry
+[x] Elite Four from the plugin: Europa, Io, Ganymede, Callisto, champ Taranis
+[x] Battle Tower tiers counted from the pool file: 378/477/395/140
+[x] Every link and icon on the six pages resolves, no red links left
+[x] Skarmory's Kiraki icon was SKARMORY_1, which is Mega Skarmory; now _2
+[x] Forms table added: 6 Kiraki regionals + Mega Flygon, Lamp Rotom,
+      Kiraki Vivillon, Sandy Castform
+[x] Glance table and Features merged; splash art floated beside the contents
+[x] Region geography corrected: 16 routes, Barium Cemetery, Mt. Silicon and
+      its Summit and Forest, Drilbur's Tunnel, Victory Road, Safari Zone
+[x] Ruins of Simkath and Ancient Ruins dropped; the latter was scrapped
+[x] Item icons live under the raw stem, "LEGENDITE Item.png", not "Legendite"
+[x] Catch/entry positional 1 is the icon stem, not a dex number; icons back
+[x] Levels moved from positional 3 to 4, so they stop landing in Location
+[x] Location column dropped from Catch/header and Catch/entry: the method is
+      already the row divider, so the cell only repeated the divider above it
+[x] Regional wild encounters shown as "Kiraki Yanma", not "Yanma (Kiraki Form)"
+[x] Route 5 restored from rev 6990: Map, Items, POI and Spoilers were lost by
+      regenerating without --splice, which is what preserves hand-written text
+[x] Default edit summary was the Xenoverse attribution line, so generated pages
+      claimed to be imports; now "Generated from the game data"
+
+[2026-08-13] MAP RENDERER
+=========================
+[x] tools/dump_map_render.rb + tools/render_map.py: composite and annotate
+[x] v17 exporter found inside Data/Scripts.rxdata section 235, not a loose file
+[x] Autotiles follow the game's own TilemapRenderer, offsets follow
+      MapFactoryHelper.getMapConnections; Route 5 = maps 7, 88, 101
+[x] Numbering: a map counts as wide only past 1.10 aspect, so a near-square
+      route reads top to bottom the way the hand-numbered pages did
+[x] Mega Trainers sort last, after the gym leaders and named specialists
+[x] Shiny spots and Cut trees are not drawn; the spots are meant to be secret
+[x] POIs are transcribed from the page's Points of Interest section and
+      matched to events by name; nothing from Spoilers gets a circle
+[x] Route 5 POIs are now the Machoke blocker and the Rayquaza tutor only
+[x] File:Route 5 map.png uploaded; the old hand-drawn Route 5a.png is kept
+[x] render_map.py writes <location>.json so the page lists follow the image
+[x] Route 5 page: Items list generated and numbered to the yellow circles,
+      Trainers renumbered to the red ones, Map section on the new render
+[x] Old items list kept its editorial notes; TMs now name the move they teach
+[x] TM48 added, Altarianite moved to a note as Veronica's Mega Trainer reward
+[x] tools/generate_item_pages.py: 60 pages for items original to the game
+[x] tools/sunday_items.json curates which items are ours; the Gen 9 baseline
+      is too small to diff against, it calls 213 items new
+[x] TM List page with an anchor per machine: our TM numbers match no canon game
+[x] 41 machine_<TYPE> icons uploaded; a TM's icon keys on the move's type
+[x] Route items are a table with icons, live links, and the reworded note
+[x] Trainer entries carry their type sprite; parties list nature and held item
+[x] Old pages' "[[hatchet]]" fixed to "[[Hatchet]]": only the first letter is
+      case-forgiving in MediaWiki, so the rest was a red link
+
+[2026-08-13] MEGA TRAINERS DISPERSED
+====================================
+[x] Switches 13-18 are Essentials script switches: a switch named "s:..." is
+      evaluated as Ruby on read, which is why nothing ever assigns them
+      13 isDay 06-18, 14 isNight 18-06, 15 isMorning 06-10,
+      16 isAfternoon 10-17, 17 isEvening 17-18, 18 Mon/Wed/Fri
+[x] 14-17 are disjoint and cover the day; 13 overlaps them and is not used
+[x] 45 of the 47 staged on Platinum Heights moved out to the 16 routes
+[x] ev9 and ev40 stay: they were never part of the corner block
+[x] Placement: passable, non-water, off the map edge, no other event, and
+      flood-fill reachable on foot from a trainer already on that map
+[x] Spots chosen furthest from anyone already there, so they do not huddle
+[x] 9 more events retimed so no map has two Mega Trainers at once
+[x] Solo Mega Trainers left alone; a time window would only hide them
+[x] 133 Mega Trainers before and after, none lost
+[x] Placement also rejects chokepoints: solid ground on both sides means an
+      event there walls off the route, since the player cannot walk through one
+[x] Beaten Mega Trainers leave a day later: page 4, no graphic, conditioned on
+      self switch A plus new script switch 240 "s:expiredDays?(1)"
+[x] Victory branch stamps get_self.variable with the time; without it
+      expiredDays? reads 0 and they would vanish the instant they were beaten
+[x] Essentials' own s:cooledDownDays?(1) is unusable here: it also requires the
+      self switch to be OFF, the opposite of what marks a trainer beaten
+[x] Daily-respawn events audited: 178 pages on 68 maps use s:cooledDownDays?(1)
+      and all stamp with pbSetEventTime, so berries, evolution-item balls and
+      the rest came through the port working. No change needed.
+[x] Game_Event has setVariable but no variable= setter; the stamp must go
+      through pbSetEventTime, which also flips self switch A
+[x] Mega Trainers page: all 133, sorted by dex, with stone, location and window
+[x] tools/dump_mega_trainers.rb reads them out of the map events, not the PBS
+[x] All 16 route maps rendered, uploaded as "Route N map.png", pages spliced
+[x] POI matching now resolves a doorway's destination map name; a Transfer
+      Player command carries a numeric id and no text, so bullets like
+      "Tunnel to Boron Village" had nothing to match against
+[x] old_item_notes reads its own table output as well as the old "#" list:
+      after the first regeneration the table IS the record of the editorial
+      notes, and parsing only the list format dropped them all
+[x] Braille pillars found: pbShowImageInWindow with a Pokemon-named picture
+      (Route 2 map 115 ev13 Kabuto, map 118 ev23; Route 12 map 92 ev50)
+[x] POI_HINTS matches a bullet on what an event DOES when the words cannot
+      meet - "Pillar #1" and "Kabuto" share no token. Tried only after normal
+      token matching fails, and a claimed event is not handed out twice
+[x] customTrainerBattle trainers now marked: the named specialists and the
+      postgame rematches never call TrainerBattle.start
+[x] Route 12's Healing Nurse is map 92 ev48 at (47,26): a plain NPC that heals
+      with the Recover All editor command (code 314), not a script call, so
+      nothing in its text or scripts named it
+[x] Maps rendered and uploaded for the towns, the wild areas, the Kiraki
+      Museum, the 8 gyms and the Pokémon League
+[x] wiki_out/build_places.sh only splices a page that already has a Trainers
+      heading, so a hand-written town page cannot be blanked by the run
+[x] The Gold City gem tournament runs in the Pokémon League, map 186; the
+      map is rendered and uploaded under that name
+[x] Five new location pages written and uploaded: Kiraki Museum, Pokémon
+      League, Arevelyan Ocean, Argon Beach Front, Igandea River Boardwalks
+[x] Their POIs written from reading the map events; Ryan to review
+[x] Town exteriors now mark what is behind each door, one circle per door
+[x] tools/map_trainers.json regenerated after the dispersal: it is a cached
+      dump, so the page tables kept the old placements while the rendered maps
+      (which read the rxdata directly) already showed the new ones
+[x] Door markers skip any interior that has its own rendered map and page -
+      a gym's contents belong on the gym's page, not twice on the town's
+[x] Helium City rendered with --dungeon: outdoor by metadata but built like
+      one, so its 21 door pairs get matched blue markers as ladders do
+
+WIKI — MAPS, TRAINERS AND LINKS
+-------------------------------
+[x] Door markers need one destination and no sprite
+[x] Ferryman no longer read as a building door
+[x] unblock_mega_trainers.rb re-checks all 133, moved 5
+[x] Blocking now tested by re-running the flood fill
+[x] Two-tile keep-out around every transfer event
+[x] Route 9 doorway was Serena, not Ximena
+[x] Vivillon tabber kept 11 vanilla forms, cut Kiraki
+[x] Forms original to this game now kept first
+[x] Finizen and Palafin crashed on LevelWithPartner, fixed
+[x] regen_pokemon_pages.py rebuilds all 1,048 in place
+[x] Legendite has three sources, not one
+[x] MSP parameter 2 is a link target
+[x] About 140 icon links pointed nowhere, fixed
+[x] Wiki pages for the 23 named trainers
+[x] Trainer role read from data, never dialogue
+[x] find_red_links.py and fix_red_links.py added
+[x] Red links matched on a case-folded squashed key
+[x] Two redirects fixed 1,088 pages of misses
+[x] Locust Castform: PBS form 5, Forecast, Weather Ball
+[x] Eleven sourceless Gen 9 held items sold for BP
+[x] TM109, TM110 and TM111 stocked at Gold City Mall
+[x] Photeon icon frame 2 offset, it bounces again
+[x] Yamselia icon rebuilt from its front sprite
+[x] Type pages list every Fakemon of that type
+[x] Gigantamax ports to Megas excluded from originals
+[x] Mega Chimecho icon was CHIMECHO_1, corrected
+[x] Ruins of Simkath: four regions, every warp labelled
+[x] Simkath Region 4 exit to Route 8 restored
+[x] Landing numbers continue the pair count, no duplicates
+[x] Region bands only where the regions are the map
+[x] Outdoor E markers dropped, interiors keep theirs
+[x] Legendary lair portals never marked, they are spoilers
+[x] K-Pass ferry docks and Rotom appliances are POIs
+[x] Pokemon you can only talk to are not
+[x] POI tokens match whole words, Route 2 fixed
+[x] Route 12 Mega Trainer moved somewhere reachable
+[x] Victory Cave rendered: main level and chess floor
+[x] Trainer type regex was upper case only
+[x] Every gym leader dropped from their own gym, restored
+[x] Argon City Gym warp maze labels dropped
+[x] Unchanged uploads no longer reported as failures
