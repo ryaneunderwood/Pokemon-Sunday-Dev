@@ -651,3 +651,19 @@ WIKI — MAPS, TRAINERS AND LINKS
 [x] Every gym leader dropped from their own gym, restored
 [x] Argon City Gym warp maze labels dropped
 [x] Unchanged uploads no longer reported as failures
+[x] POI bullets match on their bolded subject
+[x] POI matching was nondeterministic, now sorted
+[x] Museum stones, trade machine and fossil desk placed
+[x] Museum fridge and topping bin are POIs
+[x] Cut tree and shiny patch bullets never drawn
+[x] Gym pages embedded old images, never repointed
+[x] Base page now uploaded when nothing is generated
+[x] Alcremie fridge recurring, nine flavours to choose
+[x] Topping bin keeps the flavour, changes the Sweet
+[x] Nuzlocke dispensers give one each, not zero
+[x] Game Corner Pokemon counter crashed on $player.owned[]
+
+OPEN, WIKI
+----------
+[ ] Ferry, Carbon Correctional Facility, Simkath: no pages
+[ ] Gym trainer lists ordered differently from map circles
