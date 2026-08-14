@@ -663,7 +663,20 @@ WIKI — MAPS, TRAINERS AND LINKS
 [x] Nuzlocke dispensers give one each, not zero
 [x] Game Corner Pokemon counter crashed on $player.owned[]
 
+[x] 25 character pages researched and rewritten
+[x] Elite Four parties extracted from the plugin
+[x] Saturday and Burnham exist only in Ruby
+[x] Trainer art added to every character page
+[x] Conversations split by sprite, colour and prefix
+[x] Signboards and brackets are not dialogue
+[x] Tsadek's thrown party was on six pages
+[x] Iron Town Gym postgame is Daled, not Themisto
+[x] Carbon Slums Gym postgame is Khof, not Amalthea
+[x] Draw board swaps Sinope and Khof colours
+[x] CHANELLER typo broke five Channeler battles
+[x] Story order list drives every page's sections
+
 OPEN, WIKI
 ----------
 [ ] Ferry, Carbon Correctional Facility, Simkath: no pages
-[ ] Gym trainer lists ordered differently from map circles
+[ ] Europa's K-ROCK contest chain gated on unset switch
