@@ -675,6 +675,8 @@ WIKI — MAPS, TRAINERS AND LINKS
 [x] Draw board swaps Sinope and Khof colours
 [x] CHANELLER typo broke five Channeler battles
 [x] Story order list drives every page's sections
+[x] Three Skarmory slots were Mega, meant Kiraki
+[x] Carbon Correctional Facility page written
 
 OPEN, WIKI
 ----------
