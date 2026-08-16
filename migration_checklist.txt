@@ -338,6 +338,11 @@ EBDX BATTLE FIXES
 -----------------
 [x] Blank strip at the end of trainer battles
 [x] HP bar drained instantly, fault was EbdxWaiter#wait
+[x] EbdxWaiter deficit bounded, not snapped to now
+[x] Beaten trainer walks the full distance again
+[x] Opponent trainer at 1.2x, player back sprite at 2x
+[x] Trainer lose_text uses the same box as everything else
+[x] Stock EBDX VS splash art deleted, six files
 
 POKEMON CENTER HEALING
 ----------------------
@@ -424,6 +429,7 @@ OVERWORLD EVENT SPRITES CONSOLIDATED ONTO FOLLOWER ART
 [x] Character choice is one picker screen, not three steps
 [x] Prompt reads "Who will you play as?"
 [x] Picker prompt uses the game's own speech box
+[x] Crumpled token sprite follows the skin tone
 
 [2026-08-11] TITLE LOGO AND SPLASH
 ==================================
