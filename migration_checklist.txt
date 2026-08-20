@@ -10,10 +10,9 @@ OPEN
 ----
 [ ] Back and Back shiny art missing, four Fakemon
       LEOTERYGI, PALOSSNOW, ROOBOP, SNOWYGAST
-[ ] Followers art missing, 18 listed below (plus shinies and swimmers)
-      CHORDALUX, CHROMASP, CLOWD,
-      CRUCIBLEAK, GALEFRONT, GALEFRONT_1, HOVEON, LEOTERYGI, NIMBEE, PHOTEON,
-      ROOBOP,
+[ ] Followers art missing, 15 listed below (plus shinies and swimmers)
+      CHORDALUX, CLOWD,
+      CRUCIBLEAK, GALEFRONT, GALEFRONT_1, HOVEON, LEOTERYGI, NIMBEE,
       STORRM, TARFELON, WIKINIKI,
       YAMSELIA, YIMBEE, PROTOSOLARIA, VIVILLON_20
 [ ] Eight Fakemon have no cry, none in v17
@@ -442,6 +441,15 @@ OVERWORLD EVENT SPRITES CONSOLIDATED ONTO FOLLOWER ART
 
 [2026-08-11] FAKEMON SPRITES
 ============================
+[x] Sign arrows sit on the text line, and lose their white edge
+[x] Locust Plague eats Grass types for double damage
+[x] No white box flash before the beaten trainer speaks
+[x] Follower idle animation runs at a quarter speed
+[x] Tileset passability, layering and terrain tags restored from v17
+[x] Fakemon tutor moves match the near-universal canon set
+[x] Roobop follower, swimmer and both shinies
+[x] Chromasp follower, swimmer and both shinies
+[x] Photeon follower, swimmer and both shinies
 [x] Castform 1-3 shiny fronts painted, follower shinies redone
 [x] Actinotox follower, swimmer and both shinies
 [x] Cauldread follower, swimmer and both shinies
