@@ -466,6 +466,11 @@ OVERWORLD EVENT SPRITES CONSOLIDATED ONTO FOLLOWER ART
 [x] Cauldream swimmer in, shiny keeps the grey water
 [x] Cauldream follower in, shiny derived from battle palette
 [x] Cauldream third walk frame dropped one block
+[x] Leoterygi follower, swimmer and both shinies
+[x] Crucibleak stretched out of Cauldream, all four sheets
+[x] Roobop tail pointed, stripes off, arms raised
+[x] Palossnow own-left turret is a Mimikyu snowman
+[x] Snowygast generator refuses to clobber hand edits
 [x] Levitating followers wear the walking sheet over water
 [x] Spudnick follower and levitate shinies derived
 [x] tools/derive_shiny_from_front.py added, PowerShell cannot run here
