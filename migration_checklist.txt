@@ -468,6 +468,8 @@ OVERWORLD EVENT SPRITES CONSOLIDATED ONTO FOLLOWER ART
 [x] Cauldream third walk frame dropped one block
 [x] Leoterygi follower, swimmer and both shinies
 [x] Crucibleak stretched out of Cauldream, all four sheets
+[x] Crucibleak mist, pestle and face carried to all frames
+[x] Follower generators gain --from-walker read-only mode
 [x] Roobop tail pointed, stripes off, arms raised
 [x] Palossnow own-left turret is a Mimikyu snowman
 [x] Snowygast generator refuses to clobber hand edits
