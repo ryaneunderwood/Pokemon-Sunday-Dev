@@ -465,6 +465,8 @@ OVERWORLD EVENT SPRITES CONSOLIDATED ONTO FOLLOWER ART
 [x] Photowyrm follower in, shiny derived from battle palette
 [x] Cauldream swimmer in, shiny keeps the grey water
 [x] Cauldream follower in, shiny derived from battle palette
+[x] Cauldream third walk frame dropped one block
+[x] Levitating followers wear the walking sheet over water
 [x] Spudnick follower and levitate shinies derived
 [x] tools/derive_shiny_from_front.py added, PowerShell cannot run here
 
