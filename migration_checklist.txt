@@ -11,19 +11,20 @@ OPEN
 [ ] Back and Back shiny art missing, four Fakemon
       LEOTERYGI, PALOSSNOW, ROOBOP, SNOWYGAST
 [ ] Followers art missing, 15 listed below (plus shinies and swimmers)
-      CHORDALUX, CLOWD,
-      CRUCIBLEAK, GALEFRONT, GALEFRONT_1, HOVEON, LEOTERYGI, NIMBEE,
-      STORRM, TARFELON, WIKINIKI,
+      CHORDALUX,  GALEFRONT, GALEFRONT_1, HOVEON, LEOTERYGI, NIMBEE,
+      , TARFELON, WIKINIKI,
       YAMSELIA, YIMBEE, PROTOSOLARIA, VIVILLON_20
 [ ] Eight Fakemon have no cry, none in v17
       SNOWYGAST, PALOSSNOW, TARFELON, ROOBOP, WIKINIKI, ACTINOTOX, LEOTERYGI,
       SPUDNICK
 [ ] Add the Celebi paradox quest
 [ ] Museum: Ogerpon masks, Crimson Gem, Eternal Flower
-[ ] Route 8 "Man warning of fog" matches no event
-[ ] Locust Castform has no art: CASTFORM_5 front, back, shiny and icon
+[x] Locust Castform has no art: CASTFORM_5 front, back, shiny and icon
 [ ] ELECTRICGEM is never awarded by anyone
-
+[ ] Fix Ganymede on Ferry
+[ ] Add more Pokemon to daycare
+[ ] Elevator consistency
+[ ] Fix trees near daycare
 
 
 COMPLETED
@@ -285,6 +286,7 @@ GENERATION 9 PACK UPGRADED 3.3.4 -> 3.3.7
 [x] Pack replaced, 14,725 files
 [x] Dependency bumped in meta.txt
 [x] Tools repointed to glob for the highest version
+[x] Last Resort menu check used undefined user, crashed
 
 PLZA MEGA ART — 6 forms that had no sprites
 -------------------------------------------
@@ -342,6 +344,7 @@ EBDX BATTLE FIXES
 [x] Opponent trainer at 1.2x, player back sprite at 2x
 [x] Trainer lose_text uses the same box as everything else
 [x] Stock EBDX VS splash art deleted, six files
+[x] getBattlerAltitude crashed on 21 species lacking metrics entries
 
 POKEMON CENTER HEALING
 ----------------------
@@ -476,6 +479,17 @@ OVERWORLD EVENT SPRITES CONSOLIDATED ONTO FOLLOWER ART
 [x] Levitating followers wear the walking sheet over water
 [x] Spudnick follower and levitate shinies derived
 [x] tools/derive_shiny_from_front.py added, PowerShell cannot run here
+[x] Storrm follower drawn from scratch, no template
+[x] Plugin comments trimmed to short section descriptions
+[x] Clowd and Storrm off the needs-art list, nine left
+[x] Followers cross bridges; only the player was bridge-aware
+[x] Blocked jumps hang a move route, not just blocked steps
+[x] Followers stop detouring around graphicless trigger events
+[x] Museum trade: GameData.each needs a block, every trade crashed
+[x] Museum trade: cancelling a picker rewrote the last party member
+[x] Museum fossil restorer: :NONE replaced v17's -1 and 0
+[x] Walking evolutions 1000 -> 10000 steps, steps here are short
+[x] Walking evolutions fire on the step, buddy only, Everstone blocks
 
 [2026-08-12] NEW MOVES PUT TO USE
 =================================
