@@ -481,6 +481,7 @@ OVERWORLD EVENT SPRITES CONSOLIDATED ONTO FOLLOWER ART
 [x] Spudnick follower and levitate shinies derived
 [x] tools/derive_shiny_from_front.py added, PowerShell cannot run here
 [x] Icon sprites defaulted to shiny; 0 is truthy
+[x] Turn and bump delays set to 0.7 of v17
 [x] Storrm follower drawn from scratch, no template
 [x] Plugin comments trimmed to short section descriptions
 [x] Clowd and Storrm off the needs-art list, nine left
