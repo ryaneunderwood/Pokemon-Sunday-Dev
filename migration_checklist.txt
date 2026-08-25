@@ -287,6 +287,7 @@ GENERATION 9 PACK UPGRADED 3.3.4 -> 3.3.7
 [x] Dependency bumped in meta.txt
 [x] Tools repointed to glob for the highest version
 [x] Last Resort menu check used undefined user, crashed
+[x] Unselectable moves refused at selection, not mid-turn
 
 PLZA MEGA ART — 6 forms that had no sprites
 -------------------------------------------
@@ -479,6 +480,7 @@ OVERWORLD EVENT SPRITES CONSOLIDATED ONTO FOLLOWER ART
 [x] Levitating followers wear the walking sheet over water
 [x] Spudnick follower and levitate shinies derived
 [x] tools/derive_shiny_from_front.py added, PowerShell cannot run here
+[x] Icon sprites defaulted to shiny; 0 is truthy
 [x] Storrm follower drawn from scratch, no template
 [x] Plugin comments trimmed to short section descriptions
 [x] Clowd and Storrm off the needs-art list, nine left
