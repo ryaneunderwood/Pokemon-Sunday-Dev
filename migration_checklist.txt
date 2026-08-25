@@ -484,6 +484,7 @@ OVERWORLD EVENT SPRITES CONSOLIDATED ONTO FOLLOWER ART
 [x] Turn and bump delays set to 0.7 of v17
 [x] Wrong gym quiz answer battles its trainer at once
 [x] Quizzes 5 and 6 pointed at the wrong events
+[x] Steel gym's Skarmory was Ghost via the Kiraki rule
 [x] Storrm follower drawn from scratch, no template
 [x] Plugin comments trimmed to short section descriptions
 [x] Clowd and Storrm off the needs-art list, nine left
