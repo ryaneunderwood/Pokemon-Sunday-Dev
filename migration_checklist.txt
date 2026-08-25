@@ -486,6 +486,8 @@ OVERWORLD EVENT SPRITES CONSOLIDATED ONTO FOLLOWER ART
 [x] Quizzes 5 and 6 pointed at the wrong events
 [x] Steel gym's Skarmory was Ghost via the Kiraki rule
 [x] Summary EV bars restored, v17 had them
+[x] HP bar sits above the HP stat, boxes now match
+[x] Charging animations hid the target as well as the user
 [x] Storrm follower drawn from scratch, no template
 [x] Plugin comments trimmed to short section descriptions
 [x] Clowd and Storrm off the needs-art list, nine left
