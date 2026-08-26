@@ -490,6 +490,7 @@ OVERWORLD EVENT SPRITES CONSOLIDATED ONTO FOLLOWER ART
 [x] Charging animations hid the target as well as the user
 [x] Six charging animations were unreachable by counting
 [x] Fly, Bounce and Dive vanished the wrong Pokemon
+[x] A blocked charge left its user invisible
 [x] Storrm follower drawn from scratch, no template
 [x] Plugin comments trimmed to short section descriptions
 [x] Clowd and Storrm off the needs-art list, nine left
