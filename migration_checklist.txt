@@ -488,6 +488,8 @@ OVERWORLD EVENT SPRITES CONSOLIDATED ONTO FOLLOWER ART
 [x] Summary EV bars restored, v17 had them
 [x] HP bar sits above the HP stat, boxes now match
 [x] Charging animations hid the target as well as the user
+[x] Six charging animations were unreachable by counting
+[x] Fly, Bounce and Dive vanished the wrong Pokemon
 [x] Storrm follower drawn from scratch, no template
 [x] Plugin comments trimmed to short section descriptions
 [x] Clowd and Storrm off the needs-art list, nine left
