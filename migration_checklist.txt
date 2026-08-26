@@ -492,6 +492,8 @@ OVERWORLD EVENT SPRITES CONSOLIDATED ONTO FOLLOWER ART
 [x] Fly, Bounce and Dive vanished the wrong Pokemon
 [x] A blocked charge left its user invisible
 [x] Route 10 pool was drawn under its dirt corners
+[x] Pink grass was a ledge, jumped every step
+[x] Route 11 hidden item drew a green tile
 [x] Storrm follower drawn from scratch, no template
 [x] Plugin comments trimmed to short section descriptions
 [x] Clowd and Storrm off the needs-art list, nine left
