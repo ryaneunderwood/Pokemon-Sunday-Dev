@@ -805,3 +805,5 @@ OPEN, WIKI
 - Museum mask plaques point at the BP reproductions
 - Museum and library additions translated into five languages
 - Lugia is not in a portal, it is on Mt. Silicon
+- Ogerpon added to the library's portal list
+- Gen 9 lairs let you out where you went in
