@@ -18,14 +18,19 @@ OPEN
       SNOWYGAST, PALOSSNOW, TARFELON, ROOBOP, WIKINIKI, ACTINOTOX, LEOTERYGI,
       SPUDNICK
 [ ] Add the Celebi paradox quest
-[ ] Museum: Ogerpon masks, Crimson Gem, Eternal Flower
+[ ] Museum: Ogerpon masks, crimson gem (blood moon ursaluna), Eternal Flower
 [x] Locust Castform has no art: CASTFORM_5 front, back, shiny and icon
 [ ] ELECTRICGEM is never awarded by anyone
-[ ] Fix Ganymede on Ferry
-[ ] Add more Pokemon to daycare
+[?] Fix Ganymede on Ferry
+[X] Add more Pokemon to daycare
+[x] Route 14 trainer bug
 [ ] Elevator consistency
-[ ] Fix trees near daycare
-
+[x] Fix trees near daycare
+[X] He city doors
+[ ] Add jump ledges for safe exit Diglett's cave
+[x] Rival intro splash
+[ ] Wiki update with languages, castform bug
+[x] Extend library
 
 COMPLETED
 ---------
@@ -752,3 +757,50 @@ OPEN, WIKI
 ----------
 [ ] Ferry, Carbon Correctional Facility, Simkath: no pages
 [ ] Europa's K-ROCK contest chain gated on unset switch
+- Intro asks language first, writes variable 130
+- Canon glossary tables cover six languages
+- Translations compiled to Data/messages_<lang>.dat
+- Back from mode menu returns to language pick
+- Japanese font ships in Fonts, no install needed
+- Item plurals, trainer classes, choice menus translated
+- Light type named in all five languages
+- Japanese naming screen: four kana tabs, labelled
+- Flame Burst no longer breaks the AI in doubles
+- Fly map survives squares with no point name
+- Restored doors2 frame 4; Helium City doors visible
+- Followers no longer swallow skippable move route steps
+- Boulders prompt for Stimpacks when pressed
+- Boulder and Stimpacks wording translated in five languages
+- Bumped forced steps retried, not lost, for the player
+- League cutscene page freezes the player while playing
+- Scizor turns back after its lunge in round two
+- Commissioner no longer restarts the tournament mid-run
+- Round two result set inside the battle script block
+- Freeze lifts before a cutscene leaves the League
+- Stellar Aura no longer crashes at end of battle
+- Prison escorts walk single file like follower Pokemon
+- Battle Tower walk sprites match their trainers again
+- Rental tower runs through the lobby event now
+- Rental swap offered inside the lift; record board lists it
+- Summary drops Remember/Forget; rentals drop Use TMs
+- Rental run cannot ride up without a team ready
+- A taken rental is replaced by a fresh tier draw
+- No experience or EVs from Battle Tower battles
+- A resumed rental run gets the swap it missed
+- A blanked status no longer crashes the battle data box
+- Mega Trainer times were one switch out; retimed
+- A trainer's Rotom no longer narrates its form change
+- Opposing trainers can Mega Evolve again
+- Callisto leaves the E4 room through the follower
+- A through NPC can now pass the following Pokemon
+- The player walks the Champion out at his pace
+- Restore the missing Pokemon event sprites, Alakazam included
+- Pecharunt respawns after the Elite Four like the rest
+- Restore the fourteen roaming legendaries the port dropped
+- A save is played in the language it was saved in
+- Cut the missing thrown-ball art out of v17's sheet
+- Missing EBDX tracks no longer silence legendary battles
+- Mints cost 10000 again, as they did in v17
+- Reysh no longer says the Silver portal is closing
+- Museum mask plaques point at the BP reproductions
+- Museum and library additions translated into five languages
