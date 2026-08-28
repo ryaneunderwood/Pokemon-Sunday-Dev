@@ -804,3 +804,4 @@ OPEN, WIKI
 - Reysh no longer says the Silver portal is closing
 - Museum mask plaques point at the BP reproductions
 - Museum and library additions translated into five languages
+- Lugia is not in a portal, it is on Mt. Silicon
