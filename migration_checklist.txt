@@ -8,8 +8,9 @@ commit messages of both repos. Look there before redoing anything.
 
 OPEN
 ----
-[ ] Back and Back shiny art missing, four Fakemon
-      LEOTERYGI, PALOSSNOW, ROOBOP, SNOWYGAST
+[ ] Roobop has no back art at all
+[ ] Back shiny missing, three Fakemon
+      PALOSSNOW, ROOBOP, SNOWYGAST
 [ ] Back art missing on three forms as well
       CASTFORM_5, DARUMAKA_1, PICHU_2
 [ ] Followers art missing, 15 listed below (plus shinies and swimmers)
