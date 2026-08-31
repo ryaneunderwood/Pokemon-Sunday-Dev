@@ -9,8 +9,8 @@ commit messages of both repos. Look there before redoing anything.
 OPEN
 ----
 [ ] Followers art missing, 15 listed below (plus shinies and swimmers)
-      CHORDALUX,  GALEFRONT, GALEFRONT_1, HOVEON, NIMBEE,
-      , TARFELON, YAMSELIA, YIMBEE, PROTOSOLARIA, VIVILLON_20
+      CHORDALUX,  GALEFRONT, GALEFRONT_1, NIMBEE,
+      , YAMSELIA, YIMBEE, PROTOSOLARIA, VIVILLON_20
 [ ] Add the Celebi paradox quest
 [ ] Elevator consistency
 
