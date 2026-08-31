@@ -12,8 +12,6 @@ OPEN
       CHORDALUX,  GALEFRONT, GALEFRONT_1, HOVEON, NIMBEE,
       , TARFELON, WIKINIKI, YAMSELIA, YIMBEE, PROTOSOLARIA, VIVILLON_20
 [ ] Add the Celebi paradox quest
-[ ] ELECTRICGEM is never awarded by anyone
-[?] Fix Callisto on Ferry
 [ ] Elevator consistency
 
 COMPLETED
@@ -87,6 +85,7 @@ COMPLETED
 [x] Wiki update with languages, castform bug
 [x] Back and Back shiny art missing
       CASTFORM_5
+[x] Fix Callisto on Ferry
 
 TODO — PBS Data
 ---------------
