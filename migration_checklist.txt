@@ -10,6 +10,8 @@ OPEN
 ----
 [ ] Back and Back shiny art missing, four Fakemon
       LEOTERYGI, PALOSSNOW, ROOBOP, SNOWYGAST
+[ ] Back art missing on three forms as well
+      CASTFORM_5, DARUMAKA_1, PICHU_2
 [ ] Followers art missing, 15 listed below (plus shinies and swimmers)
       CHORDALUX,  GALEFRONT, GALEFRONT_1, HOVEON, NIMBEE,
       , TARFELON, WIKINIKI, YAMSELIA, YIMBEE, PROTOSOLARIA, VIVILLON_20
@@ -17,7 +19,6 @@ OPEN
 [ ] ELECTRICGEM is never awarded by anyone
 [?] Fix Callisto on Ferry
 [ ] Elevator consistency
-[ ] Wiki update with languages, castform bug
 
 COMPLETED
 ---------
@@ -87,6 +88,7 @@ COMPLETED
 [x] Extend library
 [x] Elite Battle DX installed, see its section below
 [x] Summary IV display done
+[x] Wiki update with languages, castform bug
 
 TODO — PBS Data
 ---------------
