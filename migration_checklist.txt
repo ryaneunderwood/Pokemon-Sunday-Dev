@@ -11,26 +11,13 @@ OPEN
 [ ] Back and Back shiny art missing, four Fakemon
       LEOTERYGI, PALOSSNOW, ROOBOP, SNOWYGAST
 [ ] Followers art missing, 15 listed below (plus shinies and swimmers)
-      CHORDALUX,  GALEFRONT, GALEFRONT_1, HOVEON, LEOTERYGI, NIMBEE,
-      , TARFELON, WIKINIKI,
-      YAMSELIA, YIMBEE, PROTOSOLARIA, VIVILLON_20
-[ ] Eight Fakemon have no cry, none in v17
-      SNOWYGAST, PALOSSNOW, TARFELON, ROOBOP, WIKINIKI, ACTINOTOX, LEOTERYGI,
-      SPUDNICK
+      CHORDALUX,  GALEFRONT, GALEFRONT_1, HOVEON, NIMBEE,
+      , TARFELON, WIKINIKI, YAMSELIA, YIMBEE, PROTOSOLARIA, VIVILLON_20
 [ ] Add the Celebi paradox quest
-[ ] Museum: Ogerpon masks, crimson gem (blood moon ursaluna), Eternal Flower
-[x] Locust Castform has no art: CASTFORM_5 front, back, shiny and icon
 [ ] ELECTRICGEM is never awarded by anyone
-[?] Fix Ganymede on Ferry
-[X] Add more Pokemon to daycare
-[x] Route 14 trainer bug
+[?] Fix Callisto on Ferry
 [ ] Elevator consistency
-[x] Fix trees near daycare
-[X] He city doors
-[ ] Add jump ledges for safe exit Diglett's cave
-[x] Rival intro splash
 [ ] Wiki update with languages, castform bug
-[x] Extend library
 
 COMPLETED
 ---------
@@ -86,6 +73,20 @@ COMPLETED
 [x] Seven v17 to v21 custom-script defects swept
 [x] Full native event and script port, all shims retired
 [x] Pre-port saves made loadable again
+[x] Eight Fakemon have no cry, none in v17
+      SNOWYGAST, PALOSSNOW, TARFELON, ROOBOP, WIKINIKI, ACTINOTOX, LEOTERYGI,
+      SPUDNICK
+[x] Museum: Ogerpon masks, crimson gem (blood moon ursaluna), Eternal Flower
+[x] Locust Castform has no art: CASTFORM_5 front, back, shiny and icon
+[x] Add more Pokemon to daycare
+[x] Route 14 trainer bug
+[x] Fix trees near daycare
+[x] He city doors
+[x] Add jump ledges for safe exit Diglett's cave
+[x] Rival intro splash
+[x] Extend library
+[x] Elite Battle DX installed, see its section below
+[x] Summary IV display done
 
 TODO — PBS Data
 ---------------
@@ -221,11 +222,6 @@ ASSETS
 [x] Battlebacks: 116 maps rendered with no background
 [x] CHANELER trainer sprite renamed to match PBS
 [x] 13 Graphics/Pictures restored
-
-STILL OPEN
-----------
-[x] Elite Battle DX installed, see its section below
-[x] Summary IV display done
 
 [2026-07-28] SECOND WAVE — restored systems + Battle Tower rework
 =================================================================
