@@ -809,3 +809,4 @@ OPEN, WIKI
 - Team picking no longer wakes v21's challenge and its debug prompt
 - Gimmighoul sweep waits for the minigame; lift keeps the overflow
 - Encounter Tracker: backdrop, three scrolling rows, label, roamers
+- Tracker: scroll arrow bottom left, light grey-blue ground
