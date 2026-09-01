@@ -811,3 +811,4 @@ OPEN, WIKI
 - Encounter Tracker: backdrop, three scrolling rows, label, roamers
 - Tracker: scroll arrow bottom left, light grey-blue ground
 - Achievements: backdrop, cursor, scrolling, earned ones say why
+- Menu skin choice 1: white patch in body tile flattened
