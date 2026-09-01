@@ -807,3 +807,4 @@ OPEN, WIKI
 - Flame Body stacking handler installs over core's
 - Light moves without an animation play Shine's
 - Team picking no longer wakes v21's challenge and its debug prompt
+- Gimmighoul sweep waits for the minigame; lift keeps the overflow
