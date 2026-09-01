@@ -802,3 +802,7 @@ OPEN, WIKI
 - Lugia is not in a portal, it is on Mt. Silicon
 - Ogerpon added to the library's portal list
 - Gen 9 lairs let you out where you went in
+- Castform passes the Rock check; Locust Plague passes Bug
+- A full box no longer burns a Mystery Gift code
+- Flame Body stacking handler installs over core's
+- Light moves without an animation play Shine's
