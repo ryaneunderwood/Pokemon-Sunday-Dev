@@ -806,3 +806,4 @@ OPEN, WIKI
 - A full box no longer burns a Mystery Gift code
 - Flame Body stacking handler installs over core's
 - Light moves without an animation play Shine's
+- Team picking no longer wakes v21's challenge and its debug prompt
