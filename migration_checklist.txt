@@ -812,3 +812,4 @@ OPEN, WIKI
 - Tracker: scroll arrow bottom left, light grey-blue ground
 - Achievements: backdrop, cursor, scrolling, earned ones say why
 - Menu skin choice 1: white patch in body tile flattened
+- Poké Scanner says 'are nearby' for several roamers, translated
