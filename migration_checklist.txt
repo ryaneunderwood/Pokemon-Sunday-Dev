@@ -813,3 +813,4 @@ OPEN, WIKI
 - Menu skin choice 1: white patch in body tile flattened
 - Poké Scanner says 'are nearby' for several roamers, translated
 - Encounter Tracker lists Paradox Pokemon when they can appear
+- Paradox now half of the model's encounters; roamer-linked keep 1%
