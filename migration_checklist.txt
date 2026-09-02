@@ -9,7 +9,7 @@ commit messages of both repos. Look there before redoing anything.
 OPEN
 ----
 [ ] Followers art missing (plus shinies and swimmers)
-      CHORDALUX,  GALEFRONT, GALEFRONT_1, NIMBEE, YAMSELIA, YIMBEE, PROTOSOLARIA
+      CHORDALUX,  GALEFRONT, GALEFRONT_1, YAMSELIA, PROTOSOLARIA
 [x] Add the Celebi paradox quest
 [ ] Elevator consistency
 
