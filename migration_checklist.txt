@@ -10,7 +10,7 @@ OPEN
 ----
 [ ] Followers art missing (plus shinies and swimmers)
       CHORDALUX,  GALEFRONT, GALEFRONT_1, NIMBEE, YAMSELIA, YIMBEE, PROTOSOLARIA
-[ ] Add the Celebi paradox quest
+[x] Add the Celebi paradox quest
 [ ] Elevator consistency
 
 COMPLETED
