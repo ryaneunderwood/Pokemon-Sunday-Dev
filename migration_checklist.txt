@@ -814,3 +814,5 @@ OPEN, WIKI
 - Poké Scanner says 'are nearby' for several roamers, translated
 - Encounter Tracker lists Paradox Pokemon when they can appear
 - Paradox now half of the model's encounters; roamer-linked keep 1%
+- Fetid Freeze poisons 33% of the time
+- Z Megas: Absol Sharpness, Garchomp Levitate, Lucario Aura Guard
