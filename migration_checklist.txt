@@ -15,6 +15,9 @@ OPEN
 
 COMPLETED
 ---------
+[x] Pokedex seen-forms count capped at two, fixed
+[x] Simkath Unown forms come seven to a room again
+[x] Victory Cave dungeon draws with the v17 autotiles again
 [x] Platinum Heights type check reads Mega types from PBS
 [x] Mega Stone trainers dispersed around the region
 [x] All 1,048 Pokemon pages regenerated and re-uploaded
