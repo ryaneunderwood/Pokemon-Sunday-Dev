@@ -1,6 +1,6 @@
 Pokemon Sunday v17 -> v21 Migration Checklist
 ==============================================
-Last updated: 2026-08-13
+Last updated: 2026-09-07
 
 One line per item, ten words at most. The reasoning behind every one of these
 lived here until 2026-08-11 and is still in this file's git history, and in the
@@ -15,6 +15,7 @@ OPEN
 
 COMPLETED
 ---------
+[x] Platinum Heights type check reads Mega types from PBS
 [x] Mega Stone trainers dispersed around the region
 [x] All 1,048 Pokemon pages regenerated and re-uploaded
 [x] Route 5 render approved, every other map followed
