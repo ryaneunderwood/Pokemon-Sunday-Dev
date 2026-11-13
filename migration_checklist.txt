@@ -165,8 +165,31 @@ TODO — Misc Small Tweaks (from #Ryan audit)
 [x] EXP changes and Map 40 facility restored
 [x] Payday money multiplier raised to 20
 [x] Shiny wild Pokemon switch restored
-[x] Wild legendaries get 55 shiny rerolls again
+[x] Wild legendaries shiny 1 in the legendary count
 [x] Shiny Charm worth 100 rerolls when breeding again
+[x] v17 Pickup item tables restored
+[x] Light Show and Witch's Brew draw moves in doubles
+[x] Pickup: evolution items out, Custom Ball and Crann Berry in
+[x] Hoopa boss fight restored
+[x] Wild legendaries get three perfect IVs
+[x] Funlocke: only trophy balls catch; rate 0 never catches
+[x] Trainer default EVs: one per level, 50 a stat at most
+[x] Ability Capsule reaches hidden abilities
+[x] Flabebe line and Oricorio get a random form
+[x] Fly Whistle refused while carrying the Bicycle
+[x] Unova dex starts at 000
+[x] Every rod bites 70%; Synchronize sets a roamer's nature
+[x] PC deposit heals; a gift can take a party slot
+[x] Downpour form follows the weather at once
+[x] Nothing registered as seen before the Pokedex
+[x] Behemoth moves and Dynamax Cannon double against Megas
+[x] Terra Firma traps like Mean Look
+[x] Slicing and Biting flags restored on 16 moves
+[x] HM moves off the party menu; summary Give/Take removed
+[x] Jukebox removed; controls screen teaches the Alt speed-up
+[x] Slot reels per difficulty as in v17
+[x] v17 contributors restored to the credits
+[x] Credits end as the music does; speed-up locked off
 [x] Map event need_update: v21 does this natively
 
 CRASH FIXES — map events
